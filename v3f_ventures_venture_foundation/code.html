@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>V3F Nagpur | VNIT Incubation Centre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-high": "#202c30",
+        "on-error": "#690005",
+        "surface-dim": "#0a1519",
+        "primary": "#dbfcff",
+        "primary-fixed-dim": "#00dbe9",
+        "inverse-on-surface": "#273236",
+        "inverse-primary": "#006970",
+        "outline-variant": "#3b494b",
+        "surface-tint": "#00dbe9",
+        "error-container": "#93000a",
+        "outline": "#849495",
+        "tertiary-container": "#d9d9d9",
+        "on-primary-container": "#006970",
+        "primary-container": "#00f0ff",
+        "tertiary": "#f5f5f5",
+        "background": "#0a1519",
+        "secondary": "#ffb4a7",
+        "on-tertiary": "#2f3131",
+        "on-primary": "#00363a",
+        "on-surface": "#d8e4ea",
+        "surface-variant": "#2b363b",
+        "surface-container": "#162125",
+        "inverse-surface": "#d8e4ea",
+        "surface": "#0a1519",
+        "on-background": "#d8e4ea",
+        "on-surface-variant": "#b9cacb",
+        "surface-container-highest": "#2b363b",
+        "primary-fixed": "#7df4ff",
+        "coral-accent": "#FF7F6B",
+        "surface-container-lowest": "#051014",
+        "surface-container-low": "#121d21",
+      },
+      borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+      fontFamily: {
+        "headline-lg": ["Space Grotesk"],
+        "body-md": ["Inter"],
+        "headline-xl": ["Space Grotesk"],
+        "body-lg": ["Inter"],
+        "label-mono": ["JetBrains Mono"],
+        "label-caps": ["JetBrains Mono"],
+        "headline-md": ["Space Grotesk"],
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { background-color: #0a1519; color: #d8e4ea; overflow-x: hidden; }
+  .glass-panel {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .glow-cyan { box-shadow: 0 0 15px rgba(0,240,255,0.2); }
+  .glow-coral { box-shadow: 0 0 15px rgba(255,127,107,0.3); }
+  .isometric-grid {
+    background-image:
+      linear-gradient(rgba(0,240,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,240,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+  }
+  /* Scroll animations */
+  .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-in { opacity: 0; transition: opacity 0.8s ease; }
+  .fade-in.visible { opacity: 1; }
+  .slide-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .slide-left.visible { opacity: 1; transform: translateX(0); }
+  .slide-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .slide-right.visible { opacity: 1; transform: translateX(0); }
+  .scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .scale-in.visible { opacity: 1; transform: scale(1); }
+  /* Counter animation */
+  .counter { font-variant-numeric: tabular-nums; }
+  /* Stagger delays */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  .delay-6 { transition-delay: 0.6s; }
+  /* Ping badge */
+  @keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+  .ping-slow { animation: ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
+  /* Scan line effect */
+  @keyframes scanline { 0%{top:-10%} 100%{top:110%} }
+  .scan-line {
+    position: absolute; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,240,255,0.4), transparent);
+    animation: scanline 4s linear infinite;
+    pointer-events: none;
+  }
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #00dbe9, #7df4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Card hover lift */
+  .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,240,255,0.1); }
+  /* Typewriter cursor */
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .cursor { display: inline-block; width: 2px; height: 1.1em; background: #00dbe9; vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px; }
+  /* Nav link underline animation */
+  .nav-link { position: relative; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00dbe9; transition:width 0.3s ease; }
+  .nav-link:hover::after { width:100%; }
+  /* Focus area pill active */
+  .focus-pill.active { background: rgba(0,240,255,0.15); border-color: rgba(0,240,255,0.5); color: #00dbe9; }
+  /* Floating orbit */
+  @keyframes orbit { from{transform:rotate(0deg) translateX(120px) rotate(0deg)} to{transform:rotate(360deg) translateX(120px) rotate(-360deg)} }
+  .orbit-dot { animation: orbit 8s linear infinite; }
+  @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .float-anim { animation: float-y 4s ease-in-out infinite; }
+  /* Number counter */
+  .stat-number { font-variant-numeric: tabular-nums; }
+
+  /* ── Blueprint Building Image Animations ───────────────────── */
+
+  /* Ken Burns: very slow zoom + drift on campus photo */
+  @keyframes kenburns {
+    0%   { transform: scale(1)    translateX(0)    translateY(0); }
+    50%  { transform: scale(1.08) translateX(-1%)  translateY(-0.5%); }
+    100% { transform: scale(1.12) translateX(0.5%) translateY(-1%); }
+  }
+  .hero-kenburns {
+    animation: kenburns 22s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+
+  /* Hero content staggered fade-ups */
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-fade-1 { opacity:0; animation: hero-rise 0.7s ease 0.3s forwards; }
+  .hero-fade-2 { opacity:0; animation: hero-rise 0.7s ease 0.55s forwards; }
+  .hero-fade-3 { opacity:0; animation: hero-rise 0.7s ease 0.75s forwards; }
+  .hero-fade-4 { opacity:0; animation: hero-rise 0.7s ease 0.95s forwards; }
+  .hero-fade-5 { opacity:0; animation: hero-rise 0.7s ease 1.15s forwards; }
+
+  /* Scroll cue line drop */
+  @keyframes scroll-line {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    30%  { opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: top; opacity: 0.3; }
+  }
+  .hero-scroll-line { animation: scroll-line 1.8s ease 1.6s infinite; }
+
+  /* Parallax on scroll — applied via JS */
+  .hero-kenburns-wrap { will-change: transform; }
+
+  /* Particle dot float */
+  @keyframes particle-drift {
+    0%   { transform: translateY(0) translateX(0); opacity: 0; }
+    10%  { opacity: 0.8; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(-130px) translateX(var(--dx, 20px)); opacity: 0; }
+  }
+</style>
+</head>
+<body class="font-body-md antialiased">
+
+<!-- TOP NAV -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <div class="font-headline-md text-xl text-primary tracking-tighter flex items-center gap-2">
+      <span class="gradient-text font-black text-2xl">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="#">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#programs">Programs</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#focus">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#advisors">Advisors</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-cyan active:scale-95 transition-all text-sm">
+      Apply Now
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════ HERO -->
+<section class="relative h-screen w-full overflow-hidden">
+
+  <!-- ── LAYER 0: Campus photo — Ken Burns slow zoom ── -->
+  <div class="absolute inset-0 z-0 hero-kenburns" id="hero-bg"
+       style="background: url('building.png') center center / cover no-repeat;"></div>
+
+  <!-- ── LAYER 1: Dark tinted overlays ── -->
+  <!-- Base dark tint so text is always readable -->
+  <div class="absolute inset-0 z-1 pointer-events-none"
+       style="background: rgba(10,21,25,0.62);"></div>
+  <!-- Bottom-to-top gradient — fades photo into site background at bottom -->
+  <div class="absolute inset-0 z-1 pointer-events-none"
+       style="background: linear-gradient(to top, #0a1519 0%, transparent 45%);"></div>
+  <!-- Left-to-right gradient — darkens left side for text legibility -->
+  <div class="absolute inset-0 z-1 pointer-events-none"
+       style="background: linear-gradient(to right, rgba(10,21,25,0.75) 0%, rgba(10,21,25,0.3) 55%, transparent 100%);"></div>
+  <!-- Top fade — merges with nav -->
+  <div class="absolute top-0 left-0 right-0 h-40 z-1 pointer-events-none"
+       style="background: linear-gradient(to bottom, rgba(10,21,25,0.5) 0%, transparent 100%);"></div>
+
+  <!-- ── LAYER 2: Isometric grid overlay ── -->
+  <div class="absolute inset-0 z-2 isometric-grid opacity-10 pointer-events-none"></div>
+
+  <!-- ── LAYER 3: Scan line sweep ── -->
+  <div class="scan-line" style="z-index:30;pointer-events:none;"></div>
+
+  <!-- ── LAYER 4: Particle field ── -->
+  <div class="absolute inset-0 overflow-hidden z-10 pointer-events-none" id="particle-field"></div>
+
+  <!-- ── LAYER 5: WebGL shader — very subtle, on top to add cyan grid glow ── -->
+  <div class="absolute inset-0 z-5 pointer-events-none" style="opacity:0.18;">
+    <canvas id="shader-canvas" style="display:block;width:100%;height:100%;"></canvas>
+  </div>
+
+  <!-- ── LAYER 6: Content — vertically centered, left-aligned ── -->
+  <div class="relative z-20 h-full flex flex-col justify-center
+              px-4 md:px-16 max-w-[1440px] mx-auto" style="padding-top:80px;">
+
+    <div class="max-w-2xl space-y-6">
+
+      <!-- Live badge -->
+      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full
+                  border border-primary-fixed-dim/40 bg-primary-fixed-dim/8 backdrop-blur-md w-fit">
+        <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
+        <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">APPLICATIONS OPEN — ROLLING ADMISSIONS</span>
+      </div>
+
+      <!-- Headline -->
+      <div class="hero-fade-2">
+        <div class="font-label-mono text-xs text-primary-fixed-dim/70 mb-3 tracking-[0.2em]">
+          VNIT NAGPUR'S INNOVATION WING
+        </div>
+        <h2 class="font-black leading-[1.05] text-white"
+            style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2.8rem,5.5vw,5rem);">
+          Where Ideas<br/>Become <span class="gradient-text">Ventures</span>
+        </h2>
+      </div>
+
+      <!-- Sub-copy -->
+      <p class="hero-fade-3 text-white/70 text-base md:text-lg leading-relaxed max-w-lg">
+        VNIT's incubation centre — catalysing high-impact startups through world-class infrastructure, expert mentorship, and India's premier engineering ecosystem.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-fade-4 flex gap-3 flex-wrap">
+        <a href="#contact"
+           class="bg-primary-container text-on-primary font-bold px-7 py-3.5 rounded-full
+                  hover:glow-cyan active:scale-95 transition-all inline-flex items-center gap-2 text-sm">
+          Apply for Incubation
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="#programs"
+           class="px-7 py-3.5 border border-white/25 rounded-full font-bold text-white
+                  hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all text-sm">
+          Explore Programs
+        </a>
+      </div>
+
+      <!-- Stat pills row -->
+      <div class="hero-fade-5 flex flex-wrap gap-3 pt-1">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full
+                    bg-black/30 border border-white/15 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim flex-shrink-0"></span>
+          <span class="font-label-mono text-xs text-white/70">300+ Faculty</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full
+                    bg-black/30 border border-white/15 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral-accent flex-shrink-0"></span>
+          <span class="font-label-mono text-xs text-white/70">215-Acre Campus</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full
+                    bg-black/30 border border-white/15 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim flex-shrink-0"></span>
+          <span class="font-label-mono text-xs text-white/70">6 Centres of Excellence</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full
+                    bg-black/30 border border-white/15 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral-accent flex-shrink-0"></span>
+          <span class="font-label-mono text-xs text-white/70">Section 8 Company</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hero-fade-5 flex flex-col items-center gap-2 pointer-events-none">
+      <span class="font-label-mono text-xs text-white/30 tracking-widest">SCROLL</span>
+      <div class="w-px h-12 bg-gradient-to-b from-white/30 to-transparent hero-scroll-line"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════ WHY V3F -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10"></div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+    <div class="flex items-center gap-8 mb-20">
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+      <h2 class="font-headline-lg text-3xl font-bold text-center shrink-0 fade-in">WHY V3F NAGPUR?</h2>
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-1 group">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4 block group-hover:scale-110 transition-transform">account_balance</span>
+        <h3 class="font-bold text-lg mb-2">VNIT Ecosystem Access</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Faculty expertise, research labs, and student talent — all at your disposal.</p>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-2 group">
+        <span class="material-symbols-outlined text-coral-accent text-4xl mb-4 block group-hover:scale-110 transition-transform">handshake</span>
+        <h3 class="font-bold text-lg mb-2">Expert Mentor Network</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Matched mentors from industry, academia, and investor networks.</p>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-3 group">
+        <span class="material-symbols-outlined text-primary text-4xl mb-4 block group-hover:scale-110 transition-transform">payments</span>
+        <h3 class="font-bold text-lg mb-2">Funding & Grant Support</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Guidance on government schemes, angel networks, and investor connects.</p>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-4 group">
+        <span class="material-symbols-outlined text-coral-accent text-4xl mb-4 block group-hover:scale-110 transition-transform">domain</span>
+        <h3 class="font-bold text-lg mb-2">Campus Infrastructure</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Co-working spaces, private cabins, labs, and meeting rooms on VNIT campus.</p>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 p-8 glass-panel rounded-xl border border-primary-fixed-dim/20 fade-up">
+      <div class="text-center">
+        <div class="stat-number text-4xl font-black gradient-text" data-target="300" data-suffix="+">0</div>
+        <div class="text-on-surface-variant text-sm font-label-mono mt-1">Faculty Experts</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-4xl font-black gradient-text" data-target="1500" data-suffix="+">0</div>
+        <div class="text-on-surface-variant text-sm font-label-mono mt-1">Students / Year</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-4xl font-black gradient-text" data-target="6" data-suffix="">0</div>
+        <div class="text-on-surface-variant text-sm font-label-mono mt-1">Centres of Excellence</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number text-4xl font-black gradient-text" data-target="215" data-suffix="-Acre">0</div>
+        <div class="text-on-surface-variant text-sm font-label-mono mt-1">NIT Campus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ PROGRAMS -->
+<section id="programs" class="py-24 relative overflow-hidden">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto">
+    <div class="mb-16">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3 fade-in">OUR PROGRAMS</div>
+      <h2 class="font-headline-lg text-4xl font-bold mb-4 fade-up">Support at Every Stage</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl fade-up delay-1">From early-stage ideas to market-ready ventures, V3F provides structured support tailored to your startup's growth stage.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Pre-Incubation -->
+      <div class="glass-panel rounded-xl p-8 relative overflow-hidden card-hover fade-up delay-1 group border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="absolute top-0 right-0 p-6 text-primary/5 pointer-events-none">
+          <span class="material-symbols-outlined text-8xl">eco</span>
+        </div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-6 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">eco</span>
+          </div>
+          <div class="font-label-mono text-xs text-primary-fixed-dim mb-2 tracking-widest">PHASE 01</div>
+          <h3 class="text-2xl font-bold mb-3">Pre-Incubation</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Designed for early-stage ideas and student ventures. Get mentoring, workshop access, and networking to validate your concept.</p>
+          <a href="#contact" class="font-label-mono text-xs text-primary-fixed-dim flex items-center gap-2 hover:gap-3 transition-all">
+            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Incubation -->
+      <div class="glass-panel rounded-xl p-8 relative overflow-hidden card-hover fade-up delay-2 group border border-primary-fixed-dim/30 hover:border-primary-fixed-dim/60 transition-colors" style="background:rgba(0,219,233,0.04)">
+        <div class="absolute top-4 right-4">
+          <span class="bg-primary-container/20 text-primary font-label-mono text-xs px-3 py-1 rounded-full border border-primary-fixed-dim/30">Most Popular</span>
+        </div>
+        <div class="absolute top-0 right-0 p-6 text-coral-accent/5 pointer-events-none">
+          <span class="material-symbols-outlined text-8xl">rocket_launch</span>
+        </div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-full bg-coral-accent/10 flex items-center justify-center mb-6 group-hover:bg-coral-accent/20 transition-colors">
+            <span class="material-symbols-outlined text-coral-accent text-2xl">rocket_launch</span>
+          </div>
+          <div class="font-label-mono text-xs text-coral-accent mb-2 tracking-widest">PHASE 02</div>
+          <h3 class="text-2xl font-bold mb-3">Incubation</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Full-fledged support for startups with a prototype or early traction. Includes co-working space, dedicated mentors, investor connects, legal & financial guidance.</p>
+          <a href="#contact" class="inline-flex items-center gap-2 bg-coral-accent text-white font-bold px-5 py-2 rounded-full text-sm hover:bg-coral-accent/80 transition-colors active:scale-95">
+            Apply Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Co-Working -->
+      <div class="glass-panel rounded-xl p-8 relative overflow-hidden card-hover fade-up delay-3 group border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="absolute top-0 right-0 p-6 text-primary/5 pointer-events-none">
+          <span class="material-symbols-outlined text-8xl">work</span>
+        </div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-6 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">work</span>
+          </div>
+          <div class="font-label-mono text-xs text-primary-fixed-dim mb-2 tracking-widest">PHASE 03</div>
+          <h3 class="text-2xl font-bold mb-3">Co-Working Membership</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Access premium co-working facilities within the VNIT campus without formal incubation commitment. Ideal for early-stage teams.</p>
+          <a href="#contact" class="font-label-mono text-xs text-primary-fixed-dim flex items-center gap-2 hover:gap-3 transition-all">
+            Book a Seat <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ FOCUS AREAS -->
+<section id="focus" class="py-24 bg-surface-container-lowest relative overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10"></div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+    <div class="flex items-center gap-8 mb-16">
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+      <h2 class="font-headline-lg text-3xl font-bold text-center shrink-0 fade-in">SECTORS WE CHAMPION</h2>
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-1 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">biotech</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Deep Technology</div>
+          <div class="text-on-surface-variant text-sm">Hardware, robotics, advanced materials</div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-2 group flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
+          <span class="material-symbols-outlined text-coral-accent text-xl">smart_toy</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">AI & Digital Technologies</div>
+          <div class="text-on-surface-variant text-sm">Machine learning, SaaS, data analytics</div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-3 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">precision_manufacturing</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Manufacturing & Engineering</div>
+          <div class="text-on-surface-variant text-sm">Industrial innovation, automation</div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-4 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">energy_savings_leaf</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Clean Energy & Sustainability</div>
+          <div class="text-on-surface-variant text-sm">Renewables, climate tech, green infra</div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-5 group flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
+          <span class="material-symbols-outlined text-coral-accent text-xl">health_and_safety</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Healthcare Technologies</div>
+          <div class="text-on-surface-variant text-sm">Medtech, diagnostics, digital health</div>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-6 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">auto_awesome</span>
+        </div>
+        <div>
+          <div class="font-bold mb-1">Emerging Sectors</div>
+          <div class="text-on-surface-variant text-sm">Aligned with national innovation priorities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ VNIT ECOSYSTEM (Centres of Excellence) -->
+<section id="ecosystem" class="py-24 relative overflow-hidden">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto">
+    <div class="mb-16">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3 fade-in">VNIT ECOSYSTEM</div>
+      <h2 class="font-headline-lg text-4xl font-bold mb-4 fade-up">India-Class Research Infrastructure</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl fade-up delay-1">As a V3F incubatee, you get privileged access to VNIT Nagpur's Centres of Excellence — infrastructure worth crores, available from day one.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <!-- CoE cards -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-1 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">Industry 4.0</div>
+        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
+        <h3 class="font-bold text-lg mb-2">V.R. Jamdar Siemens CoE</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">A ₹187 Cr flagship centre with Siemens. 11 industry-grade labs — robotics, 5-axis CNC, smart factory, IoT, automation.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Robotics</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">5-Axis CNC</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">IoT</span>
+        </div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-2 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="absolute top-3 right-3 bg-coral-accent/10 text-coral-accent text-xs font-label-mono px-2 py-1 rounded">DST Funded</div>
+        <span class="material-symbols-outlined text-coral-accent text-3xl mb-4 block group-hover:scale-110 transition-transform">compost</span>
+        <h3 class="font-bold text-lg mb-2">SWAHA CoE</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">India's first CoE in Agri-Waste Management. Food, Feed, Fodder, Fuel & Fertiliser — commercial value from agricultural waste.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">AgriTech</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Sustainability</span>
+        </div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-3 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">AI Research</div>
+        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">psychology</span>
+        <h3 class="font-bold text-lg mb-2">Centre of Excellence in AI</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Deep capabilities in ML, computer vision, embedded AI, and biomedical signal processing.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">AI/ML</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Computer Vision</span>
+        </div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-4 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="absolute top-3 right-3 bg-coral-accent/10 text-coral-accent text-xs font-label-mono px-2 py-1 rounded">NPIU / TEQIP</div>
+        <span class="material-symbols-outlined text-coral-accent text-3xl mb-4 block group-hover:scale-110 transition-transform">settings_remote</span>
+        <h3 class="font-bold text-lg mb-2">CoE — Commbedded Systems</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">One of only 6 CFTI-level CoEs in India. Labs for IoT, sensor networks, RF engineering, and signal processing.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Embedded</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">IoT / Sensors</span>
+        </div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-5 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">E-Mobility</div>
+        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">electric_car</span>
+        <h3 class="font-bold text-lg mb-2">Electric Vehicle Technology Lab</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Specialised EV research covering battery systems, motor drives, and power electronics.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">EV / e-Mobility</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Battery Tech</span>
+        </div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-6 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="absolute top-3 right-3 bg-coral-accent/10 text-coral-accent text-xs font-label-mono px-2 py-1 rounded">Materials</div>
+        <span class="material-symbols-outlined text-coral-accent text-3xl mb-4 block group-hover:scale-110 transition-transform">science</span>
+        <h3 class="font-bold text-lg mb-2">Materials Testing & Characterisation</h3>
+        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Advanced materials testing from Metallurgical & Materials Engineering dept.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Metallurgy</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Material Testing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus wide access -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-panel p-8 rounded-xl card-hover fade-left group border border-primary-fixed-dim/20">
+        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">CAMPUS-WIDE ACCESS</div>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">school</span>
+            <div><div class="font-bold mb-1">300+ Faculty Experts</div><div class="text-on-surface-variant text-sm">Collaborate across 13 departments — engineering, science, architecture, and management.</div></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-coral-accent text-2xl shrink-0">group</span>
+            <div><div class="font-bold mb-1">1,500+ Students per Year</div><div class="text-on-surface-variant text-sm">Tap VNIT's talent pool for internships, capstone projects, and full-time hires.</div></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">library_books</span>
+            <div><div class="font-bold mb-1">Digital Library & IP Support</div><div class="text-on-surface-variant text-sm">Access journal databases, patent resources, and IP filing support.</div></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-coral-accent text-2xl shrink-0">location_city</span>
+            <div><div class="font-bold mb-1">215-Acre NIT Campus</div><div class="text-on-surface-variant text-sm">Co-working spaces, meeting rooms, high-speed internet, and full campus amenities.</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Pipeline Timeline -->
+      <div class="relative py-4 pl-12 border-l border-outline-variant/50 fade-right">
+        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-8">PROGRAM MATRIX</div>
+        <div class="space-y-10">
+          <div class="relative group">
+            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary-fixed-dim glow-cyan group-hover:scale-125 transition-transform"></div>
+            <div class="glass-panel p-6 rounded-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300">
+              <div class="font-label-mono text-xs text-primary mb-1">PHASE 01</div>
+              <h4 class="font-bold text-lg mb-2">Idea to Prototype</h4>
+              <p class="text-on-surface-variant text-sm">Mentoring, workshops, and concept validation for early-stage teams.</p>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-coral-accent glow-coral group-hover:scale-125 transition-transform"></div>
+            <div class="glass-panel p-6 rounded-lg transform -rotate-1 group-hover:rotate-0 transition-all duration-300">
+              <div class="font-label-mono text-xs text-coral-accent mb-1">PHASE 02</div>
+              <h4 class="font-bold text-lg mb-2">Prototype to Market</h4>
+              <p class="text-on-surface-variant text-sm">Full incubation, investor connects, legal & financial guidance, and funding access.</p>
+            </div>
+          </div>
+          <div class="relative group">
+            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary-fixed-dim glow-cyan group-hover:scale-125 transition-transform"></div>
+            <div class="glass-panel p-6 rounded-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300">
+              <div class="font-label-mono text-xs text-primary mb-1">PHASE 03</div>
+              <h4 class="font-bold text-lg mb-2">Scale & Expand</h4>
+              <p class="text-on-surface-variant text-sm">18–36 month programs with quarterly review cycles and ecosystem access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ ADVISORY BOARD -->
+<section id="advisors" class="py-24 bg-surface-container-lowest relative overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10"></div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+    <div class="flex items-center gap-8 mb-16">
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+      <h2 class="font-headline-lg text-3xl font-bold text-center shrink-0 fade-in">ADVISORY BOARD</h2>
+      <div class="h-px flex-1 bg-outline-variant/30"></div>
+    </div>
+    <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-12 fade-up">V3F Advisors guide the incubator itself — shaping policy, governance, and access to government funds and ecosystem partnerships.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-1 group text-center border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="w-16 h-16 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">person</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1">Prashant Mohite</h3>
+        <div class="text-on-surface-variant text-sm mb-3">Director, Mahindra Logistics (Ret.)</div>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Policy</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Strategy</span>
+        </div>
+        <div class="font-label-mono text-xs text-on-surface-variant mt-3">Industry Advisor</div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-2 group text-center border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="w-16 h-16 rounded-full bg-coral-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-coral-accent/20 transition-colors">
+          <span class="material-symbols-outlined text-coral-accent text-3xl">person</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1">Sandeep Kulkarni</h3>
+        <div class="text-on-surface-variant text-sm mb-3">Deccan Angel Network</div>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Investor</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Fundraising</span>
+        </div>
+        <div class="font-label-mono text-xs text-on-surface-variant mt-3">Investment Advisor</div>
+      </div>
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-3 group text-center border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="w-16 h-16 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">person</span>
+        </div>
+        <h3 class="font-bold text-lg mb-1">Dr. Vijay Thakre</h3>
+        <div class="text-on-surface-variant text-sm mb-3">Former Director, MSME-DI Nagpur</div>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Government</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Grants</span>
+        </div>
+        <div class="font-label-mono text-xs text-on-surface-variant mt-3">Government & Policy Advisor</div>
+      </div>
+    </div>
+
+    <!-- Mentors -->
+    <div class="mb-8">
+      <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3 fade-in">MENTOR NETWORK</div>
+      <h2 class="font-headline-lg text-3xl font-bold mb-4 fade-up">Domain Experts for Every Startup</h2>
+      <p class="text-on-surface-variant max-w-xl fade-up delay-1">V3F Mentors work directly with incubated startups — matched by sector and stage, providing hands-on guidance on product, market, fundraising, legal, and more.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-1 group border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="w-12 h-12 rounded-full bg-coral-accent/10 flex items-center justify-center mb-4 group-hover:bg-coral-accent/20 transition-colors">
+          <span class="material-symbols-outlined text-coral-accent text-xl">person</span>
+        </div>
+        <h3 class="font-bold mb-1">Amit Bhoyar</h3>
+        <div class="text-on-surface-variant text-xs mb-3">Serial Entrepreneur</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Hardware</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Deep Tech</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-2 group border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
+        </div>
+        <h3 class="font-bold mb-1">Dr. Ruchita Joshi</h3>
+        <div class="text-on-surface-variant text-xs mb-3">AI Research Lead, CSE — VNIT</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">AI/ML</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">Data Science</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-3 group border border-outline-variant/20 hover:border-coral-accent/30">
+        <div class="w-12 h-12 rounded-full bg-coral-accent/10 flex items-center justify-center mb-4 group-hover:bg-coral-accent/20 transition-colors">
+          <span class="material-symbols-outlined text-coral-accent text-xl">person</span>
+        </div>
+        <h3 class="font-bold mb-1">Vikram Singhania</h3>
+        <div class="text-on-surface-variant text-xs mb-3">Angel Investor, Deccan Angels</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Funding</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Pitch Prep</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-4 group border border-outline-variant/20 hover:border-primary-fixed-dim/30">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
+        </div>
+        <h3 class="font-bold mb-1">Prof. K.D. Kulat</h3>
+        <div class="text-on-surface-variant text-xs mb-3">Domain Expert, Electronics — VNIT</div>
+        <div class="flex flex-wrap gap-1">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">Research</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">IP & Patents</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ CONTACT / APPLY -->
+<section id="contact" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
+    <div class="absolute inset-0 isometric-grid opacity-15"></div>
+  </div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10 flex justify-center">
+    <div class="w-full max-w-2xl glass-panel p-10 md:p-16 rounded-xl border-t-2 border-t-primary-fixed-dim/50 shadow-2xl fade-up">
+      <div class="mb-10 text-center">
+        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">APPLICATIONS OPEN</div>
+        <h2 class="font-headline-lg text-3xl font-bold mb-2">Ready to Build Your Startup?</h2>
+        <p class="font-label-mono text-sm text-primary">AWAITING SYSTEM INPUT...</p>
+        <p class="text-on-surface-variant text-sm mt-3">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
+      </div>
+      <form class="space-y-8">
+        <div class="relative group">
+          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">01 FOUNDER NAME</label>
+          <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="Enter Full Name" type="text"/>
+          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+        </div>
+        <div class="relative group">
+          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">02 EMAIL PROTOCOL</label>
+          <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="founder@company.tech" type="email"/>
+          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+        </div>
+        <div class="relative group">
+          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">03 PROGRAM</label>
+          <select class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
+            <option value="" class="bg-surface-container-low">Select a program...</option>
+            <option class="bg-surface-container-low">Pre-Incubation</option>
+            <option class="bg-surface-container-low">Incubation</option>
+            <option class="bg-surface-container-low">Co-Working Membership</option>
+          </select>
+          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+        </div>
+        <div class="relative group">
+          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">04 PROJECT SCHEMATIC</label>
+          <textarea class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all resize-none text-sm" placeholder="Describe your startup idea and sector..." rows="3"></textarea>
+          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+        </div>
+        <button class="w-full py-4 rounded-full bg-tertiary text-on-tertiary font-bold hover:bg-coral-accent hover:text-white transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 group" type="submit">
+          Submit Application
+          <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════ FOOTER -->
+<footer class="w-full py-16 bg-surface-container-lowest border-t border-outline-variant/30">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <div class="md:col-span-4 space-y-6">
+      <div class="font-headline-md text-xl font-bold">
+        <span class="gradient-text">V3F</span> <span class="text-on-surface">NAGPUR</span>
+      </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed">
+        VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development through structured incubation support at VNIT Nagpur.
+      </p>
+      <div class="text-on-surface-variant text-xs font-label-mono">
+        Section 8 Company · Affiliated with VNIT Nagpur<br/>
+        South Ambazari Road, Nagpur — 440010, MH
+      </div>
+      <div class="text-on-surface-variant/60 text-xs font-label-mono">
+        © 2025 V3F NAGPUR. ALL RIGHTS RESERVED.
+      </div>
+    </div>
+    <div class="md:col-span-2">
+      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">PROGRAMS</h4>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Pre-Incubation</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Incubation</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Co-Working</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#contact">Funding Support</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">ABOUT</h4>
+      <ul class="space-y-4">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#">About V3F</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#advisors">Advisory Board</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#focus">Focus Areas</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#">Governance</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-4">
+      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">CONNECT</h4>
+      <div class="space-y-4">
+        <a href="#contact" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">send</span>
+          <span class="font-label-mono text-xs">Apply Now</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">psychology</span>
+          <span class="font-label-mono text-xs">Become a Mentor</span>
+        </a>
+        <a href="#contact" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">mail</span>
+          <span class="font-label-mono text-xs">Contact Us</span>
+        </a>
+        <a href="https://vnit.ac.in" target="_blank" rel="noopener" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
+          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">open_in_new</span>
+          <span class="font-label-mono text-xs">VNIT Nagpur</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════ SCRIPTS -->
+<script>
+// ── WebGL Shader ──────────────────────────────────────────────
+(function() {
+  const canvas = document.getElementById('shader-canvas');
+  function syncSize() {
+    const w = canvas.clientWidth || 1280, h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+  }
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(syncSize).observe(canvas);
+  syncSize();
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position; varying vec2 v_texCoord;
+void main() { v_texCoord = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0.0, 1.0); }`;
+  const fs = `precision highp float;
+uniform float u_time; uniform vec2 u_resolution; uniform vec2 u_mouse; varying vec2 v_texCoord;
+void main() {
+  vec2 uv = v_texCoord;
+  float scale = 30.0;
+  vec2 grid_uv = fract(uv * scale);
+  float line_width = 0.02;
+  float grid = step(1.0 - line_width, grid_uv.x) + step(1.0 - line_width, grid_uv.y);
+  vec2 mouse_uv = u_mouse / u_resolution;
+  float dist = distance(uv, mouse_uv);
+  float glow = smoothstep(0.3, 0.0, dist) * 0.4;
+  float pulse = sin(u_time * 0.5) * 0.05 + 0.95;
+  vec3 color = vec3(0.02, 0.027, 0.039);
+  vec3 grid_color = vec3(0.0, 0.94, 1.0);
+  color += grid * grid_color * 0.1 * pulse;
+  color += glow * grid_color;
+  gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      mouse.x = ((e.clientX - rect.left) / rect.width) * canvas.width;
+      mouse.y = (1.0 - (e.clientY - rect.top) / rect.height) * canvas.height;
+    }
+  });
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+
+// ── Hero: Particles + Scroll parallax on campus photo ─────────
+(function() {
+  // Floating particles
+  const field = document.getElementById('particle-field');
+  if (field) {
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.style.cssText = `
+        position:absolute;
+        width:${Math.random() > 0.5 ? 2 : 3}px;
+        height:${Math.random() > 0.5 ? 2 : 3}px;
+        border-radius:50%;
+        left:${Math.random() * 100}%;
+        bottom:${5 + Math.random() * 50}%;
+        background:${Math.random() > 0.7 ? '#FF7F6B' : '#00dbe9'};
+        opacity:0;
+        animation: particle-drift ${(3.5 + Math.random()*4).toFixed(1)}s ease-in infinite;
+        animation-delay:${(Math.random()*7).toFixed(1)}s;
+        --dx:${((Math.random()-0.5)*60).toFixed(0)}px;
+        --dur:${(3.5+Math.random()*4).toFixed(1)}s;
+        --delay:${(Math.random()*7).toFixed(1)}s;
+      `;
+      field.appendChild(p);
+    }
+  }
+
+  // Scroll parallax — hero photo moves slower than scroll
+  const heroBg = document.getElementById('hero-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      if (scrolled < window.innerHeight) {
+        heroBg.style.transform = `translateY(${scrolled * 0.35}px) scale(1.12)`;
+      }
+    }, { passive: true });
+  }
+})();
+
+// ── Scroll animations ─────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Intersection Observer
+  const classes = ['.fade-up', '.fade-in', '.slide-left', '.slide-right', '.scale-in', '.fade-left', '.fade-right'];
+  const all = document.querySelectorAll(classes.map(c => c).join(',') + ', .fade-left, .fade-right');
+
+  // Map fade-left/right to slide classes
+  document.querySelectorAll('.fade-left').forEach(el => el.classList.add('slide-left'));
+  document.querySelectorAll('.fade-right').forEach(el => el.classList.add('slide-right'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .scale-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Glass panel observer
+  document.querySelectorAll('.glass-panel').forEach((panel, i) => {
+    if (!panel.classList.contains('fade-up') && !panel.classList.contains('fade-in')) {
+      panel.style.opacity = '0';
+      panel.style.transform = 'translateY(20px)';
+      panel.style.transition = `opacity 0.6s ease ${i % 5 * 0.1}s, transform 0.6s ease ${i % 5 * 0.1}s`;
+      const obs = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) { panel.style.opacity = '1'; panel.style.transform = 'translateY(0)'; obs.unobserve(panel); }
+      }, { threshold: 0.1 });
+      obs.observe(panel);
+    }
+  });
+
+  // Stat counter animation
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        let start = 0;
+        const duration = 1800;
+        const step = timestamp => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+  // Parallax
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroText = document.querySelector('h1');
+    if (heroText) heroText.style.transform = `translateY(${scrolled * 0.4}px)`;
+  }, { passive: true });
+
+  // Form label highlight
+  document.querySelectorAll('input, textarea, select').forEach(input => {
+    const label = input.parentElement && input.parentElement.querySelector('label');
+    if (label) {
+      input.addEventListener('focus', () => { label.style.color = '#00dbe9'; });
+      input.addEventListener('blur', () => { label.style.color = ''; });
+    }
+  });
+
+  // Typewriter effect on hero subtitle
+  const typeEl = document.querySelector('.typewriter-target');
+  if (typeEl) {
+    const text = typeEl.textContent;
+    typeEl.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    typeEl.appendChild(cursor);
+    let i = 0;
+    const type = () => { if (i < text.length) { typeEl.insertBefore(document.createTextNode(text[i++]), cursor); setTimeout(type, 38); } };
+    setTimeout(type, 800);
+  }
+});
+</script>
+</body>
+</html>
