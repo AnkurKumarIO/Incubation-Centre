@@ -1,3 +1,6 @@
 {
-  "rootDirectory": "v3f_ventures_venture_foundation"
+  "rewrites": [
+    { "source": "/", "destination": "/v3f_ventures_venture_foundation/index.html" },
+    { "source": "/(.*)", "destination": "/v3f_ventures_venture_foundation/$1" }
+  ]
 }
