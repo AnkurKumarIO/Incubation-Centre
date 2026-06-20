@@ -13,37 +13,37 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        "surface-container-high": "#202c30",
+        "surface-container-high": "#201a0e",
         "on-error": "#690005",
-        "surface-dim": "#0a1519",
-        "primary": "#dbfcff",
-        "primary-fixed-dim": "#00dbe9",
-        "inverse-on-surface": "#273236",
-        "inverse-primary": "#006970",
-        "outline-variant": "#3b494b",
-        "surface-tint": "#00dbe9",
+        "surface-dim": "#120d04",
+        "primary": "#ffe8c8",
+        "primary-fixed-dim": "#ff8c00",
+        "inverse-on-surface": "#322712",
+        "inverse-primary": "#7a3e00",
+        "outline-variant": "#4a3b1f",
+        "surface-tint": "#ff8c00",
         "error-container": "#93000a",
-        "outline": "#849495",
-        "tertiary-container": "#d9d9d9",
-        "on-primary-container": "#006970",
-        "primary-container": "#00f0ff",
-        "tertiary": "#f5f5f5",
-        "background": "#0a1519",
-        "secondary": "#ffb4a7",
-        "on-tertiary": "#2f3131",
-        "on-primary": "#00363a",
-        "on-surface": "#d8e4ea",
-        "surface-variant": "#2b363b",
-        "surface-container": "#162125",
-        "inverse-surface": "#d8e4ea",
-        "surface": "#0a1519",
-        "on-background": "#d8e4ea",
-        "on-surface-variant": "#b9cacb",
-        "surface-container-highest": "#2b363b",
-        "primary-fixed": "#7df4ff",
-        "coral-accent": "#FF7F6B",
-        "surface-container-lowest": "#051014",
-        "surface-container-low": "#121d21",
+        "outline": "#9e8a6a",
+        "tertiary-container": "#f5f0d9",
+        "on-primary-container": "#7a3e00",
+        "primary-container": "#ffb347",
+        "tertiary": "#f5f0d9",
+        "background": "#0e0904",
+        "secondary": "#ffcfa7",
+        "on-tertiary": "#2f2a1f",
+        "on-primary": "#3d1c00",
+        "on-surface": "#e8ddd0",
+        "surface-variant": "#2e2416",
+        "surface-container": "#1a1209",
+        "inverse-surface": "#e8ddd0",
+        "surface": "#0e0904",
+        "on-background": "#e8ddd0",
+        "on-surface-variant": "#c9b89a",
+        "surface-container-highest": "#2e2416",
+        "primary-fixed": "#ffd080",
+        "coral-accent": "#ff6b35",
+        "surface-container-lowest": "#080502",
+        "surface-container-low": "#150f06",
       },
       borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
       fontFamily: {
@@ -60,18 +60,18 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color: #0a1519; color: #d8e4ea; overflow-x: hidden; }
+  body { background-color: #0e0904; color: #e8ddd0; overflow-x: hidden; }
   .glass-panel {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,200,100,0.03);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,180,80,0.08);
   }
-  .glow-cyan { box-shadow: 0 0 15px rgba(0,240,255,0.2); }
-  .glow-coral { box-shadow: 0 0 15px rgba(255,127,107,0.3); }
+  .glow-cyan { box-shadow: 0 0 15px rgba(255,140,0,0.25); }
+  .glow-coral { box-shadow: 0 0 15px rgba(255,107,53,0.35); }
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(0,240,255,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,240,255,0.05) 1px, transparent 1px);
+      linear-gradient(rgba(255,140,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,140,0,0.06) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   .material-symbols-outlined {
@@ -104,29 +104,29 @@ tailwind.config = {
   @keyframes scanline { 0%{top:-10%} 100%{top:110%} }
   .scan-line {
     position: absolute; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(0,240,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,140,0,0.45), transparent);
     animation: scanline 4s linear infinite;
     pointer-events: none;
   }
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #00dbe9, #7df4ff);
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   /* Card hover lift */
   .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,240,255,0.1); }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(255,140,0,0.12); }
   /* Typewriter cursor */
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  .cursor { display: inline-block; width: 2px; height: 1.1em; background: #00dbe9; vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px; }
+  .cursor { display: inline-block; width: 2px; height: 1.1em; background: #ff8c00; vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px; }
   /* Nav link underline animation */
   .nav-link { position: relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00dbe9; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
   /* Focus area pill active */
-  .focus-pill.active { background: rgba(0,240,255,0.15); border-color: rgba(0,240,255,0.5); color: #00dbe9; }
+  .focus-pill.active { background: rgba(255,140,0,0.15); border-color: rgba(255,140,0,0.5); color: #ff8c00; }
   /* Floating orbit */
   @keyframes orbit { from{transform:rotate(0deg) translateX(120px) rotate(0deg)} to{transform:rotate(360deg) translateX(120px) rotate(-360deg)} }
   .orbit-dot { animation: orbit 8s linear infinite; }
@@ -177,12 +177,169 @@ tailwind.config = {
     90%  { opacity: 0.5; }
     100% { transform: translateY(-130px) translateX(var(--dx, 20px)); opacity: 0; }
   }
+
+  /* ── Floating Side Navigation ─────────────────────────────── */
+  #arc-nav {
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    height: 380px;
+    width: 190px;        /* fixed — no expanding slab */
+    pointer-events: all;
+  }
+
+  /* Straight vertical track
+     Pill: 44px wide. Dot centre at 22px from right = 44∢22 = 22px from left.
+     Track right: 21px → centre = 21+1 = 22px from right edge ✓ */
+  .arc-track {
+    position: absolute;
+    right: 21px;
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      rgba(255,140,0,0)    0%,
+      rgba(255,140,0,0.3)  12%,
+      rgba(255,140,0,0.3)  88%,
+      rgba(255,140,0,0)    100%);
+    border-radius: 1px;
+  }
+  .arc-track-fill {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 0%;
+    background: linear-gradient(to bottom, #ff8c00, #ffb347);
+    border-radius: 1px;
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(255,140,0,0.65);
+  }
+
+  /* Items container — flush to right edge of pill */
+  .arc-dot-wrap {
+    position: absolute;
+    right: 0; top: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 0;
+  }
+
+  /* Each row: [label] [dot]
+     padding-right=17px, dot=10px → dot centre = 17+5 = 22px from right ✓ */
+  .arc-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 17px;
+    gap: 14px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+  }
+
+  /* Label — hidden by default, revealed on hover/scroll */
+  .arc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: right;
+    user-select: none;
+    color: rgba(255, 200, 110, 0.6);
+    opacity: 0;
+    transform: translateX(6px);
+    transition:
+      opacity  0.35s ease,
+      transform 0.35s ease,
+      color    0.25s ease;
+  }
+
+  /* Reveal labels when nav is hovered or scrolling */
+  #arc-nav:hover .arc-label,
+  #arc-nav.is-scrolling .arc-label {
+    opacity: 1;
+    transform: translateX(0);
+    color: rgba(255, 200, 110, 0.6);
+  }
+  /* Active label is brighter */
+  #arc-nav:hover .arc-item.arc-active .arc-label,
+  #arc-nav.is-scrolling .arc-item.arc-active .arc-label {
+    color: #ffb347;
+  }
+  /* Hovered row label */
+  .arc-item:hover .arc-label {
+    color: #ffd080 !important;
+  }
+
+  /* Dot — FIXED 10×10px, never changes size */
+  .arc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(255,140,0,0.22);
+    border: 1.5px solid rgba(255,140,0,0.45);
+    transition:
+      background  0.3s ease,
+      border-color 0.3s ease,
+      box-shadow  0.3s ease;
+  }
+  .arc-item:hover .arc-dot {
+    background: rgba(255,140,0,0.6);
+    border-color: #ffb347;
+    box-shadow: 0 0 10px rgba(255,140,0,0.5);
+  }
+  .arc-item.arc-active .arc-dot {
+    background: #ff8c00;
+    border-color: #ffd080;
+    border-width: 2px;
+    box-shadow:
+      0 0 0 3px rgba(255,140,0,0.15),
+      0 0 12px rgba(255,140,0,0.75),
+      0 0 26px rgba(255,140,0,0.38);
+    animation: arc-pulse 2s ease-in-out infinite;
+  }
+  @keyframes arc-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 0 3px rgba(255,140,0,0.15),
+        0 0 12px rgba(255,140,0,0.75),
+        0 0 26px rgba(255,140,0,0.38);
+    }
+    50% {
+      box-shadow:
+        0 0 0 5px rgba(255,140,0,0.08),
+        0 0 18px rgba(255,140,0,0.95),
+        0 0 38px rgba(255,140,0,0.52);
+    }
+  }
+
+  /* Click ripple */
+  .arc-ripple {
+    position: absolute;
+    right: 12px; top: 50%;
+    transform: translate(50%, -50%) scale(0);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,140,0,0.35) 0%, transparent 70%);
+    pointer-events: none;
+    animation: arc-ripple-anim 0.55s ease-out forwards;
+  }
+  @keyframes arc-ripple-anim {
+    0%   { transform: translate(50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(50%, -50%) scale(1); opacity: 0; }
+  }
 </style>
 </head>
 <body class="font-body-md antialiased">
 
 <!-- TOP NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.12)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <div class="font-headline-md text-xl text-primary tracking-tighter flex items-center gap-2">
       <span class="gradient-text font-black text-2xl">V3F</span>
@@ -202,6 +359,41 @@ tailwind.config = {
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════ ARC NAV -->
+<div id="arc-nav" aria-label="Page navigation">
+  <!-- Vertical track -->
+  <div class="arc-track">
+    <div class="arc-track-fill" id="arc-track-fill"></div>
+  </div>
+  <!-- Nav items -->
+  <div class="arc-dot-wrap">
+    <a href="#" class="arc-item arc-active" data-section="hero">
+      <span class="arc-label">Home</span>
+      <span class="arc-dot"></span>
+    </a>
+    <a href="#programs" class="arc-item" data-section="programs">
+      <span class="arc-label">Programs</span>
+      <span class="arc-dot"></span>
+    </a>
+    <a href="#focus" class="arc-item" data-section="focus">
+      <span class="arc-label">Focus Areas</span>
+      <span class="arc-dot"></span>
+    </a>
+    <a href="#ecosystem" class="arc-item" data-section="ecosystem">
+      <span class="arc-label">Ecosystem</span>
+      <span class="arc-dot"></span>
+    </a>
+    <a href="#advisors" class="arc-item" data-section="advisors">
+      <span class="arc-label">Advisors</span>
+      <span class="arc-dot"></span>
+    </a>
+    <a href="#contact" class="arc-item" data-section="contact">
+      <span class="arc-label">Apply Now</span>
+      <span class="arc-dot"></span>
+    </a>
+  </div>
+</div>
+
 <main>
 
 <!-- ═══════════════════════════════════════════════════ HERO -->
@@ -214,16 +406,16 @@ tailwind.config = {
   <!-- ── LAYER 1: Dark tinted overlays ── -->
   <!-- Base dark tint so text is always readable -->
   <div class="absolute inset-0 z-1 pointer-events-none"
-       style="background: rgba(10,21,25,0.62);"></div>
+       style="background: rgba(14,9,4,0.62);"></div>
   <!-- Bottom-to-top gradient — fades photo into site background at bottom -->
   <div class="absolute inset-0 z-1 pointer-events-none"
-       style="background: linear-gradient(to top, #0a1519 0%, transparent 45%);"></div>
+       style="background: linear-gradient(to top, #0e0904 0%, transparent 45%);"></div>
   <!-- Left-to-right gradient — darkens left side for text legibility -->
   <div class="absolute inset-0 z-1 pointer-events-none"
-       style="background: linear-gradient(to right, rgba(10,21,25,0.75) 0%, rgba(10,21,25,0.3) 55%, transparent 100%);"></div>
+       style="background: linear-gradient(to right, rgba(14,9,4,0.75) 0%, rgba(14,9,4,0.3) 55%, transparent 100%);"></div>
   <!-- Top fade — merges with nav -->
   <div class="absolute top-0 left-0 right-0 h-40 z-1 pointer-events-none"
-       style="background: linear-gradient(to bottom, rgba(10,21,25,0.5) 0%, transparent 100%);"></div>
+       style="background: linear-gradient(to bottom, rgba(14,9,4,0.5) 0%, transparent 100%);"></div>
 
   <!-- ── LAYER 2: Isometric grid overlay ── -->
   <div class="absolute inset-0 z-2 isometric-grid opacity-10 pointer-events-none"></div>
@@ -879,8 +1071,8 @@ void main() {
   float dist = distance(uv, mouse_uv);
   float glow = smoothstep(0.3, 0.0, dist) * 0.4;
   float pulse = sin(u_time * 0.5) * 0.05 + 0.95;
-  vec3 color = vec3(0.02, 0.027, 0.039);
-  vec3 grid_color = vec3(0.0, 0.94, 1.0);
+  vec3 color = vec3(0.055, 0.035, 0.016);
+  vec3 grid_color = vec3(1.0, 0.55, 0.0);
   color += grid * grid_color * 0.1 * pulse;
   color += glow * grid_color;
   gl_FragColor = vec4(color, 1.0);
@@ -932,7 +1124,7 @@ void main() {
         border-radius:50%;
         left:${Math.random() * 100}%;
         bottom:${5 + Math.random() * 50}%;
-        background:${Math.random() > 0.7 ? '#FF7F6B' : '#00dbe9'};
+        background:${Math.random() > 0.7 ? '#ff6b35' : '#ff8c00'};
         opacity:0;
         animation: particle-drift ${(3.5 + Math.random()*4).toFixed(1)}s ease-in infinite;
         animation-delay:${(Math.random()*7).toFixed(1)}s;
@@ -1026,7 +1218,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('input, textarea, select').forEach(input => {
     const label = input.parentElement && input.parentElement.querySelector('label');
     if (label) {
-      input.addEventListener('focus', () => { label.style.color = '#00dbe9'; });
+      input.addEventListener('focus', () => { label.style.color = '#ff8c00'; });
       input.addEventListener('blur', () => { label.style.color = ''; });
     }
   });
@@ -1044,6 +1236,58 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 800);
   }
 });
+
+// ── Side Nav: active state + scroll-reveal + click ────────────────
+(function() {
+  const nav       = document.getElementById('arc-nav');
+  const items     = document.querySelectorAll('.arc-item');
+  const trackFill = document.getElementById('arc-track-fill');
+  const sections  = ['hero', 'programs', 'focus', 'ecosystem', 'advisors', 'contact'];
+  const sectionEls = sections.map(id =>
+    id === 'hero' ? document.querySelector('section') : document.getElementById(id)
+  ).filter(Boolean);
+  const totalItems = items.length;
+
+  // --- Active section tracker ---
+  function updateArc() {
+    const scrollY = window.pageYOffset + window.innerHeight * 0.4;
+    let activeIdx = 0;
+    sectionEls.forEach((el, i) => { if (el && el.offsetTop <= scrollY) activeIdx = i; });
+    items.forEach((item, i) => item.classList.toggle('arc-active', i === activeIdx));
+    if (trackFill) {
+      const pct = totalItems > 1 ? (activeIdx / (totalItems - 1)) * 100 : 0;
+      trackFill.style.height = pct + '%';
+    }
+  }
+
+  // --- Scroll-reveal: show labels while scrolling ---
+  let scrollTimer;
+  window.addEventListener('scroll', () => {
+    updateArc();
+    nav.classList.add('is-scrolling');
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => nav.classList.remove('is-scrolling'), 350);
+  }, { passive: true });
+  updateArc();
+
+  // --- Click: smooth scroll + ripple ---
+  items.forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      const href = item.getAttribute('href');
+      const ripple = document.createElement('span');
+      ripple.className = 'arc-ripple';
+      item.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+      if (href && href !== '#') {
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+})()
 </script>
 </body>
 </html>
