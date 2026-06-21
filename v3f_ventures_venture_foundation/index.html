@@ -346,17 +346,16 @@ tailwind.config = {
       <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
     </div>
     <div class="hidden md:flex items-center gap-8">
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="#">Home</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#programs">Programs</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#focus">Focus Areas</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#ecosystem">Ecosystem</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#advisors">Advisors</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#about">About</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="#contact">Contact</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="index.html" style="border-bottom:1px solid #ff8c00;">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="#advisors">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="#contact">Contact</a>
     </div>
-    <a href="#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-cyan active:scale-95 transition-all text-sm">
-      Apply Now
-    </a>
+    <a href="#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
   </div>
 </nav>
 
@@ -473,7 +472,7 @@ tailwind.config = {
           Apply for Incubation
           <span class="material-symbols-outlined text-base">arrow_forward</span>
         </a>
-        <a href="#programs"
+        <a href="programs.html"
            class="px-7 py-3.5 border border-white/25 rounded-full font-bold text-white
                   hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all text-sm">
           Explore Programs
@@ -632,6 +631,14 @@ tailwind.config = {
         </div>
       </div>
     </div>
+
+    <!-- View All Programs button -->
+    <div class="mt-12 flex justify-center fade-up">
+      <a href="programs.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary-fixed-dim/40 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
+        View All Programs
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -640,17 +647,10 @@ tailwind.config = {
   <div class="absolute inset-0 isometric-grid opacity-10"></div>
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
 
-    <!-- Header row: title left, All Sectors button right -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-      <div class="fade-up">
-        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">FOCUS AREAS</div>
-        <h2 class="font-black text-4xl md:text-5xl text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Sectors We Champion</h2>
-      </div>
-      <a href="focus-areas.html"
-         class="fade-up delay-1 shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-outline-variant/50 text-on-surface font-label-mono text-sm hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-all self-start md:self-auto">
-        All Sectors
-        <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
+    <!-- Header -->
+    <div class="mb-12 fade-up">
+      <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">FOCUS AREAS</div>
+      <h2 class="font-black text-4xl md:text-5xl text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Sectors We Champion</h2>
     </div>
 
     <!-- Compact 3×2 card grid -->
@@ -723,6 +723,15 @@ tailwind.config = {
         </div>
       </a>
 
+    </div>
+
+    <!-- All Sectors button centred below grid -->
+    <div class="mt-10 flex justify-center fade-up">
+      <a href="focus-areas.html"
+         class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-outline-variant/50 text-on-surface font-label-mono text-sm hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-all active:scale-95">
+        View All Sectors
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>
@@ -958,6 +967,12 @@ tailwind.config = {
           <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">IP & Patents</span>
         </div>
       </div>
+    </div>
+    <div class="mt-10 flex justify-center fade-up">
+      <a href="mentors.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-coral-accent/40 rounded-full font-bold text-sm hover:bg-coral-accent/10 hover:border-coral-accent transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
+        Meet All Mentors
+        <span class="material-symbols-outlined text-base text-coral-accent">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>

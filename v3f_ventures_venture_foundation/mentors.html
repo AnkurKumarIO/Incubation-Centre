@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentor Network — V3F Nagpur | VNIT Incubation Centre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{
+    colors:{
+      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
+      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
+      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
+      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
+      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
+      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
+      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
+      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
+      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
+      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
+      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
+      "surface-container-low":"#150f06",
+    },
+    borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
+    fontFamily:{
+      "headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],
+      "headline-md":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],
+      "label-mono":["JetBrains Mono"],"label-caps":["JetBrains Mono"],
+    }
+  }}
+}
+</script>
+<style>
+  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
+
+  .glass-panel { background:rgba(255,200,100,0.03); backdrop-filter:blur(12px); border:1px solid rgba(255,180,80,0.08); }
+  .glow-amber  { box-shadow:0 0 20px rgba(255,140,0,0.25); }
+  .glow-coral  { box-shadow:0 0 20px rgba(255,107,53,0.35); }
+
+  .isometric-grid {
+    background-image:
+      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+
+  .gradient-text { background:linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+  /* Nav underline */
+  .nav-link { position:relative; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link:hover::after { width:100%; }
+
+  /* Filter pills */
+  .filter-pill { cursor:pointer; transition:all 0.2s ease; }
+  .filter-pill.active { background:rgba(255,140,0,0.15); border-color:rgba(255,140,0,0.6); color:#ff8c00; }
+
+  /* Fade animations */
+  .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+  .delay-1{transition-delay:0.07s} .delay-2{transition-delay:0.14s} .delay-3{transition-delay:0.21s}
+  .delay-4{transition-delay:0.28s} .delay-5{transition-delay:0.35s} .delay-6{transition-delay:0.42s}
+  .delay-7{transition-delay:0.49s} .delay-8{transition-delay:0.56s} .delay-9{transition-delay:0.63s}
+  .delay-10{transition-delay:0.70s} .delay-11{transition-delay:0.77s} .delay-12{transition-delay:0.84s}
+
+  /* Scanline sweep */
+  @keyframes scanline { 0%{top:-5%} 100%{top:105%} }
+  .scan-line { position:fixed; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,rgba(255,140,0,0.35),transparent); animation:scanline 8s linear infinite; pointer-events:none; z-index:100; }
+
+  /* Mentor card */
+  .mentor-card {
+    position:relative;
+    background:rgba(255,200,100,0.025);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,180,80,0.1);
+    border-radius:1rem;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow:hidden;
+  }
+  .mentor-card:hover {
+    transform:translateY(-4px);
+    border-color:rgba(255,140,0,0.35);
+    box-shadow:0 16px 40px rgba(255,140,0,0.08);
+  }
+
+  /* Crosshair corners — architectural blueprint touch */
+  .mentor-card::before,
+  .mentor-card::after {
+    content:'';
+    position:absolute;
+    width:10px; height:10px;
+    border-color:rgba(255,140,0,0.3);
+    border-style:solid;
+    pointer-events:none;
+    transition:border-color 0.3s;
+  }
+  .mentor-card::before { top:8px; left:8px; border-width:1px 0 0 1px; }
+  .mentor-card::after  { bottom:8px; right:8px; border-width:0 1px 1px 0; }
+  .mentor-card:hover::before,
+  .mentor-card:hover::after { border-color:rgba(255,140,0,0.7); }
+
+  /* Avatar initials */
+  .mentor-avatar {
+    width:48px; height:48px;
+    border-radius:50%;
+    background:rgba(255,140,0,0.12);
+    border:1px solid rgba(255,140,0,0.25);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700; font-size:1rem;
+    color:#ff8c00;
+    flex-shrink:0;
+    letter-spacing:-0.02em;
+  }
+
+  /* Index number */
+  .mentor-index {
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px; font-weight:700;
+    color:rgba(255,140,0,0.35);
+    letter-spacing:0.08em;
+  }
+
+  /* Separator hairline */
+  .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); }
+
+  /* Tag colors alternate */
+  .tag-amber { background:rgba(255,140,0,0.1); color:#ff8c00; }
+  .tag-coral { background:rgba(255,107,53,0.1); color:#ff6b35; }
+
+  /* Stats counter bar */
+  .stat-box {
+    background:rgba(255,200,100,0.03);
+    border:1px solid rgba(255,180,80,0.1);
+    border-radius:0.75rem;
+    text-align:center;
+    padding:1rem 1.5rem;
+  }
+
+  /* Expanded bio panel */
+  .mentor-bio { display:block; }
+
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+
+  :target { scroll-margin-top:100px; }
+</style>
+</head>
+<body class="font-body-md antialiased">
+<div class="scan-line"></div>
+
+<!-- ── NAV ── -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#advisors">Advisors</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="mentors.html" style="border-bottom:1px solid #ff8c00;">Mentors</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO STRIP ── -->
+<div class="relative pt-20 pb-12 overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
+
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-12">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-primary-fixed-dim">Mentor Network</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-2xl">
+        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">MENTOR NETWORK</div>
+        <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4" style="font-family:'Space Grotesk',sans-serif;">
+          Expert Guidance,<br/><span class="gradient-text">Tailored to You</span>
+        </h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed">
+          V3F's mentor pool spans entrepreneurs, investors, corporate leaders, and domain specialists — each formally onboarded and sector-matched to your startup's exact needs.
+        </p>
+      </div>
+
+      <!-- Stat boxes -->
+      <div class="flex gap-3 shrink-0">
+        <div class="stat-box">
+          <div class="font-black text-3xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">13</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-1">Mentors</div>
+        </div>
+        <div class="stat-box">
+          <div class="font-black text-3xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">7</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-1">Domains</div>
+        </div>
+        <div class="stat-box">
+          <div class="font-black text-3xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">∞</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-1">Impact</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FILTER PILLS ── -->
+<div class="sticky top-20 z-40 bg-background/90 backdrop-blur-xl border-b border-outline-variant/20 py-4">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto flex flex-wrap gap-2" id="filter-bar">
+    <button onclick="filterMentors('all')"         class="filter-pill active font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="all">All Domains</button>
+    <button onclick="filterMentors('ai')"           class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="ai">AI & Digital</button>
+    <button onclick="filterMentors('deep-tech')"   class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="deep-tech">Deep Tech</button>
+    <button onclick="filterMentors('finance')"     class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="finance">Finance & Investment</button>
+    <button onclick="filterMentors('manufacturing')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="manufacturing">Manufacturing</button>
+    <button onclick="filterMentors('healthcare')"  class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="healthcare">Healthcare</button>
+    <button onclick="filterMentors('design')"      class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="design">Design & GTM</button>
+    <button onclick="filterMentors('saas')"        class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-domain="saas">SaaS & Fintech</button>
+  </div>
+</div>
+
+<!-- ── MENTOR GRID ── -->
+<main class="py-14 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="grid grid-cols-1 gap-5" id="mentor-grid">
+
+    <!-- 01 · Anand Kamat -->
+    <div class="mentor-item fade-up" data-domains="ai deep-tech">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">AK</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Anand Kamat</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Co-Founder & CEO, PostQode</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">AI Products</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Enterprise Tech</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Agentic AI</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">01</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Co-founder and CEO of PostQode, an Agentic AI startup building AI SDLC agents for Insurance and Automobile. With 30+ years of experience in enterprise products and technology transformation — business leadership and engineering roles at Microsoft, Adobe, and Bell Labs. Specialises in AI products and platforms, helping V3F accelerate AI initiatives.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 · Swapna Gupta -->
+    <div class="mentor-item fade-up delay-1" data-domains="finance deep-tech">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">SG</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Swapna Gupta</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Partner, Avaana Capital</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Fundraising</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Deep Tech VC</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Scaling</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">02</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Partner at Avaana Capital, investing in deep-tech and frontier innovation startups building globally competitive solutions. Former investor at Qualcomm Ventures, backing high-growth startups like Shadowfax and Ninjacart across mobility, agri-tech, and Industry 4.0. Brings 15+ years in investing and finance, mentoring V3F founders on fundraising, scaling, and building venture-backable businesses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 · Rohit Srivastava -->
+    <div class="mentor-item fade-up delay-2" data-domains="healthcare deep-tech">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">RS</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Rohit Srivastava</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Chair Professor, IIT Bombay</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">MedTech</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">IP & Patents</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Translational R&D</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">03</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Distinguished Chair Professor at IIT Bombay and healthcare innovator with deep expertise in translational research and affordable medical technologies. Co-Founder of several healthcare startups from Nanobios Lab. Helps V3F in converting ideas into impactful products, scaling innovations, and navigating patents and commercialisation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 · Sandip Chintawar -->
+    <div class="mentor-item fade-up delay-3" data-domains="ai saas">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">SC</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Sandip Chintawar</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Co-Founder, Cymetrix Software</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">3 Exits</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Enterprise SaaS</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">VC Fundraising</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">04</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Co-Founder of Cymetrix Software with 20+ years building, scaling, and exiting global tech ventures — 3 successful exits. Creator of the world's first commercial Java product with OEM deals with Cisco, IBM, and Exodus. Scaled companies across Silicon Valley and India, raised capital from top VCs and angel investors. Early pioneer in cloud-based web services and enterprise tech innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 · Ajay Kamalvanshi -->
+    <div class="mentor-item fade-up delay-4" data-domains="ai deep-tech">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">AK</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Ajay Kamalvanshi</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">AI Infrastructure, NVIDIA</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">GPU / HPC</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">AI Infrastructure</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Deep Tech</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">05</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Drives next-generation AI infrastructure at NVIDIA, optimising GPU systems for hyperscale data centres and real-world AI workloads. Brings 25+ years across HPC, system software, and large-scale computing, with leadership experience at Nokia, Novell, and Phoenix Technologies. Expert in GPU performance, power optimisation, and Linux systems — helping V3F build efficient, scalable AI and deep-tech products.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 · Parag Deoras -->
+    <div class="mentor-item fade-up delay-5" data-domains="manufacturing">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">PD</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Parag Deoras</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Global Supply Chain Leader</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Supply Chain</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Operations</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Industry 4.0</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">06</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Global supply chain leader with 25+ years across Royal Philips, ArcelorMittal, and Flowserve Corporation, driving large-scale transformation and efficiency programs. Led a $2B supply chain transformation delivering 10% operating improvement, with deep expertise in procurement, cost optimisation, and industrial engineering. Mentors V3F startups on building resilient operations, smart supply chains, and scalable industrial systems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 · Pravin Kamble -->
+    <div class="mentor-item fade-up delay-6" data-domains="saas finance">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">PK</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Pravin Kamble</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Founder & CEO, 99minds</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Fintech</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">SaaS Scaling</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Commerce Tech</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">07</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Founder & CEO of 99minds, building global infrastructure for loyalty, branded currency, and digital wallet ecosystems. Expert in scaling SaaS and fintech products that drive customer engagement and revenue for modern retailers. Actively mentors founders in Vidarbha, supporting startups in building scalable commerce and fintech solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 · Sharad Bairathi -->
+    <div class="mentor-item fade-up delay-7" data-domains="deep-tech manufacturing">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">SB</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Sharad Bairathi</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Founder, Embitel → Volkswagen Group</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Exit to VW Group</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">SDV / Auto Tech</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Global Scaling</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">08</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Founder of Embitel — built a 1,500+ member global tech firm recognised among Deloitte Fast 50 and top innovative companies in India. Successfully scaled and exited to Volkswagen Group; now leading Software-Defined Vehicle (SDV) development. Proven global leader who built and expanded tech businesses across Europe and the US, driving strategy, operations, and high-growth execution.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 · Mihirr Sose -->
+    <div class="mentor-item fade-up delay-8" data-domains="ai design">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">MS</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Mihirr Sose</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Founder & Growth Operator</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">0→1 Growth</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">GTM</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">No-Code / AI</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">09</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Founder, growth operator, and startup mentor helping 0→1 stage founders move fast from idea to MVP and early traction. Enables growth through operator-led learning, community building, and practical GTM systems for early-stage startups. Mentors AI, automation, and no-code at V3F, helping teams accelerate product development and go-to-market execution.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 · Naveen Kumar Gonga -->
+    <div class="mentor-item fade-up delay-9" data-domains="design">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">NG</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Naveen Kumar Gonga</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">CEO & Co-Founder, Studio Carbon</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Product Design</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Brand Strategy</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">UI/UX</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">10</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            CEO & Co-Founder of Studio Carbon, leading a 40+ member global team across industrial design, branding, and UI/UX. Helps V3F startups turn ideas into market-ready products and scalable brands through design-led strategy and systems thinking. Expert on product strategy, design thinking, and building globally competitive offerings.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 · Mithun Shrivastava -->
+    <div class="mentor-item fade-up delay-10" data-domains="manufacturing saas">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">MS</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Mithun Shrivastava</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Founder, Blowhorn · MBA Cambridge</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Logistics</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Operations</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Startup Building</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">11</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            MBA from the University of Cambridge and Founder of Blowhorn — a logistics startup. Prior to entrepreneurship, was part of the fast-track management cohort at AP Moller Maersk. Brings deep knowledge of logistics operations, startup building, and institutional management frameworks.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 · Sharad Heda -->
+    <div class="mentor-item fade-up delay-11" data-domains="finance saas">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">SH</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Sharad Heda</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Angel Investor & CEO Coach</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">CEO Coaching</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">10→100 Growth</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Angel Investing</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">12</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Technology industry veteran and former leader at Microland, who helped scale it into a global technology services organisation. Mentors founders across 1→10 and 10→100 growth stages, guiding strategy, GTM, organisational design, and fundraising readiness. Angel investor and CEO coach bringing hands-on experience in scaling businesses across global markets and building high-performance teams.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 · Shirish Purohit -->
+    <div class="mentor-item fade-up delay-12" data-domains="deep-tech manufacturing">
+      <div class="mentor-card p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col items-center md:items-start gap-2 md:w-56 shrink-0">
+          <div class="mentor-avatar w-16 h-16 text-xl">SP</div>
+          <div class="text-center md:text-left">
+            <div class="font-bold text-base leading-tight" style="font-family:'Space Grotesk',sans-serif;">Shirish Purohit</div>
+            <div class="text-on-surface-variant text-xs mt-0.5">Emerging Markets Strategy, Tejas Networks</div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start mt-1">
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Telecom / 5G</span>
+            <span class="tag-amber text-xs px-3 py-1 rounded-full font-label-mono">Global Markets</span>
+            <span class="tag-coral text-xs px-3 py-1 rounded-full font-label-mono">Deep Tech Scale</span>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <hr class="hairline flex-1"/>
+            <span class="mentor-index ml-3">13</span>
+          </div>
+          <p class="mentor-bio text-on-surface-variant text-sm leading-relaxed">
+            Seasoned telecom leader with 35+ years across telecommunications, networking technologies, and global business development — currently leading emerging markets strategy at Tejas Networks Ltd for large-scale indigenous 4G/5G deployments. Co-founder & former CEO of Midas Communication Technologies — scaled it into a global exporter with presence in 20+ countries. Brings deep expertise in technology commercialisation, startup scaling, and global market expansion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- empty-state -->
+  <div id="no-results" class="hidden text-center py-20">
+    <span class="material-symbols-outlined text-5xl text-outline/40">search_off</span>
+    <p class="text-on-surface-variant mt-4 font-label-mono text-sm">No mentors match this filter.</p>
+  </div>
+</main>
+
+<!-- ── MENTOR–STARTUP MATCHING PROCESS ── -->
+<section class="py-16 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="mb-10 fade-up">
+    <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">HOW IT WORKS</div>
+    <h2 class="font-black text-3xl md:text-4xl" style="font-family:'Space Grotesk',sans-serif;">
+      Mentor–Startup <span class="gradient-text">Matching Process</span>
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+    <!-- Step 1 -->
+    <div class="glass-panel rounded-2xl p-7 flex flex-col gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up delay-1 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-fixed-dim/60 to-transparent"></div>
+      <div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center shrink-0">
+        <span class="font-black text-on-primary text-sm" style="font-family:'JetBrains Mono',monospace;">01</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif;">Onboarding & Profiling</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">On joining V3F, each startup completes a profiling session covering their sector, stage, key challenges, and mentorship needs.</p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="glass-panel rounded-2xl p-7 flex flex-col gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-2 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-coral-accent/60 to-transparent"></div>
+      <div class="w-10 h-10 rounded-full bg-coral-accent flex items-center justify-center shrink-0">
+        <span class="font-black text-white text-sm" style="font-family:'JetBrains Mono',monospace;">02</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif;">Tailored Matching</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">V3F matches startups with mentors from the pool based on sector alignment, stage of development, and specific support requirements.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="glass-panel rounded-2xl p-7 flex flex-col gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up delay-3 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-fixed-dim/60 to-transparent"></div>
+      <div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center shrink-0">
+        <span class="font-black text-on-primary text-sm" style="font-family:'JetBrains Mono',monospace;">03</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif;">Logged Sessions</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">All mentoring sessions are logged and documented for record keeping and impact assessment. Both parties submit brief post-session feedback.</p>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="glass-panel rounded-2xl p-7 flex flex-col gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-4 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-coral-accent/60 to-transparent"></div>
+      <div class="w-10 h-10 rounded-full bg-coral-accent flex items-center justify-center shrink-0">
+        <span class="font-black text-white text-sm" style="font-family:'JetBrains Mono',monospace;">04</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif;">Annual Review</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Mentors are onboarded for one year, with extensions based on performance and feedback from startups and V3F management.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BECOME A MENTOR CTA ── -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="glass-panel rounded-2xl p-10 md:p-14 border border-primary-fixed-dim/20 relative overflow-hidden">
+    <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+
+    <!-- crosshair corners on CTA box -->
+    <div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary-fixed-dim/40"></div>
+    <div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary-fixed-dim/40"></div>
+
+    <div class="relative z-10 flex flex-col md:flex-row items-center gap-10 justify-between">
+      <div class="max-w-xl">
+        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">JOIN THE NETWORK</div>
+        <h2 class="font-black text-3xl md:text-4xl mb-3" style="font-family:'Space Grotesk',sans-serif;">Become a V3F Mentor</h2>
+        <p class="text-on-surface-variant leading-relaxed">Share your expertise with the next generation of entrepreneurs. All mentors receive a formal onboarding letter from V3F and are matched with startups best suited to their domain. Flexible engagement — set your own availability.</p>
+        <ul class="mt-5 space-y-2">
+          <li class="flex items-center gap-2 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base">check_circle</span>
+            Formal onboarding letter issued by V3F
+          </li>
+          <li class="flex items-center gap-2 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base">check_circle</span>
+            Matched with startups aligned to your domain
+          </li>
+          <li class="flex items-center gap-2 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base">check_circle</span>
+            Sessions logged with structured feedback
+          </li>
+          <li class="flex items-center gap-2 text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base">check_circle</span>
+            VNIT faculty mentors recognised in appraisals
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick expression of interest form -->
+      <div class="glass-panel rounded-xl p-6 w-full md:w-80 shrink-0 border border-outline-variant/30">
+        <div class="font-bold text-sm mb-4" style="font-family:'Space Grotesk',sans-serif;">Quick Expression of Interest</div>
+        <div class="space-y-3">
+          <input type="text" placeholder="Full Name" class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-4 py-2.5 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-fixed-dim/60 transition-colors font-body-md"/>
+          <input type="email" placeholder="Email Address" class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-4 py-2.5 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-fixed-dim/60 transition-colors font-body-md"/>
+          <input type="text" placeholder="Organisation & Role" class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-4 py-2.5 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary-fixed-dim/60 transition-colors font-body-md"/>
+          <select class="w-full bg-surface-container border border-outline-variant/40 rounded-lg px-4 py-2.5 text-sm text-on-surface-variant focus:outline-none focus:border-primary-fixed-dim/60 transition-colors font-body-md">
+            <option value="">Primary Domain</option>
+            <option>AI & Digital Technologies</option>
+            <option>Deep Technology</option>
+            <option>Finance & Investment</option>
+            <option>Manufacturing & Engineering</option>
+            <option>Healthcare Technologies</option>
+            <option>Design & GTM</option>
+            <option>SaaS & Fintech</option>
+            <option>Legal & IP</option>
+            <option>Other</option>
+          </select>
+          <button class="w-full bg-primary-container text-on-primary font-bold py-2.5 rounded-full hover:glow-amber active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
+            Submit Interest <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="py-10 border-t border-outline-variant/30 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="flex items-center gap-2">
+      <span class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant text-sm">NAGPUR · VNIT Incubation Centre</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="index.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Home</a>
+      <a href="focus-areas.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Focus Areas</a>
+      <a href="index.html#programs" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Programs</a>
+      <a href="index.html#contact" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Apply Now</a>
+    </div>
+    <div class="font-label-mono text-xs text-on-surface-variant/50">© 2025 V3F Nagpur. Section 8 Company.</div>
+  </div>
+</footer>
+
+<script>
+// ── Filter logic ──
+function filterMentors(domain) {
+  document.querySelectorAll('.filter-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.domain === domain);
+  });
+
+  let visible = 0;
+  document.querySelectorAll('.mentor-item').forEach(item => {
+    const domains = item.dataset.domains.split(' ');
+    const show = domain === 'all' || domains.includes(domain);
+    item.style.display = show ? 'block' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+}
+
+// ── Scroll-triggered fade-ups ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
