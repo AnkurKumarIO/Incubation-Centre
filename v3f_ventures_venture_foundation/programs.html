@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programs — V3F Nagpur | VNIT Incubation Centre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{
+    colors:{
+      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
+      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
+      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
+      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
+      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
+      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
+      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
+      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
+      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
+      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
+      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
+      "surface-container-low":"#150f06",
+    },
+    borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
+    fontFamily:{
+      "headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],
+      "headline-md":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],
+      "label-mono":["JetBrains Mono"],"label-caps":["JetBrains Mono"],
+    }
+  }}
+}
+</script>
+<style>
+  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
+  .glass-panel { background:rgba(255,200,100,0.03); backdrop-filter:blur(12px); border:1px solid rgba(255,180,80,0.08); }
+  .glow-amber { box-shadow:0 0 20px rgba(255,140,0,0.25); }
+  .glow-coral { box-shadow:0 0 20px rgba(255,107,53,0.35); }
+  .isometric-grid {
+    background-image:
+      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+  .gradient-text { background:linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+  .nav-link { position:relative; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link:hover::after { width:100%; }
+
+  /* Scroll animations */
+  .fade-up  { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .fade-up.visible  { opacity:1; transform:translateY(0); }
+  .fade-in  { opacity:0; transition:opacity 0.8s ease; }
+  .fade-in.visible  { opacity:1; }
+  .slide-left  { opacity:0; transform:translateX(-32px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .slide-left.visible  { opacity:1; transform:translateX(0); }
+  .slide-right { opacity:0; transform:translateX(32px);  transition:opacity 0.65s ease,transform 0.65s ease; }
+  .slide-right.visible { opacity:1; transform:translateX(0); }
+
+  .delay-1{transition-delay:0.08s} .delay-2{transition-delay:0.16s} .delay-3{transition-delay:0.24s}
+  .delay-4{transition-delay:0.32s} .delay-5{transition-delay:0.40s} .delay-6{transition-delay:0.48s}
+  .delay-7{transition-delay:0.56s}
+
+  /* Scanline */
+  @keyframes scanline { 0%{top:-5%} 100%{top:105%} }
+  .scan-line { position:fixed; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,rgba(255,140,0,0.35),transparent); animation:scanline 8s linear infinite; pointer-events:none; z-index:100; }
+
+  /* Program card */
+  .program-card {
+    position:relative;
+    border-radius:1.25rem;
+    overflow:hidden;
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .program-card:hover { transform:translateY(-6px); }
+
+  /* Top accent bar */
+  .accent-bar { height:3px; width:100%; }
+
+  /* Crosshair corners */
+  .program-card::before, .program-card::after {
+    content:''; position:absolute; width:12px; height:12px;
+    border-color:rgba(255,140,0,0.25); border-style:solid; pointer-events:none;
+    transition:border-color 0.3s;
+  }
+  .program-card::before { top:10px; left:10px; border-width:1px 0 0 1px; }
+  .program-card::after  { bottom:10px; right:10px; border-width:0 1px 1px 0; }
+  .program-card:hover::before, .program-card:hover::after { border-color:rgba(255,140,0,0.6); }
+
+  /* Check list */
+  .check-item { display:flex; align-items:flex-start; gap:0.5rem; }
+  .check-dot { width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+
+  /* Stats row */
+  .stat-row { display:flex; gap:0; }
+  .stat-cell { flex:1; padding:0.75rem 1rem; border-right:1px solid rgba(255,180,80,0.1); }
+  .stat-cell:last-child { border-right:none; }
+
+  /* Bar chart */
+  .eval-bar-bg { background:rgba(255,180,80,0.08); border-radius:9999px; height:6px; overflow:hidden; }
+  .eval-bar-fill { height:100%; border-radius:9999px; background:linear-gradient(90deg,#ff8c00,#ffb347); transition:width 1.2s cubic-bezier(0.4,0,0.2,1); width:0; }
+  .eval-bar-fill.coral { background:linear-gradient(90deg,#ff6b35,#ff9966); }
+
+  /* Tab switcher */
+  .prog-tab { cursor:pointer; transition:all 0.2s ease; border-bottom:2px solid transparent; }
+  .prog-tab.active { color:#ff8c00; border-bottom-color:#ff8c00; }
+
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  :target { scroll-margin-top:100px; }
+
+  /* Popular badge pulse */
+  @keyframes badge-pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+  .badge-pulse { animation:badge-pulse 2.5s ease-in-out infinite; }
+
+  /* Hairline */
+  .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); }
+</style>
+</head>
+<body class="font-body-md antialiased">
+<div class="scan-line"></div>
+
+<!-- ── NAV ── -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="programs.html" style="border-bottom:1px solid #ff8c00;">Programs</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#advisors">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="relative pt-20 pb-14 overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 60% 40%,rgba(255,140,0,0.07) 0%,transparent 65%);"></div>
+
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-12">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6 fade-in">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-primary-fixed-dim">Programs</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-2xl">
+        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3 fade-in">OUR PROGRAMS</div>
+        <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4 fade-up" style="font-family:'Space Grotesk',sans-serif;">
+          Structured Support<br/>for Every <span class="gradient-text">Stage of Growth</span>
+        </h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed fade-up delay-1">
+          V3F offers three distinct program tracks — each tailored to the stage of your venture. From idea validation to scaling, we have the right support for you.
+        </p>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="flex flex-col gap-3 shrink-0 fade-up delay-2">
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">rocket_launch</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">18–36 mo</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Incubation tenure</div>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-coral-accent text-2xl">trending_up</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">Min. 2%</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Equity stake</div>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">sync</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">Quarterly</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Cohort reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="mt-12 flex gap-0 border-b border-outline-variant/30 fade-up delay-3" id="prog-tabs">
+      <button onclick="scrollToProgram('pre-incubation')" class="prog-tab active px-6 py-3 font-label-mono text-sm text-on-surface-variant" data-prog="pre-incubation">Pre-Incubation</button>
+      <button onclick="scrollToProgram('incubation')"     class="prog-tab px-6 py-3 font-label-mono text-sm text-on-surface-variant" data-prog="incubation">Incubation</button>
+      <button onclick="scrollToProgram('coworking')"      class="prog-tab px-6 py-3 font-label-mono text-sm text-on-surface-variant" data-prog="coworking">Co-Working</button>
+      <button onclick="scrollToProgram('evaluation')"     class="prog-tab px-6 py-3 font-label-mono text-sm text-on-surface-variant" data-prog="evaluation">Evaluation Matrix</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROGRAM CARDS ── -->
+<main class="px-4 md:px-16 max-w-[1440px] mx-auto pb-6 space-y-8">
+
+  <!-- ══ PRE-INCUBATION ══ -->
+  <div id="pre-incubation" class="program-card glass-panel border border-outline-variant/20 hover:border-primary-fixed-dim/30 fade-up">
+    <div class="accent-bar" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent);"></div>
+    <div class="p-8 md:p-10">
+
+      <!-- Card header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">lightbulb</span>
+          </div>
+          <div>
+            <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5 tracking-widest">TRACK 01</div>
+            <h2 class="font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">Pre-Incubation</h2>
+            <p class="text-on-surface-variant text-sm mt-0.5">For early-stage ideas and student ventures — validate before you commit</p>
+          </div>
+        </div>
+        <span class="self-start md:self-center px-4 py-1.5 rounded-full font-label-mono text-xs border border-primary-fixed-dim/40 text-primary-fixed-dim bg-primary-fixed-dim/10">Open to All</span>
+      </div>
+
+      <hr class="hairline mb-8"/>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Who -->
+        <div class="slide-left">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">WHO IS THIS FOR?</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">VNIT students with a business idea</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Early-stage founders without a prototype</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Teams exploring entrepreneurship</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Recent graduates testing a concept</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- What you get -->
+        <div class="fade-up delay-1">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">WHAT YOU GET</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Mentoring and expert guidance sessions</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Access to workshops and training programs</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Networking with ecosystem stakeholders</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Limited infrastructure access</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Introduction to V3F mentor network</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Duration & Fees -->
+        <div class="slide-right">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">DURATION & FEES</div>
+          <div class="glass-panel rounded-xl overflow-hidden border border-outline-variant/20 mb-5">
+            <div class="stat-row">
+              <div class="stat-cell">
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-1">Duration</div>
+                <div class="font-bold text-sm text-primary-fixed-dim">Up to 12 months</div>
+              </div>
+            </div>
+            <hr class="hairline"/>
+            <div class="stat-row">
+              <div class="stat-cell">
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-1">Onboarding (VNIT)</div>
+                <div class="font-bold text-sm text-primary-fixed-dim">₹5,000</div>
+              </div>
+            </div>
+            <hr class="hairline"/>
+            <div class="stat-row">
+              <div class="stat-cell">
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-1">Onboarding (External)</div>
+                <div class="font-bold text-sm text-coral-accent">₹10,000</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-primary-fixed-dim/50 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 transition-all active:scale-95">
+            Apply for Pre-Incubation
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ INCUBATION ══ -->
+  <div id="incubation" class="program-card border border-coral-accent/20 hover:border-coral-accent/50 fade-up delay-1" style="background:rgba(255,107,53,0.025);">
+    <div class="accent-bar" style="background:linear-gradient(90deg,#ff6b35,#ff9966,transparent);"></div>
+    <div class="p-8 md:p-10">
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl bg-coral-accent/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-coral-accent text-3xl">rocket_launch</span>
+          </div>
+          <div>
+            <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5 tracking-widest">TRACK 02</div>
+            <div class="flex items-center gap-3">
+              <h2 class="font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">Incubation</h2>
+              <span class="badge-pulse px-3 py-0.5 rounded-full bg-coral-accent text-white font-label-mono text-xs font-bold">Most Popular</span>
+            </div>
+            <p class="text-on-surface-variant text-sm mt-0.5">For startups with prototype, MVP or early traction — scale with full support</p>
+          </div>
+        </div>
+        <span class="self-start md:self-center px-4 py-1.5 rounded-full font-label-mono text-xs border border-coral-accent/40 text-coral-accent bg-coral-accent/10">Competitive Selection</span>
+      </div>
+
+      <hr class="hairline mb-8"/>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Who -->
+        <div class="slide-left delay-1">
+          <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">WHO IS THIS FOR?</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Startups with a working prototype or MVP</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Ventures with early customer traction</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Teams ready for full-time commitment</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">VNIT student, alumni, faculty or external startups</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- What you get -->
+        <div class="fade-up delay-2">
+          <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">WHAT YOU GET</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Co-working or private office space at VNIT</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Dedicated mentors from industry and academia</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Legal and financial guidance (first 2 hrs free)</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Investor connect and demo day participation</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Access to VNIT labs, research infra & faculty</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Government grant application support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Duration, Equity & Fees -->
+        <div class="slide-right delay-1">
+          <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">DURATION, EQUITY & FEES</div>
+          <div class="glass-panel rounded-xl overflow-hidden border border-outline-variant/20 mb-5">
+            <div class="p-3 grid grid-cols-2 gap-x-4 gap-y-3">
+              <div>
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5">Duration</div>
+                <div class="font-bold text-sm text-coral-accent">18–24 months</div>
+              </div>
+              <div>
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5">Max Extension</div>
+                <div class="font-bold text-sm text-coral-accent">Up to 36 months</div>
+              </div>
+              <div>
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5">Equity Stake</div>
+                <div class="font-bold text-sm text-primary-fixed-dim">Min. 2%</div>
+              </div>
+              <div>
+                <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5">Reviews</div>
+                <div class="font-bold text-sm text-primary-fixed-dim">Quarterly</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-coral-accent text-white font-bold text-sm hover:glow-coral active:scale-95 transition-all">
+            Apply for Incubation
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CO-WORKING ══ -->
+  <div id="coworking" class="program-card glass-panel border border-outline-variant/20 hover:border-primary-fixed-dim/30 fade-up delay-2">
+    <div class="accent-bar" style="background:linear-gradient(90deg,#ffb347,#ff8c00,transparent);"></div>
+    <div class="p-8 md:p-10">
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">business_center</span>
+          </div>
+          <div>
+            <div class="font-label-mono text-xs text-on-surface-variant/60 mb-0.5 tracking-widest">TRACK 03</div>
+            <h2 class="font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">Co-Working Membership</h2>
+            <p class="text-on-surface-variant text-sm mt-0.5">Access premium workspace at VNIT without formal incubation — pay-as-you-go</p>
+          </div>
+        </div>
+        <span class="self-start md:self-center px-4 py-1.5 rounded-full font-label-mono text-xs border border-primary-fixed-dim/40 text-primary-fixed-dim bg-primary-fixed-dim/10">Open Access</span>
+      </div>
+
+      <hr class="hairline mb-8"/>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Who -->
+        <div class="slide-left delay-2">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">WHO IS THIS FOR?</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Startups not yet ready for formal incubation</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Freelancers and small teams needing workspace</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Companies wanting a VNIT campus presence</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Startups exploring the V3F ecosystem</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Facilities -->
+        <div class="fade-up delay-3">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">FACILITIES INCLUDED</div>
+          <ul class="space-y-3">
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">High-speed internet connectivity</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Meeting room access</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Common infrastructure (printing, lounge)</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">VNIT campus access</span>
+            </li>
+            <li class="check-item">
+              <div class="check-dot bg-coral-accent/15"><span class="material-symbols-outlined text-coral-accent" style="font-size:11px;">check</span></div>
+              <span class="text-sm text-on-surface-variant">Networking with incubated startups</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pricing -->
+        <div class="slide-right delay-2">
+          <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-4">PRICING</div>
+          <div class="glass-panel rounded-xl overflow-hidden border border-outline-variant/20 mb-5">
+            <div class="p-3 space-y-2">
+              <div class="flex justify-between items-center py-1.5 border-b border-outline-variant/10">
+                <span class="text-xs text-on-surface-variant">Seat (External)</span>
+                <span class="font-bold text-sm text-coral-accent">₹6,000/mo</span>
+              </div>
+              <div class="flex justify-between items-center py-1.5 border-b border-outline-variant/10">
+                <span class="text-xs text-on-surface-variant">Seat (VNIT)</span>
+                <span class="font-bold text-sm text-primary-fixed-dim">₹3,000/mo</span>
+              </div>
+              <div class="flex justify-between items-center py-1.5 border-b border-outline-variant/10">
+                <span class="text-xs text-on-surface-variant">Cabin, 3 pax (Ext)</span>
+                <span class="font-bold text-sm text-coral-accent">₹20,000/mo</span>
+              </div>
+              <div class="flex justify-between items-center py-1.5 border-b border-outline-variant/10">
+                <span class="text-xs text-on-surface-variant">Cabin, 3 pax (VNIT)</span>
+                <span class="font-bold text-sm text-primary-fixed-dim">₹10,000/mo</span>
+              </div>
+              <div class="flex justify-between items-center py-1.5">
+                <span class="text-xs text-on-surface-variant">Min. Commitment</span>
+                <span class="font-bold text-sm text-on-surface">3 months</span>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-primary-fixed-dim/50 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 transition-all active:scale-95">
+            Enquire Now
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── EVALUATION MATRIX ── -->
+<section id="evaluation" class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+
+  <div class="mb-12 fade-up">
+    <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">SELECTION CRITERIA</div>
+    <h2 class="font-black text-3xl md:text-4xl" style="font-family:'Space Grotesk',sans-serif;">
+      Startup <span class="gradient-text">Evaluation Matrix</span>
+    </h2>
+    <p class="text-on-surface-variant mt-3 max-w-xl">Applications are scored against seven parameters. Strong teams with innovative ideas and a clear market opportunity score highest.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+    <!-- Bar chart -->
+    <div class="glass-panel rounded-2xl p-8 border border-outline-variant/20 fade-up delay-1" id="eval-bars">
+      <div class="space-y-5">
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Innovation — Uniqueness of idea</span>
+            <span class="font-label-mono text-sm text-primary-fixed-dim font-bold">20%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill" data-width="20"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Team Capability — Skills & commitment</span>
+            <span class="font-label-mono text-sm text-primary-fixed-dim font-bold">20%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill" data-width="20"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Market Potential — Market size & demand</span>
+            <span class="font-label-mono text-sm text-coral-accent font-bold">15%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill coral" data-width="15"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Business Model — Revenue & scalability</span>
+            <span class="font-label-mono text-sm text-coral-accent font-bold">15%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill coral" data-width="15"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Technical Feasibility — Technology readiness</span>
+            <span class="font-label-mono text-sm text-on-surface-variant font-bold">10%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill" data-width="10" style="background:rgba(255,140,0,0.5)"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Traction — Prototype, users, early validation</span>
+            <span class="font-label-mono text-sm text-on-surface-variant font-bold">10%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill" data-width="10" style="background:rgba(255,140,0,0.5)"></div></div>
+        </div>
+        <div class="eval-row">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-sm text-on-surface">Strategic Fit — Alignment with V3F focus areas</span>
+            <span class="font-label-mono text-sm text-on-surface-variant font-bold">10%</span>
+          </div>
+          <div class="eval-bar-bg"><div class="eval-bar-fill" data-width="10" style="background:rgba(255,140,0,0.5)"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selection committee + note -->
+    <div class="space-y-5 fade-up delay-2">
+      <!-- Note -->
+      <div class="glass-panel rounded-xl p-5 border border-primary-fixed-dim/20 flex gap-3">
+        <span class="material-symbols-outlined text-primary-fixed-dim shrink-0 mt-0.5">info</span>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Applications are reviewed by a committee comprising V3F management, VNIT faculty, industry experts, and investors.</p>
+      </div>
+
+      <!-- Selection committee -->
+      <div class="glass-panel rounded-xl p-6 border border-outline-variant/20">
+        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-5">SELECTION COMMITTEE</div>
+        <ul class="space-y-3">
+          <li class="check-item">
+            <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+            <span class="text-sm text-on-surface-variant">V3F management representatives</span>
+          </li>
+          <li class="check-item">
+            <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+            <span class="text-sm text-on-surface-variant">VNIT faculty domain experts</span>
+          </li>
+          <li class="check-item">
+            <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+            <span class="text-sm text-on-surface-variant">Ecosystem entrepreneurs</span>
+          </li>
+          <li class="check-item">
+            <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+            <span class="text-sm text-on-surface-variant">Industry professionals</span>
+          </li>
+          <li class="check-item">
+            <div class="check-dot bg-primary-fixed-dim/15"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:11px;">check</span></div>
+            <span class="text-sm text-on-surface-variant">Investors and angel network representatives</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <a href="index.html#contact" class="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary-container text-on-primary font-bold text-sm hover:glow-amber active:scale-95 transition-all">
+        Start Your Application
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="py-10 border-t border-outline-variant/30 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="flex items-center gap-2">
+      <span class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant text-sm">NAGPUR · VNIT Incubation Centre</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="index.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Home</a>
+      <a href="focus-areas.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Focus Areas</a>
+      <a href="mentors.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Mentors</a>
+      <a href="index.html#contact" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Apply Now</a>
+    </div>
+    <div class="font-label-mono text-xs text-on-surface-variant/50">© 2025 V3F Nagpur. Section 8 Company.</div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll animations ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Trigger bars if inside eval section
+      e.target.querySelectorAll && e.target.querySelectorAll('.eval-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right').forEach(el => obs.observe(el));
+
+// Animate bars when eval section enters view
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.eval-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+const evalEl = document.getElementById('eval-bars');
+if (evalEl) barObs.observe(evalEl);
+
+// ── Tab active state + smooth scroll ──
+function scrollToProgram(id) {
+  document.querySelectorAll('.prog-tab').forEach(t => t.classList.toggle('active', t.dataset.prog === id));
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Highlight tab on scroll
+const sections = ['pre-incubation','incubation','coworking','evaluation'];
+const scrollObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.prog-tab').forEach(t =>
+        t.classList.toggle('active', t.dataset.prog === e.target.id)
+      );
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(id => { const el = document.getElementById(id); if(el) scrollObs.observe(el); });
+</script>
+</body>
+</html>
