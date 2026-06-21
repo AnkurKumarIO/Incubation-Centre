@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About V3F Nagpur | VNIT Incubation Centre</title>
+  <meta name="description" content="Learn about V3F Nagpur — VNIT's premier incubation wing nurturing entrepreneurship, innovation, and startup ecosystems across the Nagpur region." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- React 18 + Babel for JSX -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#201a0e",
+            "on-error": "#690005",
+            "surface-dim": "#120d04",
+            "primary": "#ffe8c8",
+            "primary-fixed-dim": "#ff8c00",
+            "inverse-on-surface": "#322712",
+            "inverse-primary": "#7a3e00",
+            "outline-variant": "#4a3b1f",
+            "surface-tint": "#ff8c00",
+            "error-container": "#93000a",
+            "outline": "#9e8a6a",
+            "tertiary-container": "#f5f0d9",
+            "on-primary-container": "#7a3e00",
+            "primary-container": "#ffb347",
+            "tertiary": "#f5f0d9",
+            "background": "#0e0904",
+            "secondary": "#ffcfa7",
+            "on-tertiary": "#2f2a1f",
+            "on-primary": "#3d1c00",
+            "on-surface": "#e8ddd0",
+            "surface-variant": "#2e2416",
+            "surface-container": "#1a1209",
+            "inverse-surface": "#e8ddd0",
+            "surface": "#0e0904",
+            "on-background": "#e8ddd0",
+            "on-surface-variant": "#c9b89a",
+            "surface-container-highest": "#2e2416",
+            "primary-fixed": "#ffd080",
+            "coral-accent": "#ff6b35",
+            "forest-green": "#2d6a4f",
+            "forest-green-light": "#52b788",
+            "surface-container-lowest": "#080502",
+            "surface-container-low": "#150f06",
+          },
+          fontFamily: {
+            "serif-display": ["Playfair Display", "serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-mono": ["JetBrains Mono", "monospace"],
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { background-color: #0e0904; color: #e8ddd0; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+
+    .glass-panel {
+      background: rgba(255, 200, 100, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 180, 80, 0.08);
+    }
+    .glass-panel-green {
+      background: rgba(45, 106, 79, 0.08);
+      border: 1px solid rgba(82, 183, 136, 0.2);
+    }
+    .glass-panel-dark {
+      background: rgba(14, 9, 4, 0.85);
+      border: 1px solid rgba(255, 140, 0, 0.15);
+    }
+    .isometric-grid {
+      background-image:
+        linear-gradient(rgba(255, 140, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 140, 0, 0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ff8c00, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-text-green {
+      background: linear-gradient(135deg, #2d6a4f, #52b788);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(255, 140, 0, 0.12); }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Scroll animations */
+    .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-in { opacity: 0; transition: opacity 0.8s ease; }
+    .fade-in.visible { opacity: 1; }
+    .slide-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-left.visible { opacity: 1; transform: translateX(0); }
+    .slide-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+    .delay-6 { transition-delay: 0.6s; }
+
+    /* Hero animations */
+    @keyframes hero-rise {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-fade-1 { opacity: 0; animation: hero-rise 0.7s ease 0.3s forwards; }
+    .hero-fade-2 { opacity: 0; animation: hero-rise 0.7s ease 0.55s forwards; }
+    .hero-fade-3 { opacity: 0; animation: hero-rise 0.7s ease 0.8s forwards; }
+    .hero-fade-4 { opacity: 0; animation: hero-rise 0.7s ease 1.05s forwards; }
+
+    @keyframes scroll-line {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+      30%  { opacity: 1; }
+      100% { transform: scaleY(1); transform-origin: top; opacity: 0.3; }
+    }
+    .hero-scroll-line { animation: scroll-line 1.8s ease 1.5s infinite; }
+
+    @keyframes float-y { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+    .float-anim { animation: float-y 4s ease-in-out infinite; }
+
+    @keyframes arc-pulse {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(255,140,0,0.15), 0 0 12px rgba(255,140,0,0.75), 0 0 26px rgba(255,140,0,0.38); }
+      50%       { box-shadow: 0 0 0 5px rgba(255,140,0,0.08), 0 0 18px rgba(255,140,0,0.95), 0 0 38px rgba(255,140,0,0.52); }
+    }
+
+    /* Nav link */
+    .nav-link { position: relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+    .nav-link:hover::after { width:100%; }
+
+    /* Feature card accent border on hover */
+    .feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(255,140,0,0.1); border-color: rgba(255,140,0,0.25) !important; }
+
+    /* Board card hover */
+    .board-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .board-card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(255,140,0,0.1); }
+    .board-card:hover .board-avatar { background: rgba(255,140,0,0.15); border-color: rgba(255,140,0,0.4); }
+    .board-avatar { transition: background 0.3s ease, border-color 0.3s ease; }
+
+    /* Governance check items */
+    .gov-check { transition: transform 0.2s ease; }
+    .gov-check:hover { transform: translateX(4px); }
+
+    /* Separator deco lines */
+    .section-divider { height: 1px; background: linear-gradient(to right, transparent, rgba(255,140,0,0.3), transparent); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0e0904; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,140,0,0.3); border-radius: 3px; }
+
+    /* Arc side nav */
+    #arc-nav {
+      position: fixed; right: 16px; top: 50%;
+      transform: translateY(-50%); z-index: 100;
+      height: 300px; width: 190px; pointer-events: all;
+    }
+    .arc-track { position: absolute; right: 21px; top: 24px; bottom: 24px; width: 2px;
+      background: linear-gradient(to bottom, rgba(255,140,0,0) 0%, rgba(255,140,0,0.3) 12%, rgba(255,140,0,0.3) 88%, rgba(255,140,0,0) 100%);
+      border-radius: 1px; }
+    .arc-track-fill { position: absolute; left: 0; top: 0; width: 100%; height: 0%;
+      background: linear-gradient(to bottom, #ff8c00, #ffb347); border-radius: 1px;
+      transition: height 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 0 8px rgba(255,140,0,0.65); }
+    .arc-dot-wrap { position: absolute; right: 0; top: 0; width: 100%; height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between; padding: 22px 0; }
+    .arc-item { display: flex; align-items: center; justify-content: flex-end; padding-right: 17px; gap: 14px; cursor: pointer; position: relative; text-decoration: none; }
+    .arc-label { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase; white-space: nowrap; text-align: right;
+      color: rgba(255,200,110,0.6); opacity: 0; transform: translateX(6px);
+      transition: opacity 0.35s ease, transform 0.35s ease, color 0.25s ease; }
+    #arc-nav:hover .arc-label, #arc-nav.is-scrolling .arc-label { opacity: 1; transform: translateX(0); }
+    #arc-nav:hover .arc-item.arc-active .arc-label, #arc-nav.is-scrolling .arc-item.arc-active .arc-label { color: #ffb347; }
+    .arc-item:hover .arc-label { color: #ffd080 !important; }
+    .arc-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(255,140,0,0.22); border: 1.5px solid rgba(255,140,0,0.45);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .arc-item:hover .arc-dot { background: rgba(255,140,0,0.6); border-color: #ffb347; box-shadow: 0 0 10px rgba(255,140,0,0.5); }
+    .arc-item.arc-active .arc-dot { background: #ff8c00; border-color: #ffd080; border-width: 2px;
+      animation: arc-pulse 2s ease-in-out infinite; }
+
+    @media (max-width: 768px) { #arc-nav { display: none; } }
+
+    /* Scan line */
+    @keyframes scanline { 0%{top:-10%} 100%{top:110%} }
+    .scan-line { position: absolute; left: 0; width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,140,0,0.4), transparent);
+      animation: scanline 5s linear infinite; pointer-events: none; z-index: 30; }
+  </style>
+</head>
+<body class="font-body-md antialiased">
+
+<!-- TOP NAV -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.12)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <a href="index.html" class="font-headline-lg text-xl text-primary tracking-tighter flex items-center gap-2">
+      <span class="gradient-text font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm" style="font-family:'Space Grotesk',sans-serif;">NAGPUR</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#programs">Programs</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#focus">Focus Areas</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="about.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,140,0,0.25)] active:scale-95 transition-all text-sm">
+      Apply Now
+    </a>
+  </div>
+</nav>
+
+<!-- SIDE ARC NAV -->
+<div id="arc-nav" aria-label="Page navigation">
+  <div class="arc-track"><div class="arc-track-fill" id="arc-track-fill"></div></div>
+  <div class="arc-dot-wrap">
+    <a href="#about-hero"   class="arc-item arc-active" data-section="about-hero"><span class="arc-label">Intro</span><span class="arc-dot"></span></a>
+    <a href="#about-mission" class="arc-item" data-section="about-mission"><span class="arc-label">Mission</span><span class="arc-dot"></span></a>
+    <a href="#about-features" class="arc-item" data-section="about-features"><span class="arc-label">Features</span><span class="arc-dot"></span></a>
+    <a href="#about-board"  class="arc-item" data-section="about-board"><span class="arc-label">Board</span><span class="arc-dot"></span></a>
+    <a href="#about-governance" class="arc-item" data-section="about-governance"><span class="arc-label">Governance</span><span class="arc-dot"></span></a>
+  </div>
+</div>
+
+<!-- React Root -->
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+/* ── Scroll Animation Hook ── */
+function useScrollAnimation() {
+  useEffect(() => {
+    const targets = document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    targets.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
+/* ── Side Arc Nav Hook ── */
+function useSideNav() {
+  useEffect(() => {
+    const nav = document.getElementById('arc-nav');
+    const items = document.querySelectorAll('.arc-item');
+    const trackFill = document.getElementById('arc-track-fill');
+    const sectionIds = ['about-hero','about-mission','about-features','about-board','about-governance'];
+    const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    function updateArc() {
+      const scrollY = window.pageYOffset + window.innerHeight * 0.4;
+      let activeIdx = 0;
+      sectionEls.forEach((el, i) => { if (el && el.offsetTop <= scrollY) activeIdx = i; });
+      items.forEach((item, i) => item.classList.toggle('arc-active', i === activeIdx));
+      if (trackFill) {
+        const pct = sectionIds.length > 1 ? (activeIdx / (sectionIds.length - 1)) * 100 : 0;
+        trackFill.style.height = pct + '%';
+      }
+    }
+
+    let scrollTimer;
+    const onScroll = () => {
+      updateArc();
+      if (nav) { nav.classList.add('is-scrolling'); clearTimeout(scrollTimer); scrollTimer = setTimeout(() => nav.classList.remove('is-scrolling'), 350); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateArc();
+
+    items.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        const href = item.getAttribute('href');
+        if (href && href !== '#') {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+}
+
+/* ═══════════════════════ SECTION A: HERO ═══════════════════════ */
+function Hero() {
+  return (
+    <section id="about-hero" className="relative min-h-screen w-full overflow-hidden flex items-center">
+      {/* Background layers */}
+      <div className="absolute inset-0 z-0" style={{background:'linear-gradient(135deg, #0e0904 0%, #1a1009 40%, #0e0904 100%)'}}></div>
+      <div className="absolute inset-0 z-0 isometric-grid opacity-15"></div>
+      <div className="scan-line"></div>
+
+      {/* Decorative radial glow */}
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full pointer-events-none z-0"
+           style={{background:'radial-gradient(circle, rgba(255,140,0,0.07) 0%, transparent 70%)'}}></div>
+      <div className="absolute bottom-1/4 left-1/3 w-64 h-64 rounded-full pointer-events-none z-0"
+           style={{background:'radial-gradient(circle, rgba(82,183,136,0.05) 0%, transparent 70%)'}}></div>
+
+      <div className="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto pt-24 pb-16">
+        <div className="max-w-3xl">
+          {/* Label */}
+          <div className="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-8"
+               style={{borderColor:'rgba(255,140,0,0.3)', background:'rgba(255,140,0,0.06)'}}>
+            <span className="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
+            <span className="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F NAGPUR</span>
+          </div>
+
+          {/* Headline */}
+          <div className="hero-fade-2 mb-6">
+            <h1 className="leading-tight text-white mb-2"
+                style={{fontFamily:"'Space Grotesk', sans-serif", fontSize:'clamp(2.6rem,5vw,4.5rem)', fontWeight:800}}>
+              Nurturing the{' '}
+              <span style={{fontFamily:"'Playfair Display', serif", fontStyle:'italic', color:'#ff8c00'}}>
+                Spirit of Entrepreneurship
+              </span>
+            </h1>
+          </div>
+
+          {/* Subtext */}
+          <p className="hero-fade-3 text-on-surface-variant text-lg leading-relaxed max-w-2xl mb-10">
+            At the heart of innovation lies the spirit of entrepreneurship — and V3F Nagpur is committed to nurturing this spirit.
+            As VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.
+          </p>
+
+          {/* Breadcrumb pill trail */}
+          <div className="hero-fade-4 flex flex-wrap gap-3">
+            {[
+              {label:'Section 8 Company', color:'#ff8c00'},
+              {label:'Affiliated with VNIT Nagpur', color:'#52b788'},
+              {label:'Founder-First Ecosystem', color:'#ff8c00'},
+              {label:'Nagpur Region', color:'#52b788'},
+            ].map((tag, i) => (
+              <span key={i} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs"
+                    style={{background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.1)', color:tag.color}}>
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{background:tag.color}}></span>
+                {tag.label}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Decorative floating card */}
+        <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/3 float-anim"
+             style={{width:280}}>
+          <div className="glass-panel rounded-2xl p-6 border" style={{borderColor:'rgba(255,140,0,0.12)'}}>
+            <div className="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">QUICK FACTS</div>
+            {[
+              {icon:'domain', label:'VNIT Campus', val:'215 Acres'},
+              {icon:'groups', label:'Faculty Pool', val:'300+'},
+              {icon:'verified', label:'Legal Status', val:'Section 8'},
+              {icon:'account_balance', label:'Chairman', val:'Director, VNIT'},
+            ].map((f,i) => (
+              <div key={i} className="flex items-center gap-3 py-2.5 border-b last:border-0" style={{borderColor:'rgba(255,180,80,0.08)'}}>
+                <span className="material-symbols-outlined text-primary-fixed-dim text-lg">{f.icon}</span>
+                <div className="flex-1">
+                  <div className="text-on-surface-variant text-xs">{f.label}</div>
+                  <div className="text-on-surface font-semibold text-sm" style={{fontFamily:"'Space Grotesk', sans-serif"}}>{f.val}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll cue */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hero-fade-4 flex flex-col items-center gap-2 pointer-events-none">
+          <span className="font-label-mono text-xs text-white/30 tracking-widest">SCROLL</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent hero-scroll-line"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════ SECTION B: MISSION & SUPPORT ═══════════ */
+function AffiliationBox() {
+  return (
+    <div className="glass-panel-green rounded-xl p-5 flex items-start gap-4">
+      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+           style={{background:'rgba(82,183,136,0.15)'}}>
+        <span className="material-symbols-outlined text-forest-green-light text-xl">verified</span>
+      </div>
+      <div>
+        <div className="font-label-mono text-xs mb-2" style={{color:'#52b788'}}>VNIT AFFILIATION</div>
+        <p className="text-on-surface text-sm leading-relaxed">
+          V3F operates as a <strong>Section 8 company affiliated with VNIT Nagpur</strong>, with the Director of VNIT serving as Chairman of the Board of Directors.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function SupportItem({icon, title, desc, accent}) {
+  return (
+    <div className="flex items-start gap-4 p-4 rounded-xl transition-all"
+         style={{background:'rgba(255,255,255,0.03)'}}>
+      <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+           style={{background: accent === 'orange' ? 'rgba(255,140,0,0.12)' : 'rgba(82,183,136,0.12)'}}>
+        <span className="material-symbols-outlined text-xl" style={{color: accent === 'orange' ? '#ff8c00' : '#52b788'}}>{icon}</span>
+      </div>
+      <div>
+        <div className="font-semibold text-on-surface mb-1" style={{fontFamily:"'Space Grotesk', sans-serif"}}>{title}</div>
+        <p className="text-on-surface-variant text-sm leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function MissionSection() {
+  return (
+    <section id="about-mission" className="py-28 relative overflow-hidden">
+      <div className="absolute inset-0 isometric-grid opacity-8"></div>
+      <div className="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <div className="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3 fade-in">MISSION & ECOSYSTEM</div>
+          <div className="section-divider max-w-xs mx-auto mb-6"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          {/* Left Column */}
+          <div className="slide-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-on-surface"
+                style={{fontFamily:"'Playfair Display', serif"}}>
+              Building a <span className="gradient-text" style={{fontStyle:'italic'}}>Founder-First</span> Ecosystem
+            </h2>
+            <div className="space-y-5 text-on-surface-variant leading-relaxed">
+              <p className="text-base">
+                V3F Nagpur provides access to state-of-the-art facilities, a network of mentors, industry connections, and a supportive community that empowers startups to thrive. We aim to create an environment that encourages sustainable entrepreneurship and long-term ecosystem development.
+              </p>
+              <p className="text-base">
+                Incubated startups gain access to the broader VNIT innovation ecosystem — including faculty expertise, research infrastructure, student talent, industry partnerships, and investor networks.
+              </p>
+            </div>
+            <div className="mt-8">
+              <AffiliationBox />
+            </div>
+          </div>
+
+          {/* Right Column — Dark Card */}
+          <div className="slide-right">
+            <div className="glass-panel-dark rounded-2xl p-8 h-full">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background:'rgba(255,140,0,0.12)'}}>
+                  <span className="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
+                </div>
+                <h3 className="text-xl font-bold text-on-surface" style={{fontFamily:"'Space Grotesk', sans-serif"}}>
+                  How V3F Supports You
+                </h3>
+              </div>
+              <div className="space-y-4">
+                <SupportItem
+                  icon="domain"
+                  title="Infrastructure & Space"
+                  desc="Co-working seats, private cabins, labs, and meeting rooms on the VNIT campus."
+                  accent="orange"
+                />
+                <SupportItem
+                  icon="psychology"
+                  title="Mentoring & Guidance"
+                  desc="Matched mentors, quarterly milestones, and legal & financial advisory."
+                  accent="green"
+                />
+                <SupportItem
+                  icon="payments"
+                  title="Funding & Investor Access"
+                  desc="Demo days, angel connects, government grants, and CSR funding pathways."
+                  accent="orange"
+                />
+              </div>
+
+              {/* Bottom accent */}
+              <div className="mt-8 pt-6 border-t" style={{borderColor:'rgba(255,140,0,0.1)'}}>
+                <div className="flex items-center gap-2 text-on-surface-variant text-xs font-label-mono">
+                  <span className="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+                  18–36 MONTH INCUBATION PROGRAMS · ROLLING ADMISSIONS
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════ SECTION C: FEATURES GRID ═══════════════ */
+const features = [
+  { emoji:'🌱', title:'Founder-Friendly Approach', desc:'Our incubation framework is designed to support entrepreneurs with resources and guidance needed to build sustainable ventures — not just extract equity.', accent:'orange' },
+  { emoji:'🏆', title:'Competitive Landscape Awareness', desc:'Our policy is drafted considering the offerings of leading incubators across the region, ensuring startups receive best-in-class support.', accent:'green' },
+  { emoji:'♻️', title:'Long-Term Ecosystem Development', desc:'V3F fosters long-term entrepreneurial growth and sustainable businesses that contribute positively to society and the Nagpur region.', accent:'orange' },
+  { emoji:'🎓', title:'Incentives for VNIT Faculty', desc:"Faculty engagement in mentoring startups is recognised by VNIT during appraisal and professional evaluation processes.", accent:'green' },
+  { emoji:'💡', title:'Subsidised Services for VNIT Community', desc:'V3F provides subsidised access to incubation services for VNIT students and alumni — with significantly reduced fees compared to external applicants.', accent:'orange' },
+  { emoji:'⚡', title:'Operational Autonomy', desc:"V3F operates with functional autonomy to enable quick decision-making while remaining aligned with VNIT's broader institutional vision and policies.", accent:'green' },
+];
+
+function FeatureCard({emoji, title, desc, accent, delay}) {
+  const borderHoverColor = accent === 'orange' ? 'rgba(255,140,0,0.3)' : 'rgba(82,183,136,0.3)';
+  const accentBg = accent === 'orange' ? 'rgba(255,140,0,0.08)' : 'rgba(82,183,136,0.08)';
+  const accentColor = accent === 'orange' ? '#ff8c00' : '#52b788';
+
+  return (
+    <div className={`feature-card glass-panel rounded-2xl p-7 border fade-up ${delay}`}
+         style={{borderColor:'rgba(255,180,80,0.08)'}}>
+      <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5"
+           style={{background: accentBg}}>
+        {emoji}
+      </div>
+      <div className="w-8 h-0.5 rounded mb-4" style={{background: accentColor}}></div>
+      <h3 className="font-bold text-on-surface text-lg mb-3" style={{fontFamily:"'Space Grotesk', sans-serif"}}>
+        {title}
+      </h3>
+      <p className="text-on-surface-variant text-sm leading-relaxed">{desc}</p>
+    </div>
+  );
+}
+
+function FeaturesGrid() {
+  return (
+    <section id="about-features" className="py-28 relative overflow-hidden"
+             style={{background:'linear-gradient(to bottom, #0e0904, #080502, #0e0904)'}}>
+      <div className="absolute inset-0 isometric-grid opacity-8"></div>
+      <div className="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+        {/* Header */}
+        <div className="mb-16 fade-up">
+          <div className="font-label-mono text-xs text-forest-green-light tracking-widest mb-3">SALIENT FEATURES</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4"
+              style={{fontFamily:"'Playfair Display', serif"}}>
+            What Makes V3F <span className="gradient-text" style={{fontStyle:'italic'}}>Different</span>
+          </h2>
+          <p className="text-on-surface-variant text-lg max-w-xl">
+            Six core principles that define our approach to building a founder-centric, sustainable incubation ecosystem.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((f, i) => (
+            <FeatureCard
+              key={i}
+              {...f}
+              delay={`delay-${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════ SECTION D: BOARD OF DIRECTORS ══════════ */
+const boardMembers = [
+  {
+    name: 'Dr. Premlal Patel',
+    role: 'Chairman',
+    tag: 'Director, VNIT Nagpur',
+    desc: "Provides strategic direction and ensures alignment between V3F's operations and VNIT's broader institutional mission.",
+    tags: ['Strategy', 'Governance'],
+    accent: 'orange',
+    featured: true,
+  },
+  {
+    name: 'Shashikant Chaudhary',
+    role: 'Vice Chairman',
+    tag: '',
+    desc: "Supports the Chairman in strategic oversight and operational governance of the incubation centre.",
+    tags: ['Governance', 'Operations'],
+    accent: 'green',
+    featured: false,
+  },
+  {
+    name: 'Uday Kamat',
+    role: 'Board Member',
+    tag: '',
+    desc: "Strategic guidance and industry perspective on V3F's programs and ecosystem development.",
+    tags: ['Industry', 'Strategy'],
+    accent: 'orange',
+    featured: false,
+  },
+  {
+    name: 'Dr. Yashwant Kathpatal',
+    role: 'Board Member',
+    tag: '',
+    desc: "Academic expertise and research alignment ensuring V3F's programs reflect VNIT's academic strengths.",
+    tags: ['Academia', 'Research'],
+    accent: 'green',
+    featured: false,
+  },
+  {
+    name: 'Dr. R. B. Deshmukh',
+    role: 'Board Member',
+    tag: '',
+    desc: "Technical and domain expertise guiding V3F's focus areas and startup evaluation processes.",
+    tags: ['Technical', 'Evaluation'],
+    accent: 'orange',
+    featured: false,
+  },
+  {
+    name: 'Dr. Dilip Peshwe',
+    role: 'Board Member',
+    tag: '',
+    desc: "Institutional knowledge and policy guidance supporting V3F's governance framework.",
+    tags: ['Policy', 'Governance'],
+    accent: 'green',
+    featured: false,
+  },
+  {
+    name: 'Vivek Deshpande',
+    role: 'Board Member',
+    tag: '',
+    desc: "Industry connections and entrepreneurial experience enriching V3F's mentor and investor network.",
+    tags: ['Industry', 'Networking'],
+    accent: 'orange',
+    featured: false,
+  },
+];
+
+function BoardMemberCard({ member, delay }) {
+  const accentColor = member.accent === 'orange' ? '#ff8c00' : '#52b788';
+  const accentBg = member.accent === 'orange' ? 'rgba(255,140,0,0.1)' : 'rgba(82,183,136,0.1)';
+  const borderFeat = member.featured ? 'rgba(255,140,0,0.3)' : 'rgba(255,180,80,0.08)';
+
+  return (
+    <div className={`board-card glass-panel rounded-2xl p-6 border fade-up ${delay} relative overflow-hidden`}
+         style={{borderColor: borderFeat}}>
+      {member.featured && (
+        <div className="absolute top-4 right-4">
+          <span className="font-label-mono text-xs px-3 py-1 rounded-full border"
+                style={{background:'rgba(255,140,0,0.1)', borderColor:'rgba(255,140,0,0.3)', color:'#ff8c00'}}>
+            Chairman
+          </span>
+        </div>
+      )}
+      {/* Avatar ring */}
+      <div className="board-avatar w-16 h-16 rounded-full flex items-center justify-center mb-5 border-2"
+           style={{background: accentBg, borderColor: accentColor + '50'}}>
+        <span className="material-symbols-outlined text-3xl" style={{color: accentColor}}>person</span>
+      </div>
+
+      <h3 className="font-bold text-on-surface text-lg mb-1" style={{fontFamily:"'Space Grotesk', sans-serif"}}>
+        {member.name}
+      </h3>
+      <div className="font-label-mono text-xs mb-1" style={{color: accentColor}}>{member.role}</div>
+      {member.tag && <div className="text-on-surface-variant text-xs mb-3">{member.tag}</div>}
+      <p className="text-on-surface-variant text-sm leading-relaxed mb-4">{member.desc}</p>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-2">
+        {member.tags.map((t, i) => (
+          <span key={i} className="font-label-mono text-xs px-2.5 py-1 rounded-full"
+                style={{background: accentBg, color: accentColor}}>
+            {t}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BoardSection() {
+  return (
+    <section id="about-board" className="py-28 relative overflow-hidden bg-surface-container-lowest">
+      <div className="absolute inset-0 isometric-grid opacity-10"></div>
+      <div className="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+        {/* Header */}
+        <div className="flex items-center gap-8 mb-6">
+          <div className="h-px flex-1 bg-outline-variant/30"></div>
+          <h2 className="font-bold text-3xl text-center shrink-0 fade-in"
+              style={{fontFamily:"'Playfair Display', serif", color:'#e8ddd0'}}>
+            Board of Directors
+          </h2>
+          <div className="h-px flex-1 bg-outline-variant/30"></div>
+        </div>
+        <p className="text-on-surface-variant text-center max-w-2xl mx-auto mb-16 fade-up text-base leading-relaxed">
+          V3F Nagpur is governed by a distinguished board comprising VNIT leadership, industry veterans, and academic experts.
+        </p>
+
+        {/* Featured — Chairman row */}
+        <div className="mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {boardMembers.filter(m => m.featured).map((m, i) => (
+              <div key={m.name} className="lg:col-span-1">
+                <BoardMemberCard member={m} delay="delay-1" />
+              </div>
+            ))}
+            {/* Vice Chairman & one more in featured row */}
+            {boardMembers.filter(m => !m.featured).slice(0,2).map((m, i) => (
+              <BoardMemberCard key={m.name} member={m} delay={`delay-${i+2}`} />
+            ))}
+          </div>
+        </div>
+
+        {/* Remaining members */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {boardMembers.filter(m => !m.featured).slice(2).map((m, i) => (
+            <BoardMemberCard key={m.name} member={m} delay={`delay-${i+1}`} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════ SECTION E: GOVERNANCE ══════════════════ */
+const govChecks = [
+  "The Director of VNIT Nagpur chairs the Board of Directors",
+  "Operational activities are reported to the Board quarterly",
+  "Policy revisions are made periodically by the Governing Board",
+  "Faculty startup and IPR matters are guided by VNIT policies",
+  "Disputes are resolved through mediation or arbitration",
+  "All startups submit audited financial statements annually",
+];
+
+const govFrameworks = [
+  {
+    icon: 'how_to_vote',
+    title: 'Selection Authority',
+    desc: 'Final incubation decisions rest with the V3F Governing Board or an authorised committee.',
+    accent: 'orange',
+  },
+  {
+    icon: 'patent',
+    title: 'IP Ownership',
+    desc: 'IP created using VNIT resources is governed by the VNIT IPR Policy.',
+    accent: 'green',
+  },
+  {
+    icon: 'trending_up',
+    title: 'Exit Strategy',
+    desc: 'V3F exits equity via founder buyback, secondary share sale, or acquisition — timing determined by the Governing Board.',
+    accent: 'orange',
+  },
+];
+
+function GovernanceSection() {
+  return (
+    <section id="about-governance" className="py-28 relative overflow-hidden">
+      <div className="absolute inset-0" style={{background:'linear-gradient(135deg, rgba(45,106,79,0.03) 0%, transparent 50%, rgba(255,140,0,0.03) 100%)'}}></div>
+      <div className="absolute inset-0 isometric-grid opacity-8"></div>
+      <div className="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+        {/* Header */}
+        <div className="mb-16 fade-up">
+          <div className="font-label-mono text-xs tracking-widest mb-3" style={{color:'#52b788'}}>TRANSPARENCY & ACCOUNTABILITY</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4"
+              style={{fontFamily:"'Playfair Display', serif"}}>
+            Governance <span className="gradient-text-green" style={{fontStyle:'italic'}}>Structure</span>
+          </h2>
+          <p className="text-on-surface-variant text-lg max-w-xl">
+            V3F operates with clearly defined accountability structures to ensure transparency, fairness, and institutional alignment.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          {/* Left — Accountability Checklist */}
+          <div className="slide-left">
+            <div className="glass-panel rounded-2xl p-8 border" style={{borderColor:'rgba(82,183,136,0.12)'}}>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{background:'rgba(82,183,136,0.12)'}}>
+                  <span className="material-symbols-outlined" style={{color:'#52b788'}}>verified_user</span>
+                </div>
+                <h3 className="text-xl font-bold text-on-surface" style={{fontFamily:"'Space Grotesk', sans-serif"}}>
+                  Accountability Framework
+                </h3>
+              </div>
+              <ul className="space-y-4">
+                {govChecks.map((item, i) => (
+                  <li key={i} className="gov-check flex items-start gap-3 py-2 border-b last:border-0"
+                      style={{borderColor:'rgba(255,180,80,0.06)'}}>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                         style={{background:'rgba(82,183,136,0.15)'}}>
+                      <span className="material-symbols-outlined text-xs" style={{color:'#52b788', fontSize:'14px'}}>check</span>
+                    </div>
+                    <span className="text-on-surface-variant text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Right — Framework Cards */}
+          <div className="slide-right space-y-5">
+            <div className="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-6">KEY POLICY FRAMEWORKS</div>
+            {govFrameworks.map((fw, i) => {
+              const c = fw.accent === 'orange' ? '#ff8c00' : '#52b788';
+              const bg = fw.accent === 'orange' ? 'rgba(255,140,0,0.08)' : 'rgba(82,183,136,0.08)';
+              return (
+                <div key={i} className={`feature-card glass-panel rounded-xl p-6 border fade-up delay-${i+1}`}
+                     style={{borderColor:'rgba(255,180,80,0.08)'}}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{background: bg}}>
+                      <span className="material-symbols-outlined text-xl" style={{color: c}}>{fw.icon}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-on-surface mb-2" style={{fontFamily:"'Space Grotesk', sans-serif"}}>{fw.title}</h4>
+                      <p className="text-on-surface-variant text-sm leading-relaxed">{fw.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Bottom CTA */}
+            <div className="glass-panel rounded-xl p-6 border mt-6"
+                 style={{borderColor:'rgba(255,140,0,0.15)', background:'rgba(255,140,0,0.04)'}}>
+              <div className="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">JOIN THE ECOSYSTEM</div>
+              <p className="text-on-surface-variant text-sm mb-5">
+                Ready to build your startup within a structured, transparent, and founder-friendly incubation environment?
+              </p>
+              <a href="index.html#contact"
+                 className="inline-flex items-center gap-2 bg-primary-container text-on-primary font-bold px-6 py-2.5 rounded-full text-sm hover:shadow-[0_0_20px_rgba(255,140,0,0.25)] active:scale-95 transition-all">
+                Apply for Incubation
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════ FOOTER ══════════════════════════════════ */
+function Footer() {
+  return (
+    <footer className="w-full py-16 bg-surface-container-lowest border-t border-outline-variant/30">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 px-4 md:px-16 max-w-[1440px] mx-auto">
+        <div className="md:col-span-4 space-y-6">
+          <div className="text-xl font-bold" style={{fontFamily:"'Space Grotesk', sans-serif"}}>
+            <span className="gradient-text">V3F</span>{' '}
+            <span className="text-on-surface">NAGPUR</span>
+          </div>
+          <p className="text-on-surface-variant text-sm leading-relaxed">
+            VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development through structured incubation support at VNIT Nagpur.
+          </p>
+          <div className="text-on-surface-variant text-xs font-label-mono">
+            Section 8 Company · Affiliated with VNIT Nagpur<br/>
+            South Ambazari Road, Nagpur — 440010, MH
+          </div>
+          <div className="text-on-surface-variant/60 text-xs font-label-mono">
+            © 2025 V3F NAGPUR. ALL RIGHTS RESERVED.
+          </div>
+        </div>
+        <div className="md:col-span-2">
+          <h4 className="font-label-mono text-xs text-primary mb-6 tracking-widest">PROGRAMS</h4>
+          <ul className="space-y-4">
+            {['Pre-Incubation','Incubation','Co-Working','Funding Support'].map(l => (
+              <li key={l}><a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="index.html#programs">{l}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:col-span-2">
+          <h4 className="font-label-mono text-xs text-primary mb-6 tracking-widest">ABOUT</h4>
+          <ul className="space-y-4">
+            {[
+              {l:'About V3F', h:'about.html'},
+              {l:'Board of Directors', h:'#about-board'},
+              {l:'Governance', h:'#about-governance'},
+              {l:'VNIT Nagpur', h:'https://vnit.ac.in'},
+            ].map(({l,h}) => (
+              <li key={l}><a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href={h}>{l}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:col-span-4">
+          <h4 className="font-label-mono text-xs text-primary mb-6 tracking-widest">CONNECT</h4>
+          <div className="space-y-4">
+            {[
+              {icon:'send', label:'Apply Now', h:'index.html#contact'},
+              {icon:'psychology', label:'Become a Mentor', h:'index.html#contact'},
+              {icon:'mail', label:'Contact Us', h:'index.html#contact'},
+              {icon:'open_in_new', label:'VNIT Nagpur', h:'https://vnit.ac.in'},
+            ].map(({icon,label,h}) => (
+              <a key={label} href={h} className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
+                <span className="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">{icon}</span>
+                <span className="font-label-mono text-xs">{label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ═══════════════════════ APP ROOT ═══════════════════════════════ */
+function App() {
+  useScrollAnimation();
+  useSideNav();
+
+  return (
+    <main>
+      <Hero />
+      <MissionSection />
+      <FeaturesGrid />
+      <BoardSection />
+      <GovernanceSection />
+      <Footer />
+    </main>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
