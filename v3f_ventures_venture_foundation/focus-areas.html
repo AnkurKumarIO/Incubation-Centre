@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Focus Areas — V3F Nagpur | VNIT Incubation Centre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{
+    colors:{
+      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
+      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
+      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
+      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
+      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
+      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
+      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
+      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
+      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
+      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
+      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
+      "surface-container-low":"#150f06",
+    },
+    borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
+    fontFamily:{
+      "headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],
+      "headline-md":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],
+      "label-mono":["JetBrains Mono"],"label-caps":["JetBrains Mono"],
+    }
+  }}
+}
+</script>
+<style>
+  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
+  .glass-panel { background:rgba(255,200,100,0.03); backdrop-filter:blur(12px); border:1px solid rgba(255,180,80,0.08); }
+  .glow-cyan  { box-shadow:0 0 15px rgba(255,140,0,0.25); }
+  .glow-coral { box-shadow:0 0 15px rgba(255,107,53,0.35); }
+  .isometric-grid {
+    background-image:
+      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+  .gradient-text { background:linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .card-hover { transition:transform 0.3s ease,box-shadow 0.3s ease; }
+  .card-hover:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(255,140,0,0.1); }
+  .nav-link { position:relative; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link:hover::after { width:100%; }
+  .fade-up { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease,transform 0.7s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+  .fade-in { opacity:0; transition:opacity 0.8s ease; }
+  .fade-in.visible { opacity:1; }
+  .delay-1{transition-delay:0.1s} .delay-2{transition-delay:0.2s} .delay-3{transition-delay:0.3s}
+  .delay-4{transition-delay:0.4s} .delay-5{transition-delay:0.5s} .delay-6{transition-delay:0.6s}
+  :target { scroll-margin-top:100px; }
+  .filter-pill { cursor:pointer; transition:all 0.2s ease; }
+  .filter-pill.active { background:rgba(255,140,0,0.15); border-color:rgba(255,140,0,0.6); color:#ff8c00; }
+  @keyframes scanline { 0%{top:-5%} 100%{top:105%} }
+  .scan-line { position:fixed; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,rgba(255,140,0,0.4),transparent); animation:scanline 8s linear infinite; pointer-events:none; z-index:100; }
+  @keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+  .ping-slow { animation:ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+</style>
+</head>
+<body class="font-body-md antialiased">
+<div class="scan-line"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#programs">Programs</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="focus-areas.html" style="border-bottom:1px solid #ff8c00;">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#advisors">Advisors</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-cyan active:scale-95 transition-all text-sm">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO STRIP -->
+<div class="relative pt-20 pb-16 overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-12">
+    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-primary-fixed-dim">Focus Areas</span>
+    </div>
+    <div class="max-w-2xl">
+      <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">FOCUS AREAS</div>
+      <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4" style="font-family:'Space Grotesk',sans-serif;">
+        Sectors at the<br/><span class="gradient-text">Frontier of Innovation</span>
+      </h1>
+      <p class="text-on-surface-variant text-lg leading-relaxed">
+        V3F supports innovation-driven startups across high-impact sectors aligned with national priorities. Our focus areas evolve based on industry trends and ecosystem opportunities.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER PILLS -->
+<div class="sticky top-20 z-40 bg-background/90 backdrop-blur-xl border-b border-outline-variant/20 py-4">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto flex flex-wrap gap-2" id="filter-bar">
+    <button onclick="filterSector('all')" class="filter-pill active font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="all">All Sectors</button>
+    <button onclick="filterSector('deep-tech')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="deep-tech">Deep Technology</button>
+    <button onclick="filterSector('ai-digital')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="ai-digital">AI & Digital</button>
+    <button onclick="filterSector('manufacturing')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="manufacturing">Manufacturing</button>
+    <button onclick="filterSector('clean-energy')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="clean-energy">Clean Energy</button>
+    <button onclick="filterSector('healthcare')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="healthcare">Healthcare</button>
+    <button onclick="filterSector('emerging')" class="filter-pill font-label-mono text-xs px-4 py-2 rounded-full border border-outline-variant/40 text-on-surface-variant" data-sector="emerging">Emerging</button>
+  </div>
+</div>
+
+<!-- SECTORS DETAIL — 2-col grid matching reference design -->
+<main class="py-16 px-4 md:px-16 max-w-[1440px] mx-auto" id="sectors-list">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="sectors-grid">
+
+    <!-- ── Deep Technology ── -->
+    <div id="deep-tech" class="sector-item" data-sector="deep-tech">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">biotech</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Deep Technology</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Startups working on foundational technology breakthroughs — robotics, advanced materials, quantum computing, semiconductors, and hardware innovation. V3F provides access to VNIT's world-class research labs and faculty expertise in these domains.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Robotics</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Hardware</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Materials Science</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── AI & Digital Technologies ── -->
+    <div id="ai-digital" class="sector-item" data-sector="ai-digital">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-1">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-coral-accent/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-coral-accent text-2xl">smart_toy</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Artificial Intelligence & Digital Technologies</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Machine learning, SaaS products, data analytics, computer vision, NLP, and enterprise software. VNIT's strong computer science faculty provides unmatched support for AI-first startups.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">AI/ML</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">SaaS</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Data Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Manufacturing & Engineering ── -->
+    <div id="manufacturing" class="sector-item" data-sector="manufacturing">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up delay-2">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">precision_manufacturing</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Manufacturing & Engineering</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Industrial automation, precision engineering, smart manufacturing, Industry 4.0 technologies, and supply chain innovation. Nagpur's central location and industrial base make it an ideal launchpad for manufacturing startups.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Industry 4.0</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Automation</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Engineering</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Clean Energy & Sustainability ── -->
+    <div id="clean-energy" class="sector-item" data-sector="clean-energy">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up delay-3">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">energy_savings_leaf</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Clean Energy & Sustainability</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Renewable energy, climate technology, energy efficiency, green infrastructure, circular economy, and environmental monitoring. Aligned with India's net-zero commitments and growing green investment landscape.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">CleanTech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Renewables</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Climate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Healthcare Technologies ── -->
+    <div id="healthcare" class="sector-item" data-sector="healthcare">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-4">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-coral-accent/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-coral-accent text-2xl">health_and_safety</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Healthcare Technologies</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Medical devices, diagnostics, digital health, telemedicine, health analytics, and biotech. VNIT's engineering expertise enables unique cross-disciplinary innovation in healthcare technology development.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">MedTech</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Diagnostics</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Digital Health</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Emerging Sectors ── -->
+    <div id="emerging" class="sector-item" data-sector="emerging">
+      <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-dashed border-outline-variant/40 hover:border-primary-fixed-dim/40 card-hover transition-colors fade-up delay-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-primary-fixed-dim/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">auto_awesome</span>
+          </div>
+          <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Space Grotesk',sans-serif;">Emerging Sectors</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">V3F's focus areas evolve with the times. We are open to supporting breakthrough startups in other sectors that align with national innovation priorities — space tech, agritech, edtech, fintech, and beyond.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Agritech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Edtech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Space Tech</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+</main>
+
+<!-- CTA STRIP -->
+<section class="py-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center border border-primary-fixed-dim/20 relative overflow-hidden">
+    <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+    <div class="relative z-10">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">READY TO BUILD?</div>
+      <h2 class="font-black text-3xl md:text-4xl mb-4" style="font-family:'Space Grotesk',sans-serif;">Building in One of These Sectors?</h2>
+      <p class="text-on-surface-variant text-lg max-w-lg mx-auto mb-8">Apply for incubation at V3F Nagpur and gain access to VNIT's world-class research infrastructure, expert mentors, and investor network.</p>
+      <div class="flex gap-3 justify-center flex-wrap">
+        <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-8 py-3.5 rounded-full hover:glow-cyan active:scale-95 transition-all inline-flex items-center gap-2 text-sm">
+          Apply for Incubation <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="index.html#contact" class="px-8 py-3.5 border border-outline/30 rounded-full font-bold hover:bg-surface-variant transition-all text-sm">
+          Talk to Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t border-outline-variant/30 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="flex items-center gap-2">
+      <span class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant text-sm">NAGPUR · VNIT Incubation Centre</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="index.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Home</a>
+      <a href="index.html#programs" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Programs</a>
+      <a href="index.html#contact" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Apply Now</a>
+    </div>
+    <div class="font-label-mono text-xs text-on-surface-variant/50">© 2025 V3F Nagpur. Section 8 Company.</div>
+  </div>
+</footer>
+
+<script>
+// Filter logic
+function filterSector(sector) {
+  // Update pills
+  document.querySelectorAll('.filter-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.sector === sector);
+  });
+  // Show/hide sector items
+  const grid = document.getElementById('sectors-grid');
+  document.querySelectorAll('.sector-item').forEach(item => {
+    const show = sector === 'all' || item.dataset.sector === sector;
+    item.style.display = show ? 'block' : 'none';
+  });
+  // When filtering to single sector, make it full-width; restore grid otherwise
+  if (sector !== 'all') {
+    grid.className = 'grid grid-cols-1 gap-5';
+    document.getElementById('sectors-list').scrollIntoView({ behavior:'smooth', block:'start' });
+  } else {
+    grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-5';
+  }
+}
+
+// Scroll-triggered fade-ups
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Hash-based deep link — highlight & scroll to sector on load
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash.replace('#','');
+  if (hash && hash !== 'all') {
+    filterSector(hash);
+    const el = document.getElementById(hash);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior:'smooth', block:'start' }), 300);
+  }
+});
+</script>
+</body>
+</html>
