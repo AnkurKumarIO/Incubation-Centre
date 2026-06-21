@@ -634,67 +634,128 @@ tailwind.config = {
 <section id="focus" class="py-24 bg-surface-container-lowest relative overflow-hidden">
   <div class="absolute inset-0 isometric-grid opacity-10"></div>
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-    <div class="flex items-center gap-8 mb-16">
-      <div class="h-px flex-1 bg-outline-variant/30"></div>
-      <h2 class="font-headline-lg text-3xl font-bold text-center shrink-0 fade-in">SECTORS WE CHAMPION</h2>
-      <div class="h-px flex-1 bg-outline-variant/30"></div>
+
+    <!-- Header -->
+    <div class="mb-6 fade-up">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">FOCUS AREAS</div>
+      <h2 class="font-headline-lg text-4xl font-bold mb-3">Sectors at the <span class="gradient-text">Frontier of Innovation</span></h2>
+      <p class="text-on-surface-variant text-lg max-w-2xl">V3F supports innovation-driven startups across high-impact sectors aligned with national priorities. Our focus areas evolve based on industry trends and ecosystem opportunities.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-1 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">biotech</span>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+      <!-- Deep Technology -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-1 group border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">biotech</span>
+          </div>
+          <div class="font-bold text-lg">Deep Technology</div>
         </div>
-        <div>
-          <div class="font-bold mb-1">Deep Technology</div>
-          <div class="text-on-surface-variant text-sm">Hardware, robotics, advanced materials</div>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-2 group flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-coral-accent text-xl">smart_toy</span>
-        </div>
-        <div>
-          <div class="font-bold mb-1">AI & Digital Technologies</div>
-          <div class="text-on-surface-variant text-sm">Machine learning, SaaS, data analytics</div>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-3 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">precision_manufacturing</span>
-        </div>
-        <div>
-          <div class="font-bold mb-1">Manufacturing & Engineering</div>
-          <div class="text-on-surface-variant text-sm">Industrial innovation, automation</div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Startups working on foundational technology breakthroughs — robotics, advanced materials, quantum computing, semiconductors, and hardware innovation. V3F provides access to VNIT's world-class research labs and faculty expertise in these domains.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Robotics</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Hardware</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Materials Science</span>
         </div>
       </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-4 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">energy_savings_leaf</span>
+
+      <!-- AI & Digital Technologies -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-2 group border border-outline-variant/20 hover:border-coral-accent/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
+            <span class="material-symbols-outlined text-coral-accent text-2xl">smart_toy</span>
+          </div>
+          <div class="font-bold text-lg">AI & Digital Technologies</div>
         </div>
-        <div>
-          <div class="font-bold mb-1">Clean Energy & Sustainability</div>
-          <div class="text-on-surface-variant text-sm">Renewables, climate tech, green infra</div>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-5 group flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-coral-accent text-xl">health_and_safety</span>
-        </div>
-        <div>
-          <div class="font-bold mb-1">Healthcare Technologies</div>
-          <div class="text-on-surface-variant text-sm">Medtech, diagnostics, digital health</div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Machine learning, SaaS products, data analytics, computer vision, NLP, and enterprise software. VNIT's strong computer science faculty provides unmatched support for AI-first startups.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">AI/ML</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">SaaS</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Data Analytics</span>
         </div>
       </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-6 group flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">auto_awesome</span>
+
+      <!-- Manufacturing & Engineering -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-3 group border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">precision_manufacturing</span>
+          </div>
+          <div class="font-bold text-lg">Manufacturing & Engineering</div>
         </div>
-        <div>
-          <div class="font-bold mb-1">Emerging Sectors</div>
-          <div class="text-on-surface-variant text-sm">Aligned with national innovation priorities</div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Industrial automation, precision engineering, smart manufacturing, Industry 4.0 technologies, and supply chain innovation. Nagpur's central location and industrial base make it an ideal launchpad for manufacturing startups.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Industry 4.0</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Automation</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Engineering</span>
         </div>
+      </div>
+
+      <!-- Clean Energy & Sustainability -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-4 group border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">energy_savings_leaf</span>
+          </div>
+          <div class="font-bold text-lg">Clean Energy & Sustainability</div>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Renewable energy, climate technology, energy efficiency, green infrastructure, circular economy, and environmental monitoring. Aligned with India's net-zero commitments and growing green investment landscape.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">CleanTech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Renewables</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Climate</span>
+        </div>
+      </div>
+
+      <!-- Healthcare Technologies -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-5 group border border-outline-variant/20 hover:border-coral-accent/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
+            <span class="material-symbols-outlined text-coral-accent text-2xl">health_and_safety</span>
+          </div>
+          <div class="font-bold text-lg">Healthcare Technologies</div>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Medical devices, diagnostics, digital health, telemedicine, health analytics, and biotech. VNIT's engineering expertise enables unique cross-disciplinary innovation in healthcare technology development.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">MedTech</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Diagnostics</span>
+          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-1 rounded font-label-mono">Digital Health</span>
+        </div>
+      </div>
+
+      <!-- Emerging Sectors -->
+      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-6 group border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-colors flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">auto_awesome</span>
+          </div>
+          <div class="font-bold text-lg">Emerging Sectors</div>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">V3F's focus areas evolve with the times. We are open to supporting breakthrough startups in sectors aligned with national innovation priorities — space tech, agritech, edtech, fintech, and beyond.</p>
+        <div class="flex flex-wrap gap-2 mt-auto pt-2">
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Agritech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Edtech</span>
+          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Space Tech</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 glass-panel rounded-xl p-10 text-center fade-up border border-primary-fixed-dim/20">
+      <h3 class="text-2xl font-bold mb-3">Building in One of These Sectors?</h3>
+      <p class="text-on-surface-variant mb-6 max-w-lg mx-auto">Apply for incubation at V3F Nagpur and gain access to VNIT's world-class research infrastructure, expert mentors, and investor network.</p>
+      <div class="flex gap-3 justify-center flex-wrap">
+        <a href="#contact" class="bg-primary-container text-on-primary font-bold px-7 py-3 rounded-full hover:glow-cyan transition-all active:scale-95 inline-flex items-center gap-2 text-sm">
+          Apply for Incubation <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="#contact" class="px-7 py-3 border border-outline/30 rounded-full font-bold hover:bg-surface-variant transition-all text-sm">
+          Talk to Us
+        </a>
       </div>
     </div>
+
   </div>
 </section>
 
