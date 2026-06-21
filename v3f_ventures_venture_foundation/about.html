@@ -233,6 +233,7 @@
       <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#programs">Programs</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#focus">Focus Areas</a>
       <a class="nav-link text-primary font-bold font-label-mono text-sm" href="about.html">About</a>
+      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#contact">Contact</a>
     </div>
     <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,140,0,0.25)] active:scale-95 transition-all text-sm">
@@ -287,11 +288,21 @@ function useSideNav() {
 
     function updateArc() {
       const scrollY = window.pageYOffset + window.innerHeight * 0.4;
+      let activeSection = sectionIds[0];
+      sectionEls.forEach((el) => {
+        if (el && el.offsetTop <= scrollY) activeSection = el.id;
+      });
+
       let activeIdx = 0;
-      sectionEls.forEach((el, i) => { if (el && el.offsetTop <= scrollY) activeIdx = i; });
-      items.forEach((item, i) => item.classList.toggle('arc-active', i === activeIdx));
+      items.forEach((item, i) => {
+        const href = item.getAttribute('href');
+        const isSecActive = (href === '#' + activeSection);
+        item.classList.toggle('arc-active', isSecActive);
+        if (isSecActive) activeIdx = i;
+      });
+
       if (trackFill) {
-        const pct = sectionIds.length > 1 ? (activeIdx / (sectionIds.length - 1)) * 100 : 0;
+        const pct = items.length > 1 ? (activeIdx / (items.length - 1)) * 100 : 0;
         trackFill.style.height = pct + '%';
       }
     }
@@ -306,8 +317,12 @@ function useSideNav() {
 
     items.forEach(item => {
       item.addEventListener('click', e => {
-        e.preventDefault();
         const href = item.getAttribute('href');
+        if (href && !href.startsWith('#')) {
+          // Allow external redirection normally
+          return;
+        }
+        e.preventDefault();
         if (href && href !== '#') {
           const target = document.querySelector(href);
           if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -871,9 +886,6 @@ function Footer() {
             Section 8 Company · Affiliated with VNIT Nagpur<br/>
             South Ambazari Road, Nagpur — 440010, MH
           </div>
-          <div className="text-on-surface-variant/60 text-xs font-label-mono">
-            © 2025 V3F NAGPUR. ALL RIGHTS RESERVED.
-          </div>
         </div>
         <div className="md:col-span-2">
           <h4 className="font-label-mono text-xs text-primary mb-6 tracking-widest">PROGRAMS</h4>
@@ -890,6 +902,7 @@ function Footer() {
               {l:'About V3F', h:'about.html'},
               {l:'Board of Directors', h:'#about-board'},
               {l:'Governance', h:'#about-governance'},
+              {l:'Frequently Asked Questions', h:'faq.html'},
               {l:'VNIT Nagpur', h:'https://vnit.ac.in'},
             ].map(({l,h}) => (
               <li key={l}><a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href={h}>{l}</a></li>
@@ -911,6 +924,20 @@ function Footer() {
               </a>
             ))}
           </div>
+        </div>
+      </div>
+      
+      {/* Footer links in the last bottom center */}
+      <div className="mt-12 pt-8 border-t border-outline-variant/10 text-center space-y-4">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="index.html">Home</a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="programs.html">Programs</a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="focus-areas.html">Focus Areas</a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="about.html">About</a>
+          <a className="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="faq.html">FAQ</a>
+        </div>
+        <div className="text-on-surface-variant/60 text-xs font-label-mono">
+          © 2025 V3F NAGPUR. ALL RIGHTS RESERVED.
         </div>
       </div>
     </footer>
