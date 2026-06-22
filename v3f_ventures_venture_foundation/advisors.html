@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advisory Board — V3F Nagpur | VNIT Incubation Centre</title>
+<meta name="description" content="Meet the V3F Nagpur Advisory Board — seasoned leaders from industry, academia, and government shaping the future of India's startup ecosystem." />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{
+    colors:{
+      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
+      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
+      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
+      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
+      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
+      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
+      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
+      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
+      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
+      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
+      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
+      "surface-container-low":"#150f06",
+    },
+    borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
+    fontFamily:{
+      "headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],
+      "headline-md":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],
+      "label-mono":["JetBrains Mono"],"label-caps":["JetBrains Mono"],
+    }
+  }}
+}
+</script>
+<style>
+  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
+  .glass-panel { background:rgba(255,200,100,0.03); backdrop-filter:blur(12px); border:1px solid rgba(255,180,80,0.08); }
+  .glow-amber { box-shadow:0 0 20px rgba(255,140,0,0.25); }
+  .isometric-grid {
+    background-image:
+      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+    background-size:40px 40px;
+  }
+  .gradient-text { background:linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .nav-link { position:relative; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link:hover::after { width:100%; }
+  .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+  .fade-in { opacity:0; transition:opacity 0.8s ease; }
+  .fade-in.visible { opacity:1; }
+  .slide-left { opacity:0; transform:translateX(-32px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .slide-left.visible { opacity:1; transform:translateX(0); }
+  .delay-1{transition-delay:0.08s} .delay-2{transition-delay:0.16s} .delay-3{transition-delay:0.24s}
+  .delay-4{transition-delay:0.32s} .delay-5{transition-delay:0.40s} .delay-6{transition-delay:0.48s}
+
+  /* Scanline */
+  @keyframes scanline { 0%{top:-5%} 100%{top:105%} }
+  .scan-line { position:fixed; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,rgba(255,140,0,0.35),transparent); animation:scanline 8s linear infinite; pointer-events:none; z-index:100; }
+
+  /* Advisor card */
+  .advisor-card {
+    position:relative;
+    background:rgba(255,200,100,0.025);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,180,80,0.1);
+    border-radius:1.25rem;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow:hidden;
+  }
+  .advisor-card:hover {
+    transform:translateY(-5px);
+    border-color:rgba(255,140,0,0.35);
+    box-shadow:0 20px 48px rgba(255,140,0,0.09);
+  }
+
+  /* Crosshair corners */
+  .advisor-card::before, .advisor-card::after {
+    content:''; position:absolute; width:12px; height:12px;
+    border-color:rgba(255,140,0,0.25); border-style:solid; pointer-events:none;
+    transition:border-color 0.3s;
+  }
+  .advisor-card::before { top:10px; left:10px; border-width:1px 0 0 1px; }
+  .advisor-card::after  { bottom:10px; right:10px; border-width:0 1px 1px 0; }
+  .advisor-card:hover::before, .advisor-card:hover::after { border-color:rgba(255,140,0,0.65); }
+
+  /* Lead advisor card special styling */
+  .advisor-card.lead { border-color:rgba(255,140,0,0.4); }
+  .advisor-card.lead::before, .advisor-card.lead::after { border-color:rgba(255,140,0,0.5); }
+
+  /* Avatar initials (fallback) */
+  .advisor-avatar {
+    width:72px; height:72px; border-radius:50%;
+    background:rgba(255,140,0,0.12);
+    border:2px solid rgba(255,140,0,0.3);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700; font-size:1.3rem;
+    color:#ff8c00;
+    flex-shrink:0;
+    letter-spacing:-0.02em;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  .advisor-card:hover .advisor-avatar {
+    border-color: rgba(255,140,0,0.6);
+    background: rgba(255,140,0,0.18);
+  }
+
+  /* Coral avatar variant */
+  .advisor-avatar.coral {
+    background:rgba(255,107,53,0.12);
+    border-color:rgba(255,107,53,0.3);
+    color:#ff6b35;
+  }
+  .advisor-card:hover .advisor-avatar.coral {
+    border-color: rgba(255,107,53,0.6);
+    background: rgba(255,107,53,0.18);
+  }
+
+  /* Real photo avatar */
+  .advisor-photo {
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center top;
+    flex-shrink:0;
+    border:2px solid rgba(255,140,0,0.35);
+    box-shadow:0 0 18px rgba(255,140,0,0.18);
+    transition:border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .advisor-card:hover .advisor-photo {
+    border-color:rgba(255,140,0,0.65);
+    box-shadow:0 0 26px rgba(255,140,0,0.28);
+  }
+  .advisor-photo.coral-border {
+    border-color:rgba(255,107,53,0.35);
+    box-shadow:0 0 18px rgba(255,107,53,0.18);
+  }
+  .advisor-card:hover .advisor-photo.coral-border {
+    border-color:rgba(255,107,53,0.65);
+    box-shadow:0 0 26px rgba(255,107,53,0.28);
+  }
+
+  /* Tag styles */
+  .tag-amber { background:rgba(255,140,0,0.1); color:#ff8c00; border:1px solid rgba(255,140,0,0.2); }
+  .tag-coral  { background:rgba(255,107,53,0.1); color:#ff6b35; border:1px solid rgba(255,107,53,0.2); }
+  .tag-teal   { background:rgba(82,183,136,0.1); color:#52b788; border:1px solid rgba(82,183,136,0.2); }
+
+  /* Hairline */
+  .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); }
+
+  /* Lead badge */
+  .lead-badge {
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    background:#ff8c00; color:#3d1c00;
+    padding:4px 12px; border-radius:9999px;
+  }
+
+  /* Role label */
+  .role-label {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; font-weight:600; letter-spacing:0.05em;
+  }
+
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  :target { scroll-margin-top:100px; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:#0e0904; }
+  ::-webkit-scrollbar-thumb { background:rgba(255,140,0,0.3); border-radius:3px; }
+
+  /* Accent bar on top of card */
+  .accent-bar-top { height:2px; width:100%; }
+
+  /* Filter pills */
+  .filter-pill { cursor:pointer; transition:all 0.2s ease; }
+  .filter-pill.active { background:rgba(255,140,0,0.15); border-color:rgba(255,140,0,0.6); color:#ff8c00; }
+</style>
+</head>
+<body class="font-body-md antialiased">
+<div class="scan-line"></div>
+
+<!-- ── NAV ── -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
+    <a href="index.html" class="flex items-center gap-2">
+      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="advisors.html" style="border-bottom:1px solid #ff8c00;">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
+    </div>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO STRIP ── -->
+<div class="relative pt-20 pb-16 overflow-hidden">
+  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
+
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-14">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6 fade-in">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-primary-fixed-dim">Advisory Board</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-2xl">
+        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3 fade-in">OUR ADVISORS</div>
+        <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4 fade-up" style="font-family:'Space Grotesk',sans-serif;">
+          Guided by<br/><span class="gradient-text">Seasoned Leaders</span>
+        </h1>
+        <p class="text-on-surface-variant text-lg leading-relaxed fade-up delay-1">
+          V3F's Advisory Board comprises accomplished professionals who shape the incubator's strategic direction — from policy and governance to global investment and frontier technology. They guide V3F itself, distinct from Mentors who work directly with individual startups.
+        </p>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="flex flex-col gap-3 shrink-0 fade-up delay-2">
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">groups</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">6</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Advisors</div>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-coral-accent text-2xl">public</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">Global</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Industry reach</div>
+          </div>
+        </div>
+        <div class="glass-panel rounded-xl px-6 py-4 flex items-center gap-4">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">domain</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">5</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Expertise domains</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clarification note -->
+    <div class="mt-10 p-5 rounded-xl flex items-start gap-4 fade-up delay-3" style="background:rgba(255,140,0,0.05);border:1px solid rgba(255,140,0,0.18);">
+      <span class="material-symbols-outlined text-primary-fixed-dim shrink-0 mt-0.5">info</span>
+      <p class="text-sm text-on-surface-variant leading-relaxed">
+        <strong class="text-on-surface">Advisors guide V3F itself</strong> — on policy, governance, government fund applications, and ecosystem development. They are distinct from <a href="mentors.html" class="text-primary-fixed-dim hover:underline">Mentors</a> who work directly with individual startups.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── ADVISORS GRID ── -->
+<main class="py-16 px-4 md:px-16 max-w-[1440px] mx-auto">
+
+  <!-- ── LEAD ADVISOR ── -->
+  <div class="mb-6 fade-in">
+    <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">LEAD ADVISOR</div>
+    <div class="h-px bg-gradient-to-r from-primary-fixed-dim/60 via-outline-variant/20 to-transparent"></div>
+  </div>
+
+  <!-- ADVISOR 01: Hiranmay Mahanta (Lead) -->
+  <div class="mb-14">
+    <div class="advisor-card lead fade-up p-8 md:p-10">
+      <div class="accent-bar-top rounded-full mb-8" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent);"></div>
+
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        <!-- Left: Avatar + Identity -->
+        <div class="flex flex-col items-center md:items-start gap-4 md:w-64 shrink-0">
+          <div class="relative">
+            <img src="advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="advisor-photo w-24 h-24" style="width:96px;height:96px;"/>
+            <div class="absolute -top-3 -right-3">
+              <span class="lead-badge">
+                <span class="material-symbols-outlined" style="font-size:11px;">star</span>
+                Lead Advisor
+              </span>
+            </div>
+          </div>
+          <div>
+            <div class="font-black text-xl text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Mr. Hiranmay Mahanta</div>
+            <div class="role-label text-primary-fixed-dim mt-1">Ecosystem & Innovation Advisor</div>
+            <div class="text-on-surface-variant text-xs mt-2 leading-relaxed">CEO, i-Hub Gujarat — Gujarat Student Start-up & Innovation Hub</div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Entrepreneurship</span>
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Ecosystem</span>
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Policy</span>
+          </div>
+        </div>
+
+        <!-- Right: Bio -->
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-5">
+            <hr class="hairline flex-1"/>
+            <span class="font-label-mono text-xs text-primary-fixed-dim/40 ml-4">01</span>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Drives Gujarat's flagship startup ecosystem across 104 universities as CEO of i-Hub Gujarat, nurturing the entrepreneurial spirit of the state's youth and forging strategic partnerships with industry and government. As Founding Director of GTU Innovation Council, he contributed over a decade to building one of India's most cohesive academic innovation ecosystems. His work spans sectoral and regional innovation development, positioning Gujarat — and India — as globally competitive startup destinations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OTHER ADVISORS ── -->
+  <div class="mb-6 fade-in">
+    <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">ADVISORY BOARD</div>
+    <div class="h-px bg-gradient-to-r from-primary-fixed-dim/60 via-outline-variant/20 to-transparent"></div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
+
+    <!-- ADVISOR 02: Prof. M.S. Unnikrishnan -->
+    <div class="advisor-card fade-up delay-1 p-7 flex flex-col gap-5">
+      <div class="accent-bar-top rounded-full" style="background:linear-gradient(90deg,#ff6b35,#ffb347,transparent);"></div>
+      <div class="flex items-start gap-4">
+        <img src="advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" class="advisor-photo coral-border" style="width:64px;height:64px;"/>
+        <div class="flex-1">
+          <div class="font-black text-lg text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Prof. M.S. Unnikrishnan</div>
+          <div class="role-label text-coral-accent mt-0.5">Industry–Academia & Policy Advisor</div>
+          <div class="text-on-surface-variant text-xs mt-1.5 leading-relaxed">CEO, IITB-Monash Research Academy · Former MD & CEO, Thermax Ltd.</div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Academia</span>
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Industry</span>
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Policy</span>
+          </div>
+        </div>
+        <span class="font-label-mono text-xs text-primary-fixed-dim/30 shrink-0">02</span>
+      </div>
+      <hr class="hairline"/>
+      <p class="text-on-surface-variant text-sm leading-relaxed">
+        A rare leader who has excelled at the highest level in both industry and academia. As MD & CEO of Thermax, he globalised the engineering conglomerate multifold through innovation and strategic acquisitions. He now heads the IITB-Monash Research Academy — a unique collaboration between IIT Bombay and Monash University, Australia. An active partner in government policy bodies, he champions technology development, gender equality, and sustainable industrial growth at the national level.
+      </p>
+    </div>
+
+    <!-- ADVISOR 03: Mr. Kamal Sarda -->
+    <div class="advisor-card fade-up delay-2 p-7 flex flex-col gap-5">
+      <div class="accent-bar-top rounded-full" style="background:linear-gradient(90deg,#ff8c00,transparent);"></div>
+      <div class="flex items-start gap-4">
+        <div class="advisor-avatar text-lg" style="width:56px;height:56px;">KS</div>
+        <div class="flex-1">
+          <div class="font-black text-lg text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Mr. Kamal Sarda</div>
+          <div class="role-label text-primary-fixed-dim mt-0.5">Industry & Governance Advisor</div>
+          <div class="text-on-surface-variant text-xs mt-1.5 leading-relaxed">Chairman & Managing Director, Sarda Energy & Minerals Ltd.</div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Industry</span>
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Governance</span>
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Infrastructure</span>
+          </div>
+        </div>
+        <span class="font-label-mono text-xs text-primary-fixed-dim/30 shrink-0">03</span>
+      </div>
+      <hr class="hairline"/>
+      <p class="text-on-surface-variant text-sm leading-relaxed">
+        Chairman & Managing Director of Sarda Energy & Minerals Ltd., a publicly listed diversified industrial group with integrated operations in steel, power, ferro alloys, and mining across Central India. With decades of leadership steering a large-scale enterprise through capital markets and regulatory landscapes, Mr. Sarda brings deep governance expertise and an industrialist's perspective to V3F — advising on institutional credibility, corporate partnerships, and building durable long-term value.
+      </p>
+    </div>
+
+    <!-- ADVISOR 04: Prof. B.S. Murty -->
+    <div class="advisor-card fade-up delay-3 p-7 flex flex-col gap-5">
+      <div class="accent-bar-top rounded-full" style="background:linear-gradient(90deg,#ff6b35,transparent);"></div>
+      <div class="flex items-start gap-4">
+        <img src="advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="advisor-photo coral-border" style="width:64px;height:64px;"/>
+        <div class="flex-1">
+          <div class="font-black text-lg text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Prof. B.S. Murty</div>
+          <div class="role-label text-coral-accent mt-0.5">Research & Deep-Tech Advisor</div>
+          <div class="text-on-surface-variant text-xs mt-1.5 leading-relaxed">Director, IIT Hyderabad · Director, IIITDM Kurnool · President, Indian Institute of Metals</div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Research</span>
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Deep Tech</span>
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Materials Science</span>
+          </div>
+        </div>
+        <span class="font-label-mono text-xs text-primary-fixed-dim/30 shrink-0">04</span>
+      </div>
+      <hr class="hairline"/>
+      <p class="text-on-surface-variant text-sm leading-relaxed">
+        One of India's foremost materials scientists and academic leaders, Prof. Murty serves simultaneously as Director of IIT Hyderabad, Director of IIITDM Kurnool, and President of the Indian Institute of Metals. A pioneer in nano-materials and high-entropy alloys research, he brings unparalleled depth in translating frontier science into technology. He guides V3F on deep-tech incubation strategy, research commercialisation pathways, and alignment with national science & technology funding programs including DST and SERB.
+      </p>
+    </div>
+
+    <!-- ADVISOR 05: Mr. Jagdish Desai -->
+    <div class="advisor-card fade-up delay-4 p-7 flex flex-col gap-5">
+      <div class="accent-bar-top rounded-full" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent);"></div>
+      <div class="flex items-start gap-4">
+        <img src="advisor-jagdish-desai.png" alt="Mr. Jagdish Desai" class="advisor-photo" style="width:64px;height:64px;"/>
+        <div class="flex-1">
+          <div class="font-black text-lg text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Mr. Jagdish Desai</div>
+          <div class="role-label text-primary-fixed-dim mt-0.5">Global Business & Investment Advisor</div>
+          <div class="text-on-surface-variant text-xs mt-1.5 leading-relaxed">Global Executive, CEO & Venture Capitalist · Former President, Emerson Electric (Isolation Valves Division)</div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Venture Capital</span>
+            <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">Global Ops</span>
+            <span class="tag-coral font-label-mono text-xs px-3 py-1 rounded-full">M&A</span>
+          </div>
+        </div>
+        <span class="font-label-mono text-xs text-primary-fixed-dim/30 shrink-0">05</span>
+      </div>
+      <hr class="hairline"/>
+      <p class="text-on-surface-variant text-sm leading-relaxed">
+        A global corporate executive with 30+ years in manufacturing and international sales. Co-founded Virgo Valves & Controls Ltd., which he scaled into a world-class manufacturer supplying ball and triple-offset valves to Oil & Gas projects globally — leading to its landmark $400 million acquisition by Emerson Electric (NYSE: EMR) in 2014. He subsequently served as President of Emerson's Isolation Valves Division. Now a venture capitalist investing across diverse industries and geographies, Mr. Desai advises V3F on international growth strategy, fundraising, and cross-border deal-making.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ADVISOR 06: Prof. Ramesh C Jain — full-width feature -->
+  <div class="mb-6 fade-in">
+    <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-2">FRONTIER TECHNOLOGY</div>
+    <div class="h-px bg-gradient-to-r from-coral-accent/60 via-outline-variant/20 to-transparent"></div>
+  </div>
+
+  <div class="advisor-card fade-up p-8 md:p-10 mb-20" style="border-color:rgba(255,107,53,0.3);">
+    <div class="accent-bar-top rounded-full mb-8" style="background:linear-gradient(90deg,#ff6b35,#ffb347,transparent);"></div>
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="flex flex-col items-center md:items-start gap-4 md:w-64 shrink-0">
+        <img src="advisor-ramesh-jain.jpg" alt="Prof. Ramesh C Jain" class="advisor-photo coral-border" style="width:96px;height:96px;"/>
+        <div>
+          <div class="font-black text-xl text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Prof. Ramesh C Jain</div>
+          <div class="role-label text-coral-accent mt-1">AI, Technology & Healthcare Innovation Advisor</div>
+          <div class="text-on-surface-variant text-xs mt-2 leading-relaxed">Pioneer in AI, Computer Vision & Multimodal Computing · Fellow, ACM, IEEE, AAAI, AAAS</div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span class="tag-coral font-label-mono text-xs px-3 py-1 rounded-full">AI & Vision</span>
+          <span class="tag-amber font-label-mono text-xs px-3 py-1 rounded-full">Deep Tech</span>
+          <span class="tag-teal font-label-mono text-xs px-3 py-1 rounded-full">HealthTech</span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div class="flex items-center justify-between mb-5">
+          <hr class="hairline flex-1"/>
+          <span class="font-label-mono text-xs text-coral-accent/40 ml-4">06</span>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          A 50-year pioneer in AI, computer vision, and multimedia computing, Prof. Jain founded the AI Lab at the University of Michigan and established multimedia computing as a recognised discipline. His students went on to create Photoshop, the iPod, and the iPhone. A serial entrepreneur and holder of fellowships in ACM, IEEE, AAAI, AAAS, IAPR, and SPIE, he now builds multimodal AI systems for healthcare at billion-person scale — inverting the conventional model by making daily lifestyle the primary driver of health. He advises V3F on frontier technology strategy, AI-driven ventures, and building globally impactful startups.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADVISORY DISTINCTION NOTE ── -->
+  <div class="glass-panel rounded-2xl p-8 border border-primary-fixed-dim/20 fade-up mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(255,140,0,0.12);">
+            <span class="material-symbols-outlined text-primary-fixed-dim">shield</span>
+          </div>
+          <h3 class="font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Role of Advisors</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Advisory Board members guide V3F as an institution — shaping policy, governance frameworks, government grant applications, and strategic ecosystem partnerships. They meet periodically with V3F leadership and provide high-level strategic direction.
+        </p>
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(255,107,53,0.12);">
+            <span class="material-symbols-outlined text-coral-accent">psychology</span>
+          </div>
+          <h3 class="font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Role of Mentors</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Mentors work directly and hands-on with incubated startups — matched by sector and stage — providing structured guidance on product, market, fundraising, legal, and operational matters on an ongoing basis.
+        </p>
+        <a href="mentors.html" class="inline-flex items-center gap-2 mt-4 font-label-mono text-xs text-coral-accent hover:underline">
+          Meet all Mentors <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center border border-primary-fixed-dim/20 relative overflow-hidden fade-up">
+    <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+    <div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary-fixed-dim/40"></div>
+    <div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary-fixed-dim/40"></div>
+    <div class="relative z-10">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">JOIN THE ECOSYSTEM</div>
+      <h2 class="font-black text-3xl md:text-4xl mb-4" style="font-family:'Space Grotesk',sans-serif;">
+        Ready to Build with <span class="gradient-text">V3F Nagpur?</span>
+      </h2>
+      <p class="text-on-surface-variant text-lg max-w-lg mx-auto mb-8">
+        Apply for incubation and gain access to world-class research infrastructure, a powerful mentor network, and an advisory board shaping India's innovation future.
+      </p>
+      <div class="flex gap-3 justify-center flex-wrap">
+        <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-8 py-3.5 rounded-full hover:glow-amber active:scale-95 transition-all inline-flex items-center gap-2 text-sm">
+          Apply for Incubation <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="programs.html" class="px-8 py-3.5 border border-outline/30 rounded-full font-bold hover:bg-surface-variant transition-all text-sm">
+          Explore Programs
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="py-10 border-t border-outline-variant/30 px-4 md:px-16 max-w-[1440px] mx-auto">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="flex items-center gap-2">
+      <span class="font-black text-xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
+      <span class="text-on-surface-variant text-sm">NAGPUR · VNIT Incubation Centre</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="index.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">About</a>
+      <a href="programs.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Programs</a>
+      <a href="advisors.html" class="font-label-mono text-xs text-primary transition-colors">Advisors</a>
+      <a href="mentors.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Mentors</a>
+      <a href="faq.html" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+      <a href="index.html#contact" class="font-label-mono text-xs text-on-surface-variant hover:text-primary transition-colors">Apply Now</a>
+    </div>
+    <div class="font-label-mono text-xs text-on-surface-variant/50">© 2025 V3F Nagpur. Section 8 Company.</div>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up, .fade-in, .slide-left').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
