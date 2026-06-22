@@ -97,7 +97,8 @@
     .arc-item.arc-active .arc-dot{background:#ff8c00;border-color:#ffd080;border-width:2px;animation:arc-pulse 2s ease-in-out infinite}
     @media(max-width:768px){#arc-nav{display:none}}
     @keyframes scanline{0%{top:-10%}100%{top:110%}}
-    .scan-line{position:absolute;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,rgba(255,140,0,0.4),transparent);animation:scanline 5s linear infinite;pointer-events:none;z-index:30}
+    /* scan-line disabled on about page */
+    .scan-line{display:none}
   </style>
 </head>
 <body class="font-body-md antialiased">
@@ -343,54 +344,62 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
         <!-- CHAIRMAN -->
-        <div class="fade-up delay-1 relative overflow-hidden rounded-2xl" style="border:1px solid rgba(255,140,0,0.35);background:linear-gradient(135deg,rgba(255,140,0,0.06) 0%,rgba(14,9,4,0.92) 60%)">
-          <div class="absolute top-0 left-0 w-48 h-48 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,140,0,0.12) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
+        <div class="fade-up delay-1 relative overflow-hidden rounded-2xl" style="border:2px solid rgba(255,140,0,0.6);background:linear-gradient(135deg,rgba(255,140,0,0.10) 0%,rgba(14,9,4,0.95) 55%);box-shadow:0 0 40px rgba(255,140,0,0.18),inset 0 0 60px rgba(255,140,0,0.04)">
+          <!-- stronger glow blob -->
+          <div class="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,140,0,0.18) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
+          <!-- top accent bar -->
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent)"></div>
           <div class="relative z-10 p-8 flex flex-col sm:flex-row items-start gap-7">
             <div class="flex-shrink-0">
               <div class="relative">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(255,140,0,0.5);box-shadow:0 0 24px rgba(255,140,0,0.2)">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(255,140,0,0.65);box-shadow:0 0 32px rgba(255,140,0,0.35)">
                   <img src="chairman.jpg" alt="Dr. Premlal Patel" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ff8c00;color:#3d1c00;font-weight:700">CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ff8c00;color:#3d1c00;font-weight:700;box-shadow:0 0 12px rgba(255,140,0,0.5)">CHAIRMAN</span>
                 </div>
               </div>
             </div>
             <div class="flex-1 pt-1">
-              <h4 class="font-black text-xl text-white mb-1" style="font-family:'Space Grotesk',sans-serif">Dr. Premlal Patel</h4>
-              <div class="text-on-surface-variant text-sm mb-4">Director, VNIT Nagpur</div>
-              <p class="text-on-surface-variant text-sm leading-relaxed mb-5">Provides strategic direction and ensures alignment between V3F's operations and VNIT's broader institutional mission.</p>
+              <h4 class="font-black text-xl text-white mb-0.5" style="font-family:'Space Grotesk',sans-serif">Dr. Prem Lal Patel</h4>
+              <div class="font-label-mono text-xs mb-1" style="color:#ff8c00">Director, VNIT Nagpur · Since May 2024</div>
+              <div class="text-on-surface-variant text-xs mb-3">Professor (HAG), Civil Engineering · Former Director, SVNIT Surat</div>
+              <p class="text-on-surface-variant text-sm leading-relaxed mb-4">A distinguished hydraulics and water resources engineer with over 220 peer-reviewed publications. He established the Centre of Excellence on Water Resources &amp; Flood Management at SVNIT and has supervised numerous doctoral theses. As Director of VNIT Nagpur, he champions international collaborations, institutional accreditation, and the growth of the startup ecosystem.</p>
               <div class="flex gap-2 flex-wrap">
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.12);color:#ff8c00;border:1px solid rgba(255,140,0,0.25)">Strategy</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.12);color:#ff8c00;border:1px solid rgba(255,140,0,0.25)">Governance</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.12);color:#ff8c00;border:1px solid rgba(255,140,0,0.25)">VNIT Leadership</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Water Resources</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Research &amp; Innovation</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Institute Leadership</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- VICE CHAIRMAN -->
-        <div class="fade-up delay-2 relative overflow-hidden rounded-2xl" style="border:1px solid rgba(82,183,136,0.3);background:linear-gradient(135deg,rgba(82,183,136,0.06) 0%,rgba(14,9,4,0.92) 60%)">
-          <div class="absolute top-0 left-0 w-48 h-48 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(82,183,136,0.1) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
+        <div class="fade-up delay-2 relative overflow-hidden rounded-2xl" style="border:2px solid rgba(82,183,136,0.55);background:linear-gradient(135deg,rgba(82,183,136,0.10) 0%,rgba(14,9,4,0.95) 55%);box-shadow:0 0 40px rgba(82,183,136,0.15),inset 0 0 60px rgba(82,183,136,0.03)">
+          <!-- stronger glow blob -->
+          <div class="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(82,183,136,0.16) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
+          <!-- top accent bar -->
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:linear-gradient(90deg,#52b788,#74c69d,transparent)"></div>
           <div class="relative z-10 p-8 flex flex-col sm:flex-row items-start gap-7">
             <div class="flex-shrink-0">
               <div class="relative">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(82,183,136,0.45);box-shadow:0 0 24px rgba(82,183,136,0.15)">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(82,183,136,0.6);box-shadow:0 0 32px rgba(82,183,136,0.28)">
                   <img src="vice-chairman.jpg" alt="Shashikant Chaudhary" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0e0904;font-weight:700">VICE CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0e0904;font-weight:700;box-shadow:0 0 12px rgba(82,183,136,0.4)">VICE CHAIRMAN</span>
                 </div>
               </div>
             </div>
             <div class="flex-1 pt-1">
-              <h4 class="font-black text-xl text-white mb-1" style="font-family:'Space Grotesk',sans-serif">Shashikant Chaudhary</h4>
-              <div class="text-on-surface-variant text-sm mb-4">Vice Chairman, V3F Nagpur</div>
-              <p class="text-on-surface-variant text-sm leading-relaxed mb-5">Supports the Chairman in strategic oversight and operational governance of the incubation centre.</p>
+              <h4 class="font-black text-xl text-white mb-0.5" style="font-family:'Space Grotesk',sans-serif">Shashikant Chaudhary</h4>
+              <div class="font-label-mono text-xs mb-1" style="color:#52b788">Serial Entrepreneur &amp; Angel Investor · VNIT Alumnus</div>
+              <div class="text-on-surface-variant text-xs mb-3">Former MD, GlobalLogic India · Founder, 10+ ventures · Chairman, VNIT Alumni Association</div>
+              <p class="text-on-surface-variant text-sm leading-relaxed mb-4">A pioneering technology entrepreneur from Nagpur and one of Maharashtra's earliest IT founders, Shashikant has built and led over ten companies spanning software, AI, and deep tech. As former Managing Director of GlobalLogic India and an active angel investor, he has personally funded entrepreneurship programmes at VNIT and mentored dozens of student-led startups. His contribution as VNIT Alumni Association chairman helped seed the incubation movement at VNIT.</p>
               <div class="flex gap-2 flex-wrap">
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.12);color:#52b788;border:1px solid rgba(82,183,136,0.25)">Governance</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.12);color:#52b788;border:1px solid rgba(82,183,136,0.25)">Operations</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.12);color:#52b788;border:1px solid rgba(82,183,136,0.25)">Strategic Oversight</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.15);color:#52b788;border:1px solid rgba(82,183,136,0.35)">Entrepreneurship</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.15);color:#52b788;border:1px solid rgba(82,183,136,0.35)">Angel Investing</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(82,183,136,0.15);color:#52b788;border:1px solid rgba(82,183,136,0.35)">Deep Tech</span>
               </div>
             </div>
           </div>
