@@ -456,7 +456,7 @@ tailwind.config = {
         </div>
         <h2 class="font-black leading-[1.05] text-white"
             style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2.8rem,5.5vw,5rem);">
-          Where Ideas<br/>Become <span class="gradient-text">Ventures</span>
+          Where Ideas<br/>Become <span class="gradient-text" id="rotating-word" style="display:inline-block;position:relative;"></span>
         </h2>
       </div>
 
@@ -1750,6 +1750,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 })()
+</script>
+
+<style>
+  #rotating-word {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  #rotating-word.exit {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  #rotating-word.enter {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+</style>
+<script>
+  (function() {
+    const words = ["Ventures", "Startups", "Realities", "Products", "Companies"];
+    const el = document.getElementById('rotating-word');
+    let i = 0;
+    el.textContent = words[0];
+
+    function cycle() {
+      el.classList.add('exit');
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.classList.remove('exit');
+        el.classList.add('enter');
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          el.classList.remove('enter');
+        }));
+      }, 350);
+    }
+
+    setInterval(cycle, 2200);
+  })();
 </script>
 </body>
 </html>
