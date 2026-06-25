@@ -337,17 +337,16 @@ tailwind.config = {
       <img src="logo.png" alt="V3F — VNIT Venture Vault Foundation" class="h-10 w-auto object-contain"/>
     </a>
     <div class="hidden md:flex items-center gap-8">
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="index.html">Home</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="#contact">Contact</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm whitespace-nowrap">Apply Now</a>
   </div>
 </nav>
 
@@ -928,6 +927,7 @@ tailwind.config = {
       </div>
 
     </div>
+
     <!-- Meet All Advisors CTA -->
     <div class="flex justify-center mb-16 fade-up delay-4">
       <a href="advisors.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-fixed-dim/40 rounded-full font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
@@ -936,63 +936,104 @@ tailwind.config = {
       </a>
     </div>
 
-    <!-- Mentors -->
+    <!-- Mentors section header -->
     <div class="mb-8">
       <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3 fade-in">MENTOR NETWORK</div>
       <h2 class="font-headline-lg text-3xl font-bold mb-4 fade-up">Domain Experts for Every Startup</h2>
       <p class="text-on-surface-variant max-w-xl fade-up delay-1">V3F Mentors work directly with incubated startups — matched by sector and stage, providing hands-on guidance on product, market, fundraising, legal, and more.</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-1 group border border-outline-variant/20 hover:border-coral-accent/30">
-        <div class="w-12 h-12 rounded-full bg-coral-accent/10 flex items-center justify-center mb-4 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-coral-accent text-xl">person</span>
+
+    <!-- Featured Mentors: 6 real cards, 3-column grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <a href="mentors.html#anand-kamat" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-1 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">AK</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Anand Kamat</div>
+          <div class="text-on-surface-variant text-xs mb-2">Co-Founder &amp; CEO, PostQode</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">AI Products</span>
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Agentic AI</span>
+          </div>
         </div>
-        <h3 class="font-bold mb-1">Amit Bhoyar</h3>
-        <div class="text-on-surface-variant text-xs mb-3">Serial Entrepreneur</div>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Hardware</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Deep Tech</span>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-2 group border border-outline-variant/20 hover:border-primary-fixed-dim/30">
-        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
-        </div>
-        <h3 class="font-bold mb-1">Dr. Ruchita Joshi</h3>
-        <div class="text-on-surface-variant text-xs mb-3">AI Research Lead, CSE — VNIT</div>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">AI/ML</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">Data Science</span>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-3 group border border-outline-variant/20 hover:border-coral-accent/30">
-        <div class="w-12 h-12 rounded-full bg-coral-accent/10 flex items-center justify-center mb-4 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-coral-accent text-xl">person</span>
-        </div>
-        <h3 class="font-bold mb-1">Vikram Singhania</h3>
-        <div class="text-on-surface-variant text-xs mb-3">Angel Investor, Deccan Angels</div>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Funding</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded font-label-mono">Pitch Prep</span>
-        </div>
-      </div>
-      <div class="glass-panel p-6 rounded-xl card-hover fade-up delay-4 group border border-outline-variant/20 hover:border-primary-fixed-dim/30">
-        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
-        </div>
-        <h3 class="font-bold mb-1">Prof. K.D. Kulat</h3>
-        <div class="text-on-surface-variant text-xs mb-3">Domain Expert, Electronics — VNIT</div>
-        <div class="flex flex-wrap gap-1">
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">Research</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded font-label-mono">IP & Patents</span>
-        </div>
-      </div>
-    </div>
-    <div class="mt-10 flex justify-center fade-up">
-      <a href="mentors.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-coral-accent/40 rounded-full font-bold text-sm hover:bg-coral-accent/10 hover:border-coral-accent transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
-        Meet All Mentors
-        <span class="material-symbols-outlined text-base text-coral-accent">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
+      <a href="mentors.html#swapna-gupta" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-2 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-coral-accent group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">SG</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Swapna Gupta</div>
+          <div class="text-on-surface-variant text-xs mb-2">Partner, Avaana Capital</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Deep Tech VC</span>
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Fundraising</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-coral-accent transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+      <a href="mentors.html#sandip-chintawar" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-3 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-coral-accent group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">SC</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Sandip Chintawar</div>
+          <div class="text-on-surface-variant text-xs mb-2">Co-Founder, Cymetrix Software</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">3 Exits</span>
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Enterprise SaaS</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+      <a href="mentors.html#sharad-bairathi" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-4 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-coral-accent group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">SB</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Sharad Bairathi</div>
+          <div class="text-on-surface-variant text-xs mb-2">Founder, Embitel → VW Group</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Exit to VW</span>
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Auto Tech</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-coral-accent transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+      <a href="mentors.html#ajay-kamalvanshi" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-5 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">AK</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Ajay Kamalvanshi</div>
+          <div class="text-on-surface-variant text-xs mb-2">AI Infrastructure, NVIDIA</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">GPU / HPC</span>
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Deep Tech</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+      <a href="mentors.html#pravin-kamble" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-6 group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Space Grotesk',sans-serif;">PK</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-sm mb-0.5">Pravin Kamble</div>
+          <div class="text-on-surface-variant text-xs mb-2">Founder &amp; CEO, 99minds</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="text-xs bg-coral-accent/10 text-coral-accent px-2 py-0.5 rounded-full font-label-mono">Fintech</span>
+            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">SaaS</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-coral-accent transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- Stats + dual CTA -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center gap-6 justify-between fade-up">
+      <div class="flex gap-8 flex-wrap">
+        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">13</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Active Mentors</div></div>
+        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">7</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Domains</div></div>
+        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">25+</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Avg. Years Exp.</div></div>
+      </div>
+      <div class="flex gap-3 flex-wrap justify-center">
+        <a href="mentors.html" class="inline-flex items-center gap-2 px-7 py-3 border border-coral-accent/40 rounded-full font-bold text-sm hover:bg-coral-accent/10 hover:border-coral-accent transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
+          Meet All 13 Mentors <span class="material-symbols-outlined text-base text-coral-accent">arrow_forward</span>
+        </a>
+        <a href="mentors.html#mentor-apply" class="inline-flex items-center gap-2 px-7 py-3 bg-primary-container text-on-primary rounded-full font-bold text-sm hover:glow-amber active:scale-95 transition-all" style="font-family:'Space Grotesk',sans-serif;">
+          Become a Mentor
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1110,46 +1151,179 @@ tailwind.config = {
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
     <div class="absolute inset-0 isometric-grid opacity-15"></div>
+    <!-- Decorative glows -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,140,0,0.06) 0%,transparent 70%)"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,107,53,0.05) 0%,transparent 70%)"></div>
   </div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10 flex justify-center">
-    <div class="w-full max-w-2xl glass-panel p-10 md:p-16 rounded-xl border-t-2 border-t-primary-fixed-dim/50 shadow-2xl fade-up">
-      <div class="mb-10 text-center">
-        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">APPLICATIONS OPEN</div>
-        <h2 class="font-headline-lg text-3xl font-bold mb-2">Ready to Build Your Startup?</h2>
-        <p class="font-label-mono text-sm text-primary">AWAITING SYSTEM INPUT...</p>
-        <p class="text-on-surface-variant text-sm mt-3">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
+
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-16 fade-up">
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">GET IN TOUCH</div>
+      <h2 class="font-black text-4xl md:text-5xl text-white mb-4" style="font-family:'Space Grotesk',sans-serif">
+        Start Your <span class="gradient-text">Journey</span> with V3F
+      </h2>
+      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Apply for incubation, ask a question, or simply reach out — we respond to every inquiry within 48 hours.</p>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+      <!-- ── LEFT: Contact info column ── -->
+      <div class="space-y-6 slide-left">
+
+        <div>
+          <h3 class="font-black mb-3 leading-tight" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem)"><span class="gradient-text">W</span>e'd Love to <span class="gradient-text">H</span>ear From <span class="gradient-text">Y</span>ou</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Can't find the answers you're looking for? Reach out directly to our incubation support team, or drop by our office on the VNIT Nagpur campus.</p>
+        </div>
+
+        <!-- Contact cards -->
+        <div class="space-y-3">
+          <!-- Incubation support -->
+          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,140,0,0.12)">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.1)">
+              <span class="material-symbols-outlined text-primary-fixed-dim">send</span>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Space Grotesk',sans-serif">Incubation Support</div>
+              <div class="text-on-surface-variant text-xs mb-2">Enquire about application cycles, guidelines, or eligibility criteria.</div>
+              <a href="mailto:incubation@v3foundation.in" class="font-label-mono text-xs text-primary-fixed-dim hover:text-primary transition-colors">incubation@v3foundation.in</a>
+            </div>
+          </div>
+          <!-- Become a mentor -->
+          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,107,53,0.12)">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,107,53,0.1)">
+              <span class="material-symbols-outlined text-coral-accent">psychology</span>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Space Grotesk',sans-serif">Become a Mentor</div>
+              <div class="text-on-surface-variant text-xs mb-2">Share your domain expertise and guide the next generation of founders.</div>
+              <a href="mailto:mentorship@v3foundation.in" class="font-label-mono text-xs text-coral-accent hover:text-primary transition-colors">mentorship@v3foundation.in</a>
+            </div>
+          </div>
+          <!-- General queries -->
+          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,180,80,0.08)">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.08)">
+              <span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
+            </div>
+            <div class="flex-1">
+              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Space Grotesk',sans-serif">General Queries</div>
+              <div class="text-on-surface-variant text-xs mb-2">General requests regarding memberships, co-working, or partnership options.</div>
+              <a href="mailto:info@v3foundation.in" class="font-label-mono text-xs text-primary-fixed-dim hover:text-primary transition-colors">info@v3foundation.in</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location card -->
+        <div class="glass-panel rounded-xl overflow-hidden border" style="border-color:rgba(255,140,0,0.12)">
+          <!-- Map embed placeholder styled block -->
+          <div class="relative w-full h-40 overflow-hidden" style="background:linear-gradient(135deg,#1a1009 0%,#0e0904 100%)">
+            <div class="absolute inset-0 isometric-grid opacity-20"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">location_on</span>
+              <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">VNIT NAGPUR CAMPUS</span>
+            </div>
+            <!-- Crosshair corners -->
+            <div class="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-primary-fixed-dim/40"></div>
+            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-primary-fixed-dim/40"></div>
+          </div>
+          <div class="p-5 flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-fixed-dim text-xl flex-shrink-0 mt-0.5">maps_home_work</span>
+            <div>
+              <div class="font-bold text-on-surface text-sm mb-1" style="font-family:'Space Grotesk',sans-serif">V3F Nagpur — Incubation Centre</div>
+              <div class="text-on-surface-variant text-xs leading-relaxed">Visvesvaraya National Institute of Technology<br/>South Ambazari Road, Nagpur — 440010<br/>Maharashtra, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick stats row -->
+        <div class="grid grid-cols-3 gap-3">
+          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">48h</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Response Time</div>
+          </div>
+          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">18–36</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Month Programs</div>
+          </div>
+          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">Q'ly</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Cohort Reviews</div>
+          </div>
+        </div>
+
       </div>
-      <form class="space-y-8">
-        <div class="relative group">
-          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">01 FOUNDER NAME</label>
-          <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="Enter Full Name" type="text"/>
-          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+
+      <!-- ── RIGHT: Application form ── -->
+      <div class="slide-right">
+        <div class="glass-panel p-8 md:p-10 rounded-2xl border-t-2 shadow-2xl fade-up" style="border-color:rgba(255,180,80,0.08);border-top-color:rgba(255,140,0,0.5)">
+
+          <!-- Form header -->
+          <div class="mb-8">
+            <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">APPLICATIONS OPEN</div>
+            <h3 class="font-black text-2xl text-white mb-1" style="font-family:'Space Grotesk',sans-serif">Ready to Build Your Startup?</h3>
+            <p class="font-label-mono text-xs text-primary-fixed-dim/70 mb-1">AWAITING SYSTEM INPUT...</p>
+            <p class="text-on-surface-variant text-xs">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
+          </div>
+
+          <form class="space-y-7">
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">01 FOUNDER NAME</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="Enter Full Name" type="text"/>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">02 EMAIL PROTOCOL</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="founder@company.tech" type="email"/>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">03 PHONE NUMBER</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="+91 XXXXX XXXXX" type="tel"/>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">04 PROGRAM</label>
+              <select class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
+                <option value="" class="bg-surface-container-low">Select a program...</option>
+                <option class="bg-surface-container-low">Pre-Incubation</option>
+                <option class="bg-surface-container-low">Incubation</option>
+                <option class="bg-surface-container-low">Co-Working Membership</option>
+              </select>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">05 VNIT AFFILIATION</label>
+              <select class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
+                <option value="" class="bg-surface-container-low">Are you associated with VNIT?</option>
+                <option class="bg-surface-container-low">VNIT Student</option>
+                <option class="bg-surface-container-low">VNIT Alumni</option>
+                <option class="bg-surface-container-low">VNIT Faculty</option>
+                <option class="bg-surface-container-low">External Applicant</option>
+              </select>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+            <div class="relative group">
+              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">06 PROJECT SCHEMATIC</label>
+              <textarea class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all resize-none text-sm" placeholder="Describe your startup idea and sector..." rows="3"></textarea>
+              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            </div>
+
+            <!-- Privacy note -->
+            <p class="font-label-mono text-xs text-on-surface-variant/50 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm" style="font-size:14px">lock</span>
+              Confidential &amp; secure. Your data is never shared with third parties.
+            </p>
+
+            <button class="w-full py-4 rounded-full bg-primary-container text-on-primary font-bold hover:glow-cyan active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group text-sm" type="submit">
+              Submit Application
+              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </button>
+          </form>
         </div>
-        <div class="relative group">
-          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">02 EMAIL PROTOCOL</label>
-          <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" placeholder="founder@company.tech" type="email"/>
-          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
-        </div>
-        <div class="relative group">
-          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">03 PROGRAM</label>
-          <select class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
-            <option value="" class="bg-surface-container-low">Select a program...</option>
-            <option class="bg-surface-container-low">Pre-Incubation</option>
-            <option class="bg-surface-container-low">Incubation</option>
-            <option class="bg-surface-container-low">Co-Working Membership</option>
-          </select>
-          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
-        </div>
-        <div class="relative group">
-          <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">04 PROJECT SCHEMATIC</label>
-          <textarea class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all resize-none text-sm" placeholder="Describe your startup idea and sector..." rows="3"></textarea>
-          <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
-        </div>
-        <button class="w-full py-4 rounded-full bg-tertiary text-on-tertiary font-bold hover:bg-coral-accent hover:text-white transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 group" type="submit">
-          Submit Application
-          <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-        </button>
-      </form>
+      </div>
+
     </div>
   </div>
 </section>
