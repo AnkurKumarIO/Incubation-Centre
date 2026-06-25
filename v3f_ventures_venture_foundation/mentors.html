@@ -1112,5 +1112,11 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.06 });
 document.querySelectorAll('.fade-up, .fade-in').forEach(el => obs.observe(el));
 </script>
+
+<!-- Scroll progress bar -->
+<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#ec6520;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
+<script>
+(function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
+</script>
 </body>
 </html>
