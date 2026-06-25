@@ -13,18 +13,18 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
-      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
-      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
-      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
-      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
-      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
-      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
-      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
-      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
-      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
-      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
-      "surface-container-low":"#150f06",
+      "surface-container-high":"#1A2030","on-error":"#690005","surface-dim":"#06090F",
+      "primary":"#e8eef4","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A2030",
+      "inverse-primary":"#1A2030","outline-variant":"#1e2d3d","surface-tint":"#ec6520",
+      "error-container":"#93000a","outline":"#3a4a5c","tertiary-container":"#d0e8f0",
+      "on-primary-container":"#1A2030","primary-container":"#ec6520","tertiary":"#d0e8f0",
+      "background":"#0A0E16","secondary":"#7fd4d9","on-tertiary":"#141A26",
+      "on-primary":"#0E141F","on-surface":"#e8eef4","surface-variant":"#222C3C",
+      "surface-container":"#141A26","inverse-surface":"#e8eef4","surface":"#0A0E16",
+      "on-background":"#e8eef4","on-surface-variant":"#a9bbcc",
+      "surface-container-highest":"#222C3C","primary-fixed":"#f08040",
+      "coral-accent":"#ec6520","surface-container-lowest":"#06090F",
+      "surface-container-low":"#0E141F",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
     fontFamily:{
@@ -36,23 +36,23 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
+  body { background-color:#0A0E16; color:#e8eef4; overflow-x:hidden; }
 
   .glass-panel {
-    background:rgba(255,200,100,0.03);
+    background:rgba(120,170,200,0.04);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(255,180,80,0.08);
+    border:1px solid rgba(120,170,200,0.12);
   }
 
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+      linear-gradient(rgba(120,170,200,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,170,200,0.06) 1px,transparent 1px);
     background-size:40px 40px;
   }
 
   .gradient-text {
-    background:linear-gradient(135deg,#ff8c00,#ffb347);
+    background:linear-gradient(135deg,#ec6520,#ec6520);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
@@ -60,7 +60,7 @@ tailwind.config = {
 
   /* Nav */
   .nav-link { position:relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
 
   /* Animations */
@@ -88,13 +88,13 @@ tailwind.config = {
   .advisor-card:hover {
     transform:translateY(-6px);
     border-color:rgba(255,140,0,0.38);
-    box-shadow:0 24px 52px rgba(255,140,0,0.1);
+    box-shadow:0 24px 52px rgba(236,101,32,0.1);
   }
 
   /* Corner crosshairs */
   .advisor-card::before, .advisor-card::after {
     content:''; position:absolute; width:12px; height:12px;
-    border-color:rgba(255,140,0,0.2); border-style:solid; pointer-events:none;
+    border-color:rgba(236,101,32,0.2); border-style:solid; pointer-events:none;
     transition:border-color 0.3s;
   }
   .advisor-card::before { top:10px; left:10px; border-width:1px 0 0 1px; }
@@ -107,17 +107,17 @@ tailwind.config = {
     object-fit:cover;
     object-position:center top;
     flex-shrink:0;
-    border:2px solid rgba(255,140,0,0.35);
-    box-shadow:0 0 18px rgba(255,140,0,0.15);
+    border:2px solid rgba(236,101,32,0.35);
+    box-shadow:0 0 18px rgba(236,101,32,0.15);
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
     display:block;
   }
   .advisor-card:hover .advisor-photo {
     border-color:rgba(255,140,0,0.7);
-    box-shadow:0 0 28px rgba(255,140,0,0.3);
+    box-shadow:0 0 28px rgba(236,101,32,0.3);
   }
   .advisor-photo.coral {
-    border-color:rgba(255,107,53,0.35);
+    border-color:rgba(236,101,32,0.35);
     box-shadow:0 0 18px rgba(255,107,53,0.15);
   }
   .advisor-card:hover .advisor-photo.coral {
@@ -128,18 +128,18 @@ tailwind.config = {
   /* Initials fallback */
   .advisor-initials {
     width:80px; height:80px; border-radius:50%;
-    background:rgba(255,140,0,0.1);
-    border:2px solid rgba(255,140,0,0.3);
+    background:rgba(236,101,32,0.1);
+    border:2px solid rgba(236,101,32,0.3);
     display:flex; align-items:center; justify-content:center;
     font-family:'Space Grotesk',sans-serif;
     font-weight:700; font-size:1.4rem;
-    color:#ff8c00;
+    color:#ec6520;
     flex-shrink:0;
     transition:border-color 0.3s, background 0.3s;
   }
   .advisor-card:hover .advisor-initials {
-    border-color:rgba(255,140,0,0.6);
-    background:rgba(255,140,0,0.15);
+    border-color:rgba(236,101,32,0.6);
+    background:rgba(236,101,32,0.15);
   }
 
   /* Lead badge — sits BELOW the photo */
@@ -147,7 +147,7 @@ tailwind.config = {
     display:inline-flex; align-items:center; gap:5px;
     font-family:'JetBrains Mono',monospace;
     font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-    background:#ff8c00; color:#3d1c00;
+    background:#ec6520; color:#0E141F;
     padding:3px 10px; border-radius:9999px;
   }
 
@@ -156,9 +156,7 @@ tailwind.config = {
     font-family:'JetBrains Mono',monospace;
     font-size:11px; padding:3px 10px; border-radius:9999px;
   }
-  .tag-amber { background:rgba(255,140,0,0.1); color:#ff8c00; border:1px solid rgba(255,140,0,0.22); }
-  .tag-coral  { background:rgba(255,107,53,0.1); color:#ff6b35; border:1px solid rgba(255,107,53,0.22); }
-  .tag-dim    { background:rgba(255,180,80,0.06); color:#c9b89a; border:1px solid rgba(255,180,80,0.14); }
+  .tag-amber, .tag-coral, .tag-dim { background:rgba(120,170,200,0.07); color:#b3c2d4; border:1px solid rgba(120,170,200,0.16); }
 
   /* Hairline */
   .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); margin:0; }
@@ -174,32 +172,32 @@ tailwind.config = {
 
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   ::-webkit-scrollbar { width:5px; }
-  ::-webkit-scrollbar-track { background:#0e0904; }
-  ::-webkit-scrollbar-thumb { background:rgba(255,140,0,0.3); border-radius:3px; }
+  ::-webkit-scrollbar-track { background:#0A0E16; }
+  ::-webkit-scrollbar-thumb { background:rgba(236,101,32,0.3); border-radius:3px; }
 
   /* Glow util */
-  .glow-amber { box-shadow:0 0 20px rgba(255,140,0,0.25); }
+  .glow-amber { box-shadow:0 0 20px rgba(236,101,32,0.25); }
 </style>
 </head>
 <body class="font-body-md antialiased">
 
 
 <!-- ── NAV ── -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <a href="index.html" class="flex items-center gap-2">
-      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
-      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="logo.png" alt="V3F — VNIT Venture Vault Foundation" class="h-10 w-auto object-contain"/>
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="advisors.html" style="border-bottom:1px solid #ff8c00;">Advisors</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
     <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
   </div>
@@ -256,7 +254,7 @@ tailwind.config = {
     </div>
 
     <!-- Info note -->
-    <div class="mt-10 p-5 rounded-xl flex items-start gap-4 fade-up delay-3" style="background:rgba(255,140,0,0.05);border:1px solid rgba(255,140,0,0.18);">
+    <div class="mt-10 p-5 rounded-xl flex items-start gap-4 fade-up delay-3" style="background:rgba(255,140,0,0.05);border:1px solid rgba(236,101,32,0.18);">
       <span class="material-symbols-outlined text-primary-fixed-dim shrink-0 mt-0.5" style="font-size:18px;">info</span>
       <p class="text-sm text-on-surface-variant leading-relaxed">
         <strong class="text-on-surface">Advisors guide V3F itself</strong> on policy, governance, government fund applications, and ecosystem development. They are distinct from <a href="mentors.html" class="text-primary-fixed-dim hover:underline">Mentors</a> who work directly with individual startups.
@@ -270,7 +268,7 @@ tailwind.config = {
 
   <div class="mb-8 fade-in">
     <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">ADVISORY BOARD</div>
-    <div class="h-px" style="background:linear-gradient(90deg,rgba(255,140,0,0.5),rgba(255,180,80,0.15),transparent);"></div>
+    <div class="h-px" style="background:linear-gradient(90deg,rgba(236,101,32,0.5),rgba(255,180,80,0.15),transparent);"></div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
@@ -278,7 +276,7 @@ tailwind.config = {
     <!-- ═══════════════ CARD 01: Hiranmay Mahanta ═══════════════ -->
     <div class="advisor-card fade-up delay-1">
       <!-- Accent top bar -->
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <!-- Photo + identity block -->
@@ -314,7 +312,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 02: Prof. M.S. Unnikrishnan ═══════════════ -->
     <div class="advisor-card fade-up delay-2">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff6b35,#ff8c00,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -344,7 +342,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 03: Mr. Kamal Sarda ═══════════════ -->
     <div class="advisor-card fade-up delay-3">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff8c00,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -374,7 +372,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 04: Prof. B.S. Murty ═══════════════ -->
     <div class="advisor-card fade-up delay-4">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff6b35,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -404,7 +402,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 05: Mr. Jagdish Desai ═══════════════ -->
     <div class="advisor-card fade-up delay-5">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -434,7 +432,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 06: Prof. Ramesh C Jain ═══════════════ -->
     <div class="advisor-card fade-up delay-6">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ff6b35,#ff8c00,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -465,11 +463,11 @@ tailwind.config = {
   </div><!-- /grid -->
 
   <!-- ── ADVISORS vs MENTORS DISTINCTION ── -->
-  <div class="glass-panel rounded-2xl p-8 border border-outline-variant/20 fade-up mb-16" style="border-color:rgba(255,140,0,0.15);">
+  <div class="glass-panel rounded-2xl p-8 border border-outline-variant/20 fade-up mb-16" style="border-color:rgba(236,101,32,0.15);">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgba(255,140,0,0.12);">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgba(236,101,32,0.12);">
             <span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:18px;">shield</span>
           </div>
           <h3 class="font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif;">Role of Advisors</h3>
@@ -496,7 +494,7 @@ tailwind.config = {
   </div>
 
   <!-- ── CTA ── -->
-  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center relative overflow-hidden fade-up" style="border:1px solid rgba(255,140,0,0.2);">
+  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center relative overflow-hidden fade-up" style="border:1px solid rgba(236,101,32,0.2);">
     <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
     <div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary-fixed-dim/30"></div>
     <div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary-fixed-dim/30"></div>

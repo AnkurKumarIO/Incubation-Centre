@@ -16,23 +16,23 @@
       theme: {
         extend: {
           colors: {
-            "surface-container-high": "#201a0e", "on-error": "#690005", "surface-dim": "#120d04",
-            "primary": "#ffe8c8", "primary-fixed-dim": "#ff8c00", "inverse-on-surface": "#322712",
-            "inverse-primary": "#7a3e00", "outline-variant": "#4a3b1f", "surface-tint": "#ff8c00",
-            "error-container": "#93000a", "outline": "#9e8a6a", "tertiary-container": "#f5f0d9",
-            "on-primary-container": "#7a3e00", "primary-container": "#ffb347", "tertiary": "#f5f0d9",
-            "background": "#0e0904", "secondary": "#ffcfa7", "on-tertiary": "#2f2a1f",
-            "on-primary": "#3d1c00", "on-surface": "#e8ddd0", "surface-variant": "#2e2416",
-            "surface-container": "#1a1209", "inverse-surface": "#e8ddd0", "surface": "#0e0904",
-            "on-background": "#e8ddd0", "on-surface-variant": "#c9b89a",
-            "surface-container-highest": "#2e2416", "primary-fixed": "#ffd080",
-            "coral-accent": "#ff6b35", "surface-container-lowest": "#080502",
-            "surface-container-low": "#150f06",
+            "surface-container-high": "#1A2030", "on-error": "#690005", "surface-dim": "#06090F",
+            "primary": "#e8eef4", "primary-fixed-dim": "#ec6520", "inverse-on-surface": "#1A2030",
+            "inverse-primary": "#1A2030", "outline-variant": "#1e2d3d", "surface-tint": "#ec6520",
+            "error-container": "#93000a", "outline": "#3a4a5c", "tertiary-container": "#d0e8f0",
+            "on-primary-container": "#1A2030", "primary-container": "#ec6520", "tertiary": "#d0e8f0",
+            "background": "#0A0E16", "secondary": "#7fd4d9", "on-tertiary": "#141A26",
+            "on-primary": "#0E141F", "on-surface": "#e8eef4", "surface-variant": "#222C3C",
+            "surface-container": "#141A26", "inverse-surface": "#e8eef4", "surface": "#0A0E16",
+            "on-background": "#e8eef4", "on-surface-variant": "#a9bbcc",
+            "surface-container-highest": "#222C3C", "primary-fixed": "#f08040",
+            "coral-accent": "#ec6520", "surface-container-lowest": "#06090F",
+            "surface-container-low": "#0E141F",
           },
           fontFamily: {
             "headline-lg": ["Space Grotesk", "sans-serif"],
             "body-md": ["Inter", "sans-serif"],
-            "label-mono": ["JetBrains Mono", "monospace"],
+            "label-mono": ["Space Grotesk"],
           },
           borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
         }
@@ -41,17 +41,17 @@
   </script>
   <style>
     * { box-sizing: border-box; }
-    body { background-color: #0e0904; color: #e8ddd0; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-    .glass-panel { background: rgba(255,200,100,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,180,80,0.08); }
+    body { background-color: #0A0E16; color: #e8eef4; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    .glass-panel { background: rgba(120,170,200,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(120,170,200,0.12); }
     .glass-panel-green { background: rgba(45,106,79,0.08); border: 1px solid rgba(82,183,136,0.2); }
-    .glass-panel-dark { background: rgba(14,9,4,0.85); border: 1px solid rgba(255,140,0,0.15); }
+    .glass-panel-dark { background: rgba(14,9,4,0.85); border: 1px solid rgba(236,101,32,0.15); }
     .isometric-grid {
-      background-image: linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+      background-image: linear-gradient(rgba(120,170,200,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(120,170,200,0.06) 1px,transparent 1px);
       background-size: 40px 40px;
     }
-    .gradient-text { background: linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gradient-text { background: linear-gradient(135deg,#ec6520,#ec6520); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(255,140,0,0.12); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(236,101,32,0.12); }
     .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
     .fade-up { opacity:0; transform:translateY(40px); transition:opacity 0.7s ease,transform 0.7s ease; }
     .fade-up.visible { opacity:1; transform:translateY(0); }
@@ -73,55 +73,52 @@
     @keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
     .float-anim{animation:float-y 4s ease-in-out infinite}
     @keyframes arc-pulse {
-      0%,100%{box-shadow:0 0 0 3px rgba(255,140,0,0.15),0 0 12px rgba(255,140,0,0.75),0 0 26px rgba(255,140,0,0.38)}
-      50%{box-shadow:0 0 0 5px rgba(255,140,0,0.08),0 0 18px rgba(255,140,0,0.95),0 0 38px rgba(255,140,0,0.52)}
+      0%,100%{box-shadow:0 0 0 3px rgba(236,101,32,0.15),0 0 12px rgba(255,140,0,0.75),0 0 26px rgba(255,140,0,0.38)}
+      50%{box-shadow:0 0 0 5px rgba(236,101,32,0.08),0 0 18px rgba(255,140,0,0.95),0 0 38px rgba(255,140,0,0.52)}
     }
     .nav-link{position:relative}
-    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#ff8c00;transition:width 0.3s ease}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#ec6520;transition:width 0.3s ease}
     .nav-link:hover::after{width:100%}
     .feature-card{transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease}
-    .feature-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.25)!important}
-    .section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(255,140,0,0.3),transparent)}
-    ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#0e0904} ::-webkit-scrollbar-thumb{background:rgba(255,140,0,0.3);border-radius:3px}
+    .feature-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)!important}
+    .section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(236,101,32,0.3),transparent)}
+    ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#0A0E16} ::-webkit-scrollbar-thumb{background:rgba(236,101,32,0.3);border-radius:3px}
     #arc-nav{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:100;height:320px;width:190px;pointer-events:all}
-    .arc-track{position:absolute;right:21px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,rgba(255,140,0,0) 0%,rgba(255,140,0,0.3) 12%,rgba(255,140,0,0.3) 88%,rgba(255,140,0,0) 100%);border-radius:1px}
-    .arc-track-fill{position:absolute;left:0;top:0;width:100%;height:0%;background:linear-gradient(to bottom,#ff8c00,#ffb347);border-radius:1px;transition:height 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 0 8px rgba(255,140,0,0.65)}
+    .arc-track{position:absolute;right:21px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,rgba(236,101,32,0) 0%,rgba(236,101,32,0.3) 12%,rgba(236,101,32,0.3) 88%,rgba(236,101,32,0) 100%);border-radius:1px}
+    .arc-track-fill{position:absolute;left:0;top:0;width:100%;height:0%;background:linear-gradient(to bottom,#ec6520,#ec6520);border-radius:1px;transition:height 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 0 8px rgba(236,101,32,0.65)}
     .arc-dot-wrap{position:absolute;right:0;top:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 0}
     .arc-item{display:flex;align-items:center;justify-content:flex-end;padding-right:17px;gap:14px;cursor:pointer;position:relative;text-decoration:none}
     .arc-label{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;white-space:nowrap;text-align:right;color:rgba(255,200,110,0.6);opacity:0;transform:translateX(6px);transition:opacity 0.35s ease,transform 0.35s ease,color 0.25s ease}
     #arc-nav:hover .arc-label,#arc-nav.is-scrolling .arc-label{opacity:1;transform:translateX(0)}
-    #arc-nav:hover .arc-item.arc-active .arc-label,#arc-nav.is-scrolling .arc-item.arc-active .arc-label{color:#ffb347}
-    .arc-item:hover .arc-label{color:#ffd080!important}
-    .arc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;background:rgba(255,140,0,0.22);border:1.5px solid rgba(255,140,0,0.45);transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease}
-    .arc-item:hover .arc-dot{background:rgba(255,140,0,0.6);border-color:#ffb347;box-shadow:0 0 10px rgba(255,140,0,0.5)}
-    .arc-item.arc-active .arc-dot{background:#ff8c00;border-color:#ffd080;border-width:2px;animation:arc-pulse 2s ease-in-out infinite}
+    #arc-nav:hover .arc-item.arc-active .arc-label,#arc-nav.is-scrolling .arc-item.arc-active .arc-label{color:#ec6520}
+    .arc-item:hover .arc-label{color:#f08040!important}
+    .arc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;background:rgba(236,101,32,0.22);border:1.5px solid rgba(236,101,32,0.45);transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease}
+    .arc-item:hover .arc-dot{background:rgba(236,101,32,0.6);border-color:#ec6520;box-shadow:0 0 10px rgba(236,101,32,0.5)}
+    .arc-item.arc-active .arc-dot{background:#ec6520;border-color:#f08040;border-width:2px;animation:arc-pulse 2s ease-in-out infinite}
     @media(max-width:768px){#arc-nav{display:none}}
-    @keyframes scanline{0%{top:-10%}100%{top:110%}}
-    /* scan-line disabled on about page */
-    .scan-line{display:none}
-  </style>
+
+</style>
 </head>
 <body class="font-body-md antialiased">
 
 <!-- TOP NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <a href="index.html" class="font-headline-lg text-xl text-primary tracking-tighter flex items-center gap-2">
-      <span class="gradient-text font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
-      <span class="text-on-surface-variant font-light text-sm" style="font-family:'Space Grotesk',sans-serif;">NAGPUR</span>
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="logo.png" alt="V3F — VNIT Venture Vault Foundation" class="h-10 w-auto object-contain"/>
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#advisors">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="about.html" style="border-bottom:1px solid #ff8c00;">About</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,140,0,0.25)] active:scale-95 transition-all text-sm">Apply Now</a>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
   </div>
 </nav>
 
@@ -141,22 +138,21 @@
 
 <!-- ═══════════════════ SECTION A: HERO ═══════════════════════════ -->
 <section id="about-hero" class="relative min-h-screen w-full overflow-hidden flex items-center">
-  <div class="absolute inset-0 z-0" style="background:linear-gradient(135deg,#0e0904 0%,#1a1009 40%,#0e0904 100%)"></div>
+  <div class="absolute inset-0 z-0" style="background:linear-gradient(135deg,#0A0E16 0%,#1a1009 40%,#0A0E16 100%)"></div>
   <div class="absolute inset-0 z-0 isometric-grid opacity-15"></div>
-  <div class="scan-line"></div>
   <div class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full pointer-events-none z-0" style="background:radial-gradient(circle,rgba(255,140,0,0.07) 0%,transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/3 w-64 h-64 rounded-full pointer-events-none z-0" style="background:radial-gradient(circle,rgba(82,183,136,0.05) 0%,transparent 70%)"></div>
 
   <div class="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto pt-24 pb-16">
     <div class="max-w-3xl">
-      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-8" style="border-color:rgba(255,140,0,0.3);background:rgba(255,140,0,0.06)">
+      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-8" style="border-color:rgba(236,101,32,0.3);background:rgba(120,170,200,0.06)">
         <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
         <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F NAGPUR</span>
       </div>
       <div class="hero-fade-2 mb-6">
         <h1 class="leading-tight text-white mb-2" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,5vw,4.5rem);font-weight:800;">
           Nurturing the
-          <span style="font-family:'Playfair Display',serif;font-style:italic;color:#ff8c00;"> Spirit of Entrepreneurship</span>
+          <span style="font-family:'Playfair Display',serif;font-style:italic;color:#ec6520;"> Spirit of Entrepreneurship</span>
         </h1>
       </div>
       <p class="hero-fade-3 text-on-surface-variant text-lg leading-relaxed max-w-2xl mb-10">
@@ -164,26 +160,26 @@
         As VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.
       </p>
       <div class="hero-fade-4 flex flex-wrap gap-3">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#ff8c00"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ff8c00"></span>Section 8 Company</span>
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#ec6520"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ec6520"></span>Section 8 Company</span>
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#52b788"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#52b788"></span>Affiliated with VNIT Nagpur</span>
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#ff8c00"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ff8c00"></span>Founder-First Ecosystem</span>
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#ec6520"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#ec6520"></span>Founder-First Ecosystem</span>
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#52b788"><span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#52b788"></span>Nagpur Region</span>
       </div>
     </div>
 
     <!-- Floating quick facts card -->
     <div class="hidden lg:block absolute float-anim" style="width:260px;right:220px;top:28%">
-      <div class="glass-panel rounded-2xl p-6 border" style="border-color:rgba(255,140,0,0.12)">
+      <div class="glass-panel rounded-2xl p-6 border" style="border-color:rgba(236,101,32,0.12)">
         <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">QUICK FACTS</div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(255,180,80,0.08)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">domain</span>
           <div><div class="text-on-surface-variant text-xs">VNIT Campus</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">215 Acres</div></div>
         </div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(255,180,80,0.08)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">groups</span>
           <div><div class="text-on-surface-variant text-xs">Faculty Pool</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">300+</div></div>
         </div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(255,180,80,0.08)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">verified</span>
           <div><div class="text-on-surface-variant text-xs">Legal Status</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">Section 8</div></div>
         </div>
@@ -233,14 +229,14 @@
       <div class="slide-right">
         <div class="glass-panel-dark rounded-2xl p-8 h-full">
           <div class="flex items-center gap-3 mb-8">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(255,140,0,0.12)">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(236,101,32,0.12)">
               <span class="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
             </div>
             <h3 class="text-xl font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif">How V3F Supports You</h3>
           </div>
           <div class="space-y-4">
             <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.12)">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.12)">
                 <span class="material-symbols-outlined text-primary-fixed-dim text-xl">domain</span>
               </div>
               <div><div class="font-semibold text-on-surface mb-1" style="font-family:'Space Grotesk',sans-serif">Infrastructure & Space</div><p class="text-on-surface-variant text-sm leading-relaxed">Co-working seats, private cabins, labs, and meeting rooms on the VNIT campus.</p></div>
@@ -252,13 +248,13 @@
               <div><div class="font-semibold text-on-surface mb-1" style="font-family:'Space Grotesk',sans-serif">Mentoring & Guidance</div><p class="text-on-surface-variant text-sm leading-relaxed">Matched mentors, quarterly milestones, and legal & financial advisory.</p></div>
             </div>
             <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.12)">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.12)">
                 <span class="material-symbols-outlined text-primary-fixed-dim text-xl">payments</span>
               </div>
               <div><div class="font-semibold text-on-surface mb-1" style="font-family:'Space Grotesk',sans-serif">Funding & Investor Access</div><p class="text-on-surface-variant text-sm leading-relaxed">Demo days, angel connects, government grants, and CSR funding pathways.</p></div>
             </div>
           </div>
-          <div class="mt-8 pt-6 border-t flex items-center gap-2 text-on-surface-variant text-xs font-label-mono" style="border-color:rgba(255,140,0,0.1)">
+          <div class="mt-8 pt-6 border-t flex items-center gap-2 text-on-surface-variant text-xs font-label-mono" style="border-color:rgba(236,101,32,0.1)">
             <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
             18–36 MONTH INCUBATION PROGRAMS · ROLLING ADMISSIONS
           </div>
@@ -269,7 +265,7 @@
 </section>
 
 <!-- ═══════════════════ SECTION C: SALIENT FEATURES ══════════════ -->
-<section id="about-features" class="py-28 relative overflow-hidden" style="background:linear-gradient(to bottom,#0e0904,#080502,#0e0904)">
+<section id="about-features" class="py-28 relative overflow-hidden" style="background:linear-gradient(to bottom,#0A0E16,#06090F,#0A0E16)">
   <div class="absolute inset-0 isometric-grid opacity-8"></div>
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
     <div class="mb-16 fade-up">
@@ -281,42 +277,42 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-1" style="border-color:rgba(255,180,80,0.08)">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(255,140,0,0.08)">🌱</div>
-        <div class="w-8 h-0.5 rounded mb-4" style="background:#ff8c00"></div>
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">🌱</div>
+        <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Founder-Friendly Approach</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Our incubation framework is designed to support entrepreneurs with the resources and guidance needed to build sustainable ventures, not just extract equity.</p>
       </div>
       <!-- Card 2 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-2" style="border-color:rgba(255,180,80,0.08)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">🏆</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Competitive Landscape Awareness</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Our policy is drafted considering the offerings of leading incubators across the region, ensuring startups receive best-in-class support.</p>
       </div>
       <!-- Card 3 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-3" style="border-color:rgba(255,180,80,0.08)">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(255,140,0,0.08)">♻️</div>
-        <div class="w-8 h-0.5 rounded mb-4" style="background:#ff8c00"></div>
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">♻️</div>
+        <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Long-Term Ecosystem Development</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">V3F fosters long-term entrepreneurial growth and sustainable businesses that contribute positively to society and the Nagpur region.</p>
       </div>
       <!-- Card 4 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-4" style="border-color:rgba(255,180,80,0.08)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-4" style="border-color:rgba(120,170,200,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">🎓</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Incentives for VNIT Faculty</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Faculty engagement in mentoring startups is recognised by VNIT during appraisal and professional evaluation processes.</p>
       </div>
       <!-- Card 5 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-5" style="border-color:rgba(255,180,80,0.08)">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(255,140,0,0.08)">💡</div>
-        <div class="w-8 h-0.5 rounded mb-4" style="background:#ff8c00"></div>
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-5" style="border-color:rgba(120,170,200,0.12)">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">💡</div>
+        <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Subsidised Services for VNIT Community</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">V3F provides subsidised access to incubation services for VNIT students and alumni, with significantly reduced fees compared to external applicants.</p>
       </div>
       <!-- Card 6 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-6" style="border-color:rgba(255,180,80,0.08)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-6" style="border-color:rgba(120,170,200,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">⚡</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Operational Autonomy</h3>
@@ -333,7 +329,7 @@
     <!-- Header -->
     <div class="flex items-center gap-8 mb-6">
       <div class="h-px flex-1 bg-outline-variant/30"></div>
-      <h2 class="font-bold text-3xl text-center shrink-0 fade-in" style="font-family:'Playfair Display',serif;color:#e8ddd0">Board of Directors</h2>
+      <h2 class="font-bold text-3xl text-center shrink-0 fade-in" style="font-family:'Playfair Display',serif;color:#e8eef4">Board of Directors</h2>
       <div class="h-px flex-1 bg-outline-variant/30"></div>
     </div>
     <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-16 fade-up text-base leading-relaxed">V3F Nagpur is governed by a distinguished board comprising VNIT leadership, industry veterans, and academic experts.</p>
@@ -344,31 +340,31 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
         <!-- CHAIRMAN -->
-        <div class="fade-up delay-1 relative overflow-hidden rounded-2xl" style="border:2px solid rgba(255,140,0,0.6);background:linear-gradient(135deg,rgba(255,140,0,0.10) 0%,rgba(14,9,4,0.95) 55%);box-shadow:0 0 40px rgba(255,140,0,0.18),inset 0 0 60px rgba(255,140,0,0.04)">
+        <div class="fade-up delay-1 relative overflow-hidden rounded-2xl" style="border:2px solid rgba(236,101,32,0.6);background:linear-gradient(135deg,rgba(255,140,0,0.10) 0%,rgba(14,9,4,0.95) 55%);box-shadow:0 0 40px rgba(236,101,32,0.18),inset 0 0 60px rgba(255,140,0,0.04)">
           <!-- stronger glow blob -->
-          <div class="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,140,0,0.18) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
+          <div class="absolute top-0 left-0 w-64 h-64 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(236,101,32,0.18) 0%,transparent 70%);transform:translate(-30%,-30%)"></div>
           <!-- top accent bar -->
-          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:linear-gradient(90deg,#ff8c00,#ffb347,transparent)"></div>
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent)"></div>
           <div class="relative z-10 p-8 flex flex-col sm:flex-row items-start gap-7">
             <div class="flex-shrink-0">
               <div class="relative">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(255,140,0,0.65);box-shadow:0 0 32px rgba(255,140,0,0.35)">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden" style="border:2px solid rgba(236,101,32,0.65);box-shadow:0 0 32px rgba(236,101,32,0.35)">
                   <img src="chairman.jpg" alt="Dr. Premlal Patel" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ff8c00;color:#3d1c00;font-weight:700;box-shadow:0 0 12px rgba(255,140,0,0.5)">CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ec6520;color:#0E141F;font-weight:700;box-shadow:0 0 12px rgba(236,101,32,0.5)">CHAIRMAN</span>
                 </div>
               </div>
             </div>
             <div class="flex-1 pt-1">
               <h4 class="font-black text-xl text-white mb-0.5" style="font-family:'Space Grotesk',sans-serif">Dr. Prem Lal Patel</h4>
-              <div class="font-label-mono text-xs mb-1" style="color:#ff8c00">Director, VNIT Nagpur · Since May 2024</div>
+              <div class="font-label-mono text-xs mb-1" style="color:#ec6520">Director, VNIT Nagpur · Since May 2024</div>
               <div class="text-on-surface-variant text-xs mb-3">Professor (HAG), Civil Engineering · Former Director, SVNIT Surat</div>
               <p class="text-on-surface-variant text-sm leading-relaxed mb-4">A distinguished hydraulics and water resources engineer with over 220 peer-reviewed publications. He established the Centre of Excellence on Water Resources &amp; Flood Management at SVNIT and has supervised numerous doctoral theses. As Director of VNIT Nagpur, he champions international collaborations, institutional accreditation, and the growth of the startup ecosystem.</p>
               <div class="flex gap-2 flex-wrap">
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Water Resources</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Research &amp; Innovation</span>
-                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(255,140,0,0.15);color:#ff8c00;border:1px solid rgba(255,140,0,0.35)">Institute Leadership</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(236,101,32,0.15);color:#ec6520;border:1px solid rgba(236,101,32,0.35)">Water Resources</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(236,101,32,0.15);color:#ec6520;border:1px solid rgba(236,101,32,0.35)">Research &amp; Innovation</span>
+                <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:rgba(236,101,32,0.15);color:#ec6520;border:1px solid rgba(236,101,32,0.35)">Institute Leadership</span>
               </div>
             </div>
           </div>
@@ -387,7 +383,7 @@
                   <img src="vice-chairman.jpg" alt="Shashikant Chaudhary" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0e0904;font-weight:700;box-shadow:0 0 12px rgba(82,183,136,0.4)">VICE CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0A0E16;font-weight:700;box-shadow:0 0 12px rgba(82,183,136,0.4)">VICE CHAIRMAN</span>
                 </div>
               </div>
             </div>
@@ -412,20 +408,20 @@
       <div class="font-label-mono text-xs text-on-surface-variant tracking-widest mb-5 fade-in" style="opacity:0.6">BOARD MEMBERS</div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
       <!-- Uday Kamat -->
-      <div class="glass-panel rounded-2xl p-5 card-hover fade-up delay-1" style="border:1px solid rgba(255,180,80,0.08)">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.25)">
+      <div class="glass-panel rounded-2xl p-5 card-hover fade-up delay-1" style="border:1px solid rgba(120,170,200,0.12)">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
         </div>
         <h4 class="font-bold text-on-surface text-sm mb-0.5 text-center" style="font-family:'Space Grotesk',sans-serif">Uday Kamat</h4>
         <div class="font-label-mono text-xs text-primary-fixed-dim mb-3 text-center">Board Member</div>
         <p class="text-on-surface-variant text-xs leading-relaxed mb-3">Strategic guidance and industry perspective on V3F's programs and ecosystem development.</p>
         <div class="flex flex-wrap gap-1 justify-center">
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Industry</span>
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Strategy</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Industry</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Strategy</span>
         </div>
       </div>
       <!-- Dr. Yashwant Kathpatal -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-1" style="border-color:rgba(255,180,80,0.08)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(82,183,136,0.1);border-color:rgba(82,183,136,0.25)">
           <span class="material-symbols-outlined text-2xl" style="color:#52b788">person</span>
         </div>
@@ -438,20 +434,20 @@
         </div>
       </div>
       <!-- Dr. R. B. Deshmukh -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-2" style="border-color:rgba(255,180,80,0.08)">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.25)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">person</span>
         </div>
         <h4 class="font-bold text-on-surface text-sm mb-0.5 text-center" style="font-family:'Space Grotesk',sans-serif">Dr. R. B. Deshmukh</h4>
         <div class="font-label-mono text-xs text-primary-fixed-dim mb-3 text-center">Board Member</div>
         <p class="text-on-surface-variant text-xs leading-relaxed mb-3">Technical and domain expertise guiding V3F's focus areas and startup evaluation.</p>
         <div class="flex flex-wrap gap-1 justify-center">
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Technical</span>
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Evaluation</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Technical</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Evaluation</span>
         </div>
       </div>
       <!-- Dr. Dilip Peshwe -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-3" style="border-color:rgba(255,180,80,0.08)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(82,183,136,0.1);border-color:rgba(82,183,136,0.25)">
           <span class="material-symbols-outlined text-2xl" style="color:#52b788">person</span>
         </div>
@@ -464,16 +460,16 @@
         </div>
       </div>
       <!-- Vivek Deshpande -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-4" style="border-color:rgba(255,180,80,0.08)">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(255,140,0,0.1);border-color:rgba(255,140,0,0.25)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-4" style="border-color:rgba(120,170,200,0.12)">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">person</span>
         </div>
         <h4 class="font-bold text-on-surface text-sm mb-0.5 text-center" style="font-family:'Space Grotesk',sans-serif">Vivek Deshpande</h4>
         <div class="font-label-mono text-xs text-primary-fixed-dim mb-3 text-center">Board Member</div>
         <p class="text-on-surface-variant text-xs leading-relaxed mb-3">Industry connections and entrepreneurial experience enriching V3F's mentor and investor network.</p>
         <div class="flex flex-wrap gap-1 justify-center">
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Industry</span>
-          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(255,140,0,0.1);color:#ff8c00">Networking</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Industry</span>
+          <span class="font-label-mono text-xs px-2 py-0.5 rounded-full" style="background:rgba(236,101,32,0.1);color:#ec6520">Networking</span>
         </div>
       </div>
     </div>
@@ -534,9 +530,9 @@
       <div class="slide-right">
         <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-5">KEY POLICY FRAMEWORKS</div>
         <div class="space-y-5">
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-1" style="border-color:rgba(255,180,80,0.08)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.08)">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.08)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-xl">how_to_vote</span>
             </div>
             <div>
@@ -545,7 +541,7 @@
             </div>
           </div>
         </div>
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-2" style="border-color:rgba(255,180,80,0.08)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.08)">
               <span class="material-symbols-outlined text-xl" style="color:#52b788">policy</span>
@@ -556,9 +552,9 @@
             </div>
           </div>
         </div>
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-3" style="border-color:rgba(255,180,80,0.08)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.08)">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.08)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-xl">trending_up</span>
             </div>
             <div>
@@ -573,10 +569,10 @@
 
     <!-- CTA — full width, centered below both columns -->
     <div class="mt-12 fade-up">
-      <div class="glass-panel rounded-2xl p-8 border text-center max-w-2xl mx-auto" style="border-color:rgba(255,140,0,0.2);background:rgba(255,140,0,0.04)">
+      <div class="glass-panel rounded-2xl p-8 border text-center max-w-2xl mx-auto" style="border-color:rgba(236,101,32,0.2);background:rgba(255,140,0,0.04)">
         <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">JOIN THE ECOSYSTEM</div>
         <p class="text-on-surface-variant text-sm mb-6 max-w-lg mx-auto">Ready to build your startup within a structured, transparent, and founder-friendly incubation environment?</p>
-        <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary-container text-on-primary font-bold px-8 py-3 rounded-full text-sm hover:shadow-[0_0_20px_rgba(255,140,0,0.25)] active:scale-95 transition-all">
+        <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary-container text-on-primary font-bold px-8 py-3 rounded-full text-sm hover:shadow-[0_0_20px_rgba(236,101,32,0.25)] active:scale-95 transition-all">
           Apply for Incubation
           <span class="material-symbols-outlined text-base">arrow_forward</span>
         </a>

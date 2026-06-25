@@ -21,45 +21,45 @@
       theme: {
         extend: {
           colors: {
-            "surface-container-high": "#201a0e",
+            "surface-container-high": "#1A2030",
             "on-error": "#690005",
-            "surface-dim": "#120d04",
-            "primary": "#ffe8c8",
-            "primary-fixed-dim": "#ff8c00",
-            "inverse-on-surface": "#322712",
-            "inverse-primary": "#7a3e00",
-            "outline-variant": "#4a3b1f",
-            "surface-tint": "#ff8c00",
+            "surface-dim": "#06090F",
+            "primary": "#e8eef4",
+            "primary-fixed-dim": "#ec6520",
+            "inverse-on-surface": "#1A2030",
+            "inverse-primary": "#1A2030",
+            "outline-variant": "#1e2d3d",
+            "surface-tint": "#ec6520",
             "error-container": "#93000a",
-            "outline": "#9e8a6a",
-            "tertiary-container": "#f5f0d9",
-            "on-primary-container": "#7a3e00",
-            "primary-container": "#ffb347",
-            "tertiary": "#f5f0d9",
-            "background": "#0e0904",
-            "secondary": "#ffcfa7",
-            "on-tertiary": "#2f2a1f",
-            "on-primary": "#3d1c00",
-            "on-surface": "#e8ddd0",
-            "surface-variant": "#2e2416",
-            "surface-container": "#1a1209",
-            "inverse-surface": "#e8ddd0",
-            "surface": "#0e0904",
-            "on-background": "#e8ddd0",
-            "on-surface-variant": "#c9b89a",
-            "surface-container-highest": "#2e2416",
-            "primary-fixed": "#ffd080",
-            "coral-accent": "#ff6b35",
+            "outline": "#3a4a5c",
+            "tertiary-container": "#d0e8f0",
+            "on-primary-container": "#1A2030",
+            "primary-container": "#ec6520",
+            "tertiary": "#d0e8f0",
+            "background": "#0A0E16",
+            "secondary": "#7fd4d9",
+            "on-tertiary": "#141A26",
+            "on-primary": "#0E141F",
+            "on-surface": "#e8eef4",
+            "surface-variant": "#222C3C",
+            "surface-container": "#141A26",
+            "inverse-surface": "#e8eef4",
+            "surface": "#0A0E16",
+            "on-background": "#e8eef4",
+            "on-surface-variant": "#a9bbcc",
+            "surface-container-highest": "#222C3C",
+            "primary-fixed": "#f08040",
+            "coral-accent": "#ec6520",
             "forest-green": "#2d6a4f",
             "forest-green-light": "#52b788",
-            "surface-container-lowest": "#080502",
-            "surface-container-low": "#150f06",
+            "surface-container-lowest": "#06090F",
+            "surface-container-low": "#0E141F",
           },
           fontFamily: {
             "serif-display": ["Playfair Display", "serif"],
             "headline-lg": ["Space Grotesk", "sans-serif"],
             "body-md": ["Inter", "sans-serif"],
-            "label-mono": ["JetBrains Mono", "monospace"],
+            "label-mono": ["Space Grotesk"],
           },
           borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
         }
@@ -69,7 +69,7 @@
 
   <style>
     * { box-sizing: border-box; }
-    body { background-color: #0e0904; color: #e8ddd0; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    body { background-color: #0A0E16; color: #e8eef4; overflow-x: hidden; font-family: 'Inter', sans-serif; }
 
     .glass-panel {
       background: rgba(255, 200, 100, 0.03);
@@ -91,13 +91,13 @@
       background-size: 40px 40px;
     }
     .gradient-text {
-      background: linear-gradient(135deg, #ff8c00, #ffb347);
+      background: linear-gradient(135deg, #ec6520, #7fd4d9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .gradient-text-coral {
-      background: linear-gradient(135deg, #ff6b35, #ffb347);
+      background: linear-gradient(135deg, #ec6520, #7fd4d9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -160,22 +160,17 @@
 
     /* Scrollbar styling */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0e0904; }
+    ::-webkit-scrollbar-track { background: #0A0E16; }
     ::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.3); border-radius: 3px; }
 
     /* Scan line */
-    @keyframes scanline { 0%{top:-10%} 100%{top:110%} }
-    .scan-line { position: absolute; left: 0; width: 100%; height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(255,140,0,0.4), transparent);
-      animation: scanline 5s linear infinite; pointer-events: none; z-index: 30; }
-
-    /* Filter pills */
+/* Filter pills */
     .filter-pill { cursor: pointer; transition: all 0.2s ease; }
-    .filter-pill.active { background: rgba(255, 140, 0, 0.15); border-color: rgba(255, 140, 0, 0.6); color: #ff8c00; }
+    .filter-pill.active { background: rgba(255, 140, 0, 0.15); border-color: rgba(255, 140, 0, 0.6); color: #ec6520; }
 
     /* Nav links */
     .nav-link { position: relative; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
     .nav-link:hover::after { width:100%; }
 
     /* Floating blueprint corner decorations */
@@ -204,31 +199,29 @@
   <div class="absolute inset-0 isometric-grid opacity-15"></div>
   <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
   <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
-       style="background: radial-gradient(circle, rgba(255,140,0,0.06) 0%, transparent 70%)"></div>
+       style="background: radial-gradient(circle, rgba(120,170,200,0.06) 0%, transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full"
        style="background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%)"></div>
 </div>
 
 <!-- TOP NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <a href="index.html" class="font-headline-lg text-xl text-primary tracking-tighter flex items-center gap-2">
-      <span class="gradient-text font-black text-2xl" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
-      <span class="text-on-surface-variant font-light text-sm" style="font-family:'Space Grotesk',sans-serif;">NAGPUR</span>
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="logo.png" alt="V3F — VNIT Venture Vault Foundation" class="h-10 w-auto object-contain"/>
     </a>
     <div class="hidden md:flex items-center gap-8">
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html">Home</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="programs.html">Programs</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="focus-areas.html">Focus Areas</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="index.html#advisors">Advisors</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="mentors.html">Mentors</a>
-      <a class="nav-link text-on-surface-variant font-medium hover:text-primary transition-colors font-label-mono text-sm" href="about.html">About</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="faq.html" style="border-bottom:1px solid #ff8c00;">FAQ</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="faq.html">FAQ</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,140,0,0.25)] active:scale-95 transition-all text-sm">
-      Apply Now
-    </a>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
   </div>
 </nav>
 
@@ -247,7 +240,7 @@
       <div class="max-w-3xl">
         <!-- Label Badge -->
         <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6"
-             style="border-color: rgba(255,140,0,0.3); background: rgba(255,140,0,0.06);">
+             style="border-color: rgba(236,101,32,0.3); background: rgba(120,170,200,0.06);">
           <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
           <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest uppercase">FAQ Database</span>
         </div>
@@ -271,7 +264,7 @@
     
     <!-- Search Input -->
     <div class="max-w-2xl mx-auto mb-10 fade-up">
-      <div class="relative glass-panel rounded-full overflow-hidden border border-outline-variant/30 focus-within:border-primary-fixed-dim/50 focus-within:shadow-[0_0_20px_rgba(255,140,0,0.15)] transition-all duration-300">
+      <div class="relative glass-panel rounded-full overflow-hidden border border-outline-variant/30 focus-within:border-primary-fixed-dim/50 focus-within:shadow-[0_0_20px_rgba(236,101,32,0.15)] transition-all duration-300">
         <span class="material-symbols-outlined text-on-surface-variant/60 absolute left-5 top-1/2 -translate-y-1/2">
           search
         </span>
@@ -323,10 +316,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         
         <!-- Incubation Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(255,180,80,0.08);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(120,170,200,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 140, 0, 0.08);">
-              <span class="material-symbols-outlined text-2xl" style="color: #ff8c00;">send</span>
+              <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">send</span>
             </div>
             <h3 class="font-bold text-lg text-on-surface mb-2 font-headline-lg">Incubation Support</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Enquire about application cycles, guidelines, or eligibility criteria.</p>
@@ -341,10 +334,10 @@
         </div>
 
         <!-- Mentorship Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(255,180,80,0.08);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(120,170,200,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 107, 53, 0.08);">
-              <span class="material-symbols-outlined text-2xl" style="color: #ff6b35;">psychology</span>
+              <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">psychology</span>
             </div>
             <h3 class="font-bold text-lg text-on-surface mb-2 font-headline-lg">Become a Mentor</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Share your domain expertise and guide the next generation of founders.</p>
@@ -359,7 +352,7 @@
         </div>
 
         <!-- General Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(255,180,80,0.08);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(120,170,200,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(82, 183, 136, 0.08);">
               <span class="material-symbols-outlined text-2xl" style="color: #52b788;">mail</span>
@@ -726,7 +719,7 @@
     const div = document.createElement('div');
     div.id = `faq-card-${faq.id}`;
     div.className = 'faq-card glass-panel rounded-xl border p-6 mb-4 relative overflow-hidden transition-all duration-300';
-    div.style.borderColor = 'rgba(255,180,80,0.08)';
+    div.style.borderColor = 'rgba(120,170,200,0.12)';
     div.dataset.id = faq.id;
 
     div.innerHTML = `
@@ -804,7 +797,7 @@
       const content = document.getElementById(`faq-content-${cid}`);
       const cicon = document.getElementById(`faq-icon-${cid}`);
       c.classList.remove('open', 'bg-primary-fixed-dim/5');
-      c.style.borderColor = 'rgba(255,180,80,0.08)';
+      c.style.borderColor = 'rgba(120,170,200,0.12)';
       if (content) {
         content.style.maxHeight = '0px';
         content.style.opacity = '0';
@@ -815,7 +808,7 @@
 
     if (!isOpen) {
       card.classList.add('open', 'bg-primary-fixed-dim/5');
-      card.style.borderColor = 'rgba(255,140,0,0.3)';
+      card.style.borderColor = 'rgba(236,101,32,0.3)';
       // Add padding/border classes FIRST so scrollHeight includes them
       container.classList.add('mt-4', 'pt-4', 'border-t', 'border-outline-variant/20');
       container.style.opacity = '1';

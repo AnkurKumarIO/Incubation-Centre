@@ -12,44 +12,44 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#201a0e","on-error":"#690005","surface-dim":"#120d04",
-      "primary":"#ffe8c8","primary-fixed-dim":"#ff8c00","inverse-on-surface":"#322712",
-      "inverse-primary":"#7a3e00","outline-variant":"#4a3b1f","surface-tint":"#ff8c00",
-      "error-container":"#93000a","outline":"#9e8a6a","tertiary-container":"#f5f0d9",
-      "on-primary-container":"#7a3e00","primary-container":"#ffb347","tertiary":"#f5f0d9",
-      "background":"#0e0904","secondary":"#ffcfa7","on-tertiary":"#2f2a1f",
-      "on-primary":"#3d1c00","on-surface":"#e8ddd0","surface-variant":"#2e2416",
-      "surface-container":"#1a1209","inverse-surface":"#e8ddd0","surface":"#0e0904",
-      "on-background":"#e8ddd0","on-surface-variant":"#c9b89a",
-      "surface-container-highest":"#2e2416","primary-fixed":"#ffd080",
-      "coral-accent":"#ff6b35","surface-container-lowest":"#080502",
-      "surface-container-low":"#150f06",
+      "surface-container-high":"#1A2030","on-error":"#690005","surface-dim":"#06090F",
+      "primary":"#e8eef4","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A2030",
+      "inverse-primary":"#1A2030","outline-variant":"#1e2d3d","surface-tint":"#ec6520",
+      "error-container":"#93000a","outline":"#3a4a5c","tertiary-container":"#d0e8f0",
+      "on-primary-container":"#1A2030","primary-container":"#ec6520","tertiary":"#d0e8f0",
+      "background":"#0A0E16","secondary":"#7fd4d9","on-tertiary":"#141A26",
+      "on-primary":"#0E141F","on-surface":"#e8eef4","surface-variant":"#222C3C",
+      "surface-container":"#141A26","inverse-surface":"#e8eef4","surface":"#0A0E16",
+      "on-background":"#e8eef4","on-surface-variant":"#a9bbcc",
+      "surface-container-highest":"#222C3C","primary-fixed":"#f08040",
+      "coral-accent":"#ec6520","surface-container-lowest":"#06090F",
+      "surface-container-low":"#0E141F",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
     fontFamily:{
       "headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],
       "headline-md":["Space Grotesk"],"body-lg":["Inter"],"body-md":["Inter"],
-      "label-mono":["JetBrains Mono"],"label-caps":["JetBrains Mono"],
+      "label-mono":["Space Grotesk"],"label-caps":["Space Grotesk"],
     }
   }}
 }
 </script>
 <style>
-  body { background-color:#0e0904; color:#e8ddd0; overflow-x:hidden; }
-  .glass-panel { background:rgba(255,200,100,0.03); backdrop-filter:blur(12px); border:1px solid rgba(255,180,80,0.08); }
-  .glow-cyan  { box-shadow:0 0 15px rgba(255,140,0,0.25); }
-  .glow-coral { box-shadow:0 0 15px rgba(255,107,53,0.35); }
+  body { background-color:#0A0E16; color:#e8eef4; overflow-x:hidden; }
+  .glass-panel { background:rgba(120,170,200,0.04); backdrop-filter:blur(12px); border:1px solid rgba(120,170,200,0.12); }
+  .glow-cyan  { box-shadow:0 0 15px rgba(236,101,32,0.25); }
+  .glow-coral { box-shadow:0 0 15px rgba(236,101,32,0.35); }
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(255,140,0,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,140,0,0.06) 1px,transparent 1px);
+      linear-gradient(rgba(120,170,200,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(120,170,200,0.06) 1px,transparent 1px);
     background-size:40px 40px;
   }
-  .gradient-text { background:linear-gradient(135deg,#ff8c00,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .gradient-text { background:linear-gradient(135deg,#ec6520,#ec6520); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .card-hover { transition:transform 0.3s ease,box-shadow 0.3s ease; }
-  .card-hover:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(255,140,0,0.1); }
+  .card-hover:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(236,101,32,0.1); }
   .nav-link { position:relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ff8c00; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
   .fade-up { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease,transform 0.7s ease; }
   .fade-up.visible { opacity:1; transform:translateY(0); }
@@ -59,35 +59,33 @@ tailwind.config = {
   .delay-4{transition-delay:0.4s} .delay-5{transition-delay:0.5s} .delay-6{transition-delay:0.6s}
   :target { scroll-margin-top:100px; }
   .filter-pill { cursor:pointer; transition:all 0.2s ease; }
-  .filter-pill.active { background:rgba(255,140,0,0.15); border-color:rgba(255,140,0,0.6); color:#ff8c00; }
-  @keyframes scanline { 0%{top:-5%} 100%{top:105%} }
-  .scan-line { position:fixed; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,rgba(255,140,0,0.4),transparent); animation:scanline 8s linear infinite; pointer-events:none; z-index:100; }
-  @keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+  .filter-pill.active { background:rgba(236,101,32,0.15); border-color:rgba(236,101,32,0.6); color:#ec6520; }
+
+@keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
   .ping-slow { animation:ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
 </style>
 </head>
 <body class="font-body-md antialiased">
-<div class="scan-line"></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(255,140,0,0.1)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <a href="index.html" class="flex items-center gap-2">
-      <span class="font-black text-2xl gradient-text" style="font-family:'Space Grotesk',sans-serif;">V3F</span>
-      <span class="text-on-surface-variant font-light text-sm">NAGPUR</span>
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="logo.png" alt="V3F — VNIT Venture Vault Foundation" class="h-10 w-auto object-contain"/>
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" href="focus-areas.html" style="border-bottom:1px solid #ff8c00;">Focus Areas</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#advisors">Advisors</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-cyan active:scale-95 transition-all text-sm">Apply Now</a>
+    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
   </div>
 </nav>
 
