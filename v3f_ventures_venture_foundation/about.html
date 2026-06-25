@@ -16,18 +16,18 @@
       theme: {
         extend: {
           colors: {
-            "surface-container-high": "#1A2030", "on-error": "#690005", "surface-dim": "#06090F",
-            "primary": "#e8eef4", "primary-fixed-dim": "#ec6520", "inverse-on-surface": "#1A2030",
-            "inverse-primary": "#1A2030", "outline-variant": "#1e2d3d", "surface-tint": "#ec6520",
-            "error-container": "#93000a", "outline": "#3a4a5c", "tertiary-container": "#d0e8f0",
-            "on-primary-container": "#1A2030", "primary-container": "#ec6520", "tertiary": "#d0e8f0",
-            "background": "#0A0E16", "secondary": "#7fd4d9", "on-tertiary": "#141A26",
-            "on-primary": "#0E141F", "on-surface": "#e8eef4", "surface-variant": "#222C3C",
-            "surface-container": "#141A26", "inverse-surface": "#e8eef4", "surface": "#0A0E16",
-            "on-background": "#e8eef4", "on-surface-variant": "#a9bbcc",
-            "surface-container-highest": "#222C3C", "primary-fixed": "#f08040",
-            "coral-accent": "#ec6520", "surface-container-lowest": "#06090F",
-            "surface-container-low": "#0E141F",
+            "surface-container-high": "#1C1C1C", "on-error": "#690005", "surface-dim": "#0A0A0A",
+            "primary": "#E8E8E8", "primary-fixed-dim": "#ec6520", "inverse-on-surface": "#1C1C1C",
+            "inverse-primary": "#1C1C1C", "outline-variant": "#1E1E1E", "surface-tint": "#ec6520",
+            "error-container": "#93000a", "outline": "#383838", "tertiary-container": "#D0D0D0",
+            "on-primary-container": "#1C1C1C", "primary-container": "#ec6520", "tertiary": "#D0D0D0",
+            "background": "#0C0C0C", "secondary": "#7fd4d9", "on-tertiary": "#161616",
+            "on-primary": "#111111", "on-surface": "#E8E8E8", "surface-variant": "#222222",
+            "surface-container": "#161616", "inverse-surface": "#E8E8E8", "surface": "#0C0C0C",
+            "on-background": "#E8E8E8", "on-surface-variant": "#9A9A9A",
+            "surface-container-highest": "#222222", "primary-fixed": "#f08040",
+            "coral-accent": "#ec6520", "surface-container-lowest": "#0A0A0A",
+            "surface-container-low": "#111111",
           },
           fontFamily: {
             "headline-lg": ["Space Grotesk", "sans-serif"],
@@ -41,12 +41,12 @@
   </script>
   <style>
     * { box-sizing: border-box; }
-    body { background-color: #0A0E16; color: #e8eef4; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-    .glass-panel { background: rgba(120,170,200,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(120,170,200,0.12); }
+    body { background-color: #0C0C0C; color: #E8E8E8; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    .glass-panel { background: rgba(160,160,160,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(160,160,160,0.12); }
     .glass-panel-green { background: rgba(45,106,79,0.08); border: 1px solid rgba(82,183,136,0.2); }
     .glass-panel-dark { background: rgba(14,9,4,0.85); border: 1px solid rgba(236,101,32,0.15); }
     .isometric-grid {
-      background-image: linear-gradient(rgba(120,170,200,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(120,170,200,0.06) 1px,transparent 1px);
+      background-image: linear-gradient(rgba(160,160,160,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(160,160,160,0.06) 1px,transparent 1px);
       background-size: 40px 40px;
     }
     .gradient-text { background: linear-gradient(135deg,#ec6520,#ec6520); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -82,7 +82,7 @@
     .feature-card{transition:transform 0.3s ease,box-shadow 0.3s ease,border-color 0.3s ease}
     .feature-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)!important}
     .section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(236,101,32,0.3),transparent)}
-    ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#0A0E16} ::-webkit-scrollbar-thumb{background:rgba(236,101,32,0.3);border-radius:3px}
+    ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#0C0C0C} ::-webkit-scrollbar-thumb{background:rgba(236,101,32,0.3);border-radius:3px}
     #arc-nav{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:100;height:320px;width:190px;pointer-events:all}
     .arc-track{position:absolute;right:21px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,rgba(236,101,32,0) 0%,rgba(236,101,32,0.3) 12%,rgba(236,101,32,0.3) 88%,rgba(236,101,32,0) 100%);border-radius:1px}
     .arc-track-fill{position:absolute;left:0;top:0;width:100%;height:0%;background:linear-gradient(to bottom,#ec6520,#ec6520);border-radius:1px;transition:height 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 0 8px rgba(236,101,32,0.65)}
@@ -138,14 +138,14 @@
 
 <!-- ═══════════════════ SECTION A: HERO ═══════════════════════════ -->
 <section id="about-hero" class="relative min-h-screen w-full overflow-hidden flex items-center">
-  <div class="absolute inset-0 z-0" style="background:linear-gradient(135deg,#0A0E16 0%,#1a1009 40%,#0A0E16 100%)"></div>
+  <div class="absolute inset-0 z-0" style="background:linear-gradient(135deg,#0C0C0C 0%,#1a1009 40%,#0C0C0C 100%)"></div>
   <div class="absolute inset-0 z-0 isometric-grid opacity-15"></div>
   <div class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full pointer-events-none z-0" style="background:radial-gradient(circle,rgba(255,140,0,0.07) 0%,transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/3 w-64 h-64 rounded-full pointer-events-none z-0" style="background:radial-gradient(circle,rgba(82,183,136,0.05) 0%,transparent 70%)"></div>
 
   <div class="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto pt-24 pb-16">
     <div class="max-w-3xl">
-      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-8" style="border-color:rgba(236,101,32,0.3);background:rgba(120,170,200,0.06)">
+      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-8" style="border-color:rgba(236,101,32,0.3);background:rgba(160,160,160,0.06)">
         <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
         <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F NAGPUR</span>
       </div>
@@ -171,15 +171,15 @@
     <div class="hidden lg:block absolute float-anim" style="width:260px;right:220px;top:28%">
       <div class="glass-panel rounded-2xl p-6 border" style="border-color:rgba(236,101,32,0.12)">
         <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">QUICK FACTS</div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(160,160,160,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">domain</span>
           <div><div class="text-on-surface-variant text-xs">VNIT Campus</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">215 Acres</div></div>
         </div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(160,160,160,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">groups</span>
           <div><div class="text-on-surface-variant text-xs">Faculty Pool</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">300+</div></div>
         </div>
-        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(120,170,200,0.12)">
+        <div class="flex items-center gap-3 py-2.5 border-b" style="border-color:rgba(160,160,160,0.12)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-lg">verified</span>
           <div><div class="text-on-surface-variant text-xs">Legal Status</div><div class="text-on-surface font-semibold text-sm" style="font-family:'Space Grotesk',sans-serif">Section 8</div></div>
         </div>
@@ -265,7 +265,7 @@
 </section>
 
 <!-- ═══════════════════ SECTION C: SALIENT FEATURES ══════════════ -->
-<section id="about-features" class="py-28 relative overflow-hidden" style="background:linear-gradient(to bottom,#0A0E16,#06090F,#0A0E16)">
+<section id="about-features" class="py-28 relative overflow-hidden" style="background:linear-gradient(to bottom,#0C0C0C,#0A0A0A,#0C0C0C)">
   <div class="absolute inset-0 isometric-grid opacity-8"></div>
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
     <div class="mb-16 fade-up">
@@ -277,42 +277,42 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-1" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">🌱</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Founder-Friendly Approach</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Our incubation framework is designed to support entrepreneurs with the resources and guidance needed to build sustainable ventures, not just extract equity.</p>
       </div>
       <!-- Card 2 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-2" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">🏆</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Competitive Landscape Awareness</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Our policy is drafted considering the offerings of leading incubators across the region, ensuring startups receive best-in-class support.</p>
       </div>
       <!-- Card 3 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-3" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">♻️</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Long-Term Ecosystem Development</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">V3F fosters long-term entrepreneurial growth and sustainable businesses that contribute positively to society and the Nagpur region.</p>
       </div>
       <!-- Card 4 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-4" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-4" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">🎓</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Incentives for VNIT Faculty</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Faculty engagement in mentoring startups is recognised by VNIT during appraisal and professional evaluation processes.</p>
       </div>
       <!-- Card 5 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-5" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-5" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(236,101,32,0.08)">💡</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#ec6520"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Subsidised Services for VNIT Community</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">V3F provides subsidised access to incubation services for VNIT students and alumni, with significantly reduced fees compared to external applicants.</p>
       </div>
       <!-- Card 6 -->
-      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-6" style="border-color:rgba(120,170,200,0.12)">
+      <div class="feature-card glass-panel rounded-2xl p-7 border fade-up delay-6" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:rgba(82,183,136,0.08)">⚡</div>
         <div class="w-8 h-0.5 rounded mb-4" style="background:#52b788"></div>
         <h3 class="font-bold text-on-surface text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Operational Autonomy</h3>
@@ -329,7 +329,7 @@
     <!-- Header -->
     <div class="flex items-center gap-8 mb-6">
       <div class="h-px flex-1 bg-outline-variant/30"></div>
-      <h2 class="font-bold text-3xl text-center shrink-0 fade-in" style="font-family:'Playfair Display',serif;color:#e8eef4">Board of Directors</h2>
+      <h2 class="font-bold text-3xl text-center shrink-0 fade-in" style="font-family:'Playfair Display',serif;color:#E8E8E8">Board of Directors</h2>
       <div class="h-px flex-1 bg-outline-variant/30"></div>
     </div>
     <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-16 fade-up text-base leading-relaxed">V3F Nagpur is governed by a distinguished board comprising VNIT leadership, industry veterans, and academic experts.</p>
@@ -352,7 +352,7 @@
                   <img src="chairman.jpg" alt="Dr. Premlal Patel" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ec6520;color:#0E141F;font-weight:700;box-shadow:0 0 12px rgba(236,101,32,0.5)">CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#ec6520;color:#111111;font-weight:700;box-shadow:0 0 12px rgba(236,101,32,0.5)">CHAIRMAN</span>
                 </div>
               </div>
             </div>
@@ -383,7 +383,7 @@
                   <img src="vice-chairman.jpg" alt="Shashikant Chaudhary" class="w-full h-full object-cover object-top" />
                 </div>
                 <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0A0E16;font-weight:700;box-shadow:0 0 12px rgba(82,183,136,0.4)">VICE CHAIRMAN</span>
+                  <span class="font-label-mono text-xs px-3 py-1 rounded-full" style="background:#52b788;color:#0C0C0C;font-weight:700;box-shadow:0 0 12px rgba(82,183,136,0.4)">VICE CHAIRMAN</span>
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@
       <div class="font-label-mono text-xs text-on-surface-variant tracking-widest mb-5 fade-in" style="opacity:0.6">BOARD MEMBERS</div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
       <!-- Uday Kamat -->
-      <div class="glass-panel rounded-2xl p-5 card-hover fade-up delay-1" style="border:1px solid rgba(120,170,200,0.12)">
+      <div class="glass-panel rounded-2xl p-5 card-hover fade-up delay-1" style="border:1px solid rgba(160,160,160,0.12)">
         <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-xl">person</span>
         </div>
@@ -421,7 +421,7 @@
         </div>
       </div>
       <!-- Dr. Yashwant Kathpatal -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-1" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(82,183,136,0.1);border-color:rgba(82,183,136,0.25)">
           <span class="material-symbols-outlined text-2xl" style="color:#52b788">person</span>
         </div>
@@ -434,7 +434,7 @@
         </div>
       </div>
       <!-- Dr. R. B. Deshmukh -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-2" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">person</span>
         </div>
@@ -447,7 +447,7 @@
         </div>
       </div>
       <!-- Dr. Dilip Peshwe -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-3" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(82,183,136,0.1);border-color:rgba(82,183,136,0.25)">
           <span class="material-symbols-outlined text-2xl" style="color:#52b788">person</span>
         </div>
@@ -460,7 +460,7 @@
         </div>
       </div>
       <!-- Vivek Deshpande -->
-      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-4" style="border-color:rgba(120,170,200,0.12)">
+      <div class="glass-panel rounded-2xl p-6 border card-hover fade-up delay-4" style="border-color:rgba(160,160,160,0.12)">
         <div class="w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 mx-auto" style="background:rgba(236,101,32,0.1);border-color:rgba(236,101,32,0.25)">
           <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">person</span>
         </div>
@@ -530,7 +530,7 @@
       <div class="slide-right">
         <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-5">KEY POLICY FRAMEWORKS</div>
         <div class="space-y-5">
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-1" style="border-color:rgba(120,170,200,0.12)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-1" style="border-color:rgba(160,160,160,0.12)">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.08)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-xl">how_to_vote</span>
@@ -541,7 +541,7 @@
             </div>
           </div>
         </div>
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-2" style="border-color:rgba(120,170,200,0.12)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-2" style="border-color:rgba(160,160,160,0.12)">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.08)">
               <span class="material-symbols-outlined text-xl" style="color:#52b788">policy</span>
@@ -552,7 +552,7 @@
             </div>
           </div>
         </div>
-        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-3" style="border-color:rgba(120,170,200,0.12)">
+        <div class="feature-card glass-panel rounded-xl p-6 border fade-up delay-3" style="border-color:rgba(160,160,160,0.12)">
           <div class="flex items-start gap-4">
             <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.08)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-xl">trending_up</span>

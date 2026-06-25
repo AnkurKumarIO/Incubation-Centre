@@ -13,18 +13,18 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#1A2030","on-error":"#690005","surface-dim":"#06090F",
-      "primary":"#e8eef4","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A2030",
-      "inverse-primary":"#1A2030","outline-variant":"#1e2d3d","surface-tint":"#ec6520",
-      "error-container":"#93000a","outline":"#3a4a5c","tertiary-container":"#d0e8f0",
-      "on-primary-container":"#1A2030","primary-container":"#ec6520","tertiary":"#d0e8f0",
-      "background":"#0A0E16","secondary":"#7fd4d9","on-tertiary":"#141A26",
-      "on-primary":"#0E141F","on-surface":"#e8eef4","surface-variant":"#222C3C",
-      "surface-container":"#141A26","inverse-surface":"#e8eef4","surface":"#0A0E16",
-      "on-background":"#e8eef4","on-surface-variant":"#a9bbcc",
-      "surface-container-highest":"#222C3C","primary-fixed":"#f08040",
-      "coral-accent":"#ec6520","surface-container-lowest":"#06090F",
-      "surface-container-low":"#0E141F",
+      "surface-container-high":"#1C1C1C","on-error":"#690005","surface-dim":"#0A0A0A",
+      "primary":"#E8E8E8","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1C1C1C",
+      "inverse-primary":"#1C1C1C","outline-variant":"#1E1E1E","surface-tint":"#ec6520",
+      "error-container":"#93000a","outline":"#383838","tertiary-container":"#D0D0D0",
+      "on-primary-container":"#1C1C1C","primary-container":"#ec6520","tertiary":"#D0D0D0",
+      "background":"#0C0C0C","secondary":"#7fd4d9","on-tertiary":"#161616",
+      "on-primary":"#111111","on-surface":"#E8E8E8","surface-variant":"#222222",
+      "surface-container":"#161616","inverse-surface":"#E8E8E8","surface":"#0C0C0C",
+      "on-background":"#E8E8E8","on-surface-variant":"#9A9A9A",
+      "surface-container-highest":"#222222","primary-fixed":"#f08040",
+      "coral-accent":"#ec6520","surface-container-lowest":"#0A0A0A",
+      "surface-container-low":"#111111",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
     fontFamily:{
@@ -36,18 +36,18 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0A0E16; color:#e8eef4; overflow-x:hidden; }
+  body { background-color:#0C0C0C; color:#E8E8E8; overflow-x:hidden; }
 
   .glass-panel {
-    background:rgba(120,170,200,0.04);
+    background:rgba(160,160,160,0.04);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(120,170,200,0.12);
+    border:1px solid rgba(160,160,160,0.12);
   }
 
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(120,170,200,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(120,170,200,0.06) 1px,transparent 1px);
+      linear-gradient(rgba(160,160,160,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(160,160,160,0.06) 1px,transparent 1px);
     background-size:40px 40px;
   }
 
@@ -147,7 +147,7 @@ tailwind.config = {
     display:inline-flex; align-items:center; gap:5px;
     font-family:'JetBrains Mono',monospace;
     font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-    background:#ec6520; color:#0E141F;
+    background:#ec6520; color:#111111;
     padding:3px 10px; border-radius:9999px;
   }
 
@@ -156,7 +156,7 @@ tailwind.config = {
     font-family:'JetBrains Mono',monospace;
     font-size:11px; padding:3px 10px; border-radius:9999px;
   }
-  .tag-amber, .tag-coral, .tag-dim { background:rgba(120,170,200,0.07); color:#b3c2d4; border:1px solid rgba(120,170,200,0.16); }
+  .tag-amber, .tag-coral, .tag-dim { background:rgba(160,160,160,0.07); color:#b3c2d4; border:1px solid rgba(160,160,160,0.16); }
 
   /* Hairline */
   .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); margin:0; }
@@ -172,7 +172,7 @@ tailwind.config = {
 
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   ::-webkit-scrollbar { width:5px; }
-  ::-webkit-scrollbar-track { background:#0A0E16; }
+  ::-webkit-scrollbar-track { background:#0C0C0C; }
   ::-webkit-scrollbar-thumb { background:rgba(236,101,32,0.3); border-radius:3px; }
 
   /* Glow util */
