@@ -13,17 +13,17 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#1C1C1C","on-error":"#690005","surface-dim":"#0A0A0A",
-      "primary":"#E8E8E8","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1C1C1C",
-      "inverse-primary":"#1C1C1C","outline-variant":"#1E1E1E","surface-tint":"#ec6520",
-      "error-container":"#93000a","outline":"#383838","tertiary-container":"#D0D0D0",
-      "on-primary-container":"#1C1C1C","primary-container":"#ec6520","tertiary":"#D0D0D0",
-      "background":"#0C0C0C","secondary":"#7fd4d9","on-tertiary":"#161616",
-      "on-primary":"#111111","on-surface":"#E8E8E8","surface-variant":"#222222",
-      "surface-container":"#161616","inverse-surface":"#E8E8E8","surface":"#0C0C0C",
-      "on-background":"#E8E8E8","on-surface-variant":"#9A9A9A",
+      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#0D0D0D",
+      "primary":"#FFFFFF","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A1A1A",
+      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#ec6520",
+      "error-container":"#93000a","outline":"#333333","tertiary-container":"#CCCCCC",
+      "on-primary-container":"#1A1A1A","primary-container":"#ec6520","tertiary":"#CCCCCC",
+      "background":"#0D0D0D","secondary":"#7fd4d9","on-tertiary":"#141414",
+      "on-primary":"#111111","on-surface":"#FFFFFF","surface-variant":"#222222",
+      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#0D0D0D",
+      "on-background":"#FFFFFF","on-surface-variant":"#888888",
       "surface-container-highest":"#222222","primary-fixed":"#f08040",
-      "coral-accent":"#ec6520","surface-container-lowest":"#0A0A0A",
+      "coral-accent":"#ec6520","surface-container-lowest":"#0D0D0D",
       "surface-container-low":"#111111",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
@@ -36,18 +36,18 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0C0C0C; color:#E8E8E8; overflow-x:hidden; }
+  body { background-color:#0D0D0D; color:#FFFFFF; overflow-x:hidden; }
 
   .glass-panel {
-    background:rgba(160,160,160,0.04);
+    background:rgba(180,180,180,0.04);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(160,160,160,0.12);
+    border:1px solid rgba(180,180,180,0.12);
   }
 
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(160,160,160,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(160,160,160,0.06) 1px,transparent 1px);
+      linear-gradient(rgba(180,180,180,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(180,180,180,0.06) 1px,transparent 1px);
     background-size:40px 40px;
   }
 
@@ -156,7 +156,7 @@ tailwind.config = {
     font-family:'JetBrains Mono',monospace;
     font-size:11px; padding:3px 10px; border-radius:9999px;
   }
-  .tag-amber, .tag-coral, .tag-dim { background:rgba(160,160,160,0.07); color:#b3c2d4; border:1px solid rgba(160,160,160,0.16); }
+  .tag-amber, .tag-coral, .tag-dim { background:rgba(180,180,180,0.07); color:#b3c2d4; border:1px solid rgba(180,180,180,0.16); }
 
   /* Hairline */
   .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); margin:0; }
@@ -172,7 +172,7 @@ tailwind.config = {
 
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   ::-webkit-scrollbar { width:5px; }
-  ::-webkit-scrollbar-track { background:#0C0C0C; }
+  ::-webkit-scrollbar-track { background:#0D0D0D; }
   ::-webkit-scrollbar-thumb { background:rgba(236,101,32,0.3); border-radius:3px; }
 
   /* Glow util */

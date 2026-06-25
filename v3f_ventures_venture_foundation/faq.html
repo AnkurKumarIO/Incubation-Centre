@@ -21,38 +21,38 @@
       theme: {
         extend: {
           colors: {
-            "surface-container-high": "#1C1C1C",
+            "surface-container-high": "#1A1A1A",
             "on-error": "#690005",
-            "surface-dim": "#0A0A0A",
-            "primary": "#E8E8E8",
+            "surface-dim": "#0D0D0D",
+            "primary": "#FFFFFF",
             "primary-fixed-dim": "#ec6520",
-            "inverse-on-surface": "#1C1C1C",
-            "inverse-primary": "#1C1C1C",
-            "outline-variant": "#1E1E1E",
+            "inverse-on-surface": "#1A1A1A",
+            "inverse-primary": "#1A1A1A",
+            "outline-variant": "#222222",
             "surface-tint": "#ec6520",
             "error-container": "#93000a",
-            "outline": "#383838",
-            "tertiary-container": "#D0D0D0",
-            "on-primary-container": "#1C1C1C",
+            "outline": "#333333",
+            "tertiary-container": "#CCCCCC",
+            "on-primary-container": "#1A1A1A",
             "primary-container": "#ec6520",
-            "tertiary": "#D0D0D0",
-            "background": "#0C0C0C",
+            "tertiary": "#CCCCCC",
+            "background": "#0D0D0D",
             "secondary": "#7fd4d9",
-            "on-tertiary": "#161616",
+            "on-tertiary": "#141414",
             "on-primary": "#111111",
-            "on-surface": "#E8E8E8",
+            "on-surface": "#FFFFFF",
             "surface-variant": "#222222",
-            "surface-container": "#161616",
-            "inverse-surface": "#E8E8E8",
-            "surface": "#0C0C0C",
-            "on-background": "#E8E8E8",
-            "on-surface-variant": "#9A9A9A",
+            "surface-container": "#141414",
+            "inverse-surface": "#FFFFFF",
+            "surface": "#0D0D0D",
+            "on-background": "#FFFFFF",
+            "on-surface-variant": "#888888",
             "surface-container-highest": "#222222",
             "primary-fixed": "#f08040",
             "coral-accent": "#ec6520",
             "forest-green": "#2d6a4f",
             "forest-green-light": "#52b788",
-            "surface-container-lowest": "#0A0A0A",
+            "surface-container-lowest": "#0D0D0D",
             "surface-container-low": "#111111",
           },
           fontFamily: {
@@ -69,7 +69,7 @@
 
   <style>
     * { box-sizing: border-box; }
-    body { background-color: #0C0C0C; color: #E8E8E8; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    body { background-color: #0D0D0D; color: #FFFFFF; overflow-x: hidden; font-family: 'Inter', sans-serif; }
 
     .glass-panel {
       background: rgba(255, 200, 100, 0.03);
@@ -160,7 +160,7 @@
 
     /* Scrollbar styling */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0C0C0C; }
+    ::-webkit-scrollbar-track { background: #0D0D0D; }
     ::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.3); border-radius: 3px; }
 
     /* Scan line */
@@ -199,7 +199,7 @@
   <div class="absolute inset-0 isometric-grid opacity-15"></div>
   <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
   <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
-       style="background: radial-gradient(circle, rgba(160,160,160,0.06) 0%, transparent 70%)"></div>
+       style="background: radial-gradient(circle, rgba(180,180,180,0.06) 0%, transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full"
        style="background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%)"></div>
 </div>
@@ -240,7 +240,7 @@
       <div class="max-w-3xl">
         <!-- Label Badge -->
         <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6"
-             style="border-color: rgba(236,101,32,0.3); background: rgba(160,160,160,0.06);">
+             style="border-color: rgba(236,101,32,0.3); background: rgba(180,180,180,0.06);">
           <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
           <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest uppercase">FAQ Database</span>
         </div>
@@ -316,7 +316,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         
         <!-- Incubation Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(160,160,160,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 140, 0, 0.08);">
               <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">send</span>
@@ -334,7 +334,7 @@
         </div>
 
         <!-- Mentorship Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(160,160,160,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 107, 53, 0.08);">
               <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">psychology</span>
@@ -352,7 +352,7 @@
         </div>
 
         <!-- General Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(160,160,160,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(82, 183, 136, 0.08);">
               <span class="material-symbols-outlined text-2xl" style="color: #52b788;">mail</span>
@@ -667,7 +667,7 @@
     const div = document.createElement('div');
     div.id = `faq-card-${faq.id}`;
     div.className = 'faq-card glass-panel rounded-xl border p-6 mb-4 relative overflow-hidden transition-all duration-300';
-    div.style.borderColor = 'rgba(160,160,160,0.12)';
+    div.style.borderColor = 'rgba(180,180,180,0.12)';
     div.dataset.id = faq.id;
 
     div.innerHTML = `
@@ -745,7 +745,7 @@
       const content = document.getElementById(`faq-content-${cid}`);
       const cicon = document.getElementById(`faq-icon-${cid}`);
       c.classList.remove('open', 'bg-primary-fixed-dim/5');
-      c.style.borderColor = 'rgba(160,160,160,0.12)';
+      c.style.borderColor = 'rgba(180,180,180,0.12)';
       if (content) {
         content.style.maxHeight = '0px';
         content.style.opacity = '0';
