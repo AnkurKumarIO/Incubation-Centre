@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "v3f-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "v3f_ventures_venture_foundation", "-p", "3000", "--no-clipboard"],
+      "port": 3000
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Page Not Found — V3F Nagpur</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{
+    colors:{
+      "background":"#0D0D0D","on-surface":"#FFFFFF","on-surface-variant":"#888888",
+      "primary-container":"#ec6520","on-primary":"#111111","outline-variant":"#222222",
+    }
+  }}
+}
+</script>
+<style>
+  body{background:#0D0D0D;color:#fff;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;overflow:hidden}
+  .gradient-text{background:linear-gradient(135deg,#ec6520,#f6a06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .isometric-grid{background-image:linear-gradient(rgba(180,180,180,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(180,180,180,0.06) 1px,transparent 1px);background-size:40px 40px}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .float{animation:float 4s ease-in-out infinite}
+</style>
+</head>
+<body>
+<div class="isometric-grid absolute inset-0 opacity-10 pointer-events-none"></div>
+<div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at center,rgba(236,101,32,0.06) 0%,transparent 70%)"></div>
+
+<div class="relative text-center px-6 max-w-lg">
+  <div class="float mb-8">
+    <div class="text-[7rem] font-black leading-none" style="font-family:'Manrope',sans-serif">
+      <span class="gradient-text">404</span>
+    </div>
+  </div>
+
+  <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
+    <span class="w-2 h-2 rounded-full animate-ping flex-shrink-0" style="background:#ec6520"></span>
+    <span style="font-family:'Manrope',sans-serif;font-size:11px;color:#ec6520;letter-spacing:0.12em">PAGE NOT FOUND</span>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-3" style="font-family:'Manrope',sans-serif">This page doesn't exist</h1>
+  <p class="text-sm mb-8" style="color:#888">The link may be broken, or the page may have been moved. Head back to the homepage to explore V3F Nagpur.</p>
+
+  <div class="flex flex-col sm:flex-row gap-3 justify-center">
+    <a href="index.html" class="px-8 py-3 rounded-full font-bold text-sm" style="background:#ec6520;color:#111;font-family:'Manrope',sans-serif">Back to Home</a>
+    <a href="programs.html" class="px-8 py-3 rounded-full font-bold text-sm" style="border:1px solid rgba(255,255,255,0.15);color:#fff;font-family:'Manrope',sans-serif">View Programs</a>
+  </div>
+
+  <p class="mt-10 text-xs" style="color:#555;font-family:'Manrope',sans-serif">V3F Nagpur · VNIT Incubation Centre · <a href="mailto:anil@v3foundation.in" style="color:#ec6520">anil@v3foundation.in</a></p>
+</div>
+</body>
+</html>
