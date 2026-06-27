@@ -36,17 +36,17 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#0D0D0D",
-      "primary":"#FFFFFF","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A1A1A",
-      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#ec6520",
+      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#050B14",
+      "primary":"#FFFFFF","primary-fixed-dim":"#00B4D8","inverse-on-surface":"#1A1A1A",
+      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#00B4D8",
       "error-container":"#93000a","outline":"#333333","tertiary-container":"#CCCCCC",
-      "on-primary-container":"#1A1A1A","primary-container":"#ec6520","tertiary":"#CCCCCC",
-      "background":"#0D0D0D","secondary":"#7fd4d9","on-tertiary":"#141414",
+      "on-primary-container":"#1A1A1A","primary-container":"#00B4D8","tertiary":"#CCCCCC",
+      "background":"#050B14","secondary":"#7fd4d9","on-tertiary":"#141414",
       "on-primary":"#111111","on-surface":"#FFFFFF","surface-variant":"#222222",
-      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#0D0D0D",
+      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#050B14",
       "on-background":"#FFFFFF","on-surface-variant":"#888888",
       "surface-container-highest":"#222222","primary-fixed":"#f08040",
-      "coral-accent":"#ec6520","surface-container-lowest":"#0D0D0D",
+      "coral-accent":"#00B4D8","surface-container-lowest":"#050B14",
       "surface-container-low":"#111111",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
@@ -59,21 +59,21 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0D0D0D; color:#FFFFFF; overflow-x:hidden; }
-  .glass-panel { background:rgba(180,180,180,0.04); backdrop-filter:blur(12px); border:1px solid rgba(180,180,180,0.12); }
-  .glow-cyan  { box-shadow:0 0 15px rgba(236,101,32,0.25); }
-  .glow-coral { box-shadow:0 0 15px rgba(236,101,32,0.35); }
+  body { background-color:#050B14; color: #A0AEC0; overflow-x:hidden; }
+  .glass-panel { background:rgba(20,40,80,0.35); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08); }
+  .glow-cyan  { box-shadow:0 0 15px rgba(79,209,197,0.2); }
+  .glow-coral { box-shadow:0 0 15px rgba(79,209,197,0.35); }
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(180,180,180,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(180,180,180,0.06) 1px,transparent 1px);
-    background-size:40px 40px;
+      linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);
+    background-size:44px 44px;
   }
-  .gradient-text { background:linear-gradient(135deg,#ec6520,#f6a06a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .gradient-text { background:linear-gradient(135deg,#FF9900,#FF6B35); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .card-hover { transition:transform 0.3s ease,box-shadow 0.3s ease; }
-  .card-hover:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(236,101,32,0.1); }
+  .card-hover:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(79,209,197,0.1); }
   .nav-link { position:relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00B4D8; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
   .fade-up { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease,transform 0.7s ease; }
   .fade-up.visible { opacity:1; transform:translateY(0); }
@@ -83,7 +83,7 @@ tailwind.config = {
   .delay-4{transition-delay:0.4s} .delay-5{transition-delay:0.5s} .delay-6{transition-delay:0.6s}
   :target { scroll-margin-top:100px; }
   .filter-pill { cursor:pointer; transition:all 0.2s ease; }
-  .filter-pill.active { background:rgba(236,101,32,0.15); border-color:rgba(236,101,32,0.6); color:#ec6520; }
+  .filter-pill.active { background:rgba(79,209,197,0.12); border-color:rgba(79,209,197,0.5); color:#4FD1C5; }
 
 @keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
   .ping-slow { animation:ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
@@ -97,13 +97,39 @@ tailwind.config = {
   #mob-drawer { transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
   #mob-menu.open #mob-drawer { transform: translateX(0); }
   .mob-nav-link { display: flex; align-items: center; padding: 13px 0; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, padding-left 0.2s; text-decoration: none; }
-  .mob-nav-link:hover { color: #ec6520; padding-left: 5px; }
+  .mob-nav-link:hover { color: #4FD1C5; padding-left: 5px; }
+
+  /* ── Marquee ticker ─────────────────────────────────────────── */
+  .marquee-strip {
+    position: relative; width: 100%; overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,153,0,0.03) 0%, rgba(79,209,197,0.03) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 9px 0; z-index: 49;
+  }
+  .marquee-track { display: inline-flex; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; padding: 0 2.5rem; flex-shrink: 0; }
+  .marquee-item.amber { color: rgba(255,153,0,0.75); }
+  .marquee-item.teal  { color: rgba(79,209,197,0.65); }
+  .marquee-sep { color: rgba(255,255,255,0.2); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* Section numbering */
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #94A3B8; display: inline-block; margin-bottom: 10px; }
+  .section-num span { color: #FF9900; }
+  /* Ambient dots */
+  .amb-amber { position: absolute; width: 4px; height: 4px; background: #FF9900; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(255,153,0,0.28); pointer-events: none; z-index: 1; }
+  .amb-teal  { position: absolute; width: 4px; height: 4px; background: #4FD1C5; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(79,209,197,0.18); pointer-events: none; z-index: 1; }
+  /* Teal gradient text */
+  .gradient-text-teal { background: linear-gradient(to right, #ffffff, #4FD1C5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  /* Card hover */
+  .card-hover { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(255,153,0,0.25) !important; box-shadow: 0 10px 30px rgba(5,11,20,0.8), 0 0 20px rgba(255,153,0,0.05); }
 </style>
 </head>
 <body class="font-body-md antialiased">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
@@ -111,7 +137,7 @@ tailwind.config = {
     <div class="hidden md:flex items-center gap-8">
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html">Home</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="focus-areas.html">Focus Areas</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #00B4D8;" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
@@ -119,17 +145,43 @@ tailwind.config = {
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+    <a href="index.html#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;" class="font-bold px-6 py-2.5 rounded-lg active:scale-95 transition-all text-sm whitespace-nowrap hover:opacity-95 hover:shadow-[0_0_20px_rgba(255,153,0,0.35)]">Apply Now →</a>
     <button id="mob-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg ml-2 flex-shrink-0" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════ MARQUEE TICKER -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
 <!-- Mobile navigation drawer -->
 <div id="mob-menu" class="fixed inset-0 z-[999]" aria-hidden="true">
   <div id="mob-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#0D0D0D;border-left:1px solid #222;">
+  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#050B14;border-left:1px solid #222;">
     <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid #222;">
       <img src="images/Option 9.png" alt="V3F" class="h-10 w-auto" style="mix-blend-mode:screen;"/>
       <button id="mob-close" aria-label="Close navigation menu" class="flex items-center justify-center w-9 h-9 rounded-full" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
@@ -148,23 +200,23 @@ tailwind.config = {
       <a href="index.html#contact" class="mob-nav-link">Contact</a>
     </nav>
     <div class="px-6 pb-8 pt-4" style="border-top:1px solid #222;">
-      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#ec6520;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
+      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
     </div>
   </div>
 </div>
 
 <!-- HERO STRIP -->
-<div class="relative pt-20 pb-16 overflow-hidden">
+<div class="relative pt-20 pb-10 overflow-hidden">
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-12">
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,153,0,0.07) 0%,transparent 60%);"></div>
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
     <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6">
       <a href="index.html" class="hover:text-primary transition-colors">Home</a>
       <span class="text-outline-variant">›</span>
       <span class="text-primary-fixed-dim">Focus Areas</span>
     </div>
     <div class="max-w-2xl">
-      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
+      <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(79,209,197,0.3);background:rgba(255,255,255,0.06)">
         <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
         <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">FOCUS AREAS</span>
       </div>
@@ -219,15 +271,15 @@ tailwind.config = {
       <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-1">
         <div class="flex items-start gap-4 mb-4">
           <div class="w-11 h-11 rounded-xl bg-coral-accent/10 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-coral-accent text-2xl">smart_toy</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">smart_toy</span>
           </div>
           <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Manrope',sans-serif;">Artificial Intelligence & Digital Technologies</h2>
         </div>
         <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Machine learning, SaaS products, data analytics, computer vision, NLP, and enterprise software. VNIT's strong computer science faculty provides unmatched support for AI-first startups.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">AI/ML</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">SaaS</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Data Analytics</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">AI/ML</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">SaaS</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Data Analytics</span>
         </div>
       </div>
     </div>
@@ -273,15 +325,15 @@ tailwind.config = {
       <div class="sector-card glass-panel rounded-2xl p-8 h-full flex flex-col border border-outline-variant/20 hover:border-coral-accent/40 card-hover transition-colors fade-up delay-4">
         <div class="flex items-start gap-4 mb-4">
           <div class="w-11 h-11 rounded-xl bg-coral-accent/10 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-coral-accent text-2xl">health_and_safety</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">health_and_safety</span>
           </div>
           <h2 class="font-bold text-lg leading-snug pt-1" style="font-family:'Manrope',sans-serif;">Healthcare Technologies</h2>
         </div>
         <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-1">Medical devices, diagnostics, digital health, telemedicine, health analytics, and biotech. VNIT's engineering expertise enables unique cross-disciplinary innovation in healthcare technology development.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">MedTech</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Diagnostics</span>
-          <span class="text-xs bg-coral-accent/10 text-coral-accent px-3 py-1 rounded-full font-label-mono">Digital Health</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">MedTech</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Diagnostics</span>
+          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-3 py-1 rounded-full font-label-mono">Digital Health</span>
         </div>
       </div>
     </div>
@@ -386,7 +438,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <!-- Scroll progress bar -->
-<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#ec6520;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
+<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#00B4D8;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
 <script>
 (function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
 </script>

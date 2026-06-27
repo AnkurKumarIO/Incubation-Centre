@@ -37,17 +37,17 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#0D0D0D",
-      "primary":"#FFFFFF","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A1A1A",
-      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#ec6520",
+      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#050B14",
+      "primary":"#FFFFFF","primary-fixed-dim":"#00B4D8","inverse-on-surface":"#1A1A1A",
+      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#00B4D8",
       "error-container":"#93000a","outline":"#333333","tertiary-container":"#CCCCCC",
-      "on-primary-container":"#1A1A1A","primary-container":"#ec6520","tertiary":"#CCCCCC",
-      "background":"#0D0D0D","secondary":"#7fd4d9","on-tertiary":"#141414",
+      "on-primary-container":"#1A1A1A","primary-container":"#00B4D8","tertiary":"#CCCCCC",
+      "background":"#050B14","secondary":"#7fd4d9","on-tertiary":"#141414",
       "on-primary":"#111111","on-surface":"#FFFFFF","surface-variant":"#222222",
-      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#0D0D0D",
+      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#050B14",
       "on-background":"#FFFFFF","on-surface-variant":"#888888",
       "surface-container-highest":"#222222","primary-fixed":"#f08040",
-      "coral-accent":"#ec6520","surface-container-lowest":"#0D0D0D",
+      "coral-accent":"#00B4D8","surface-container-lowest":"#050B14",
       "surface-container-low":"#111111",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
@@ -60,27 +60,27 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0D0D0D; color:#FFFFFF; overflow-x:hidden; }
+  body { background-color:#050B14; color: #A0AEC0; overflow-x:hidden; }
 
-  .glass-panel { background:rgba(180,180,180,0.04); backdrop-filter:blur(12px); border:1px solid rgba(180,180,180,0.12); }
-  .glow-amber  { box-shadow:0 0 20px rgba(236,101,32,0.25); }
-  .glow-coral  { box-shadow:0 0 20px rgba(236,101,32,0.35); }
+  .glass-panel { background:rgba(20,40,80,0.35); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08); }
+  .glow-amber  { box-shadow:0 0 20px rgba(255,153,0,0.3); }
+  .glow-coral  { box-shadow:0 0 28px rgba(79,209,197,0.3); }
 
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(180,180,180,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(180,180,180,0.06) 1px,transparent 1px);
-    background-size:40px 40px;
+      linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);
+    background-size:44px 44px;
   }
 
-  .gradient-text { background:linear-gradient(135deg,#ec6520,#f6a06a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .gradient-text { background:linear-gradient(135deg,#FF9900,#FF6B35); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
   .nav-link { position:relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00B4D8; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
 
   .filter-pill { cursor:pointer; transition:all 0.2s ease; }
-  .filter-pill.active { background:rgba(236,101,32,0.15); border-color:rgba(236,101,32,0.6); color:#ec6520; }
+  .filter-pill.active { background:rgba(79,209,197,0.12); border-color:rgba(79,209,197,0.5); color:#4FD1C5; }
 
   .fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease,transform 0.65s ease; }
   .fade-up.visible { opacity:1; transform:translateY(0); }
@@ -104,7 +104,7 @@ tailwind.config = {
   }
   .mentor-card:hover {
     transform:translateY(-4px);
-    border-color:rgba(236,101,32,0.35);
+    border-color:rgba(79,209,197,0.3);
     box-shadow:0 16px 40px rgba(236,101,32,0.08);
   }
   .mentor-card::before,
@@ -112,7 +112,7 @@ tailwind.config = {
     content:'';
     position:absolute;
     width:10px; height:10px;
-    border-color:rgba(236,101,32,0.3);
+    border-color:rgba(79,209,197,0.3);
     border-style:solid;
     pointer-events:none;
     transition:border-color 0.3s;
@@ -120,46 +120,46 @@ tailwind.config = {
   .mentor-card::before { top:8px; left:8px; border-width:1px 0 0 1px; }
   .mentor-card::after  { bottom:8px; right:8px; border-width:0 1px 1px 0; }
   .mentor-card:hover::before,
-  .mentor-card:hover::after { border-color:rgba(255,140,0,0.7); }
+  .mentor-card:hover::after { border-color:rgba(255,153,0,0.7); }
 
   .mentor-avatar {
     width:56px; height:56px;
     border-radius:50%;
-    background:rgba(236,101,32,0.12);
-    border:1px solid rgba(236,101,32,0.25);
+    background:rgba(79,209,197,0.1);
+    border:1px solid rgba(79,209,197,0.2);
     display:flex; align-items:center; justify-content:center;
     font-family:'Manrope',sans-serif;
     font-weight:700; font-size:1rem;
-    color:#ec6520;    flex-shrink:0;
+    color:#4FD1C5;    flex-shrink:0;
     letter-spacing:-0.02em;
     transition: all 0.3s ease;
   }
-  .mentor-avatar.amber-av { background:rgba(255,140,0,0.12); border:1.5px solid rgba(255,140,0,0.3); color:#ff8c00; }
+  .mentor-avatar.amber-av { background:rgba(255,153,0,0.12); border:1.5px solid rgba(255,153,0,0.3); color:#ff8c00; }
   .mentor-avatar.coral-av { background:rgba(255,107,53,0.12); border:1.5px solid rgba(255,107,53,0.3); color:#ff6b35; }
   .mentor-card:hover .mentor-avatar { transform:scale(1.05); }
 
   .mentor-index {
     font-family:'JetBrains Mono',monospace;
     font-size:10px; font-weight:700;
-    color:rgba(236,101,32,0.35);
+    color:rgba(79,209,197,0.35);
     letter-spacing:0.08em;
   }
   .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); }
 
   /* Tag colors alternate */
-  .tag-amber { background:rgba(236,101,32,0.1); color:#ec6520; }
-  .tag-coral { background:rgba(255,107,53,0.1); color:#ec6520; }
+  .tag-amber { background:rgba(79,209,197,0.1); color:#4FD1C5; }
+  .tag-coral { background:rgba(255,107,53,0.1); color:#4FD1C5; }
   .stat-box {
-    background:rgba(180,180,180,0.04);
+    background:rgba(20,40,80,0.35);
     border:1px solid rgba(255,180,80,0.1);    border-radius:0.75rem;
     text-align:center;
     padding:1rem 1.5rem;
     transition: all 0.3s ease;
   }
-  .stat-box:hover { border-color:rgba(255,140,0,0.35); background:rgba(255,140,0,0.06); }
+  .stat-box:hover { border-color:rgba(255,153,0,0.35); background:rgba(255,153,0,0.06); }
 
   .card-hover { transition:transform 0.3s ease, box-shadow 0.3s ease; }
-  .card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(255,140,0,0.12); }
+  .card-hover:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(255,153,0,0.12); }
 
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   :target { scroll-margin-top:100px; }
@@ -195,11 +195,11 @@ tailwind.config = {
   .form-input::-moz-placeholder { color: rgba(255, 255, 255, 0.7); opacity: 1; }
   textarea.form-input { border-radius: 1rem; padding: 1rem 1.25rem; }
   select.form-input:invalid { color: rgba(255, 255, 255, 0.7) !important; }
-  .form-input:hover { border-color: rgba(255,140,0,0.35); }
+  .form-input:hover { border-color: rgba(255,153,0,0.35); }
   .form-input:focus {
-    border-color: rgba(255,140,0,0.6);
-    background: rgba(255,140,0,0.05);
-    box-shadow: 0 0 0 3px rgba(255,140,0,0.08), inset 0 1px 3px rgba(0,0,0,0.3);
+    border-color: rgba(255,153,0,0.6);
+    background: rgba(255,153,0,0.05);
+    box-shadow: 0 0 0 3px rgba(255,153,0,0.08), inset 0 1px 3px rgba(0,0,0,0.3);
   }
 
   /* Select arrow icon — custom amber chevron */
@@ -254,7 +254,7 @@ tailwind.config = {
   }
 
   /* Step card highlight line */
-  .step-top-amber { background:linear-gradient(to right, rgba(255,140,0,0.7), transparent); }
+  .step-top-amber { background:linear-gradient(to right, rgba(255,153,0,0.7), transparent); }
   .step-top-coral  { background:linear-gradient(to right, rgba(255,107,53,0.7), transparent); }
 
   /* Mobile menu */
@@ -272,13 +272,39 @@ tailwind.config = {
   #mob-drawer { transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
   #mob-menu.open #mob-drawer { transform: translateX(0); }
   .mob-nav-link { display: flex; align-items: center; padding: 13px 0; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, padding-left 0.2s; text-decoration: none; }
-  .mob-nav-link:hover { color: #ec6520; padding-left: 5px; }
+  .mob-nav-link:hover { color: #4FD1C5; padding-left: 5px; }
+
+  /* ── Marquee ticker ─────────────────────────────────────────── */
+  .marquee-strip {
+    position: relative; width: 100%; overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,153,0,0.03) 0%, rgba(79,209,197,0.03) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 9px 0; z-index: 49;
+  }
+  .marquee-track { display: inline-flex; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; padding: 0 2.5rem; flex-shrink: 0; }
+  .marquee-item.amber { color: rgba(255,153,0,0.75); }
+  .marquee-item.teal  { color: rgba(79,209,197,0.65); }
+  .marquee-sep { color: rgba(255,255,255,0.2); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* Section numbering */
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #94A3B8; display: inline-block; margin-bottom: 10px; }
+  .section-num span { color: #FF9900; }
+  /* Ambient dots */
+  .amb-amber { position: absolute; width: 4px; height: 4px; background: #FF9900; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(255,153,0,0.28); pointer-events: none; z-index: 1; }
+  .amb-teal  { position: absolute; width: 4px; height: 4px; background: #4FD1C5; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(79,209,197,0.18); pointer-events: none; z-index: 1; }
+  /* Teal gradient text */
+  .gradient-text-teal { background: linear-gradient(to right, #ffffff, #4FD1C5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  /* Card hover */
+  .card-hover { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(255,153,0,0.25) !important; box-shadow: 0 10px 30px rgba(5,11,20,0.8), 0 0 20px rgba(255,153,0,0.05); }
 </style>
 </head>
 <body class="font-body-md antialiased">
 
 <!-- ── NAV ── -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
@@ -289,21 +315,47 @@ tailwind.config = {
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="mentors.html">Mentors</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #00B4D8;" href="mentors.html">Mentors</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm whitespace-nowrap">Apply Now</a>
+    <a href="index.html#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;" class="font-bold px-6 py-2.5 rounded-lg active:scale-95 transition-all text-sm whitespace-nowrap hover:opacity-95 hover:shadow-[0_0_20px_rgba(255,153,0,0.35)]">Apply Now →</a>
     <button id="mob-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg ml-2 flex-shrink-0" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════ MARQUEE TICKER -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
 <!-- Mobile navigation drawer -->
 <div id="mob-menu" class="fixed inset-0 z-[999]" aria-hidden="true">
   <div id="mob-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#0D0D0D;border-left:1px solid #222;">
+  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#050B14;border-left:1px solid #222;">
     <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid #222;">
       <img src="images/Option 9.png" alt="V3F" class="h-10 w-auto" style="mix-blend-mode:screen;"/>
       <button id="mob-close" aria-label="Close navigation menu" class="flex items-center justify-center w-9 h-9 rounded-full" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
@@ -322,17 +374,17 @@ tailwind.config = {
       <a href="index.html#contact" class="mob-nav-link">Contact</a>
     </nav>
     <div class="px-6 pb-8 pt-4" style="border-top:1px solid #222;">
-      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#ec6520;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
+      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
     </div>
   </div>
 </div>
 
 <!-- ── HERO STRIP ── -->
-<div class="relative pt-20 pb-8 overflow-hidden">
+<div class="relative pt-20 pb-6 overflow-hidden">
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,153,0,0.07) 0%,transparent 60%);"></div>
 
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-12">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
     <!-- Breadcrumb -->
     <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-8">
       <a href="index.html" class="hover:text-primary transition-colors">Home</a>
@@ -342,7 +394,7 @@ tailwind.config = {
 
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
       <div class="max-w-2xl">
-        <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
+        <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(79,209,197,0.3);background:rgba(255,255,255,0.06)">
           <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
           <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">MENTOR NETWORK</span>
         </div>
@@ -372,7 +424,7 @@ tailwind.config = {
     </div>
 
     <!-- Thin separator line with glow -->
-    <div class="mt-10 h-px" style="background:linear-gradient(to right, rgba(255,140,0,0.5), rgba(255,140,0,0.05), transparent);"></div>
+    <div class="mt-10 h-px" style="background:linear-gradient(to right, rgba(255,153,0,0.5), rgba(255,153,0,0.05), transparent);"></div>
   </div>
 </div>
 
@@ -812,7 +864,7 @@ tailwind.config = {
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
   <div class="max-w-[1440px] mx-auto relative z-10">
     <div class="mb-12 fade-up">
-      <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3">HOW IT WORKS</div>
+      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">HOW IT WORKS</div>
       <h2 class="font-black text-3xl md:text-4xl" style="font-family:'Manrope',sans-serif;">
         Mentor–Startup <span class="gradient-text">Matching Process</span>
       </h2>
@@ -908,11 +960,11 @@ tailwind.config = {
             VNIT faculty mentors recognised in performance appraisals
           </li>
           <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-coral-accent text-base mt-0.5 shrink-0">check_circle</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base mt-0.5 shrink-0">check_circle</span>
             Annual extension based on performance &amp; mutual interest
           </li>
           <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-            <span class="material-symbols-outlined text-coral-accent text-base mt-0.5 shrink-0">check_circle</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim text-base mt-0.5 shrink-0">check_circle</span>
             Access to V3F network events, panels, and demo days
           </li>
         </ul>
@@ -996,7 +1048,7 @@ tailwind.config = {
             Submit Expression of Interest
             <span class="material-symbols-outlined text-base">arrow_forward</span>
           </button>
-          <div id="mentor-success" class="hidden text-center py-3 rounded-xl" style="background:rgba(255,140,0,0.08); border:1px solid rgba(255,140,0,0.25);">
+          <div id="mentor-success" class="hidden text-center py-3 rounded-xl" style="background:rgba(255,153,0,0.08); border:1px solid rgba(255,153,0,0.25);">
             <span class="material-symbols-outlined text-primary-fixed-dim text-2xl block mb-1">check_circle</span>
             <p class="font-label-mono text-xs text-primary-fixed-dim">Thank you! We'll be in touch shortly.</p>
           </div>
@@ -1037,7 +1089,7 @@ tailwind.config = {
 
           <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20">
             <div class="w-10 h-10 rounded-full bg-coral-accent/10 flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-coral-accent text-lg">mail</span>
+              <span class="material-symbols-outlined text-primary-fixed-dim text-lg">mail</span>
             </div>
             <div>
               <div class="font-bold text-sm mb-0.5" style="font-family:'Manrope',sans-serif;">Email</div>
@@ -1098,8 +1150,8 @@ tailwind.config = {
               <span class="material-symbols-outlined text-base">send</span>
             </button>
             <div id="contact-success" class="hidden text-center py-3 rounded-xl" style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.25);">
-              <span class="material-symbols-outlined text-coral-accent text-2xl block mb-1">check_circle</span>
-              <p class="font-label-mono text-xs text-coral-accent">Message sent! We'll get back to you soon.</p>
+              <span class="material-symbols-outlined text-primary-fixed-dim text-2xl block mb-1">check_circle</span>
+              <p class="font-label-mono text-xs text-primary-fixed-dim">Message sent! We'll get back to you soon.</p>
             </div>
           </form>
         </div>
@@ -1179,7 +1231,7 @@ document.querySelectorAll('.fade-up, .fade-in').forEach(el => obs.observe(el));
 </script>
 
 <!-- Scroll progress bar -->
-<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#ec6520;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
+<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#00B4D8;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
 <script>
 (function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
 </script>

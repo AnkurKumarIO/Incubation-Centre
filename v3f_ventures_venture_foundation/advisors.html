@@ -37,17 +37,17 @@ tailwind.config = {
   darkMode:"class",
   theme:{ extend:{
     colors:{
-      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#0D0D0D",
-      "primary":"#FFFFFF","primary-fixed-dim":"#ec6520","inverse-on-surface":"#1A1A1A",
-      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#ec6520",
+      "surface-container-high":"#1A1A1A","on-error":"#690005","surface-dim":"#050B14",
+      "primary":"#FFFFFF","primary-fixed-dim":"#00B4D8","inverse-on-surface":"#1A1A1A",
+      "inverse-primary":"#1A1A1A","outline-variant":"#222222","surface-tint":"#00B4D8",
       "error-container":"#93000a","outline":"#333333","tertiary-container":"#CCCCCC",
-      "on-primary-container":"#1A1A1A","primary-container":"#ec6520","tertiary":"#CCCCCC",
-      "background":"#0D0D0D","secondary":"#7fd4d9","on-tertiary":"#141414",
+      "on-primary-container":"#1A1A1A","primary-container":"#00B4D8","tertiary":"#CCCCCC",
+      "background":"#050B14","secondary":"#7fd4d9","on-tertiary":"#141414",
       "on-primary":"#111111","on-surface":"#FFFFFF","surface-variant":"#222222",
-      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#0D0D0D",
+      "surface-container":"#141414","inverse-surface":"#FFFFFF","surface":"#050B14",
       "on-background":"#FFFFFF","on-surface-variant":"#888888",
       "surface-container-highest":"#222222","primary-fixed":"#f08040",
-      "coral-accent":"#ec6520","surface-container-lowest":"#0D0D0D",
+      "coral-accent":"#00B4D8","surface-container-lowest":"#050B14",
       "surface-container-low":"#111111",
     },
     borderRadius:{ DEFAULT:"1rem", lg:"2rem", xl:"3rem", full:"9999px" },
@@ -60,23 +60,23 @@ tailwind.config = {
 }
 </script>
 <style>
-  body { background-color:#0D0D0D; color:#FFFFFF; overflow-x:hidden; }
+  body { background-color:#050B14; color: #A0AEC0; overflow-x:hidden; }
 
   .glass-panel {
-    background:rgba(180,180,180,0.04);
+    background:rgba(20,40,80,0.35);
     backdrop-filter:blur(12px);
-    border:1px solid rgba(180,180,180,0.12);
+    border:1px solid rgba(255,255,255,0.08);
   }
 
   .isometric-grid {
     background-image:
-      linear-gradient(rgba(180,180,180,0.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(180,180,180,0.06) 1px,transparent 1px);
-    background-size:40px 40px;
+      linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);
+    background-size:44px 44px;
   }
 
   .gradient-text {
-    background:linear-gradient(135deg,#ec6520,#f6a06a);
+    background:linear-gradient(135deg,#FF9900,#FF6B35);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
@@ -84,7 +84,7 @@ tailwind.config = {
 
   /* Nav */
   .nav-link { position:relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
+  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00B4D8; transition:width 0.3s ease; }
   .nav-link:hover::after { width:100%; }
 
   /* Animations */
@@ -111,19 +111,19 @@ tailwind.config = {
   }
   .advisor-card:hover {
     transform:translateY(-6px);
-    border-color:rgba(255,140,0,0.38);
-    box-shadow:0 24px 52px rgba(236,101,32,0.1);
+    border-color:rgba(255,153,0,0.4);
+    box-shadow:0 24px 52px rgba(79,209,197,0.1);
   }
 
   /* Corner crosshairs */
   .advisor-card::before, .advisor-card::after {
     content:''; position:absolute; width:12px; height:12px;
-    border-color:rgba(236,101,32,0.2); border-style:solid; pointer-events:none;
+    border-color:rgba(79,209,197,0.18); border-style:solid; pointer-events:none;
     transition:border-color 0.3s;
   }
   .advisor-card::before { top:10px; left:10px; border-width:1px 0 0 1px; }
   .advisor-card::after  { bottom:10px; right:10px; border-width:0 1px 1px 0; }
-  .advisor-card:hover::before, .advisor-card:hover::after { border-color:rgba(255,140,0,0.55); }
+  .advisor-card:hover::before, .advisor-card:hover::after { border-color:rgba(255,153,0,0.55); }
 
   /* Photo */
   .advisor-photo {
@@ -131,17 +131,17 @@ tailwind.config = {
     object-fit:cover;
     object-position:center top;
     flex-shrink:0;
-    border:2px solid rgba(236,101,32,0.35);
-    box-shadow:0 0 18px rgba(236,101,32,0.15);
+    border:2px solid rgba(79,209,197,0.35);
+    box-shadow:0 0 18px rgba(79,209,197,0.12);
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
     display:block;
   }
   .advisor-card:hover .advisor-photo {
-    border-color:rgba(255,140,0,0.7);
-    box-shadow:0 0 28px rgba(236,101,32,0.3);
+    border-color:rgba(255,153,0,0.7);
+    box-shadow:0 0 28px rgba(79,209,197,0.3);
   }
   .advisor-photo.coral {
-    border-color:rgba(236,101,32,0.35);
+    border-color:rgba(79,209,197,0.3);
     box-shadow:0 0 18px rgba(255,107,53,0.15);
   }
   .advisor-card:hover .advisor-photo.coral {
@@ -152,18 +152,18 @@ tailwind.config = {
   /* Initials fallback */
   .advisor-initials {
     width:80px; height:80px; border-radius:50%;
-    background:rgba(236,101,32,0.1);
-    border:2px solid rgba(236,101,32,0.3);
+    background:rgba(79,209,197,0.1);
+    border:2px solid rgba(79,209,197,0.3);
     display:flex; align-items:center; justify-content:center;
     font-family:'Manrope',sans-serif;
     font-weight:700; font-size:1.4rem;
-    color:#ec6520;
+    color:#4FD1C5;
     flex-shrink:0;
     transition:border-color 0.3s, background 0.3s;
   }
   .advisor-card:hover .advisor-initials {
-    border-color:rgba(236,101,32,0.6);
-    background:rgba(236,101,32,0.15);
+    border-color:rgba(79,209,197,0.5);
+    background:rgba(79,209,197,0.12);
   }
 
   /* Lead badge — sits BELOW the photo */
@@ -171,7 +171,7 @@ tailwind.config = {
     display:inline-flex; align-items:center; gap:5px;
     font-family:'JetBrains Mono',monospace;
     font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-    background:#ec6520; color:#111111;
+    background:#00B4D8; color:#111111;
     padding:3px 10px; border-radius:9999px;
   }
 
@@ -180,7 +180,7 @@ tailwind.config = {
     font-family:'JetBrains Mono',monospace;
     font-size:11px; padding:3px 10px; border-radius:9999px;
   }
-  .tag-amber, .tag-coral, .tag-dim { background:rgba(180,180,180,0.07); color:#b3c2d4; border:1px solid rgba(180,180,180,0.16); }
+  .tag-amber, .tag-coral, .tag-dim { background:rgba(255,255,255,0.05); color:#b3c2d4; border:1px solid rgba(255,255,255,0.10); }
 
   /* Hairline */
   .hairline { border:none; border-top:1px solid rgba(255,180,80,0.1); margin:0; }
@@ -196,11 +196,11 @@ tailwind.config = {
 
   .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
   ::-webkit-scrollbar { width:5px; }
-  ::-webkit-scrollbar-track { background:#0D0D0D; }
-  ::-webkit-scrollbar-thumb { background:rgba(236,101,32,0.3); border-radius:3px; }
+  ::-webkit-scrollbar-track { background:#050B14; }
+  ::-webkit-scrollbar-thumb { background:rgba(79,209,197,0.3); border-radius:3px; }
 
   /* Glow util */
-  .glow-amber { box-shadow:0 0 20px rgba(236,101,32,0.25); }
+  .glow-amber { box-shadow:0 0 20px rgba(255,153,0,0.3); }
 
   /* ── Mobile nav ── */
   #mob-menu { pointer-events: none; }
@@ -210,14 +210,40 @@ tailwind.config = {
   #mob-drawer { transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
   #mob-menu.open #mob-drawer { transform: translateX(0); }
   .mob-nav-link { display: flex; align-items: center; padding: 13px 0; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, padding-left 0.2s; text-decoration: none; }
-  .mob-nav-link:hover { color: #ec6520; padding-left: 5px; }
+  .mob-nav-link:hover { color: #4FD1C5; padding-left: 5px; }
+
+  /* ── Marquee ticker ─────────────────────────────────────────── */
+  .marquee-strip {
+    position: relative; width: 100%; overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,153,0,0.03) 0%, rgba(79,209,197,0.03) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 9px 0; z-index: 49;
+  }
+  .marquee-track { display: inline-flex; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; padding: 0 2.5rem; flex-shrink: 0; }
+  .marquee-item.amber { color: rgba(255,153,0,0.75); }
+  .marquee-item.teal  { color: rgba(79,209,197,0.65); }
+  .marquee-sep { color: rgba(255,255,255,0.2); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* Section numbering */
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #94A3B8; display: inline-block; margin-bottom: 10px; }
+  .section-num span { color: #FF9900; }
+  /* Ambient dots */
+  .amb-amber { position: absolute; width: 4px; height: 4px; background: #FF9900; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(255,153,0,0.28); pointer-events: none; z-index: 1; }
+  .amb-teal  { position: absolute; width: 4px; height: 4px; background: #4FD1C5; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(79,209,197,0.18); pointer-events: none; z-index: 1; }
+  /* Teal gradient text */
+  .gradient-text-teal { background: linear-gradient(to right, #ffffff, #4FD1C5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  /* Card hover */
+  .card-hover { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(255,153,0,0.25) !important; box-shadow: 0 10px 30px rgba(5,11,20,0.8), 0 0 20px rgba(255,153,0,0.05); }
 </style>
 </head>
 <body class="font-body-md antialiased">
 
 
 <!-- ── NAV ── -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
@@ -227,22 +253,48 @@ tailwind.config = {
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="advisors.html">Advisors</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #00B4D8;" href="advisors.html">Advisors</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm whitespace-nowrap">Apply Now</a>
+    <a href="index.html#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;" class="font-bold px-6 py-2.5 rounded-lg active:scale-95 transition-all text-sm whitespace-nowrap hover:opacity-95 hover:shadow-[0_0_20px_rgba(255,153,0,0.35)]">Apply Now →</a>
     <button id="mob-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg ml-2 flex-shrink-0" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════ MARQUEE TICKER -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
 <!-- Mobile navigation drawer -->
 <div id="mob-menu" class="fixed inset-0 z-[999]" aria-hidden="true">
   <div id="mob-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#0D0D0D;border-left:1px solid #222;">
+  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#050B14;border-left:1px solid #222;">
     <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid #222;">
       <img src="images/Option 9.png" alt="V3F" class="h-10 w-auto" style="mix-blend-mode:screen;"/>
       <button id="mob-close" aria-label="Close navigation menu" class="flex items-center justify-center w-9 h-9 rounded-full" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
@@ -261,17 +313,17 @@ tailwind.config = {
       <a href="index.html#contact" class="mob-nav-link">Contact</a>
     </nav>
     <div class="px-6 pb-8 pt-4" style="border-top:1px solid #222;">
-      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#ec6520;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
+      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
     </div>
   </div>
 </div>
 
 <!-- ── HERO ── -->
-<div class="relative pt-20 pb-14 overflow-hidden">
+<div class="relative pt-20 pb-10 overflow-hidden">
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,140,0,0.07) 0%,transparent 60%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,153,0,0.07) 0%,transparent 60%);"></div>
 
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-14">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
     <!-- Breadcrumb -->
     <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6 fade-in">
       <a href="index.html" class="hover:text-primary transition-colors">Home</a>
@@ -281,7 +333,7 @@ tailwind.config = {
 
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
       <div class="max-w-2xl">
-        <div class="font-label-mono text-xs text-coral-accent tracking-widest mb-3 fade-in">OUR ADVISORS</div>
+        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3 fade-in">OUR ADVISORS</div>
         <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4 fade-up" style="font-family:'Manrope',sans-serif;">
           Guided by<br/><span class="gradient-text">Seasoned Leaders</span>
         </h1>
@@ -300,7 +352,7 @@ tailwind.config = {
           </div>
         </div>
         <div class="glass-panel rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="material-symbols-outlined text-coral-accent text-xl">public</span>
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">public</span>
           <div>
             <div class="font-black text-xl gradient-text" style="font-family:'Manrope',sans-serif;">Global</div>
             <div class="font-label-mono text-xs text-on-surface-variant">Reach</div>
@@ -317,7 +369,7 @@ tailwind.config = {
     </div>
 
     <!-- Info note -->
-    <div class="mt-10 p-5 rounded-xl flex items-start gap-4 fade-up delay-3" style="background:rgba(255,140,0,0.05);border:1px solid rgba(236,101,32,0.18);">
+    <div class="mt-10 p-5 rounded-xl flex items-start gap-4 fade-up delay-3" style="background:rgba(255,153,0,0.05);border:1px solid rgba(236,101,32,0.18);">
       <span class="material-symbols-outlined text-primary-fixed-dim shrink-0 mt-0.5" style="font-size:18px;">info</span>
       <p class="text-sm text-on-surface-variant leading-relaxed">
         <strong class="text-on-surface">Advisors guide V3F itself</strong> on policy, governance, government fund applications, and ecosystem development. They are distinct from <a href="mentors.html" class="text-primary-fixed-dim hover:underline">Mentors</a> who work directly with individual startups.
@@ -330,11 +382,11 @@ tailwind.config = {
 <main class="py-12 px-4 md:px-16 max-w-[1440px] mx-auto">
 
   <div class="mb-8 fade-in">
-    <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
+    <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(79,209,197,0.3);background:rgba(255,255,255,0.06)">
       <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
       <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ADVISORY BOARD</span>
     </div>
-    <div class="h-px" style="background:linear-gradient(90deg,rgba(236,101,32,0.5),rgba(255,180,80,0.15),transparent);"></div>
+    <div class="h-px" style="background:linear-gradient(90deg,rgba(79,209,197,0.4),rgba(255,180,80,0.15),transparent);"></div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
@@ -342,7 +394,7 @@ tailwind.config = {
     <!-- ═══════════════ CARD 01: Hiranmay Mahanta ═══════════════ -->
     <div class="advisor-card fade-up delay-1">
       <!-- Accent top bar -->
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <!-- Photo + identity block -->
@@ -378,7 +430,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 02: Prof. M.S. Unnikrishnan ═══════════════ -->
     <div class="advisor-card fade-up delay-2">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -386,7 +438,7 @@ tailwind.config = {
                class="advisor-photo coral" style="width:88px;height:88px;"/>
           <div>
             <div class="font-black text-lg text-on-surface leading-snug" style="font-family:'Manrope',sans-serif;">Prof. M.S. Unnikrishnan</div>
-            <div class="role-label text-coral-accent mt-1">Industry–Academia &amp; Policy</div>
+            <div class="role-label text-primary-fixed-dim mt-1">Industry–Academia &amp; Policy</div>
             <div class="text-on-surface-variant text-xs mt-2 leading-relaxed">CEO, IITB-Monash Research Academy · Former MD &amp; CEO, Thermax Ltd.</div>
           </div>
           <div class="flex flex-wrap gap-2 justify-center">
@@ -408,7 +460,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 03: Mr. Kamal Sarda ═══════════════ -->
     <div class="advisor-card fade-up delay-3">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -438,7 +490,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 04: Prof. B.S. Murty ═══════════════ -->
     <div class="advisor-card fade-up delay-4">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -446,7 +498,7 @@ tailwind.config = {
                class="advisor-photo coral" style="width:88px;height:88px;"/>
           <div>
             <div class="font-black text-lg text-on-surface leading-snug" style="font-family:'Manrope',sans-serif;">Prof. B.S. Murty</div>
-            <div class="role-label text-coral-accent mt-1">Research &amp; Deep-Tech</div>
+            <div class="role-label text-primary-fixed-dim mt-1">Research &amp; Deep-Tech</div>
             <div class="text-on-surface-variant text-xs mt-2 leading-relaxed">Director, IIT Hyderabad &amp; IIITDM Kurnool · President, Indian Institute of Metals</div>
           </div>
           <div class="flex flex-wrap gap-2 justify-center">
@@ -468,7 +520,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 05: Mr. Jagdish Desai ═══════════════ -->
     <div class="advisor-card fade-up delay-5">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -498,7 +550,7 @@ tailwind.config = {
 
     <!-- ═══════════════ CARD 06: Prof. Ramesh C Jain ═══════════════ -->
     <div class="advisor-card fade-up delay-6">
-      <div class="accent-bar" style="background:linear-gradient(90deg,#ec6520,#ec6520,transparent);"></div>
+      <div class="accent-bar" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
 
       <div class="p-7 flex flex-col flex-1 gap-5">
         <div class="flex flex-col items-center text-center gap-3">
@@ -506,7 +558,7 @@ tailwind.config = {
                class="advisor-photo coral" style="width:88px;height:88px;"/>
           <div>
             <div class="font-black text-lg text-on-surface leading-snug" style="font-family:'Manrope',sans-serif;">Prof. Ramesh C Jain</div>
-            <div class="role-label text-coral-accent mt-1">AI, Technology &amp; Healthcare</div>
+            <div class="role-label text-primary-fixed-dim mt-1">AI, Technology &amp; Healthcare</div>
             <div class="text-on-surface-variant text-xs mt-2 leading-relaxed">Pioneer in AI, Computer Vision &amp; Multimodal Computing · Fellow, ACM, IEEE, AAAI, AAAS</div>
           </div>
           <div class="flex flex-wrap gap-2 justify-center">
@@ -529,11 +581,11 @@ tailwind.config = {
   </div><!-- /grid -->
 
   <!-- ── ADVISORS vs MENTORS DISTINCTION ── -->
-  <div class="glass-panel rounded-2xl p-8 border border-outline-variant/20 fade-up mb-16" style="border-color:rgba(236,101,32,0.15);">
+  <div class="glass-panel rounded-2xl p-8 border border-outline-variant/20 fade-up mb-16" style="border-color:rgba(79,209,197,0.12);">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgba(236,101,32,0.12);">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgba(79,209,197,0.1);">
             <span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:18px;">shield</span>
           </div>
           <h3 class="font-bold text-on-surface" style="font-family:'Manrope',sans-serif;">Role of Advisors</h3>
@@ -545,14 +597,14 @@ tailwind.config = {
       <div>
         <div class="flex items-center gap-3 mb-4">
           <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:rgba(255,107,53,0.12);">
-            <span class="material-symbols-outlined text-coral-accent" style="font-size:18px;">psychology</span>
+            <span class="material-symbols-outlined text-primary-fixed-dim" style="font-size:18px;">psychology</span>
           </div>
           <h3 class="font-bold text-on-surface" style="font-family:'Manrope',sans-serif;">Role of Mentors</h3>
         </div>
         <p class="text-on-surface-variant text-sm leading-relaxed">
           Mentors work directly and hands-on with incubated startups, matched by sector and stage, providing structured guidance on product, market, fundraising, legal, and operational matters on an ongoing basis.
         </p>
-        <a href="mentors.html" class="inline-flex items-center gap-2 mt-4 font-label-mono text-xs text-coral-accent hover:underline">
+        <a href="mentors.html" class="inline-flex items-center gap-2 mt-4 font-label-mono text-xs text-primary-fixed-dim hover:underline">
           Meet all Mentors <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
         </a>
       </div>
@@ -560,7 +612,7 @@ tailwind.config = {
   </div>
 
   <!-- ── CTA ── -->
-  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center relative overflow-hidden fade-up" style="border:1px solid rgba(236,101,32,0.2);">
+  <div class="glass-panel rounded-2xl p-10 md:p-14 text-center relative overflow-hidden fade-up" style="border:1px solid rgba(79,209,197,0.18);">
     <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
     <div class="absolute top-4 left-4 w-4 h-4 border-t border-l border-primary-fixed-dim/30"></div>
     <div class="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-primary-fixed-dim/30"></div>
@@ -612,7 +664,7 @@ document.querySelectorAll('.fade-up, .fade-in').forEach(el => obs.observe(el));
 </script>
 
 <!-- Scroll progress bar -->
-<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#ec6520;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
+<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#00B4D8;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
 <script>
 (function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
 </script>

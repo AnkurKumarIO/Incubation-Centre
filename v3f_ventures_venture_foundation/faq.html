@@ -45,39 +45,39 @@
       theme: {
         extend: {
           colors: {
-            "surface-container-high": "#1A1A1A",
+            "surface-container-high": "#162035",
             "on-error": "#690005",
-            "surface-dim": "#0D0D0D",
+            "surface-dim": "#050B14",
             "primary": "#FFFFFF",
-            "primary-fixed-dim": "#ec6520",
+            "primary-fixed-dim": "#00B4D8",
             "inverse-on-surface": "#1A1A1A",
             "inverse-primary": "#1A1A1A",
-            "outline-variant": "#222222",
-            "surface-tint": "#ec6520",
+            "outline-variant": "#1A2744",
+            "surface-tint": "#00B4D8",
             "error-container": "#93000a",
-            "outline": "#333333",
+            "outline": "#1E3A5F",
             "tertiary-container": "#CCCCCC",
             "on-primary-container": "#1A1A1A",
-            "primary-container": "#ec6520",
+            "primary-container": "#FF9900",
             "tertiary": "#CCCCCC",
-            "background": "#0D0D0D",
-            "secondary": "#7fd4d9",
+            "background": "#050B14",
+            "secondary": "#00B4D8",
             "on-tertiary": "#141414",
             "on-primary": "#111111",
             "on-surface": "#FFFFFF",
-            "surface-variant": "#222222",
-            "surface-container": "#141414",
+            "surface-variant": "#1E2D4A",
+            "surface-container": "#11192E",
             "inverse-surface": "#FFFFFF",
-            "surface": "#0D0D0D",
+            "surface": "#050B14",
             "on-background": "#FFFFFF",
-            "on-surface-variant": "#888888",
-            "surface-container-highest": "#222222",
-            "primary-fixed": "#f08040",
-            "coral-accent": "#ec6520",
+            "on-surface-variant": "#94A3B8","surface-text": "#A0AEC0",
+            "surface-container-highest": "#1E2D4A",
+            "primary-fixed": "#FF6B35","electric-teal": "#4FD1C5","neon-cyan": "#00B4D8",
+            "coral-accent": "#FF9900",
             "forest-green": "#2d6a4f",
             "forest-green-light": "#52b788",
-            "surface-container-lowest": "#0D0D0D",
-            "surface-container-low": "#111111",
+            "surface-container-lowest": "#050B14",
+            "surface-container-low": "#0D1526",
           },
           fontFamily: {
             "serif-display": ["Playfair Display", "serif"],
@@ -93,7 +93,7 @@
 
   <style>
     * { box-sizing: border-box; }
-    body { background-color: #0D0D0D; color: #FFFFFF; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    body { background-color: #050B14; color: #A0AEC0; overflow-x: hidden; font-family: 'Inter', sans-serif; }
 
     .glass-panel {
       background: rgba(255, 200, 100, 0.03);
@@ -112,16 +112,16 @@
       background-image:
         linear-gradient(rgba(255, 140, 0, 0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 140, 0, 0.06) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-size: 44px 44px;
     }
     .gradient-text {
-      background: linear-gradient(135deg, #ec6520, #f6a06a);
+      background: linear-gradient(135deg, #FF9900, #FF6B35);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .gradient-text-coral {
-      background: linear-gradient(135deg, #ec6520, #f6a06a);
+      background: linear-gradient(135deg, #FF9900, #FF6B35);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -184,17 +184,17 @@
 
     /* Scrollbar styling */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0D0D0D; }
+    ::-webkit-scrollbar-track { background: #050B14; }
     ::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.3); border-radius: 3px; }
 
     /* Scan line */
 /* Filter pills */
     .filter-pill { cursor: pointer; transition: all 0.2s ease; }
-    .filter-pill.active { background: rgba(255, 140, 0, 0.15); border-color: rgba(255, 140, 0, 0.6); color: #ec6520; }
+    .filter-pill.active { background: rgba(255, 140, 0, 0.15); border-color: rgba(255, 140, 0, 0.6); color: #4FD1C5; }
 
     /* Nav links */
     .nav-link { position: relative; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#ec6520; transition:width 0.3s ease; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00B4D8; transition:width 0.3s ease; }
     .nav-link:hover::after { width:100%; }
 
     /* Floating blueprint corner decorations */
@@ -223,7 +223,33 @@
   #mob-drawer { transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
   #mob-menu.open #mob-drawer { transform: translateX(0); }
   .mob-nav-link { display: flex; align-items: center; padding: 13px 0; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, padding-left 0.2s; text-decoration: none; }
-  .mob-nav-link:hover { color: #ec6520; padding-left: 5px; }
+  .mob-nav-link:hover { color: #4FD1C5; padding-left: 5px; }
+
+  /* ── Marquee ticker ─────────────────────────────────────────── */
+  .marquee-strip {
+    position: relative; width: 100%; overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,153,0,0.03) 0%, rgba(79,209,197,0.03) 100%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 9px 0; z-index: 49;
+  }
+  .marquee-track { display: inline-flex; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; padding: 0 2.5rem; flex-shrink: 0; }
+  .marquee-item.amber { color: rgba(255,153,0,0.75); }
+  .marquee-item.teal  { color: rgba(79,209,197,0.65); }
+  .marquee-sep { color: rgba(255,255,255,0.2); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* Section numbering */
+  .section-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #94A3B8; display: inline-block; margin-bottom: 10px; }
+  .section-num span { color: #FF9900; }
+  /* Ambient dots */
+  .amb-amber { position: absolute; width: 4px; height: 4px; background: #FF9900; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(255,153,0,0.28); pointer-events: none; z-index: 1; }
+  .amb-teal  { position: absolute; width: 4px; height: 4px; background: #4FD1C5; border-radius: 50%; box-shadow: 0 0 24px 10px rgba(79,209,197,0.18); pointer-events: none; z-index: 1; }
+  /* Teal gradient text */
+  .gradient-text-teal { background: linear-gradient(to right, #ffffff, #4FD1C5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  /* Card hover */
+  .card-hover { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(255,153,0,0.25) !important; box-shadow: 0 10px 30px rgba(5,11,20,0.8), 0 0 20px rgba(255,153,0,0.05); }
 </style>
 </head>
 <body class="font-body-md antialiased">
@@ -233,13 +259,13 @@
   <div class="absolute inset-0 isometric-grid opacity-15"></div>
   <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
   <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full"
-       style="background: radial-gradient(circle, rgba(180,180,180,0.06) 0%, transparent 70%)"></div>
+       style="background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full"
        style="background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%)"></div>
 </div>
 
 <!-- TOP NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_15px_rgba(236,101,32,0.12)]">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
@@ -252,20 +278,46 @@
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #ec6520;" href="faq.html">FAQ</a>
+      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #00B4D8;" href="faq.html">FAQ</a>
       <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
     </div>
-    <a href="index.html#contact" class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-full hover:glow-amber active:scale-95 transition-all text-sm">Apply Now</a>
+    <a href="index.html#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;" class="font-bold px-6 py-2.5 rounded-lg active:scale-95 transition-all text-sm whitespace-nowrap hover:opacity-95 hover:shadow-[0_0_20px_rgba(255,153,0,0.35)]">Apply Now →</a>
     <button id="mob-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg ml-2 flex-shrink-0" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════ MARQUEE TICKER -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
 <!-- Mobile navigation drawer -->
 <div id="mob-menu" class="fixed inset-0 z-[999]" aria-hidden="true">
   <div id="mob-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#0D0D0D;border-left:1px solid #222;">
+  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#050B14;border-left:1px solid #222;">
     <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid #222;">
       <img src="images/Option 9.png" alt="V3F" class="h-10 w-auto" style="mix-blend-mode:screen;"/>
       <button id="mob-close" aria-label="Close navigation menu" class="flex items-center justify-center w-9 h-9 rounded-full" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
@@ -284,16 +336,16 @@
       <a href="index.html#contact" class="mob-nav-link">Contact</a>
     </nav>
     <div class="px-6 pb-8 pt-4" style="border-top:1px solid #222;">
-      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#ec6520;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
+      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
     </div>
   </div>
 </div>
 
 <main>
   <!-- HERO SECTION -->
-  <section class="relative pt-24 pb-12 overflow-hidden flex items-center min-h-[50vh]">
+  <section class="relative pt-20 pb-8 overflow-hidden flex items-center">
 
-    <div class="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto pt-16">
+    <div class="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
       <!-- Breadcrumbs -->
       <div class="hero-fade-1 flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6">
         <a href="index.html" class="hover:text-primary transition-colors">Home</a>
@@ -304,7 +356,7 @@
       <div class="max-w-3xl">
         <!-- Label Badge -->
         <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6"
-             style="border-color: rgba(236,101,32,0.3); background: rgba(180,180,180,0.06);">
+             style="border-color: rgba(79,209,197,0.3); background: rgba(255,255,255,0.06);">
           <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
           <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest uppercase">FAQ Database</span>
         </div>
@@ -328,7 +380,7 @@
     
     <!-- Search Input -->
     <div class="max-w-2xl mx-auto mb-10 fade-up">
-      <div class="relative glass-panel rounded-full overflow-hidden border border-outline-variant/30 focus-within:border-primary-fixed-dim/50 focus-within:shadow-[0_0_20px_rgba(236,101,32,0.15)] transition-all duration-300">
+      <div class="relative glass-panel rounded-full overflow-hidden border border-outline-variant/30 focus-within:border-primary-fixed-dim/50 focus-within:shadow-[0_0_20px_rgba(79,209,197,0.12)] transition-all duration-300">
         <span class="material-symbols-outlined text-on-surface-variant/60 absolute left-5 top-1/2 -translate-y-1/2">
           search
         </span>
@@ -380,10 +432,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         
         <!-- Incubation Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-1 flex flex-col justify-between" style="border-color: rgba(255,255,255,0.06);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 140, 0, 0.08);">
-              <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">send</span>
+              <span class="material-symbols-outlined text-2xl" style="color: #4FD1C5;">send</span>
             </div>
             <h3 class="font-bold text-lg text-on-surface mb-2 font-headline-lg">Incubation Support</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Enquire about application cycles, guidelines, or eligibility criteria.</p>
@@ -398,10 +450,10 @@
         </div>
 
         <!-- Mentorship Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-2 flex flex-col justify-between" style="border-color: rgba(255,255,255,0.06);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(255, 107, 53, 0.08);">
-              <span class="material-symbols-outlined text-2xl" style="color: #ec6520;">psychology</span>
+              <span class="material-symbols-outlined text-2xl" style="color: #4FD1C5;">psychology</span>
             </div>
             <h3 class="font-bold text-lg text-on-surface mb-2 font-headline-lg">Become a Mentor</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Share your domain expertise and guide the next generation of founders.</p>
@@ -416,7 +468,7 @@
         </div>
 
         <!-- General Card -->
-        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(180,180,180,0.12);">
+        <div class="glass-panel p-8 rounded-2xl card-hover border fade-up delay-3 flex flex-col justify-between" style="border-color: rgba(255,255,255,0.06);">
           <div>
             <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(82, 183, 136, 0.08);">
               <span class="material-symbols-outlined text-2xl" style="color: #52b788;">mail</span>
@@ -476,24 +528,25 @@
             </div>
           </div>
 
-          <!-- Blueprint Deco Map Column -->
-          <div class="lg:col-span-6 h-48 bg-surface-container/40 rounded-xl border border-outline-variant/30 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 isometric-grid opacity-20"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-              <span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-2 animate-bounce">
-                map
-              </span>
-              <span class="font-label-mono text-xs text-on-surface-variant tracking-wider uppercase">VNIT Nagpur Campus Area Map</span>
-              <span class="text-[10px] text-outline/60 mt-1">Visit Nagpur's Hub of High-Impact Ventures</span>
-              <a 
-                href="https://www.google.com/maps/place/Visvesvaraya+National+Institute+of+Technology+(VNIT),+Nagpur/@21.1260,79.0480,17z/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="mt-4 bg-primary-container text-on-primary font-bold px-5 py-2 rounded-full text-xs hover:glow-amber active:scale-95 transition-all"
-              >
-                Open in Google Maps
-              </a>
-            </div>
+          <!-- Google Maps embed -->
+          <div class="lg:col-span-6 rounded-xl overflow-hidden border border-outline-variant/30 relative" style="height:240px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7443.4640766825605!2d79.04893757434158!3d21.123246684528322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c070e8004c25%3A0xdcfcc32c89158bc3!2sVisvesvaraya%20National%20Institute%20of%20Technology%20(VNIT)%2C%20Nagpur!5e0!3m2!1sen!2sin!4v1782555238189!5m2!1sen!2sin"
+              width="100%"
+              height="240"
+              style="border:0;filter:invert(90%) hue-rotate(180deg) saturate(0.6) brightness(0.85);display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="VNIT Nagpur Campus Location"
+            ></iframe>
+            <a
+              href="https://maps.app.goo.gl/g1Rdb5fbaWYpopCh9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="absolute bottom-3 right-3 font-label-mono text-xs font-bold px-4 py-2 rounded-full pointer-events-auto"
+              style="background:rgba(5,11,20,0.85);border:1px solid rgba(255,153,0,0.4);color:#FF9900;backdrop-filter:blur(8px);"
+            >Open in Maps ↗</a>
           </div>
 
         </div>
@@ -729,7 +782,7 @@
     const div = document.createElement('div');
     div.id = `faq-card-${faq.id}`;
     div.className = 'faq-card glass-panel rounded-xl border p-6 mb-4 relative overflow-hidden transition-all duration-300';
-    div.style.borderColor = 'rgba(180,180,180,0.12)';
+    div.style.borderColor = 'rgba(255,255,255,0.06)';
     div.dataset.id = faq.id;
 
     div.innerHTML = `
@@ -807,7 +860,7 @@
       const content = document.getElementById(`faq-content-${cid}`);
       const cicon = document.getElementById(`faq-icon-${cid}`);
       c.classList.remove('open', 'bg-primary-fixed-dim/5');
-      c.style.borderColor = 'rgba(180,180,180,0.12)';
+      c.style.borderColor = 'rgba(255,255,255,0.06)';
       if (content) {
         content.style.maxHeight = '0px';
         content.style.opacity = '0';
@@ -818,7 +871,7 @@
 
     if (!isOpen) {
       card.classList.add('open', 'bg-primary-fixed-dim/5');
-      card.style.borderColor = 'rgba(236,101,32,0.3)';
+      card.style.borderColor = 'rgba(79,209,197,0.3)';
       // Add padding/border classes FIRST so scrollHeight includes them
       container.classList.add('mt-4', 'pt-4', 'border-t', 'border-outline-variant/20');
       container.style.opacity = '1';
@@ -931,7 +984,7 @@
 </script>
 
 <!-- Scroll progress bar -->
-<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#ec6520;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
+<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#00B4D8;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
 <script>
 (function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
 </script>
