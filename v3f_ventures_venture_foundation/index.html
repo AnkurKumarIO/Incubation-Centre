@@ -1039,105 +1039,122 @@ tailwind.config = {
 </section>
 
 <!-- ═══════════════════════════════════════════════════ ABOUT V3F -->
-<section id="about" class="py-24 relative overflow-hidden" style="background:linear-gradient(180deg,#0D0D0D 0%,#0A0A0A 50%,#0D0D0D 100%)">
+<section id="about" class="py-24 relative overflow-hidden" style="background:linear-gradient(180deg,#0e0904 0%,#080502 50%,#0e0904 100%)">
   <div class="absolute inset-0 isometric-grid opacity-10"></div>
-
-  <!-- Decorative glows -->
-  <div class="absolute top-1/4 right-1/4 w-80 h-80 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(180,180,180,0.06) 0%,transparent 70%)"></div>
+  <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,140,0,0.06) 0%,transparent 70%)"></div>
   <div class="absolute bottom-1/4 left-1/3 w-60 h-60 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(82,183,136,0.05) 0%,transparent 70%)"></div>
 
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
 
-    <!-- ── Section Label + Hero Headline ── -->
-    <div class="mb-20 fade-up">
-      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
+    <!-- ── Header — left aligned ── -->
+    <div class="mb-16 fade-up">
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-5" style="border-color:rgba(255,140,0,0.3);background:rgba(255,140,0,0.06)">
         <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
         <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F NAGPUR</span>
       </div>
-      <h2 class="font-black leading-tight text-white mb-4" style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4.5vw,3.8rem)">
-        Championing the
-        <span style="font-family:'Manrope',sans-serif;font-style:italic;background:linear-gradient(135deg,#ec6520,#f6a06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"> Entrepreneurial Ambition</span>
+      <h2 class="font-black leading-tight text-white mb-4" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,4.5vw,3.6rem)">
+        Championing the Future of
+        <span class="gradient-text"> Entrepreneurial Excellence</span>
       </h2>
-      <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
-        True innovation begins where entrepreneurial ambition meets the right environment — and V3F Nagpur exists to create exactly that. As VNIT's dedicated incubation arm, we accelerate startups that generate meaningful impact, spark new ideas, and advance economic progress throughout the region.
+      <p class="text-on-surface-variant text-base leading-relaxed" style="width: 850px;">
+        V3F Nagpur exists to turn ambition into impact. As VNIT's dedicated incubation arm, we accelerate startups that spark new ideas and advance economic progress throughout the region.
       </p>
     </div>
 
-    <!-- ── B: Mission & Support — Two-Column ── -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start mb-20">
+    <!-- ── Body — equal two-column ── -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
 
-      <!-- Left: Founder-First Ecosystem -->
-      <div class="slide-left">
-        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">MISSION & ECOSYSTEM</div>
-        <h3 class="text-2xl md:text-3xl font-bold mb-5 text-on-surface" style="font-family:'Manrope',sans-serif">
-          Crafting a <span class="gradient-text">Startup-Centric</span> Environment
-        </h3>
-        <div class="space-y-4 text-on-surface-variant leading-relaxed">
-          <p>V3F Nagpur opens doors to world-class facilities, an experienced mentor community, strong industry linkages, and a collaborative atmosphere that gives startups every advantage to grow. Our core goal is to cultivate a space where responsible entrepreneurship and lasting ecosystem value go hand in hand.</p>
-          <p>Startups that join V3F tap into the full breadth of VNIT's innovation network — from academic experts and cutting-edge research labs to a pipeline of student talent, corporate collaborations, and active investor communities.</p>
+      <!-- Left: Mission text + affiliation box -->
+      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-6 slide-left" style="border:1px solid rgba(255,140,0,0.1)">
+        <div>
+          <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">MISSION & ECOSYSTEM</div>
+          <h3 class="text-xl md:text-2xl font-bold mb-4 text-on-surface" style="font-family:'Space Grotesk',sans-serif">
+            A <span class="gradient-text">Startup-Centric</span> Environment Built on VNIT's Legacy
+          </h3>
+          <div class="space-y-3 text-on-surface-variant text-sm leading-relaxed">
+            <p>V3F opens doors to world-class facilities, an experienced mentor community, strong industry linkages, and a collaborative atmosphere that gives every startup the advantage to grow.</p>
+            <p>Startups that join V3F tap into the full breadth of VNIT's innovation network — research labs, student talent, corporate collaborations, and active investor communities.</p>
+          </div>
         </div>
-        <!-- Affiliation Highlight Box -->
-        <div class="mt-6 p-5 rounded-xl flex items-start gap-4" style="background:rgba(45,106,79,0.08);border:1px solid rgba(82,183,136,0.2)">
+        <!-- Affiliation box -->
+        <div class="p-4 rounded-xl flex items-start gap-4 mt-auto" style="background:rgba(45,106,79,0.08);border:1px solid rgba(82,183,136,0.2)">
           <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.15)">
             <span class="material-symbols-outlined text-xl" style="color:#52b788">verified</span>
           </div>
           <div>
             <div class="font-label-mono text-xs mb-1" style="color:#52b788">VNIT AFFILIATION</div>
-            <p class="text-on-surface text-sm leading-relaxed">V3F is incorporated as a <strong>Section 8 company under the aegis of VNIT Nagpur</strong>, with the VNIT Director holding the position of Chairman on the Board of Directors.</p>
+            <p class="text-on-surface text-sm leading-relaxed">V3F is a <strong>Section 8 company under VNIT Nagpur</strong>, with the Director of VNIT as Chairman of the Board.</p>
           </div>
         </div>
       </div>
 
-      <!-- Right: How V3F Supports You -->
-      <div class="slide-right">
-        <div class="glass-panel rounded-2xl p-8 h-full" style="background:rgba(14,9,4,0.85);border:1px solid rgba(236,101,32,0.15)">
-          <div class="flex items-center gap-3 mb-7">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(236,101,32,0.12)">
-              <span class="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
-            </div>
-            <h4 class="text-xl font-bold text-on-surface" style="font-family:'Manrope',sans-serif">What V3F Brings to Your Journey</h4>
+      <!-- Right: What V3F Brings card -->
+      <div class="rounded-2xl p-8 flex flex-col gap-5 slide-right" style="background:rgba(14,9,4,0.88);border:1px solid rgba(255,140,0,0.15)">
+        <div class="flex items-center gap-3 mb-1">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(255,140,0,0.12)">
+            <span class="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
           </div>
-          <div class="space-y-4">
-            <!-- Support item -->
-            <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.12)">
-                <span class="material-symbols-outlined text-primary-fixed-dim text-xl">domain</span>
-              </div>
-              <div>
-                <div class="font-semibold text-on-surface mb-1">Workspace & Facilities</div>
-                <p class="text-on-surface-variant text-sm leading-relaxed">Dedicated desks, enclosed cabins, specialised labs, and collaborative meeting spaces situated within the VNIT campus.</p>
-              </div>
+          <h4 class="text-lg font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif">What V3F Brings to Your Journey</h4>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.12)">
+              <span class="material-symbols-outlined text-primary-fixed-dim text-lg">domain</span>
             </div>
-            <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.12)">
-                <span class="material-symbols-outlined text-xl" style="color:#52b788">psychology</span>
-              </div>
-              <div>
-                <div class="font-semibold text-on-surface mb-1">Expert Mentorship & Advisory</div>
-                <p class="text-on-surface-variant text-sm leading-relaxed">Curated mentor assignments, structured quarterly goal reviews, and access to legal and financial consulting services.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(236,101,32,0.12)">
-                <span class="material-symbols-outlined text-primary-fixed-dim text-xl">payments</span>
-              </div>
-              <div>
-                <div class="font-semibold text-on-surface mb-1">Capital & Investor Connections</div>
-                <p class="text-on-surface-variant text-sm leading-relaxed">Startup showcases, direct introductions to angel investors, government scheme facilitation, and CSR capital avenues.</p>
-              </div>
+            <div>
+              <div class="font-semibold text-on-surface text-sm mb-0.5">Workspace & Facilities</div>
+              <p class="text-on-surface-variant text-xs leading-relaxed">Dedicated desks, cabins, labs, and meeting rooms on the VNIT campus.</p>
             </div>
           </div>
-          <div class="mt-6 pt-5 border-t flex items-center gap-2 text-on-surface-variant text-xs font-label-mono" style="border-color:rgba(236,101,32,0.1)">
-            <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
-            18–36 MONTH PROGRAMS · ROLLING ADMISSIONS
+          <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.12)">
+              <span class="material-symbols-outlined text-lg" style="color:#52b788">psychology</span>
+            </div>
+            <div>
+              <div class="font-semibold text-on-surface text-sm mb-0.5">Expert Mentorship & Advisory</div>
+              <p class="text-on-surface-variant text-xs leading-relaxed">Curated mentors, quarterly reviews, legal and financial advisory.</p>
+            </div>
           </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,140,0,0.12)">
+              <span class="material-symbols-outlined text-primary-fixed-dim text-lg">payments</span>
+            </div>
+            <div>
+              <div class="font-semibold text-on-surface text-sm mb-0.5">Capital & Investor Connections</div>
+              <p class="text-on-surface-variant text-xs leading-relaxed">Demo days, angel connects, government grants, and CSR pathways.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t flex items-center gap-2 text-on-surface-variant text-xs font-label-mono" style="border-color:rgba(255,140,0,0.1)">
+          <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+          18–36 MONTH PROGRAMS · ROLLING ADMISSIONS
         </div>
       </div>
     </div>
 
-    <!-- ── C: Learn More CTA ── -->
-    <div class="mt-4 flex justify-center fade-up">
-      <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary-fixed-dim/40 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Manrope',sans-serif;">
+    <!-- ── Footer — stats + CTA centred ── -->
+    <div class="flex flex-col items-center gap-8 fade-up">
+      <!-- Four stat chips -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">300+</div>
+          <div class="font-label-mono text-xs text-on-surface-variant">Faculty Experts</div>
+        </div>
+        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">215</div>
+          <div class="font-label-mono text-xs text-on-surface-variant">Acre Campus</div>
+        </div>
+        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">6</div>
+          <div class="font-label-mono text-xs text-on-surface-variant">Centres of Excellence</div>
+        </div>
+        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
+          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">Sec 8</div>
+          <div class="font-label-mono text-xs text-on-surface-variant">Legal Status</div>
+        </div>
+      </div>
+      <!-- CTA -->
+      <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary-fixed-dim/40 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
         Learn More About V3F
         <span class="material-symbols-outlined text-base">arrow_forward</span>
       </a>
