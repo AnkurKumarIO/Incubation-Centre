@@ -1956,8 +1956,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Parallax
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const heroText = document.querySelector('h1');
-    if (heroText) heroText.style.transform = `translateY(${scrolled * 0.4}px)`;
   }, { passive: true });
 
   // Form label highlight
