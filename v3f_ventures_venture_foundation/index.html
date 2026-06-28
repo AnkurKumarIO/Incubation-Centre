@@ -1369,36 +1369,36 @@ tailwind.config = {
 <!-- ═══════════════════════════════════════════════════ ABOUT V3F -->
 <section id="about" class="py-24 relative overflow-hidden" style="background:linear-gradient(180deg,#050B14 0%,#0a1222 50%,#050B14 100%)">
   <div class="absolute inset-0 isometric-grid opacity-10"></div>
-  <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,153,0,0.06) 0%,transparent 70%)"></div>
-  <div class="absolute bottom-1/4 left-1/3 w-60 h-60 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(79,209,197,0.04) 0%,transparent 70%)"></div>
   <div class="amb-amber" style="top:15%;right:8%"></div>
   <div class="amb-teal"  style="bottom:20%;left:5%"></div>
 
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
 
-    <!-- ── Header — left aligned ── -->
-    <div class="mb-16 fade-up">
-      <div class="aws-header-label mb-4">
-        <span class="aws-header-num">[ 06 ]</span>
-        <div class="aws-header-line ml-4"></div>
-        <span class="aws-header-tag">About V3F</span>
+    <!-- Header — matches aws-header pattern used by all other sections -->
+    <div class="aws-header mb-16 fade-in" style="margin: 40px;">
+      <div class="aws-header-num hidden md:block">[ 06 ]</div>
+      <div class="flex-1">
+        <div class="aws-header-label">
+          <div class="aws-header-line"></div>
+          <span class="aws-header-tag">About V3F</span>
+        </div>
+        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1; font-size: 65px;">
+          Championing the future of<br><em class="serif-italic gradient-text" style="font-weight:400">entrepreneurial excellence.</em>
+        </h2>
+        <p class="text-on-surface-variant text-base mt-4 max-w-2xl">
+          V3F Nagpur exists to turn ambition into impact. As VNIT's dedicated incubation arm, we accelerate startups that spark new ideas and advance economic progress throughout the region.
+        </p>
       </div>
-      <h2 class="font-black leading-tight text-white mb-4" style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4.5vw,3.6rem)">
-        Championing the future of<br><em class="serif-italic gradient-text" style="font-weight:400">entrepreneurial excellence.</em>
-      </h2>
-      <p class="text-on-surface-variant text-base leading-relaxed" style="width: 850px;">
-        V3F Nagpur exists to turn ambition into impact. As VNIT's dedicated incubation arm, we accelerate startups that spark new ideas and advance economic progress throughout the region.
-      </p>
     </div>
 
-    <!-- ── Body — equal two-column ── -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <!-- Two-column body -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
 
-      <!-- Left: Mission text + affiliation box -->
-      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-6 slide-left" style="border:1px solid rgba(255,153,0,0.1)">
+      <!-- Left: Mission + Affiliation -->
+      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-6 slide-left border border-white/8">
         <div>
-          <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3">MISSION & ECOSYSTEM</div>
-          <h3 class="text-xl md:text-2xl font-bold mb-4 text-on-surface" style="font-family:'Space Grotesk',sans-serif">
+          <div class="aws-header-tag mb-3">Mission & Ecosystem</div>
+          <h3 class="font-bold text-xl text-white mb-4" style="font-family:'Manrope',sans-serif">
             A <span class="gradient-text">Startup-Centric</span> Environment Built on VNIT's Legacy
           </h3>
           <div class="space-y-3 text-on-surface-variant text-sm leading-relaxed">
@@ -1406,7 +1406,6 @@ tailwind.config = {
             <p>Startups that join V3F tap into the full breadth of VNIT's innovation network — research labs, student talent, corporate collaborations, and active investor communities.</p>
           </div>
         </div>
-        <!-- Affiliation box -->
         <div class="p-4 rounded-xl flex items-start gap-4 mt-auto" style="background:rgba(45,106,79,0.08);border:1px solid rgba(82,183,136,0.2)">
           <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.15)">
             <span class="material-symbols-outlined text-xl" style="color:#52b788">verified</span>
@@ -1418,13 +1417,11 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Right: What V3F Brings card -->
-      <div class="rounded-2xl p-8 flex flex-col gap-5 slide-right" style="background:rgba(14,9,4,0.88);border:1px solid rgba(255,153,0,0.15)">
-        <div class="flex items-center gap-3 mb-1">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(255,153,0,0.12)">
-            <span class="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
-          </div>
-          <h4 class="text-lg font-bold text-on-surface" style="font-family:'Space Grotesk',sans-serif">What V3F Brings to Your Journey</h4>
+      <!-- Right: What V3F Brings -->
+      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-5 slide-right border border-white/8">
+        <div class="flex items-center gap-3">
+          <div class="card-num-teal">→</div>
+          <h4 class="font-bold text-white text-lg" style="font-family:'Manrope',sans-serif">What V3F Brings to Your Journey</h4>
         </div>
         <div class="space-y-3 flex-1">
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
@@ -1432,16 +1429,16 @@ tailwind.config = {
               <span class="material-symbols-outlined text-primary-fixed-dim text-lg">domain</span>
             </div>
             <div>
-              <div class="font-semibold text-on-surface text-sm mb-0.5">Workspace & Facilities</div>
+              <div class="font-semibold text-white text-sm mb-0.5">Workspace & Facilities</div>
               <p class="text-on-surface-variant text-xs leading-relaxed">Dedicated desks, cabins, labs, and meeting rooms on the VNIT campus.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.12)">
-              <span class="material-symbols-outlined text-lg" style="color:#52b788">psychology</span>
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(79,209,197,0.1)">
+              <span class="material-symbols-outlined text-lg" style="color:#4FD1C5">psychology</span>
             </div>
             <div>
-              <div class="font-semibold text-on-surface text-sm mb-0.5">Expert Mentorship & Advisory</div>
+              <div class="font-semibold text-white text-sm mb-0.5">Expert Mentorship & Advisory</div>
               <p class="text-on-surface-variant text-xs leading-relaxed">Curated mentors, quarterly reviews, legal and financial advisory.</p>
             </div>
           </div>
@@ -1450,7 +1447,7 @@ tailwind.config = {
               <span class="material-symbols-outlined text-primary-fixed-dim text-lg">payments</span>
             </div>
             <div>
-              <div class="font-semibold text-on-surface text-sm mb-0.5">Capital & Investor Connections</div>
+              <div class="font-semibold text-white text-sm mb-0.5">Capital & Investor Connections</div>
               <p class="text-on-surface-variant text-xs leading-relaxed">Demo days, angel connects, government grants, and CSR pathways.</p>
             </div>
           </div>
@@ -1462,31 +1459,28 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- ── Footer — stats + CTA centred ── -->
-    <div class="flex flex-col items-center gap-8 fade-up">
-      <!-- Four stat chips -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
-        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">300+</div>
-          <div class="font-label-mono text-xs text-on-surface-variant">Faculty Experts</div>
+    <!-- Stats + CTA — inline mentors-style footer row -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center gap-6 justify-between fade-up">
+      <div class="flex gap-10 flex-wrap">
+        <div>
+          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">300+</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Faculty Experts</div>
         </div>
-        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">215</div>
-          <div class="font-label-mono text-xs text-on-surface-variant">Acre Campus</div>
+        <div>
+          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">215</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Acre Campus</div>
         </div>
-        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">6</div>
-          <div class="font-label-mono text-xs text-on-surface-variant">Centres of Excellence</div>
+        <div>
+          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">6</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Centres of Excellence</div>
         </div>
-        <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-          <div class="font-black text-2xl gradient-text mb-1" style="font-family:'Space Grotesk',sans-serif">Sec 8</div>
-          <div class="font-label-mono text-xs text-on-surface-variant">Legal Status</div>
+        <div>
+          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">Sec 8</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Legal Status</div>
         </div>
       </div>
-      <!-- CTA -->
-      <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary-fixed-dim/40 text-primary-fixed-dim font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Space Grotesk',sans-serif;">
-        Learn More About V3F
-        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      <a href="about.html" class="inline-flex items-center gap-2 px-7 py-3 border border-primary-fixed-dim/40 rounded-full font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Manrope',sans-serif;">
+        Learn More About V3F <span class="material-symbols-outlined text-base text-primary-fixed-dim">arrow_forward</span>
       </a>
     </div>
 
