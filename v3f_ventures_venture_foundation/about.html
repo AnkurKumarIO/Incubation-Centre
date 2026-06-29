@@ -256,117 +256,106 @@ tailwind.config = {
 <main>
 
 <!-- ═══════════════════════════════════════ SECTION A — HERO -->
-<section id="about-hero" class="relative w-full overflow-hidden min-h-screen flex items-center" style="background:#050B14;padding-top:128px;padding-bottom:60px;">
+<div id="about-hero" class="relative pt-[116px] pb-10 overflow-hidden" style="background:#050B14;">
   <!-- Isometric grid -->
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <!-- Ambient glows -->
-  <div class="amb-amber" style="top:18%;right:12%;"></div>
-  <div class="amb-teal" style="bottom:22%;left:8%;"></div>
   <!-- Radial background glow -->
-  <div class="absolute pointer-events-none" style="top:-5%;right:-5%;width:700px;height:700px;background:radial-gradient(circle,rgba(255,153,0,0.06) 0%,transparent 65%);"></div>
-  <div class="absolute pointer-events-none" style="bottom:0;left:5%;width:500px;height:500px;background:radial-gradient(circle,rgba(79,209,197,0.05) 0%,transparent 65%);"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 60% 40%,rgba(255,153,0,0.07) 0%,transparent 65%);"></div>
 
-  <div class="relative z-10 w-full px-4 md:px-16 max-w-[1440px] mx-auto">
-    <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6 fade-in">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-outline-variant">›</span>
+      <span class="text-primary-fixed-dim">About</span>
+    </div>
 
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- Label -->
-        <div class="aws-header-label hero-fade-1">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">About V3F</span>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div class="max-w-2xl">
+        <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(79,209,197,0.3);background:rgba(255,255,255,0.06)">
+          <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
+          <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F</span>
         </div>
-
-        <!-- H1 -->
-        <h1 class="hero-fade-2 text-white leading-tight mb-6" style="font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(3rem,6vw,5rem);">
-          Nurturing the Spirit of<br>
-          <em class="serif-italic gradient-text">Entrepreneurship</em>
+        <h1 class="font-black text-5xl md:text-6xl leading-tight mb-4 fade-up" style="font-family:'Manrope',sans-serif;">
+          Nurturing the Spirit of<br/><span class="serif-italic gradient-text" style="font-weight:400;">Entrepreneurship</span>
         </h1>
-
-        <!-- Paragraph -->
-        <p class="hero-fade-3 text-on-surface-variant text-lg leading-relaxed max-w-2xl mb-8">
-          At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit.
-          As VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.
+        <p class="text-on-surface-variant text-lg leading-relaxed fade-up delay-1">
+          At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit. As VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.
         </p>
+      </div>
 
-        <!-- Pills -->
-        <div class="hero-fade-4 flex flex-wrap gap-3 mb-10">
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Section 8 Company
-          </span>
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Affiliated with VNIT Nagpur
-          </span>
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Founder-First Ecosystem
-          </span>
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Nagpur Region
-          </span>
+      <!-- Stats -->
+      <div class="flex gap-3 shrink-0 fade-up delay-2 flex-wrap">
+        <div class="glass-panel rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">landscape</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Manrope',sans-serif;">215</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Acre Campus</div>
+          </div>
         </div>
-
-        <!-- Quick facts strip -->
-        <div class="hero-fade-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
-          <div class="flex flex-col gap-1">
-            <span class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;">CAMPUS</span>
-            <span class="font-bold text-white text-xl" style="font-family:'Manrope',sans-serif;">215 Acres</span>
+        <div class="glass-panel rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">verified</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Manrope',sans-serif;">Section 8</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Legal Status</div>
           </div>
-          <div class="flex flex-col gap-1">
-            <span class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;">FACULTY</span>
-            <span class="font-bold text-white text-xl" style="font-family:'Manrope',sans-serif;">300+</span>
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;">LEGAL STATUS</span>
-            <span class="font-bold text-white text-xl" style="font-family:'Manrope',sans-serif;">Section 8</span>
-          </div>
-          <div class="flex flex-col gap-1">
-            <span class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;">CHAIRMAN</span>
-            <span class="font-bold text-white text-xl" style="font-family:'Manrope',sans-serif;">Director, VNIT</span>
+        </div>
+        <div class="glass-panel rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">calendar_today</span>
+          <div>
+            <div class="font-black text-xl gradient-text" style="font-family:'Manrope',sans-serif;">2024</div>
+            <div class="font-label-mono text-xs text-on-surface-variant">Established</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- RIGHT COLUMN — decorative stat card -->
-      <div class="hidden lg:flex flex-col items-center justify-center gap-6 hero-fade-4">
-        <div class="glass-panel rounded-2xl p-8 border w-full max-w-sm" style="border-color:rgba(79,209,197,0.18);">
-          <div class="aws-header-label mb-4">
-            <div class="aws-header-line"></div>
-            <span class="aws-header-tag">V3F at a Glance</span>
-          </div>
-          <div class="grid grid-cols-2 gap-6">
-            <div>
-              <div class="card-num-teal">18<em style="font-size:1.5rem;">–36</em></div>
-              <div class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;margin-top:4px;">MONTH PROGRAMS</div>
-            </div>
-            <div>
-              <div class="card-num-amber">300+</div>
-              <div class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;margin-top:4px;">FACULTY MENTORS</div>
-            </div>
-            <div>
-              <div class="card-num-teal">∞</div>
-              <div class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;margin-top:4px;">ROLLING ADMISSIONS</div>
-            </div>
-            <div>
-              <div class="card-num-amber">01</div>
-              <div class="font-label-mono text-xs text-on-surface-variant" style="letter-spacing:0.12em;margin-top:4px;">NIT BACKED INCUBATOR</div>
-            </div>
-          </div>
-          <div class="mt-6 pt-5 border-t flex items-center gap-2" style="border-color:rgba(255,255,255,0.06);">
-            <span class="w-2 h-2 rounded-full bg-[#4FD1C5] animate-pulse flex-shrink-0"></span>
-            <span class="font-label-mono text-xs text-on-surface-variant">Applications Open · Nagpur, MH</span>
-          </div>
+    <!-- Identity pills -->
+    <div class="hero-fade-4 flex flex-wrap gap-3 mt-10">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
+        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Section 8 Company
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
+        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Affiliated with VNIT Nagpur
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
+        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Founder-First Ecosystem
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
+        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Nagpur Region
+      </span>
+    </div>
+
+    <!-- V3F at a Glance — stat band -->
+    <div class="fade-up delay-3 mt-12">
+      <div class="aws-header-label mb-5">
+        <div class="aws-header-line"></div>
+        <span class="aws-header-tag">V3F at a Glance</span>
+      </div>
+      <div class="flex items-stretch flex-wrap gap-y-6 rounded-2xl py-7 px-4" style="background:linear-gradient(135deg,rgba(17,25,46,0.6),rgba(9,21,16,0.4));border:1px solid rgba(255,255,255,0.07);">
+        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
+          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#4FD1C5;line-height:1;">18<span style="font-size:1.3rem;">–36</span></div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">MONTH PROGRAMS</div>
+        </div>
+        <div class="hidden sm:block w-px self-center" style="height:54px;background:rgba(255,255,255,0.1);"></div>
+        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
+          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#FF9900;line-height:1;">300+</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">FACULTY MENTORS</div>
+        </div>
+        <div class="hidden sm:block w-px self-center" style="height:54px;background:rgba(255,255,255,0.1);"></div>
+        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
+          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#4FD1C5;line-height:1;">∞</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">ROLLING ADMISSIONS</div>
+        </div>
+        <div class="hidden sm:block w-px self-center" style="height:54px;background:rgba(255,255,255,0.1);"></div>
+        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
+          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#FF9900;line-height:1;">01</div>
+          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">NIT-BACKED INCUBATOR</div>
         </div>
       </div>
-
-    </div><!-- end grid -->
-
-    <!-- Scroll cue -->
-    <div class="absolute bottom-8 right-16 hero-fade-4 flex flex-col items-center gap-2 pointer-events-none">
-      <span class="font-label-mono text-xs text-white/30 tracking-widest">SCROLL</span>
-      <div class="w-px h-10 bg-gradient-to-b from-white/30 to-transparent hero-scroll-line"></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ═══════════════════════════════════════ SECTION B — MISSION -->
 <section id="about-mission" class="py-24 relative overflow-hidden" style="background:#11192E;">

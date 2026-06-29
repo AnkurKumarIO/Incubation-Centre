@@ -101,10 +101,10 @@ tailwind.config = {
 
   /* ── Marquee ticker ─────────────────────────────────────────── */
   .marquee-strip {
-    position: relative; width: 100%; overflow: hidden;
-    background: linear-gradient(90deg, rgba(255,153,0,0.03) 0%, rgba(79,209,197,0.03) 100%);
+    position: fixed; top: 0; left: 0; right: 0; width: 100%; overflow: hidden;
+    background: rgba(5,11,20,0.95); backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 9px 0; z-index: 49;
+    padding: 7px 0; z-index: 51;
   }
   .marquee-track { display: inline-flex; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
   .marquee-track:hover { animation-play-state: paused; }
@@ -129,7 +129,7 @@ tailwind.config = {
 <body class="font-body-md antialiased">
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]">
+<nav class="fixed w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]" style="top:35px;">
   <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
@@ -206,7 +206,7 @@ tailwind.config = {
 </div>
 
 <!-- HERO STRIP -->
-<div class="relative pt-20 pb-10 overflow-hidden">
+<div class="relative pt-[116px] pb-10 overflow-hidden">
   <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,153,0,0.07) 0%,transparent 60%);"></div>
   <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
