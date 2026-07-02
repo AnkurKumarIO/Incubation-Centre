@@ -265,11 +265,11 @@ tailwind.config = {
 
   <!-- Secondary stats bar -->
   <div class="mt-12 grid grid-cols-2 md:grid-cols-5 gap-px bg-outline-variant border border-outline-variant overflow-hidden rounded-xl reveal">
-    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Experts</p></div>
-    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">1500+</p><p class="section-label text-on-surface-variant mt-1">Students / Year</p></div>
-    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">6</p><p class="section-label text-on-surface-variant mt-1">Centres of Excellence</p></div>
-    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">215ac</p><p class="section-label text-on-surface-variant mt-1">NIT Campus</p></div>
-    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">18mo</p><p class="section-label text-on-surface-variant mt-1">Avg. Incubation</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary stat-num" data-target="300" data-suffix="+">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Experts</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary stat-num" data-target="1500" data-suffix="+">1500+</p><p class="section-label text-on-surface-variant mt-1">Students / Year</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary stat-num" data-target="6">6</p><p class="section-label text-on-surface-variant mt-1">Centres of Excellence</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary stat-num" data-target="215" data-suffix="ac">215ac</p><p class="section-label text-on-surface-variant mt-1">NIT Campus</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary stat-num" data-target="18" data-suffix="mo">18mo</p><p class="section-label text-on-surface-variant mt-1">Avg. Incubation</p></div>
   </div>
 </section>
 
@@ -858,26 +858,7 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Stat chips + CTA -->
-    <div class="flex flex-col items-center gap-8 reveal">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
-        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
-          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">300+</div>
-          <div class="section-label text-white/50">Faculty Experts</div>
-        </div>
-        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
-          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">215</div>
-          <div class="section-label text-white/50">Acre Campus</div>
-        </div>
-        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
-          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">6</div>
-          <div class="section-label text-white/50">Centres of Excellence</div>
-        </div>
-        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
-          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">Sec 8</div>
-          <div class="section-label text-white/50">Legal Status</div>
-        </div>
-      </div>
+    <div class="flex justify-center mt-10 reveal">
       <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-display font-bold text-sm text-primary-fixed-dim transition-all hover:bg-primary-fixed-dim/10 active:scale-95" style="border:1px solid rgba(99,140,255,0.4)">
         Learn More About V3F
         <span class="material-symbols-outlined text-base">arrow_forward</span>
@@ -938,57 +919,75 @@ tailwind.config = {
 
       <!-- Right: form -->
       <div class="reveal">
-        <div class="bg-surface-gray border border-outline-variant p-8">
-          <h3 class="font-display font-bold text-2xl text-primary mb-2">Ready to Build Your Startup?</h3>
-          <p class="text-on-surface-variant text-sm mb-8">Rolling Admissions · First Cohort · Monthly/Quarterly review cycles · 18-36 month programs</p>
-          <form class="space-y-5" data-formspree action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="section-label text-on-surface-variant mb-2 block">FOUNDER NAME</label>
-                <input name="name" type="text" required placeholder="Full Name" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+        <div class="bg-primary text-white p-8 rounded-2xl relative overflow-hidden">
+          <!-- subtle glow -->
+          <div class="absolute top-[-60px] right-[-60px] w-64 h-64 rounded-full" style="background:radial-gradient(circle,rgba(34,116,190,.35),transparent 65%);pointer-events:none"></div>
+
+          <span class="section-label text-primary-fixed-dim block mb-4">APPLICATION PROCESS</span>
+          <h3 class="font-display font-extrabold text-3xl text-white mb-3 leading-tight relative">What happens<br/>after you apply?</h3>
+          <p class="text-primary-fixed text-sm mb-8 relative">We review every application carefully. Here's what to expect after you hit submit.</p>
+
+          <!-- Timeline -->
+          <div class="space-y-0 relative mb-8">
+            <!-- vertical line -->
+            <div class="absolute left-[19px] top-6 bottom-6 w-px bg-white/10"></div>
+            <div class="flex gap-4 items-start pb-6 relative">
+              <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 font-display font-bold text-sm z-10">1</div>
+              <div class="pt-1">
+                <p class="font-bold text-white text-sm mb-1">Submit Application</p>
+                <p class="text-primary-fixed text-xs leading-relaxed">Fill the multi-step form with your startup details, team info, and pitch deck.</p>
               </div>
-              <div>
-                <label class="section-label text-on-surface-variant mb-2 block">EMAIL PROTOCOL</label>
-                <input name="email" type="email" required placeholder="email@vnit.ac.in" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+            </div>
+            <div class="flex gap-4 items-start pb-6 relative">
+              <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 font-display font-bold text-sm z-10">2</div>
+              <div class="pt-1">
+                <p class="font-bold text-white text-sm mb-1">Initial Screening</p>
+                <p class="text-primary-fixed text-xs leading-relaxed">V3F management reviews your application within 2 weeks against our evaluation matrix.</p>
               </div>
             </div>
-            <div>
-              <label class="section-label text-on-surface-variant mb-2 block">PHONE NUMBER</label>
-              <input name="phone" type="tel" placeholder="+91 00000 00000" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+            <div class="flex gap-4 items-start pb-6 relative">
+              <div class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 font-display font-bold text-sm z-10">3</div>
+              <div class="pt-1">
+                <p class="font-bold text-white text-sm mb-1">Founder Interview</p>
+                <p class="text-primary-fixed text-xs leading-relaxed">Shortlisted teams present to V3F's Selection Committee at VNIT Nagpur.</p>
+              </div>
             </div>
-            <div>
-              <label class="section-label text-on-surface-variant mb-2 block">PROGRAM</label>
-              <select name="program" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
-                <option value="">Select a program...</option>
-                <option>Pre-Incubation</option>
-                <option>Incubation</option>
-                <option>Co-Working Membership</option>
-              </select>
+            <div class="flex gap-4 items-start relative">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0 z-10" style="background:#16a34a">
+                <span class="material-symbols-outlined text-white text-[18px]">check</span>
+              </div>
+              <div class="pt-1">
+                <p class="font-bold text-white text-sm mb-1">Decision &amp; Onboarding</p>
+                <p class="text-primary-fixed text-xs leading-relaxed">Governing Board approves. You sign the agreement, set milestones, and begin.</p>
+              </div>
             </div>
-            <div>
-              <label class="section-label text-on-surface-variant mb-2 block">VNIT AFFILIATION</label>
-              <select name="affiliation" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
-                <option value="">Select affiliation...</option>
-                <option>VNIT Student</option>
-                <option>VNIT Alumni</option>
-                <option>VNIT Faculty</option>
-                <option>External Startup</option>
-              </select>
+          </div>
+
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-6 mb-8">
+            <div class="text-center">
+              <p class="font-display font-extrabold text-2xl text-white">4-6</p>
+              <p class="section-label text-primary-fixed-dim mt-1">Week Decision</p>
             </div>
-            <div>
-              <label class="section-label text-on-surface-variant mb-2 block">PROJECT SCHEMATIC</label>
-              <textarea name="message" rows="4" placeholder="Briefly describe your innovation..." class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
+            <div class="text-center border-x border-white/10">
+              <p class="font-display font-extrabold text-2xl text-white">48h</p>
+              <p class="section-label text-primary-fixed-dim mt-1">Acknowledgement</p>
             </div>
-            <button type="submit" class="w-full btn-primary justify-center text-sm">
-              Submit Application <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </button>
-            <div id="form-success" class="hidden text-sm" style="padding:14px;background:#e4efff;border:1px solid #a9c7ff;color:#002754;">✓ Application received! We'll be in touch within 48 hours.</div>
-            <div id="form-error" class="hidden text-sm" style="padding:14px;background:#ffdad6;border:1px solid #ba1a1a;color:#93000a;">Something went wrong. Please email us at <a href="mailto:anil@v3foundation.in" class="underline">anil@v3foundation.in</a></div>
-            <p class="text-on-surface-variant text-xs flex items-center gap-2">
-              <span class="material-symbols-outlined text-[14px]">lock</span>
-              Confidential &amp; secure. Your data is never shared with third parties.
-            </p>
-          </form>
+            <div class="text-center">
+              <p class="font-display font-extrabold text-2xl text-white">Rolling</p>
+              <p class="section-label text-primary-fixed-dim mt-1">Admissions</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <a href="apply.html" class="relative flex items-center justify-center gap-3 w-full bg-white text-primary font-bold py-4 px-6 text-sm hover:bg-primary-fixed transition-colors">
+            Start Your Application
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+          <p class="text-center text-primary-fixed text-xs mt-4 relative">
+            Have questions first?
+            <a href="mailto:incubation@v3foundation.in" class="text-white underline ml-1">Email us</a>
+          </p>
         </div>
       </div>
     </div>
@@ -1073,7 +1072,7 @@ tailwind.config = {
     <div>
       <h5 class="section-label text-primary mb-5">CONNECT</h5>
       <ul class="space-y-3 text-sm text-on-surface-variant">
-        <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">send</span>Apply Now</a></li>
+        <li><a href="apply.html">Apply Now</a></li>
         <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">psychology</span>Become a Mentor</a></li>
         <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">mail</span>Contact Us</a></li>
         <li><a href="https://vnit.ac.in" target="_blank" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">open_in_new</span>VNIT Nagpur</a></li>
@@ -1101,6 +1100,32 @@ tailwind.config = {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Stat counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted = '1';
+        animateCounter(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
 
   // Rotating hero word
   (function(){
