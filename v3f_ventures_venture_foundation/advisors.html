@@ -132,20 +132,36 @@ tailwind.config = { theme: { extend: { colors: {
 <section class="py-20 px-6 md:px-10 bg-surface-container relative overflow-hidden">
   <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
   <div class="max-w-container mx-auto relative z-10">
-    <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> › Advisory Board</p>
-    <span class="section-label text-vibrant-blue hero-in hero-in-1">OUR ADVISORS</span>
-    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight hero-in hero-in-2">
-      Guided by<br/>Seasoned Leaders.
-    </h1>
-    <p class="text-on-surface-variant text-xl max-w-2xl mb-8 hero-in hero-in-3">V3F's Advisory Board comprises accomplished professionals who shape the incubator's strategic direction - from policy and governance to global investment and frontier technology.</p>
-    <div class="flex flex-wrap gap-6 text-sm hero-in hero-in-4">
-      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">groups</span>5 Advisors</div>
-      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">public</span>Global Reach</div>
-      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">domain</span>5 Domains</div>
-    </div>
-    <div class="mt-6 bg-surface-container-low border border-outline-variant p-4 inline-flex items-start gap-3 max-w-2xl hero-in hero-in-4">
-      <span class="material-symbols-outlined text-vibrant-blue text-[18px] mt-0.5">info</span>
-      <p class="text-on-surface-variant text-sm">Advisors guide V3F itself on policy, governance, government fund applications, and ecosystem development. They are distinct from Mentors who work directly with individual startups.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: text -->
+      <div>
+        <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> › Advisory Board</p>
+        <span class="section-label text-vibrant-blue hero-in hero-in-1">OUR ADVISORS</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight hero-in hero-in-2">
+          Guided by<br/>Seasoned Leaders.
+        </h1>
+        <p class="text-on-surface-variant text-xl max-w-2xl mb-8 hero-in hero-in-3">V3F's Advisory Board comprises accomplished professionals who shape the incubator's strategic direction - from policy and governance to global investment and frontier technology.</p>
+        <div class="flex flex-wrap gap-6 text-sm hero-in hero-in-4">
+          <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">groups</span>5 Advisors</div>
+          <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">public</span>Global Reach</div>
+          <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">domain</span>5 Domains</div>
+        </div>
+        <div class="mt-6 bg-surface-container-low border border-outline-variant p-4 inline-flex items-start gap-3 max-w-2xl hero-in hero-in-4">
+          <span class="material-symbols-outlined text-vibrant-blue text-[18px] mt-0.5">info</span>
+          <p class="text-on-surface-variant text-sm">Advisors guide V3F itself on policy, governance, government fund applications, and ecosystem development. They are distinct from Mentors who work directly with individual startups.</p>
+        </div>
+      </div>
+      <!-- Right: advisor image -->
+      <div class="hidden lg:block hero-in hero-in-3">
+        <div class="relative overflow-hidden rounded-2xl border border-outline-variant shadow-xl aspect-[4/3]">
+          <img src="images/advisor.jpeg" alt="V3F Advisory Board" class="w-full h-full object-cover"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5">
+            <p class="section-label text-white/70 mb-1">V3F ADVISORY BOARD</p>
+            <p class="font-display font-bold text-white text-lg leading-tight">Shaping Policy, Governance & Strategy</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
