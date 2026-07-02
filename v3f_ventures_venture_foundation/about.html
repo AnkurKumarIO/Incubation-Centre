@@ -59,33 +59,37 @@ tailwind.config = { theme: { extend: { colors: {
 </header>
 
 <main class="pt-20">
-<!-- HERO -->
-<section class="py-20 px-6 md:px-10 bg-primary text-white relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px;"></div>
+
+<!-- ═══════════════════════════════════════ SECTION A — HERO -->
+<section id="about-hero" class="pt-24 pb-16 px-6 md:px-10 bg-surface-container relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
   <div class="max-w-container mx-auto relative z-10">
-    <p class="text-sm text-primary-fixed/60 mb-2"><a href="index.html" class="hover:text-white text-primary-fixed">Home</a> › About</p>
-    <span class="section-label text-primary-fixed-dim mb-3 block">ABOUT V3F</span>
-    <h1 class="font-display font-extrabold text-5xl md:text-6xl mt-3 mb-5 max-w-3xl leading-tight">
-      Nurturing the Spirit of<br/>Entrepreneurship.
-    </h1>
-    <p class="text-primary-fixed text-xl max-w-2xl mb-10">At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit — catalysing startups that drive positive change, innovation, and economic development across the region.</p>
-    <div class="flex flex-wrap gap-6">
-      <div class="flex items-center gap-2 text-primary-fixed"><span class="material-symbols-outlined text-[18px]">landscape</span>215 Acre Campus</div>
-      <div class="flex items-center gap-2 text-primary-fixed"><span class="material-symbols-outlined text-[18px]">verified</span>Section 8 Legal Status</div>
-      <div class="flex items-center gap-2 text-primary-fixed"><span class="material-symbols-outlined text-[18px]">calendar_today</span>2024 Established</div>
+    <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> &rsaquo; About</p>
+    <span class="section-label text-vibrant-blue">ABOUT V3F</span>
+    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight">Nurturing the Spirit of<br/>Entrepreneurship.</h1>
+    <p class="text-on-surface-variant text-xl max-w-2xl mb-8">At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit &mdash; as VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.</p>
+
+    <!-- Identity pills -->
+    <div class="flex flex-wrap gap-3 mb-10 reveal">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Section 8 Company</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Affiliated with VNIT Nagpur</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Founder-First Ecosystem</span>
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Nagpur Region</span>
     </div>
-    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 overflow-hidden">
-      <div class="bg-primary p-6 text-center"><p class="font-display font-extrabold text-3xl">18–36</p><p class="section-label text-primary-fixed-dim mt-1">Month Programs</p></div>
-      <div class="bg-primary p-6 text-center"><p class="font-display font-extrabold text-3xl">300+</p><p class="section-label text-primary-fixed-dim mt-1">Faculty Mentors</p></div>
-      <div class="bg-primary p-6 text-center"><p class="font-display font-extrabold text-3xl">∞</p><p class="section-label text-primary-fixed-dim mt-1">Rolling Admissions</p></div>
-      <div class="bg-primary p-6 text-center"><p class="font-display font-extrabold text-3xl">01</p><p class="section-label text-primary-fixed-dim mt-1">NIT-Backed Incubator</p></div>
+
+    <!-- V3F at a Glance -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant border border-outline-variant rounded-xl overflow-hidden reveal">
+      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">18&ndash;36</p><p class="section-label text-on-surface-variant mt-1">Month Programs</p></div>
+      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary" data-count="300" data-suffix="+">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Mentors</p></div>
+      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">&infin;</p><p class="section-label text-on-surface-variant mt-1">Rolling Admissions</p></div>
+      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">01</p><p class="section-label text-on-surface-variant mt-1">NIT-Backed Incubator</p></div>
     </div>
   </div>
 </section>
 
 <!-- SUB-NAV -->
 <div class="sticky top-20 z-40 bg-white border-b border-outline-variant">
-  <div class="max-w-container mx-auto px-10 flex gap-8 overflow-x-auto">
+  <div class="max-w-container mx-auto px-6 md:px-10 flex gap-8 overflow-x-auto">
     <a href="#about-mission" class="subnav-link active">Mission</a>
     <a href="#about-features" class="subnav-link">Features</a>
     <a href="#about-board" class="subnav-link">Leadership</a>
@@ -93,44 +97,19 @@ tailwind.config = { theme: { extend: { colors: {
   </div>
 </div>
 
-<main>
+<!-- ═══════════════════════════════════════ SECTION B — MISSION -->
+<section id="about-mission" class="py-24 px-6 md:px-10">
+  <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <div class="reveal">
+      <span class="section-label text-vibrant-blue">[ 01 ] MISSION</span>
+      <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-6">Building a Founder-First Ecosystem.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed mb-5">V3F Nagpur provides startups with access to state-of-the-art facilities, a strong and well-connected network of mentors, valuable industry connections, and a supportive community that empowers entrepreneurs to grow, innovate, and thrive.</p>
+      <p class="text-on-surface-variant leading-relaxed mb-5">Our objective is to create an environment that encourages sustainable entrepreneurship by providing the right ecosystem, support, and opportunities while contributing to long-term ecosystem development through continuous collaboration and innovation.</p>
+      <p class="text-on-surface-variant leading-relaxed mb-8">Startups incubated at V3F Nagpur also benefit from being a part of the broader VNIT innovation ecosystem. They gain access to the expertise and guidance of faculty members, well-equipped research infrastructure, talented student communities, meaningful industry partnerships, and established investor networks &mdash; providing a strong foundation and a supportive environment to grow.</p>
 
-<!-- ═══════════════════════════════════════ SECTION A — HERO -->
-<div id="about-hero" class="relative pt-[116px] pb-12 overflow-hidden" style="background:#050B14;">
-  <!-- Isometric grid -->
-  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <!-- Radial background glow -->
-  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 60% 40%,rgba(255,153,0,0.07) 0%,transparent 65%);"></div>
-
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto pt-6">
-
-    <!-- Breadcrumb -->
-    <div class="flex items-center gap-2 font-label-mono text-xs text-on-surface-variant mb-6 fade-in">
-      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
-      <span class="text-outline-variant">›</span>
-      <span class="text-primary-fixed-dim">About</span>
-    </div>
-
-    <!-- Headline row -->
-    <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-8">
-      <!-- Left: badge + headline + paragraph -->
-      <div class="max-w-2xl">
-        <div class="hero-fade-1 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(79,209,197,0.3);background:rgba(255,255,255,0.06);">
-          <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping flex-shrink-0"></span>
-          <span class="font-label-mono text-xs text-primary-fixed-dim tracking-widest">ABOUT V3F</span>
-        </div>
-        <h1 class="text-white leading-tight mb-5" style="font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(2.2rem,4vw,3.5rem);">
-          Nurturing the Spirit of<br/><span class="serif-italic gradient-text" style="font-weight:400;">Entrepreneurship</span>
-        </h1>
-        <p class="text-on-surface-variant text-lg leading-relaxed fade-up delay-1">
-          At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit. As VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.
-        </p>
-      </div>
-
-      <!-- Right: quick stat chips -->
-      <div class="flex flex-col gap-3 shrink-0 fade-up delay-2 md:mt-16" style="margin-left: 100px; margin-right: 100px;">
-        <div class="glass-panel rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-xl">landscape</span>
+      <div class="bg-surface-container-low border border-outline-variant p-6 mb-8">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-vibrant-blue text-[20px] mt-0.5" style="font-variation-settings:'FILL' 1;">verified</span>
           <div>
             <p class="font-bold text-primary mb-1">VNIT Affiliation</p>
             <p class="text-on-surface-variant text-sm">V3F operates as a Section 8 company affiliated with VNIT Nagpur, with the Director of VNIT serving as Chairman of the Board of Directors.</p>
@@ -138,69 +117,18 @@ tailwind.config = { theme: { extend: { colors: {
         </div>
       </div>
 
-    <!-- Identity pills -->
-    <div class="hero-fade-4 flex flex-wrap gap-3 mb-10">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
-        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Section 8 Company
-      </span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
-        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Affiliated with VNIT Nagpur
-      </span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(255,153,0,0.45);color:#FF9900;background:rgba(255,153,0,0.06);">
-        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900;"></span>Founder-First Ecosystem
-      </span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full font-label-mono text-xs" style="border:1px solid rgba(79,209,197,0.4);color:#4FD1C5;background:rgba(79,209,197,0.06);">
-        <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5;"></span>Nagpur Region
-      </span>
-    </div>
-
-    <!-- V3F at a Glance — stat band -->
-    <div class="fade-up delay-3">
-      <div class="aws-header-label mb-5">
-        <div class="aws-header-line"></div>
-        <span class="aws-header-tag">V3F at a Glance</span>
-      </div>
-      <div class="flex items-stretch flex-wrap gap-y-6 rounded-2xl py-7 px-4" style="background:linear-gradient(135deg,rgba(17,25,46,0.6),rgba(9,21,16,0.4));border:1px solid rgba(255,255,255,0.07);">
-        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
-          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#4FD1C5;line-height:1;">18<span style="font-size:1.3rem;">–36</span></div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">MONTH PROGRAMS</div>
+      <div class="space-y-5">
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-primary flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">domain</span></div>
+          <div><h4 class="font-bold text-on-surface">Infrastructure &amp; Workspace</h4><p class="text-on-surface-variant text-sm mt-1">Co-working seats, private cabins, labs, and meeting rooms on the VNIT campus.</p></div>
         </div>
         <div class="flex gap-4 items-start">
           <div class="w-10 h-10 bg-vibrant-blue flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">psychology</span></div>
-          <div><h4 class="font-bold text-on-surface">Mentoring & Guidance</h4><p class="text-on-surface-variant text-sm mt-1">Matched mentors, quarterly milestones, and legal & financial advisory.</p></div>
+          <div><h4 class="font-bold text-on-surface">Mentoring &amp; Guidance</h4><p class="text-on-surface-variant text-sm mt-1">Matched mentors, quarterly milestones, and legal &amp; financial advisory.</p></div>
         </div>
-        <div class="hidden sm:block w-px self-center" style="height:54px;background:rgba(255,255,255,0.1);"></div>
-        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
-          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#4FD1C5;line-height:1;">∞</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">ROLLING ADMISSIONS</div>
-        </div>
-        <div class="hidden sm:block w-px self-center" style="height:54px;background:rgba(255,255,255,0.1);"></div>
-        <div class="flex-1 min-w-[140px] px-6 text-center sm:text-left">
-          <div style="font-family:Georgia,serif;font-style:italic;font-size:2.6rem;color:#FF9900;line-height:1;">01</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-2" style="letter-spacing:0.1em;">NIT-BACKED INCUBATOR</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════ SECTION B — MISSION -->
-<section id="about-mission" class="py-24 relative overflow-hidden" style="background:#11192E;">
-  <!-- Isometric grid -->
-  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-  <!-- Ambient glows -->
-  <div class="amb-amber" style="top:15%;right:8%;"></div>
-  <div class="amb-teal" style="bottom:20%;left:6%;"></div>
-
-  <div class="relative z-10 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <!-- Section header -->
-    <div class="aws-header mb-12 fade-up">
-      <span class="aws-header-num">[ 01 ]</span>
-      <div>
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Mission</span>
+        <div class="flex gap-4 items-start">
+          <div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">payments</span></div>
+          <div><h4 class="font-bold text-on-surface">Funding &amp; Investor Access</h4><p class="text-on-surface-variant text-sm mt-1">Demo days, angel connects, government grants, and CSR funding pathways.</p></div>
         </div>
       </div>
     </div>
