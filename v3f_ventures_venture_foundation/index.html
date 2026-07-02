@@ -1,2132 +1,1118 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="V3F Nagpur is VNIT's official startup incubation centre — supporting deep-tech founders with funding, mentorship, lab access, and a 18–36 month structured program."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>V3F Nagpur | VNIT Incubation Centre</title>
+<meta name="description" content="V3F Nagpur is VNIT's official startup incubation centre — supporting deep-tech founders with funding, mentorship, lab access, and an 18–36 month structured program."/>
 <link rel="canonical" href="https://v3foundation.in/"/>
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
 <link rel="apple-touch-icon" href="images/Option 9.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="V3F Nagpur"/>
 <meta property="og:title" content="V3F Nagpur | VNIT Incubation Centre"/>
-<meta property="og:description" content="V3F Nagpur is VNIT's official startup incubation centre — supporting deep-tech founders with funding, mentorship, lab access, and a 18–36 month structured program."/>
+<meta property="og:description" content="VNIT's flagship incubation centre — catalysing high-impact startups through world-class infrastructure, expert mentorship, and India's premier engineering ecosystem."/>
 <meta property="og:url" content="https://v3foundation.in/"/>
 <meta property="og:image" content="https://v3foundation.in/images/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="V3F Nagpur | VNIT Incubation Centre"/>
-<meta name="twitter:description" content="V3F Nagpur is VNIT's official startup incubation centre — supporting deep-tech founders with funding, mentorship, lab access, and a 18–36 month structured program."/>
-<meta name="twitter:image" content="https://v3foundation.in/images/og-image.png"/>
-<title>V3F Nagpur | VNIT Incubation Centre</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
 tailwind.config = {
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "surface-container-high": "#162035",
-        "on-error": "#690005",
-        "surface-dim": "#050B14",
-        "primary": "#FFFFFF",
-        "primary-fixed-dim": "#00B4D8",
-        "inverse-on-surface": "#1A1A1A",
-        "inverse-primary": "#1A1A1A",
-        "outline-variant": "#1A2744",
-        "surface-tint": "#00B4D8",
-        "error-container": "#93000a",
-        "outline": "#1E3A5F",
-        "tertiary-container": "#CCCCCC",
-        "on-primary-container": "#1A1A1A",
-        "primary-container": "#FF9900",
-        "tertiary": "#CCCCCC",
-        "background": "#050B14",
-        "secondary": "#00B4D8",
-        "on-tertiary": "#141414",
-        "on-primary": "#111111",
-        "on-surface": "#FFFFFF",
-        "surface-variant": "#1E2D4A",
-        "surface-container": "#11192E",
-        "inverse-surface": "#FFFFFF",
-        "surface": "#050B14",
-        "on-background": "#FFFFFF",
-        "on-surface-variant": "#94A3B8","surface-text": "#A0AEC0",
-        "surface-container-highest": "#1E2D4A",
-        "primary-fixed": "#FF6B35","electric-teal": "#4FD1C5","neon-cyan": "#00B4D8",
-        "coral-accent": "#FF9900",
-        "surface-container-lowest": "#050B14",
-        "surface-container-low": "#0D1526",
+        primary: "#002754", "primary-container": "#153d72", "on-primary": "#ffffff",
+        "on-primary-container": "#88a9e5", "primary-fixed": "#d6e3ff", "primary-fixed-dim": "#a9c7ff",
+        "on-primary-fixed": "#001b3e", "inverse-primary": "#a9c7ff",
+        secondary: "#006a63", "secondary-container": "#79f7ea", "on-secondary": "#ffffff",
+        "secondary-fixed": "#79f7ea", "secondary-fixed-dim": "#5adace",
+        tertiary: "#4c1600", "tertiary-container": "#6e2604", "on-tertiary": "#ffffff",
+        "on-tertiary-container": "#f58d64", "tertiary-fixed": "#ffdbce", "tertiary-fixed-dim": "#ffb59a",
+        surface: "#f7f9ff", "surface-dim": "#cddbee", "surface-bright": "#f7f9ff",
+        "surface-container-lowest": "#ffffff", "surface-container-low": "#eef4ff",
+        "surface-container": "#e4efff", "surface-container-high": "#dbe9fd",
+        "surface-container-highest": "#d6e4f7", "surface-variant": "#d6e4f7",
+        "on-surface": "#0f1d2a", "on-surface-variant": "#43474f",
+        "inverse-surface": "#243240", "inverse-on-surface": "#e9f1ff",
+        outline: "#737780", "outline-variant": "#c3c6d1", "surface-tint": "#3c5f95",
+        background: "#f7f9ff", "on-background": "#0f1d2a",
+        "deep-onyx": "#050B14", "vibrant-blue": "#2274BE", "surface-gray": "#F7FAFC",
+        error: "#ba1a1a", "on-error": "#ffffff", "error-container": "#ffdad6",
       },
-      borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
-      fontFamily: {
-        "headline-lg": ["Manrope"],
-        "body-md": ["Inter"],
-        "headline-xl": ["Manrope"],
-        "body-lg": ["Inter"],
-        "label-mono": ["Manrope"],
-        "label-caps": ["Manrope"],
-        "headline-md": ["Manrope"],
-      }
+      fontFamily: { display: ["Manrope","sans-serif"], body: ["Inter","sans-serif"], mono: ["JetBrains Mono","monospace"] },
+      maxWidth: { container: "1280px" },
     }
   }
 }
 </script>
 <style>
-  body { background-color: #050B14; color: #A0AEC0; overflow-x: hidden; }
-  .glass-panel {
-    background: rgba(20,40,80,0.35);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .glow-cyan { box-shadow: 0 0 15px rgba(79,209,197,0.2); }
-  .glow-coral { box-shadow: 0 0 15px rgba(79,209,197,0.35); }
-  .isometric-grid {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-    background-size: 44px 44px;
-  }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
-  }
-  /* Scroll animations */
-  .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  .fade-in { opacity: 0; transition: opacity 0.8s ease; }
-  .fade-in.visible { opacity: 1; }
-  .slide-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .slide-left.visible { opacity: 1; transform: translateX(0); }
-  .slide-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .slide-right.visible { opacity: 1; transform: translateX(0); }
-  .scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .scale-in.visible { opacity: 1; transform: scale(1); }
-  /* Counter animation */
-  .counter { font-variant-numeric: tabular-nums; }
-  /* Stagger delays */
-  .delay-1 { transition-delay: 0.1s; }
-  .delay-2 { transition-delay: 0.2s; }
-  .delay-3 { transition-delay: 0.3s; }
-  .delay-4 { transition-delay: 0.4s; }
-  .delay-5 { transition-delay: 0.5s; }
-  .delay-6 { transition-delay: 0.6s; }
-  /* Ping badge */
-  @keyframes ping-slow { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
-  .ping-slow { animation: ping-slow 2s cubic-bezier(0,0,0.2,1) infinite; }
-/* Gradient text */
-  .gradient-text {
-    background: linear-gradient(135deg, #FF9900, #FF6B35);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  /* Card hover lift */
-  .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(79,209,197,0.1); }
-  /* Typewriter cursor */
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  .cursor { display: inline-block; width: 2px; height: 1.1em; background: #00B4D8; vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px; }
-  /* Nav link underline animation */
+  * { box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Manrope', sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align: middle; line-height: 1; }
+  .card-hover { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -12px rgba(0,39,84,0.18); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .ticker-track { display: flex; animation: ticker 28s linear infinite; width: max-content; }
+  .ticker-track:hover { animation-play-state: paused; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .nav-link { position: relative; }
-  .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#00B4D8; transition:width 0.3s ease; }
-  .nav-link:hover::after { width:100%; }
-  /* Focus area pill active */
-  .focus-pill.active { background: rgba(79,209,197,0.12); border-color: rgba(79,209,197,0.4); color: #4FD1C5; }
-  /* Floating orbit */
-  @keyframes orbit { from{transform:rotate(0deg) translateX(120px) rotate(0deg)} to{transform:rotate(360deg) translateX(120px) rotate(-360deg)} }
-  .orbit-dot { animation: orbit 8s linear infinite; }
-  @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-  .float-anim { animation: float-y 4s ease-in-out infinite; }
-  /* Number counter */
-  .stat-number { font-variant-numeric: tabular-nums; }
-
-  /* ── AWS-style section header: left-column number layout ────── */
-  .aws-header { display: flex; align-items: flex-start; gap: 2.5rem; }
-  .aws-header-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.1em; color: #94A3B8;
-    padding-top: 4px; min-width: 48px; flex-shrink: 0;
-  }
-  .aws-header-label {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
-  }
-  .aws-header-line { width: 24px; height: 1px; background: #4FD1C5; flex-shrink: 0; }
-  .aws-header-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px; letter-spacing: 0.15em; color: #4FD1C5; text-transform: uppercase;
-  }
-
-  /* ── Serif italic accent in headings ────────────────────────── */
-  .serif-italic {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-style: italic; font-weight: 400;
-  }
-
-  /* ── Large serif italic card number ─────────────────────────── */
-  .card-num-teal { font-family: Georgia, serif; font-style: italic; color: #4FD1C5; font-size: 3.5rem; line-height: 1; margin-bottom: 12px; }
-  .card-num-amber { font-family: Georgia, serif; font-style: italic; color: #FF9900; font-size: 3.5rem; line-height: 1; margin-bottom: 12px; }
-
-  /* ── Dash list ───────────────────────────────────────────────── */
-  .dash-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-  .dash-list li { display: flex; align-items: baseline; gap: 10px; font-size: 0.85rem; color: #94A3B8; }
-  .dash-list li::before { content: '—'; color: #4FD1C5; flex-shrink: 0; }
-  .dash-list-amber li::before { color: #FF9900; }
-
-  /* ── Stats band (AWS-style serif italic numbers) ─────────────── */
-  .stat-band {
-    background: linear-gradient(135deg, #091510 0%, #0d1f18 50%, #091510 100%);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .stat-band-num {
-    font-family: Georgia, serif; font-style: italic;
-    font-size: 3.8rem; color: #FF9900; line-height: 1;
-  }
-  .stat-band-label {
-    font-family: 'JetBrains Mono', monospace; font-size: 9.5px;
-    letter-spacing: 0.15em; color: #4FD1C5; text-transform: uppercase; margin-top: 6px; line-height: 1.4;
-  }
-  .stat-band-divider { width: 1px; height: 56px; background: rgba(255,255,255,0.1); align-self: center; }
-
-  /* ── Teal gradient text (white → electric-teal) ─────────────── */
-  .gradient-text-teal {
-    background: linear-gradient(to right, #ffffff, #4FD1C5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* ── Section numbering ──────────────────────────────────────── */
-  .section-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #94A3B8;
-    display: inline-block;
-    margin-bottom: 10px;
-  }
-  .section-num span { color: #FF9900; }
-
-  /* ── Ambient glow dots ──────────────────────────────────────── */
-  .amb-amber {
-    position: absolute;
-    width: 4px; height: 4px;
-    background: #FF9900;
-    border-radius: 50%;
-    box-shadow: 0 0 24px 10px rgba(255,153,0,0.28);
-    pointer-events: none;
-    z-index: 1;
-  }
-  .amb-teal {
-    position: absolute;
-    width: 4px; height: 4px;
-    background: #4FD1C5;
-    border-radius: 50%;
-    box-shadow: 0 0 24px 10px rgba(79,209,197,0.18);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* ── Card hover — amber lift (spec-exact) ───────────────────── */
-  .card-hover { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, border-color 0.3s ease; }
-  .card-hover:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,153,0,0.25) !important;
-    box-shadow: 0 10px 30px rgba(5,11,20,0.8), 0 0 20px rgba(255,153,0,0.05);
-  }
-
-  /* ── Marquee ticker ─────────────────────────────────────────── */
-  .marquee-strip {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    overflow: hidden;
-    background: rgba(5,11,20,0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 4px 0;
-    z-index: 51;
-  }
-  .marquee-track {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: marquee-scroll 32s linear infinite;
-  }
-  .marquee-track:hover { animation-play-state: paused; }
-  .marquee-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    padding: 0 2.5rem;
-    flex-shrink: 0;
-  }
-  .marquee-item.amber { color: rgba(255,153,0,0.75); }
-  .marquee-item.teal  { color: rgba(79,209,197,0.65); }
-  .marquee-sep { color: rgba(255,255,255,0.2); }
-  @keyframes marquee-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-  }
-
-  /* ── Blueprint Building Image Animations ───────────────────── */
-
-  /* Ken Burns: very slow zoom + drift on campus photo */
-  @keyframes kenburns {
-    0%   { transform: scale(1)    translateX(0)    translateY(0); }
-    50%  { transform: scale(1.08) translateX(-1%)  translateY(-0.5%); }
-    100% { transform: scale(1.12) translateX(0.5%) translateY(-1%); }
-  }
-  .hero-kenburns {
-    animation: kenburns 22s ease-in-out infinite alternate;
-    transform-origin: center center;
-  }
-
-  /* Hero content staggered fade-ups */
-  @keyframes hero-rise {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-fade-1 { opacity:0; animation: hero-rise 0.7s ease 0.3s forwards; }
-  .hero-fade-2 { opacity:0; animation: hero-rise 0.7s ease 0.55s forwards; }
-  .hero-fade-3 { opacity:0; animation: hero-rise 0.7s ease 0.75s forwards; }
-  .hero-fade-4 { opacity:0; animation: hero-rise 0.7s ease 0.95s forwards; }
-  .hero-fade-5 { opacity:0; animation: hero-rise 0.7s ease 1.15s forwards; }
-
-  /* Scroll cue line drop */
-  @keyframes scroll-line {
-    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
-    30%  { opacity: 1; }
-    100% { transform: scaleY(1); transform-origin: top; opacity: 0.3; }
-  }
-  .hero-scroll-line { animation: scroll-line 1.8s ease 1.6s infinite; }
-
-  /* Parallax on scroll — applied via JS */
-  .hero-kenburns-wrap { will-change: transform; }
-
-  /* Particle dot float */
-  @keyframes particle-drift {
-    0%   { transform: translateY(0) translateX(0); opacity: 0; }
-    10%  { opacity: 0.8; }
-    90%  { opacity: 0.5; }
-    100% { transform: translateY(-130px) translateX(var(--dx, 20px)); opacity: 0; }
-  }
-
-  /* ── Floating Side Navigation ─────────────────────────────── */
-  #arc-nav {
-    position: fixed;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-    height: 380px;
-    width: 190px;        /* fixed — no expanding slab */
-    pointer-events: all;
-  }
-
-  /* Straight vertical track
-     Pill: 44px wide. Dot centre at 22px from right = 44∢22 = 22px from left.
-     Track right: 21px → centre = 21+1 = 22px from right edge ✓ */
-  .arc-track {
-    position: absolute;
-    right: 21px;
-    top: 30px;
-    bottom: 30px;
-    width: 2px;
-    background: linear-gradient(to bottom,
-      rgba(236,101,32,0)    0%,
-      rgba(79,209,197,0.3)  12%,
-      rgba(79,209,197,0.3)  88%,
-      rgba(236,101,32,0)    100%);
-    border-radius: 1px;
-  }
-  .arc-track-fill {
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%; height: 0%;
-    background: linear-gradient(to bottom, #4FD1C5, #4FD1C5);
-    border-radius: 1px;
-    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 8px rgba(236,101,32,0.65);
-  }
-
-  /* Items container — flush to right edge of pill */
-  .arc-dot-wrap {
-    position: absolute;
-    right: 0; top: 0;
-    width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 28px 0;
-  }
-
-  /* Each row: [label] [dot]
-     padding-right=17px, dot=10px → dot centre = 17+5 = 22px from right ✓ */
-  .arc-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 17px;
-    gap: 14px;
-    cursor: pointer;
-    position: relative;
-    text-decoration: none;
-  }
-
-  /* Label — hidden by default, revealed on hover/scroll */
-  .arc-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    text-align: right;
-    user-select: none;
-    color: rgba(127,212,217,0.6);
-    opacity: 0;
-    transform: translateX(6px);
-    transition:
-      opacity  0.35s ease,
-      transform 0.35s ease,
-      color    0.25s ease;
-  }
-
-  /* Reveal labels when nav is hovered or scrolling */
-  #arc-nav:hover .arc-label,
-  #arc-nav.is-scrolling .arc-label {
-    opacity: 1;
-    transform: translateX(0);
-    color: rgba(127,212,217,0.6);
-  }
-  /* Active label is brighter */
-  #arc-nav:hover .arc-item.arc-active .arc-label,
-  #arc-nav.is-scrolling .arc-item.arc-active .arc-label {
-    color: #4FD1C5;
-  }
-  /* Hovered row label */
-  .arc-item:hover .arc-label {
-    color: #f08040 !important;
-  }
-
-  /* Dot — FIXED 10×10px, never changes size */
-  .arc-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: rgba(236,101,32,0.22);
-    border: 1.5px solid rgba(236,101,32,0.45);
-    transition:
-      background  0.3s ease,
-      border-color 0.3s ease,
-      box-shadow  0.3s ease;
-  }
-  .arc-item:hover .arc-dot {
-    background: rgba(236,101,32,0.6);
-    border-color: #4FD1C5;
-    box-shadow: 0 0 10px rgba(79,209,197,0.4);
-  }
-  .arc-item.arc-active .arc-dot {
-    background: #00B4D8;
-    border-color: #f08040;
-    border-width: 2px;
-    box-shadow:
-      0 0 0 3px rgba(79,209,197,0.12),
-      0 0 12px rgba(255,153,0,0.75),
-      0 0 26px rgba(255,153,0,0.38);
-    animation: arc-pulse 2s ease-in-out infinite;
-  }
-  @keyframes arc-pulse {
-    0%, 100% {
-      box-shadow:
-        0 0 0 3px rgba(79,209,197,0.12),
-        0 0 12px rgba(255,153,0,0.75),
-        0 0 26px rgba(255,153,0,0.38);
-    }
-    50% {
-      box-shadow:
-        0 0 0 5px rgba(236,101,32,0.08),
-        0 0 18px rgba(255,153,0,0.95),
-        0 0 38px rgba(255,153,0,0.52);
-    }
-  }
-
-  /* Click ripple */
-  .arc-ripple {
-    position: absolute;
-    right: 12px; top: 50%;
-    transform: translate(50%, -50%) scale(0);
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(79,209,197,0.35) 0%, transparent 70%);
-    pointer-events: none;
-    animation: arc-ripple-anim 0.55s ease-out forwards;
-  }
-  @keyframes arc-ripple-anim {
-    0%   { transform: translate(50%, -50%) scale(0); opacity: 1; }
-    100% { transform: translate(50%, -50%) scale(1); opacity: 0; }
-  }
-
-  /* ── Mobile nav ── */
-  #mob-menu { pointer-events: none; }
-  #mob-menu.open { pointer-events: all; }
-  #mob-overlay { opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
-  #mob-menu.open #mob-overlay { opacity: 1; pointer-events: all; }
-  #mob-drawer { transform: translateX(100%); transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
-  #mob-menu.open #mob-drawer { transform: translateX(0); }
-  .mob-nav-link { display: flex; align-items: center; padding: 13px 0; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, padding-left 0.2s; text-decoration: none; }
-  .mob-nav-link:hover { color: #4FD1C5; padding-left: 5px; }
-
-  /* Form feedback states */
-  #form-success,#form-error{display:none;padding:16px;border-radius:12px;font-family:'Manrope',sans-serif;font-size:14px;text-align:center;margin-top:16px}
-  #form-success{background:rgba(82,183,136,0.12);border:1px solid rgba(82,183,136,0.3);color:#52b788}
-  #form-error{background:rgba(79,209,197,0.1);border:1px solid rgba(79,209,197,0.3);color:#4FD1C5}
+  .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#002754; transition:width 0.2s; }
+  .nav-link:hover::after, .nav-link.active::after { width:100%; }
+  .hero-bg { background: radial-gradient(ellipse 80% 60% at 60% 40%, #e4efff 0%, #f7f9ff 70%); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+  .btn-primary { background:#002754; color:#fff; font-weight:700; padding:14px 32px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary:hover { background:#153d72; box-shadow:0 8px 24px -6px rgba(0,39,84,0.35); transform:translateY(-1px); }
+  .btn-outline { border:1.5px solid #002754; color:#002754; font-weight:700; padding:13px 32px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
+  .btn-outline:hover { background:#002754; color:#fff; }
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://v3foundation.in/#organization",
-      "name":"V3F Nagpur — VNIT Venture Vault Foundation",
-      "url":"https://v3foundation.in",
-      "logo":"https://v3foundation.in/images/Option 9.png",
-      "email":"anil@v3foundation.in",
-      "address":{
-        "@type":"PostalAddress",
-        "streetAddress":"South Ambazari Road",
-        "addressLocality":"Nagpur",
-        "addressRegion":"Maharashtra",
-        "postalCode":"440010",
-        "addressCountry":"IN"
-      },
-      "parentOrganization":{
-        "@type":"CollegeOrUniversity",
-        "name":"Visvesvaraya National Institute of Technology",
-        "url":"https://vnit.ac.in"
-      }
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://v3foundation.in/#website",
-      "url":"https://v3foundation.in",
-      "name":"V3F Nagpur",
-      "publisher":{"@id":"https://v3foundation.in/#organization"}
-    }
-  ]
-}
-</script>
 </head>
-<body class="font-body-md antialiased">
+<body class="bg-surface text-on-surface antialiased">
 
-<!-- TOP NAV -->
-<nav class="fixed w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(79,209,197,0.08)]" style="top:35px;">
-  <div class="flex justify-between items-center h-20 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <a href="index.html" class="flex items-center shrink-0">
-      <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
+<!-- ═══════════════ NAV ═══════════════ -->
+<header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
+  <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-center no-underline">
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-14 w-auto"/>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a class="nav-link text-primary font-bold font-label-mono text-sm" style="border-bottom:1px solid #00B4D8;" href="index.html">Home</a>      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="programs.html">Programs</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="focus-areas.html">Focus Areas</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#ecosystem">Ecosystem</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="advisors.html">Advisors</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="mentors.html">Mentors</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="about.html">About</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="faq.html">FAQ</a>
-      <a class="nav-link text-on-surface-variant hover:text-primary font-label-mono text-sm transition-colors" href="index.html#contact">Contact</a>
-    </div>
-    <a href="index.html#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;" class="font-bold px-6 py-2.5 rounded-lg active:scale-95 transition-all text-sm whitespace-nowrap hover:opacity-95 hover:shadow-[0_0_20px_rgba(255,153,0,0.35)]">Apply Now →</a>
-    <button id="mob-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg ml-2 flex-shrink-0" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-menu">
-      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</nav>
-
-<!-- ═══════════════════════════════════════════════════ MARQUEE TICKER -->
-<div class="marquee-strip" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Build</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Launch</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Scale</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Innovate</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Connect</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Grow</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Pitch</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Ship</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item amber">Fund</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item teal">Disrupt</span><span class="marquee-sep">✦</span>
-  </div>
-</div>
-
-<!-- Mobile navigation drawer -->
-<div id="mob-menu" class="fixed inset-0 z-[999]" aria-hidden="true">
-  <div id="mob-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-  <div id="mob-drawer" class="absolute top-0 right-0 h-full w-72 flex flex-col" style="background:#050B14;border-left:1px solid #222;">
-    <div class="flex items-center justify-between px-6 py-5" style="border-bottom:1px solid #222;">
-      <img src="images/Option 9.png" alt="V3F" class="h-10 w-auto" style="mix-blend-mode:screen;"/>
-      <button id="mob-close" aria-label="Close navigation menu" class="flex items-center justify-center w-9 h-9 rounded-full" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <nav class="flex flex-col px-6 py-4 flex-1 overflow-y-auto" aria-label="Mobile navigation">
-      <a href="index.html" class="mob-nav-link">Home</a>
-      <a href="programs.html" class="mob-nav-link">Programs</a>
-      <a href="focus-areas.html" class="mob-nav-link">Focus Areas</a>
-      <a href="index.html#ecosystem" class="mob-nav-link">Ecosystem</a>
-      <a href="advisors.html" class="mob-nav-link">Advisors</a>
-      <a href="mentors.html" class="mob-nav-link">Mentors</a>
-      <a href="about.html" class="mob-nav-link">About</a>
-      <a href="faq.html" class="mob-nav-link">FAQ</a>
-      <a href="index.html#contact" class="mob-nav-link">Contact</a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="nav-link active text-primary font-semibold text-sm">Home</a>
+      <a href="programs.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Programs</a>
+      <a href="focus-areas.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Focus Areas</a>
+      <a href="index.html#ecosystem" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Ecosystem</a>
+      <a href="advisors.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Advisors</a>
+      <a href="mentors.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Mentors</a>
+      <a href="about.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">About</a>
+      <a href="faq.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">FAQ</a>
     </nav>
-    <div class="px-6 pb-8 pt-4" style="border-top:1px solid #222;">
-      <a href="index.html#contact" class="block text-center font-bold py-3 rounded-full text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif;">Apply Now</a>
-    </div>
+    <a href="index.html#contact" class="btn-primary text-sm">Apply Now</a>
   </div>
-</div>
+</header>
 
-<!-- ═══════════════════════════════════════════════════ ARC NAV -->
-<div id="arc-nav" aria-label="Page navigation">
-  <!-- Vertical track -->
-  <div class="arc-track">
-    <div class="arc-track-fill" id="arc-track-fill"></div>
-  </div>
-  <!-- Nav items -->
-  <div class="arc-dot-wrap">
-    <a href="#" class="arc-item arc-active" data-section="hero">
-      <span class="arc-label">Home</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#programs" class="arc-item" data-section="programs">
-      <span class="arc-label">Programs</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#focus" class="arc-item" data-section="focus">
-      <span class="arc-label">Focus Areas</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#ecosystem" class="arc-item" data-section="ecosystem">
-      <span class="arc-label">Ecosystem</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#advisors" class="arc-item" data-section="advisors">
-      <span class="arc-label">Advisors</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#about" class="arc-item" data-section="about">
-      <span class="arc-label">About</span>
-      <span class="arc-dot"></span>
-    </a>
-    <a href="#contact" class="arc-item" data-section="contact">
-      <span class="arc-label">Apply Now</span>
-      <span class="arc-dot"></span>
-    </a>
-  </div>
-</div>
+<main class="pt-20">
 
-<main>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero-bg min-h-[92vh] flex flex-col items-center justify-center relative overflow-hidden px-6 md:px-10">
+  <!-- Dot grid decoration -->
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
 
-<!-- ═══════════════════════════════════════════════════ HERO -->
-<section class="relative w-full overflow-hidden" style="height:100vh;min-height:620px;background:#050B14;">
-
-  <!-- Isometric grid -->
-  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
-
-  <!-- Ambient radial glows -->
-  <div class="absolute pointer-events-none" style="top:-10%;left:-8%;width:600px;height:600px;background:radial-gradient(circle,rgba(79,209,197,0.07) 0%,transparent 65%);"></div>
-  <div class="absolute pointer-events-none" style="bottom:0;right:15%;width:500px;height:400px;background:radial-gradient(circle,rgba(255,153,0,0.06) 0%,transparent 65%);"></div>
-
-  <!-- Particle field -->
-  <div class="absolute inset-0 overflow-hidden z-10 pointer-events-none" id="particle-field"></div>
-
-  <!-- WebGL shader -->
-  <div class="fixed inset-0 pointer-events-none" style="opacity:0.12;z-index:2;">
-    <canvas id="shader-canvas" style="display:block;width:100%;height:100%;"></canvas>
-  </div>
-
-  <!-- ── LAYER 6: Hero content ── -->
-  <div class="relative z-20 h-full flex flex-col justify-center px-6 md:px-16 max-w-[1440px] mx-auto w-full" style="padding-top:108px;padding-bottom:40px;">
-
-    <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-16 items-center w-full">
-
-      <!-- LEFT: Text content -->
-      <div class="space-y-7" style="min-width:0;">
-
-        <!-- Eyebrow -->
-        <div class="hero-fade-1 flex items-center gap-3">
-          <div style="width:20px;height:1px;background:#4FD1C5"></div>
-          <span class="font-label-mono text-xs tracking-widest" style="color:#4FD1C5">APPLICATIONS OPEN</span>
-          <span class="w-1.5 h-1.5 rounded-full animate-ping flex-shrink-0" style="background:#4FD1C5"></span>
-        </div>
-
-        <!-- Headline -->
-        <div class="hero-fade-2">
-          <h1 class="text-white" style="font-family:'Manrope',sans-serif;font-size:clamp(2.8rem,5vw,5.5rem);line-height:1.05;">
-            <span class="font-black block">Where Ideas</span>
-            <span class="block" style="display:flex;align-items:baseline;gap:0 0.3em;white-space:nowrap;">
-              <span class="font-black">Become</span>
-              <span class="serif-italic" id="rotating-word" style="font-size:clamp(2.8rem,5vw,5.5rem);font-weight:400;font-family:Georgia,serif;background:linear-gradient(135deg,#FF9900,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;min-width:0;"></span>
-            </span>
-          </h1>
-        </div>
-
-        <!-- Sub-copy -->
-        <p class="hero-fade-3 text-base md:text-lg leading-relaxed max-w-[480px]" style="color:rgba(160,174,192,0.85);">
-          VNIT's incubation centre — catalysing high-impact startups through world-class infrastructure, expert mentorship, and India's premier engineering ecosystem.
-        </p>
-
-        <!-- CTAs -->
-        <div class="hero-fade-4 flex gap-4 flex-wrap">
-          <a href="#contact"
-             style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;border-radius:8px;"
-             class="font-bold px-8 py-4 text-base active:scale-95 transition-all inline-flex items-center gap-2 hover:opacity-95 hover:shadow-[0_0_30px_rgba(255,153,0,0.45)]">
-            Apply for Incubation →
-          </a>
-          <a href="programs.html"
-             style="border-radius:8px;border:1px solid rgba(255,255,255,0.18);"
-             class="px-8 py-4 font-bold text-white text-base hover:bg-white/8 hover:border-white/35 backdrop-blur-sm transition-all">
-            Explore Programs
-          </a>
-        </div>
-
-        <!-- Stat pills -->
-        <div class="hero-fade-5 flex flex-wrap gap-2 pt-1">
-          <span class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5"></span>
-            <span class="font-label-mono text-xs" style="color:rgba(255,255,255,0.55)">300+ Faculty</span>
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900"></span>
-            <span class="font-label-mono text-xs" style="color:rgba(255,255,255,0.55)">215-Acre Campus</span>
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#4FD1C5"></span>
-            <span class="font-label-mono text-xs" style="color:rgba(255,255,255,0.55)">6 CoE Labs</span>
-          </span>
-          <span class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);">
-            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#FF9900"></span>
-            <span class="font-label-mono text-xs" style="color:rgba(255,255,255,0.55)">Section 8 Company</span>
-          </span>
-        </div>
-      </div>
-
-      <!-- RIGHT: Framed campus photo card -->
-      <div class="hidden md:block hero-fade-2">
-        <div class="relative" style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);box-shadow:0 32px 80px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.05),inset 0 1px 0 rgba(255,255,255,0.08);">
-
-          <!-- Info overlay — top left -->
-          <div class="absolute top-5 left-5 z-20 space-y-1">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);text-transform:uppercase;">V3F Access</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);text-transform:uppercase;">Applications 2024–25</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.15em;color:#4FD1C5;text-transform:uppercase;">VNIT Nagpur</div>
-          </div>
-
-          <!-- Campus image -->
-          <img src="images/building.png" alt="VNIT Nagpur Campus"
-               style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;"/>
-
-          <!-- Gradient for text legibility -->
-          <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to bottom,rgba(5,11,20,0.55) 0%,transparent 30%,transparent 55%,rgba(5,11,20,0.7) 100%);"></div>
-
-          <!-- Bottom-right branding -->
-          <div class="absolute bottom-5 right-5 z-20 text-right">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.18em;color:rgba(255,153,0,0.75);text-transform:uppercase;margin-bottom:3px;">V3F</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.15;">INCUBATION</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.15;">CENTRE</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:0.12em;color:rgba(255,153,0,0.6);text-transform:uppercase;margin-top:4px;">Nagpur · Est. 2024</div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Scroll cue -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hero-fade-5 flex flex-col items-center gap-2 pointer-events-none">
-      <span class="font-label-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.2)">SCROLL</span>
-      <div class="w-px h-10 bg-gradient-to-b from-white/20 to-transparent hero-scroll-line"></div>
+  <!-- Ticker banner top -->
+  <div class="absolute top-0 w-full bg-primary text-white overflow-hidden py-2">
+    <div class="ticker-track text-xs font-mono opacity-80">
+      <span class="whitespace-nowrap px-6">Build</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Launch</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Scale</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Innovate</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Connect</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Grow</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Pitch</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Ship</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Fund</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Disrupt</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Build</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Launch</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Scale</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Innovate</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Connect</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Grow</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Pitch</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Ship</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Fund</span><span class="px-2">✦</span>
+      <span class="whitespace-nowrap px-6">Disrupt</span><span class="px-2">✦</span>
     </div>
   </div>
 
-</section>
-
-<!-- ═══════════════════════════════════════════════════ WHY V3F -->
-<section class="py-24 bg-surface-container relative overflow-hidden">
-  <div class="absolute inset-0 isometric-grid opacity-10"></div>
-  <div class="amb-amber" style="top:12%;left:3%"></div>
-  <div class="amb-teal"  style="bottom:18%;right:5%"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-
-    <!-- AWS two-column header -->
-    <div class="aws-header mb-16 fade-in">
-      <div class="aws-header-num hidden md:block">[ 01 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Why V3F</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;">
-          The foundation your<br><em class="serif-italic" style="font-weight:400">startup deserves.</em>
-        </h2>
-        <p class="text-on-surface-variant text-base mt-4 max-w-xl">India's premier NIT-backed incubation centre — where deep tech founders find the infrastructure, capital, and network to scale.</p>
+  <div class="relative z-10 max-w-container mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center pt-12 pb-8">
+    <!-- Left: copy -->
+    <div class="flex flex-col gap-6">
+      <span class="section-label text-vibrant-blue">Applications Open 2024–25</span>
+      <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary leading-[1.08] tracking-tight">
+        Where Ideas<br/><span style="white-space:nowrap">Become <span id="rotating-word" class="text-vibrant-blue">Ventures</span></span>
+      </h1>
+      <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+        VNIT's incubation centre — catalysing high-impact startups through world-class infrastructure, expert mentorship, and India's premier engineering ecosystem.
+      </p>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="index.html#contact" class="btn-primary">Apply for Incubation <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+        <a href="programs.html" class="btn-outline">Explore Programs</a>
+      </div>
+      <!-- Stats row -->
+      <div class="grid grid-cols-4 gap-4 pt-6 border-t border-outline-variant mt-4">
+        <div><p class="font-display font-extrabold text-2xl text-primary">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty</p></div>
+        <div><p class="font-display font-extrabold text-2xl text-primary">215 Ac</p><p class="section-label text-on-surface-variant mt-1">Campus</p></div>
+        <div><p class="font-display font-extrabold text-2xl text-primary">6</p><p class="section-label text-on-surface-variant mt-1">CoE Labs</p></div>
+        <div><p class="font-display font-extrabold text-2xl text-primary">Sec 8</p><p class="section-label text-on-surface-variant mt-1">Company</p></div>
       </div>
     </div>
-
-    <!-- Cards with large serif italic numbers -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="glass-panel p-7 rounded-2xl card-hover fade-up delay-1 border border-white/8 flex flex-col">
-        <div class="card-num-teal">01</div>
-        <div class="aws-header-tag mb-3">Ecosystem</div>
-        <h3 class="font-bold text-base text-white mb-2">VNIT Ecosystem Access</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed flex-1">Faculty expertise, research labs, and student talent — all at your disposal.</p>
+    <!-- Right: campus image with overlay label -->
+    <div class="relative hidden lg:block">
+      <div class="relative overflow-hidden rounded-2xl border border-outline-variant shadow-xl">
+        <img src="images/building.png" alt="VNIT Nagpur Campus" class="w-full h-[480px] object-cover"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6">
+          <p class="section-label text-white/70 mb-1">V3F INCUBATION CENTRE NAGPUR · EST. 2024</p>
+          <p class="font-display font-bold text-white text-xl">Visvesvaraya National Institute of Technology</p>
+        </div>
       </div>
-      <div class="glass-panel p-7 rounded-2xl card-hover fade-up delay-2 border border-white/8 flex flex-col">
-        <div class="card-num-teal">02</div>
-        <div class="aws-header-tag mb-3">Mentorship</div>
-        <h3 class="font-bold text-base text-white mb-2">Expert Mentor Network</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed flex-1">Matched mentors from industry, academia, and investor networks.</p>
-      </div>
-      <div class="glass-panel p-7 rounded-2xl card-hover fade-up delay-3 border border-white/8 flex flex-col" style="border-color:rgba(255,153,0,0.2);background:rgba(255,153,0,0.03);">
-        <div class="card-num-amber">03</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#FF9900;text-transform:uppercase;margin-bottom:12px">Funding</div>
-        <h3 class="font-bold text-base text-white mb-2">Funding & Grant Support</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed flex-1">Guidance on government schemes, angel networks, and investor connects.</p>
-      </div>
-      <div class="glass-panel p-7 rounded-2xl card-hover fade-up delay-4 border border-white/8 flex flex-col">
-        <div class="card-num-teal">04</div>
-        <div class="aws-header-tag mb-3">Infrastructure</div>
-        <h3 class="font-bold text-base text-white mb-2">Campus Infrastructure</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed flex-1">Co-working spaces, private cabins, labs, and meeting rooms on VNIT campus.</p>
+      <!-- Floating badge -->
+      <div class="absolute -bottom-5 -right-5 bg-vibrant-blue text-white px-6 py-4 rounded-xl shadow-lg">
+        <p class="font-display font-extrabold text-2xl">18mo</p>
+        <p class="section-label text-white/70 mt-0.5">Avg. Incubation</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ STATS BAND -->
-<div class="stat-band py-14 fade-up">
-  <div class="flex items-center justify-center flex-wrap gap-0 px-4 md:px-16 max-w-[1200px] mx-auto">
-    <div class="flex-1 min-w-[140px] text-center px-8 py-4">
-      <div class="stat-band-num" data-target="300" data-suffix="+">+300</div>
-      <div class="stat-band-label">Faculty<br>Experts</div>
-    </div>
-    <div class="stat-band-divider hidden md:block"></div>
-    <div class="flex-1 min-w-[140px] text-center px-8 py-4">
-      <div class="stat-band-num" data-target="1500" data-suffix="+">+1500</div>
-      <div class="stat-band-label">Students<br>Per Year</div>
-    </div>
-    <div class="stat-band-divider hidden md:block"></div>
-    <div class="flex-1 min-w-[140px] text-center px-8 py-4">
-      <div class="stat-band-num" data-target="6" data-suffix="">6</div>
-      <div class="stat-band-label">Centres of<br>Excellence</div>
-    </div>
-    <div class="stat-band-divider hidden md:block"></div>
-    <div class="flex-1 min-w-[140px] text-center px-8 py-4">
-      <div class="stat-band-num" data-target="215" data-suffix="" data-unit="ac" data-unit-size="1.8rem">215<em style="font-size:1.8rem">ac</em></div>
-      <div class="stat-band-label">NIT<br>Campus</div>
-    </div>
-    <div class="stat-band-divider hidden md:block"></div>
-    <div class="flex-1 min-w-[140px] text-center px-8 py-4">
-      <div class="stat-band-num" data-target="18" data-suffix="" data-unit="mo" data-unit-size="1.8rem">18<em style="font-size:1.8rem">mo</em></div>
-      <div class="stat-band-label">Avg Incubation<br>Duration</div>
-    </div>
+<!-- ═══════════════ WHY V3F BENTO ═══════════════ -->
+<section class="py-24 px-6 md:px-10 max-w-container mx-auto">
+  <div class="mb-14 reveal">
+    <span class="section-label text-vibrant-blue">[ 01 ] WHY V3F</span>
+    <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">The foundation your<br/>startup deserves.</h2>
+    <p class="text-on-surface-variant text-lg max-w-xl">India's premier NIT-backed incubation centre — where deep tech founders find the infrastructure, capital, and network to scale.</p>
   </div>
-</div>
 
-<!-- ═══════════════════════════════════════════════════ PROGRAMS -->
-<section id="programs" class="py-24 relative overflow-hidden">
-  <div class="amb-amber" style="top:8%;right:6%"></div>
-  <div class="amb-teal"  style="bottom:12%;left:4%"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-
-    <!-- AWS two-column header -->
-    <div class="aws-header mb-16 fade-in">
-      <div class="aws-header-num hidden md:block">[ 02 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Programs</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;">
-          Support at every<br><em class="serif-italic" style="font-weight:400">stage of growth.</em>
-        </h2>
-        <p class="text-on-surface-variant text-base mt-4 max-w-xl">From early-stage ideas to market-ready ventures — structured support tailored to your startup's growth stage.</p>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[260px]">
+    <!-- Ecosystem - wide -->
+    <div class="md:col-span-8 card-hover bg-white border border-outline-variant rounded-2xl p-8 flex flex-col justify-between overflow-hidden relative reveal">
+      <div class="absolute bottom-[-20%] right-[-8%] text-primary/5 pointer-events-none">
+        <span class="material-symbols-outlined" style="font-size:220px;font-variation-settings:'wght' 100;">hub</span>
+      </div>
+      <div>
+        <p class="section-label text-vibrant-blue mb-4">01 / ECOSYSTEM</p>
+        <h3 class="font-display font-bold text-2xl text-primary mb-3">VNIT Ecosystem Access</h3>
+        <p class="text-on-surface-variant max-w-md">Faculty expertise, research labs, and student talent — all at your disposal. Access 13 engineering departments directly.</p>
+      </div>
+      <div class="flex gap-2">
+        <span class="bg-surface-container px-3 py-1 section-label text-primary">13 DEPARTMENTS</span>
+        <span class="bg-surface-container px-3 py-1 section-label text-primary">300+ FACULTY</span>
       </div>
     </div>
 
-    <!-- Program cards — AWS numbered card style -->
+    <!-- Mentorship - dark -->
+    <div class="md:col-span-4 card-hover bg-primary text-white rounded-2xl p-8 flex flex-col justify-between reveal">
+      <div>
+        <p class="section-label text-primary-fixed-dim mb-4">02 / MENTORSHIP</p>
+        <h3 class="font-display font-bold text-2xl mb-3">Expert Mentor Network</h3>
+        <p class="text-primary-fixed text-sm leading-relaxed">Matched mentors from industry, academia, and investor networks. 13+ active mentors with 25+ years experience.</p>
+      </div>
+      <a href="advisors.html" class="section-label text-primary-fixed-dim flex items-center gap-2 hover:gap-4 transition-all">VIEW MENTORS <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- Funding -->
+    <div class="md:col-span-4 card-hover bg-surface-container-low border border-outline-variant rounded-2xl p-8 flex flex-col justify-between reveal">
+      <p class="section-label text-vibrant-blue">03 / FUNDING</p>
+      <div>
+        <h3 class="font-display font-bold text-2xl text-primary mb-3">Funding & Grant Support</h3>
+        <p class="text-on-surface-variant text-sm">Guidance on government schemes, angel networks, and investor connects to fuel your seed stages.</p>
+      </div>
+      <span class="material-symbols-outlined text-primary text-4xl">payments</span>
+    </div>
+
+    <!-- Infrastructure - wide with image -->
+    <div class="md:col-span-8 card-hover bg-surface-gray border border-outline-variant rounded-2xl overflow-hidden flex reveal">
+      <div class="p-8 flex-1 flex flex-col justify-between">
+        <div>
+          <p class="section-label text-vibrant-blue mb-4">04 / INFRASTRUCTURE</p>
+          <h3 class="font-display font-bold text-2xl text-primary mb-3">Campus Infrastructure</h3>
+          <p class="text-on-surface-variant text-sm">Co-working spaces, private cabins, labs, and meeting rooms on VNIT campus. High-speed internet and full campus amenities.</p>
+        </div>
+        <a href="about.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-4 transition-all">Take a Virtual Tour <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+      </div>
+      <div class="hidden md:block w-2/5 relative">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMQ0eGOZ_SSlug7G9I0QM8OVkTVxZfBy8CfyIQdIOu-gw5_mmEtKsjZd3p-xTotEXojialhlqrmdufAPllgfrIk7UbkhqESa3WH-6dPVklF2EvJznF231O-9AKPm9SWo9DiKJ8HpqTjhO7PtXnPGR0nqsZlU6imd8xqFt32mMKd0i0tcU4b67IbV2QLuf7Sgmu7uKYZVYB9PciINxiguZYz_-O57FtbM8W7SJyKCTlviKt-a9M5Sugn4I1sq8yXbBJddh-XJ0Ohyc" alt="VNIT Lab" class="w-full h-full object-cover"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary stats bar -->
+  <div class="mt-12 grid grid-cols-2 md:grid-cols-5 gap-px bg-outline-variant border border-outline-variant overflow-hidden rounded-xl reveal">
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Experts</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">1500+</p><p class="section-label text-on-surface-variant mt-1">Students / Year</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">6</p><p class="section-label text-on-surface-variant mt-1">Centres of Excellence</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">215ac</p><p class="section-label text-on-surface-variant mt-1">NIT Campus</p></div>
+    <div class="bg-white p-6 text-center"><p class="font-display font-extrabold text-2xl text-primary">18mo</p><p class="section-label text-on-surface-variant mt-1">Avg. Incubation</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROGRAMS ═══════════════ -->
+<section class="py-24 px-6 md:px-10 bg-white">
+  <div class="max-w-container mx-auto">
+    <div class="mb-14 reveal">
+      <span class="section-label text-vibrant-blue">[ 02 ] PROGRAMS</span>
+      <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Support at every<br/>stage of growth.</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl">From early-stage ideas to market-ready ventures — structured support tailored to your startup's growth stage.</p>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
       <!-- Pre-Incubation -->
-      <div class="glass-panel rounded-2xl p-8 card-hover fade-up delay-1 border border-white/8 flex flex-col">
-        <div class="card-num-teal">01</div>
-        <div class="aws-header-tag mb-4">Pre-Incubation</div>
-        <h3 class="text-xl font-bold text-white mb-3">Early Ideas & Student Ventures</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Validate your concept with mentoring, workshop access, and a peer network before committing to full incubation.</p>
-        <ul class="dash-list mb-8 flex-1">
-          <li>Concept validation workshops</li>
-          <li>Access to faculty mentors</li>
-          <li>Peer startup community</li>
-        </ul>
-        <a href="#contact" class="aws-header-tag hover:text-white transition-colors">Learn More →</a>
+      <div class="card-hover border border-outline-variant flex flex-col reveal">
+        <div class="h-44 overflow-hidden relative">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVvcNfUC4pdAJcnb_E9B8Lh0GkATk2VFgpLgeCrWJT7jy6jWc_hKSBmGG3YukqhW8gFZxqeQVm1JUn5GgzOXWlaGdTG3Ia3srpCABggO1ErcspaXr-5RmtZsk_8_-ydimgZP1K4XzJCSTHtrQ76HtDpbpbUMsSkqehfsTwblxVNedup7v7OnlJ8sQTwSI3A1YCK3InGBHifOfaUR64wER2nn5sFm-o4IDdgOiGiVZlEfT_Fo4LLSJCY0zbZO7YMooqlFHAkPuoPdE" alt="Pre-Incubation" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"/>
+          <div class="absolute top-4 left-4 bg-surface-container-highest px-3 py-1 section-label text-primary">PHASE 01</div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="font-display font-bold text-xl text-primary mb-2">Pre-Incubation</h3>
+          <p class="text-on-surface-variant text-sm mb-5 flex-1">Validate your concept with mentoring, workshop access, and a peer network before committing to full incubation.</p>
+          <ul class="space-y-2 mb-7">
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Concept validation workshops</li>
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Access to faculty mentors</li>
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Peer startup community</li>
+          </ul>
+          <a href="programs.html" class="btn-outline text-sm justify-center">Learn More →</a>
+        </div>
       </div>
 
-      <!-- Incubation — featured (amber top border) -->
-      <div class="rounded-2xl p-8 card-hover fade-up delay-2 flex flex-col" style="background:#11192E;border:1px solid rgba(255,153,0,0.3);border-top:2px solid #FF9900;box-shadow:0 0 30px rgba(255,153,0,0.08);">
-        <div class="flex items-start justify-between mb-1">
-          <div class="card-num-amber">02</div>
-          <span class="font-label-mono text-xs px-3 py-1 rounded-full mt-2" style="background:rgba(255,153,0,0.12);color:#FF9900;border:1px solid rgba(255,153,0,0.3)">FLAGSHIP</span>
+      <!-- Incubation - highlighted -->
+      <div class="card-hover bg-primary text-white flex flex-col relative reveal">
+        <span class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container section-label px-2 py-1">FLAGSHIP</span>
+        <div class="h-44 overflow-hidden relative">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaqjhQgeqhYg5fxv8bvhwAOPIlBoj66JFVguz7gU9dootCCBauwBYzvHk9zWIl7Q8shmfj0VUVXfWw5wbXQ6_id2toWfFneTD_CmanwJe-uY8bHOH6341wJcFOoz6FvN_Ew1bDuwRssva0KrIvSmKrJYzeajn-hQqCqrwstIUBWDF9B31lyR4pThkKCUmJJpCzknW1-bMmCgi3UqwQwrFW8iL9aFPbbF51j6iX2ZjCukJZ3I7htPHXdbJ1eHhS9oX0S0t3X8OwsAs" alt="Incubation" class="w-full h-full object-cover"/>
+          <div class="absolute top-4 left-4 bg-primary-container px-3 py-1 section-label text-on-primary-container">PHASE 02</div>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#FF9900;text-transform:uppercase;margin-bottom:16px">Incubation</div>
-        <h3 class="text-xl font-bold text-white mb-3">Full-Stack Startup Support</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Co-working space, dedicated mentors, investor connects, and legal & financial guidance — everything under one roof.</p>
-        <ul class="dash-list dash-list-amber mb-8 flex-1">
-          <li>Co-working & private cabins</li>
-          <li>Dedicated mentor matching</li>
-          <li>Investor access & connects</li>
-        </ul>
-        <a href="#contact" style="background:linear-gradient(135deg,#FF9900,#FF6B35);color:#050B14;font-weight:700;padding:10px 20px;border-radius:8px;font-size:13px;display:inline-block;text-align:center;">Apply Now →</a>
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="font-display font-bold text-xl mb-2">Incubation</h3>
+          <p class="text-primary-fixed text-sm mb-5 flex-1">Full-stack support: co-working space, dedicated mentors, investor connects, and legal & financial guidance — everything under one roof.</p>
+          <ul class="space-y-2 mb-7">
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary-fixed text-[17px]">check_circle</span>Co-working & private cabins</li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary-fixed text-[17px]">check_circle</span>Dedicated mentor matching</li>
+            <li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary-fixed text-[17px]">check_circle</span>Investor access & connects</li>
+          </ul>
+          <a href="index.html#contact" class="bg-white text-primary font-bold py-3 px-6 text-sm text-center hover:bg-primary-fixed transition-colors">Apply Now →</a>
+        </div>
       </div>
 
       <!-- Co-Working -->
-      <div class="glass-panel rounded-2xl p-8 card-hover fade-up delay-3 border border-white/8 flex flex-col">
-        <div class="card-num-teal">03</div>
-        <div class="aws-header-tag mb-4">Co-Working</div>
-        <h3 class="text-xl font-bold text-white mb-3">Campus Membership</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Premium co-working on VNIT campus without full incubation commitment — ideal for early-stage teams.</p>
-        <ul class="dash-list mb-8 flex-1">
-          <li>Hot-desk & dedicated seats</li>
-          <li>Meeting rooms & event spaces</li>
-          <li>Campus amenities access</li>
-        </ul>
-        <a href="#contact" class="aws-header-tag hover:text-white transition-colors">Book a Seat →</a>
+      <div class="card-hover border border-outline-variant flex flex-col reveal">
+        <div class="h-44 overflow-hidden relative">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClY4MgMgT8i7b3ug1nhDsnVfMB3SDYGYl8rarrQ5-Os9orUFbd879ud4hztFV4ZMY_xJDOX6-A1-IqN0PevbkidQy_G3sQMxzxDKlCFgoRvvCRdKdEbbhLC5nONU5tb66QOffYgXqwAUc3RxCfWwDJbLxT2DmZ_POCCHhyNGEOAHrWQ8SmPdSLSMWCCZChNkG7KhzBmCEUpiIoMRpLHn61gKawTs6TDv-KVZeIiWdbNHZAHzumpbVfI1pnyR0eK8f4gVUbVOq8RVw" alt="Co-Working" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"/>
+          <div class="absolute top-4 left-4 bg-surface-container-highest px-3 py-1 section-label text-primary">PHASE 03</div>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="font-display font-bold text-xl text-primary mb-2">Co-Working</h3>
+          <p class="text-on-surface-variant text-sm mb-5 flex-1">Premium co-working on VNIT campus without full incubation commitment — ideal for early-stage teams and solo founders.</p>
+          <ul class="space-y-2 mb-7">
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Hot-desk & dedicated seats</li>
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Meeting rooms & event spaces</li>
+            <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Campus amenities access</li>
+          </ul>
+          <a href="programs.html" class="btn-outline text-sm justify-center">Book a Seat →</a>
+        </div>
       </div>
     </div>
 
-    <div class="mt-12 flex justify-center fade-up">
-      <a href="programs.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 text-white/70 font-bold text-sm hover:bg-white/5 hover:border-white/40 transition-all">
-        View All Programs →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════ FOCUS AREAS -->
-<section id="focus" class="py-24 bg-surface-container relative overflow-hidden">
-  <div class="absolute inset-0 isometric-grid opacity-10"></div>
-  <div class="amb-teal"  style="top:10%;right:4%"></div>
-  <div class="amb-amber" style="bottom:15%;left:6%"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-
-    <!-- Header -->
-    <div class="aws-header mb-12 fade-up">
-      <div class="aws-header-num hidden md:block">[ 03 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Focus Areas</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;">
-          Sectors we <em class="serif-italic" style="font-weight:400">champion.</em>
-        </h2>
-      </div>
-    </div>
-
-    <!-- Compact 3×2 card grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
-      <a href="focus-areas.html#deep-tech"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-1 group flex items-center gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">biotech</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">Deep Technology</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Hardware, robotics, advanced materials</div>
-        </div>
-      </a>
-
-      <a href="focus-areas.html#ai-digital"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-2 group flex items-center gap-4 border border-outline-variant/20 hover:border-coral-accent/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">smart_toy</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">AI & Digital Technologies</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Machine learning, SaaS, data analytics</div>
-        </div>
-      </a>
-
-      <a href="focus-areas.html#manufacturing"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-3 group flex items-center gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">precision_manufacturing</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">Manufacturing & Engineering</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Industrial innovation, automation</div>
-        </div>
-      </a>
-
-      <a href="focus-areas.html#clean-energy"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-4 group flex items-center gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">energy_savings_leaf</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">Clean Energy & Sustainability</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Renewables, climate tech, green infra</div>
-        </div>
-      </a>
-
-      <a href="focus-areas.html#healthcare"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-5 group flex items-center gap-4 border border-outline-variant/20 hover:border-coral-accent/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-coral-accent/10 flex items-center justify-center shrink-0 group-hover:bg-coral-accent/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">health_and_safety</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">Healthcare Technologies</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Medtech, diagnostics, digital health</div>
-        </div>
-      </a>
-
-      <!-- Emerging — dashed border, slightly different treatment matching the reference -->
-      <a href="focus-areas.html#emerging"
-         class="glass-panel p-5 rounded-xl card-hover fade-up delay-6 group flex items-center gap-4 border border-dashed border-outline-variant/40 hover:border-primary-fixed-dim/40 transition-all cursor-pointer">
-        <div class="w-11 h-11 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center shrink-0 group-hover:bg-primary-fixed-dim/20 transition-colors">
-          <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">auto_awesome</span>
-        </div>
-        <div>
-          <div class="font-bold text-base mb-0.5">Emerging Sectors</div>
-          <div class="text-on-surface-variant text-sm leading-snug">Aligned with national innovation priorities</div>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- All Sectors button centred below grid -->
-    <div class="mt-10 flex justify-center fade-up">
-      <a href="focus-areas.html"
-         class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-outline-variant/50 text-on-surface font-label-mono text-sm hover:border-primary-fixed-dim hover:text-primary-fixed-dim transition-all active:scale-95">
-        View All Sectors
-        <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
+    <div class="text-center mt-10 reveal">
+      <a href="programs.html" class="text-primary font-bold text-sm flex items-center gap-2 justify-center hover:gap-4 transition-all">View All Programs <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ VNIT ECOSYSTEM (Centres of Excellence) -->
-<section id="ecosystem" class="py-24 relative overflow-hidden">
-  <div class="amb-amber" style="top:5%;left:7%"></div>
-  <div class="amb-teal"  style="bottom:10%;right:3%"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-    <div class="aws-header mb-16 fade-in">
-      <div class="aws-header-num hidden md:block">[ 04 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Ecosystem</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;">
-          India-class research<br><em class="serif-italic" style="font-weight:400">infrastructure.</em>
-        </h2>
-        <p class="text-on-surface-variant text-base mt-4 max-w-xl">As a V3F incubatee, you get privileged access to VNIT Nagpur's Centres of Excellence — worth crores, available from day one.</p>
-      </div>
+<!-- ═══════════════ FOCUS AREAS ═══════════════ -->
+<section class="py-24 px-6 md:px-10 bg-deep-onyx text-white">
+  <div class="max-w-container mx-auto">
+    <div class="mb-14 reveal">
+      <span class="section-label text-primary-fixed-dim">[ 03 ] FOCUS AREAS</span>
+      <h2 class="font-display font-extrabold text-4xl mt-3 mb-4">Sectors we champion.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+      <a href="focus-areas.html#deep-tech" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">biotech</span>
+        <h4 class="font-display font-bold text-xl mb-2">Deep Technology</h4>
+        <p class="text-white/50 text-sm">Hardware, robotics, advanced materials engineering leveraging VNIT's core strengths.</p>
+      </a>
+      <a href="focus-areas.html#ai-digital" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">smart_toy</span>
+        <h4 class="font-display font-bold text-xl mb-2">AI & Digital</h4>
+        <p class="text-white/50 text-sm">Machine learning, SaaS, and data analytics supported by our dedicated AI Centre of Excellence.</p>
+      </a>
+      <a href="focus-areas.html#manufacturing" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
+        <h4 class="font-display font-bold text-xl mb-2">Manufacturing</h4>
+        <p class="text-white/50 text-sm">Industrial innovation and automation using Siemens-grade Industry 4.0 facilities.</p>
+      </a>
+      <a href="focus-areas.html#clean-energy" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">energy_savings_leaf</span>
+        <h4 class="font-display font-bold text-xl mb-2">Clean Energy</h4>
+        <p class="text-white/50 text-sm">Renewables, climate tech, and green infrastructure for a sustainable future.</p>
+      </a>
+      <a href="focus-areas.html#healthcare" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">health_and_safety</span>
+        <h4 class="font-display font-bold text-xl mb-2">Healthcare</h4>
+        <p class="text-white/50 text-sm">Medtech, diagnostics, and digital health technologies for national impact.</p>
+      </a>
+      <a href="focus-areas.html#emerging" class="group border-l border-white/10 hover:border-primary-fixed-dim p-8 transition-colors">
+        <span class="material-symbols-outlined text-4xl text-primary-fixed-dim mb-4 block group-hover:scale-110 transition-transform">auto_awesome</span>
+        <h4 class="font-display font-bold text-xl mb-2">Emerging Sectors</h4>
+        <p class="text-white/50 text-sm">Agritech, edtech, space tech — aligned with national innovation priorities.</p>
+      </a>
+    </div>
+    <div class="mt-10 reveal">
+      <a href="focus-areas.html" class="section-label text-primary-fixed-dim flex items-center gap-2 hover:gap-4 transition-all">View All Sectors <span class="material-symbols-outlined text-[15px]">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ECOSYSTEM / COE ═══════════════ -->
+<section id="ecosystem" class="py-24 px-6 md:px-10">
+  <div class="max-w-container mx-auto">
+    <div class="mb-14 reveal">
+      <span class="section-label text-vibrant-blue">[ 04 ] ECOSYSTEM</span>
+      <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">India-class research<br/>infrastructure.</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl">As a V3F incubatee, you get privileged access to VNIT Nagpur's Centres of Excellence — worth crores, available from day one.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-      <!-- CoE cards -->
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-1 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
-        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">Industry 4.0</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
-        <h3 class="font-bold text-lg mb-2">V.R. Jamdar Siemens CoE</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">A ₹187 Cr flagship centre with Siemens. 11 industry-grade labs — robotics, 5-axis CNC, smart factory, IoT, automation.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Robotics</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">5-Axis CNC</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">IoT</span>
+    <!-- Siemens CoE - featured -->
+    <div class="bg-primary text-white rounded-2xl overflow-hidden mb-6 reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-10 flex flex-col justify-between">
+          <div>
+            <span class="section-label text-primary-fixed-dim mb-3 block">INDUSTRY 4.0 · FLAGSHIP</span>
+            <h3 class="font-display font-bold text-3xl mb-4">V.R. Jamdar Siemens Centre of Excellence</h3>
+            <p class="text-primary-fixed mb-6">A <strong class="text-white">₹187 Cr investment</strong> providing incubatees with 11 industry-grade labs. Master Industry 4.0 standards with world-class facilities.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="border-l-2 border-secondary-fixed pl-3"><p class="font-bold">5-Axis CNC</p><p class="section-label text-primary-fixed mt-1">Precision Machining</p></div>
+              <div class="border-l-2 border-secondary-fixed pl-3"><p class="font-bold">Smart Factory</p><p class="section-label text-primary-fixed mt-1">Advanced IoT Labs</p></div>
+              <div class="border-l-2 border-secondary-fixed pl-3"><p class="font-bold">Robotics</p><p class="section-label text-primary-fixed mt-1">Industrial Automation</p></div>
+              <div class="border-l-2 border-secondary-fixed pl-3"><p class="font-bold">Digital Twin</p><p class="section-label text-primary-fixed mt-1">Simulation Labs</p></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-2 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
-        <div class="absolute top-3 right-3 bg-coral-accent/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">DST Funded</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">compost</span>
-        <h3 class="font-bold text-lg mb-2">SWAHA CoE</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">India's first CoE in Agri-Waste Management. Food, Feed, Fodder, Fuel & Fertiliser — commercial value from agricultural waste.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">AgriTech</span>
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Sustainability</span>
-        </div>
-      </div>
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-3 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
-        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">AI Research</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">psychology</span>
-        <h3 class="font-bold text-lg mb-2">Centre of Excellence in AI</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Deep capabilities in ML, computer vision, embedded AI, and biomedical signal processing.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">AI/ML</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Computer Vision</span>
-        </div>
-      </div>
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-4 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
-        <div class="absolute top-3 right-3 bg-coral-accent/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">NPIU / TEQIP</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">settings_remote</span>
-        <h3 class="font-bold text-lg mb-2">CoE — Commbedded Systems</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">One of only 6 CFTI-level CoEs in India. Labs for IoT, sensor networks, RF engineering, and signal processing.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Embedded</span>
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">IoT / Sensors</span>
-        </div>
-      </div>
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-5 group relative overflow-hidden border border-outline-variant/20 hover:border-primary-fixed-dim/30">
-        <div class="absolute top-3 right-3 bg-primary-fixed-dim/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">E-Mobility</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">electric_car</span>
-        <h3 class="font-bold text-lg mb-2">Electric Vehicle Technology Lab</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Specialised EV research covering battery systems, motor drives, and power electronics.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">EV / e-Mobility</span>
-          <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Battery Tech</span>
-        </div>
-      </div>
-      <div class="glass-panel p-8 rounded-xl card-hover fade-up delay-6 group relative overflow-hidden border border-outline-variant/20 hover:border-coral-accent/30">
-        <div class="absolute top-3 right-3 bg-coral-accent/10 text-primary-fixed-dim text-xs font-label-mono px-2 py-1 rounded">Materials</div>
-        <span class="material-symbols-outlined text-primary-fixed-dim text-3xl mb-4 block group-hover:scale-110 transition-transform">science</span>
-        <h3 class="font-bold text-lg mb-2">Materials Testing & Characterisation</h3>
-        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">Advanced materials testing from Metallurgical & Materials Engineering dept.</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Metallurgy</span>
-          <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-1 rounded font-label-mono">Material Testing</span>
+        <div class="relative min-h-[320px]">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD4QzBicnwJTTEa4iYmh8YNijnHAyuSXMht-1mRzmr5e4cWySbtQrpyhcvMXY-7_-WpJi4T15Af-UxayP2RWm-_t7z7HAMA-sD8WxQ-Q5EepEif9H3KF0qexyEDmseCqKg31JXE7JrCvzxqWlajws0fb3HXta_Is3D_0iJNp5IrCJl0UZyuQ2S53y6eeHYUjo-3yHmpP2mIdhyfKCaSonHdLznRNa2I47BBbVCjETfmKepYv0a5zDKsI5u1cyShpJHUUGSvrHVA8E" alt="Siemens CoE" class="w-full h-full object-cover"/>
+          <div class="absolute bottom-6 right-6 bg-vibrant-blue p-5 text-white">
+            <p class="font-display font-extrabold text-3xl">₹187<span class="text-xl">Cr</span></p>
+            <p class="section-label text-white/70">TOTAL VALUATION</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Campus wide access -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="glass-panel p-8 rounded-xl card-hover fade-left group border border-primary-fixed-dim/20">
-        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-4">CAMPUS-WIDE ACCESS</div>
+    <!-- Other CoEs grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-secondary">compost</span>
+          <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-1">DST FUNDED</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">SWAHA CoE</h4>
+        <p class="text-on-surface-variant text-sm mb-4">India's first CoE in Agri-Waste Management. Food, Feed, Fodder, Fuel &amp; Fertiliser — commercial value from agricultural waste.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">AGRITECH</span><span class="section-label text-primary">·</span><span class="section-label text-primary">SUSTAINABILITY</span>
+        </div>
+      </div>
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-primary">psychology</span>
+          <span class="section-label bg-surface-container text-primary px-2 py-1">AI RESEARCH</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">Centre of Excellence in AI</h4>
+        <p class="text-on-surface-variant text-sm mb-4">Deep capabilities in ML, computer vision, embedded AI, and biomedical signal processing.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">AI/ML</span><span class="section-label text-primary">·</span><span class="section-label text-primary">COMPUTER VISION</span>
+        </div>
+      </div>
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-tertiary">settings_remote</span>
+          <span class="section-label bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1">CFTI-LEVEL</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">Embedded Systems CoE</h4>
+        <p class="text-on-surface-variant text-sm mb-4">One of only 6 CFTI-level CoEs in India. IoT, RF engineering, sensor networks, and signal processing.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">IOT / SENSORS</span><span class="section-label text-primary">·</span><span class="section-label text-primary">EMBEDDED</span>
+        </div>
+      </div>
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-primary">electric_car</span>
+          <span class="section-label bg-surface-container text-primary px-2 py-1">E-MOBILITY</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">Electric Vehicle Technology Lab</h4>
+        <p class="text-on-surface-variant text-sm mb-4">Specialised EV research covering battery systems, motor drives, and power electronics for next-gen mobility startups.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">EV / E-MOBILITY</span><span class="section-label text-primary">·</span><span class="section-label text-primary">BATTERY TECH</span>
+        </div>
+      </div>
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-tertiary">science</span>
+          <span class="section-label bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1">MATERIALS</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">Materials Testing &amp; Characterisation</h4>
+        <p class="text-on-surface-variant text-sm mb-4">Advanced materials testing from the Metallurgical &amp; Materials Engineering dept — XRD, SEM, and mechanical testing.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">METALLURGY</span><span class="section-label text-primary">·</span><span class="section-label text-primary">MATERIAL TESTING</span>
+        </div>
+      </div>
+      <div class="card-hover bg-white border border-outline-variant p-7 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <span class="material-symbols-outlined text-3xl text-secondary">local_library</span>
+          <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-1">IP SUPPORT</span>
+        </div>
+        <h4 class="font-display font-bold text-lg text-primary mb-2">Digital Library &amp; IP Support</h4>
+        <p class="text-on-surface-variant text-sm mb-4">Access to journal databases, patent filing support, and technology transfer resources to protect and commercialise your IP.</p>
+        <div class="flex gap-2 border-t border-outline-variant pt-4">
+          <span class="section-label text-primary">PATENTS</span><span class="section-label text-primary">·</span><span class="section-label text-primary">RESEARCH</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus-Wide Access + Program Matrix -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+
+      <!-- Campus-Wide Access -->
+      <div class="border border-outline-variant rounded-2xl p-8 bg-white">
+        <span class="section-label text-vibrant-blue block mb-6">CAMPUS-WIDE ACCESS</span>
         <div class="space-y-5">
           <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">school</span>
-            <div><div class="font-bold mb-1">300+ Faculty Experts</div><div class="text-on-surface-variant text-sm">Collaborate across 13 departments — engineering, science, architecture, and management.</div></div>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">group</span>
-            <div><div class="font-bold mb-1">1,500+ Students per Year</div><div class="text-on-surface-variant text-sm">Tap VNIT's talent pool for internships, capstone projects, and full-time hires.</div></div>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">library_books</span>
-            <div><div class="font-bold mb-1">Digital Library & IP Support</div><div class="text-on-surface-variant text-sm">Access journal databases, patent resources, and IP filing support.</div></div>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary-fixed-dim text-2xl shrink-0">location_city</span>
-            <div><div class="font-bold mb-1">215-Acre NIT Campus</div><div class="text-on-surface-variant text-sm">Co-working spaces, meeting rooms, high-speed internet, and full campus amenities.</div></div>
-          </div>
-        </div>
-      </div>
-      <!-- Pipeline Timeline -->
-      <div class="relative py-4 pl-12 border-l border-outline-variant/50 fade-right">
-        <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-8">PROGRAM MATRIX</div>
-        <div class="space-y-10">
-          <div class="relative group">
-            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary-fixed-dim glow-cyan group-hover:scale-125 transition-transform"></div>
-            <div class="glass-panel p-6 rounded-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300">
-              <div class="font-label-mono text-xs text-primary mb-1">PHASE 01</div>
-              <h4 class="font-bold text-lg mb-2">Idea to Prototype</h4>
-              <p class="text-on-surface-variant text-sm">Mentoring, workshops, and concept validation for early-stage teams.</p>
+            <span class="material-symbols-outlined text-primary text-2xl shrink-0">school</span>
+            <div>
+              <div class="font-display font-bold text-primary mb-0.5">300+ Faculty Experts</div>
+              <div class="text-on-surface-variant text-sm">Collaborate across 13 departments — engineering, science, architecture, and management.</div>
             </div>
           </div>
-          <div class="relative group">
-            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-coral-accent glow-coral group-hover:scale-125 transition-transform"></div>
-            <div class="glass-panel p-6 rounded-lg transform -rotate-1 group-hover:rotate-0 transition-all duration-300">
-              <div class="font-label-mono text-xs text-primary-fixed-dim mb-1">PHASE 02</div>
-              <h4 class="font-bold text-lg mb-2">Prototype to Market</h4>
-              <p class="text-on-surface-variant text-sm">Full incubation, investor connects, legal & financial guidance, and funding access.</p>
+          <div class="h-px bg-outline-variant"></div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-secondary text-2xl shrink-0">group</span>
+            <div>
+              <div class="font-display font-bold text-primary mb-0.5">1,500+ Students per Year</div>
+              <div class="text-on-surface-variant text-sm">Tap VNIT's talent pool for internships, capstone projects, and full-time hires.</div>
             </div>
           </div>
-          <div class="relative group">
-            <div class="absolute -left-[54px] top-1 w-6 h-6 rounded-full bg-background border-2 border-primary-fixed-dim glow-cyan group-hover:scale-125 transition-transform"></div>
-            <div class="glass-panel p-6 rounded-lg transform rotate-1 group-hover:rotate-0 transition-all duration-300">
-              <div class="font-label-mono text-xs text-primary mb-1">PHASE 03</div>
-              <h4 class="font-bold text-lg mb-2">Scale & Expand</h4>
-              <p class="text-on-surface-variant text-sm">18–36 month programs with quarterly review cycles and ecosystem access.</p>
+          <div class="h-px bg-outline-variant"></div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-2xl shrink-0">hub</span>
+            <div>
+              <div class="font-display font-bold text-primary mb-0.5">13 Engineering Departments</div>
+              <div class="text-on-surface-variant text-sm">Cross-disciplinary expertise from Civil to CSE — all accessible to incubated startups.</div>
+            </div>
+          </div>
+          <div class="h-px bg-outline-variant"></div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-2xl shrink-0">location_city</span>
+            <div>
+              <div class="font-display font-bold text-primary mb-0.5">215-Acre NIT Campus</div>
+              <div class="text-on-surface-variant text-sm">Co-working spaces, meeting rooms, high-speed internet, and full campus amenities.</div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Program Matrix -->
+      <div class="border border-outline-variant rounded-2xl p-8 bg-white">
+        <span class="section-label text-vibrant-blue block mb-6">PROGRAM MATRIX</span>
+        <div class="space-y-6 relative pl-10 border-l-2 border-outline-variant">
+
+          <div class="relative group">
+            <div class="absolute -left-[2.85rem] top-1 w-5 h-5 rounded-full bg-white border-2 border-primary flex items-center justify-center group-hover:scale-125 transition-transform">
+              <div class="w-2 h-2 rounded-full bg-primary"></div>
+            </div>
+            <div class="section-label text-vibrant-blue mb-1">PHASE 01</div>
+            <div class="font-display font-bold text-primary text-lg mb-1">Idea to Prototype</div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Mentoring, workshops, and concept validation for early-stage teams. Up to 12 months.</p>
+          </div>
+
+          <div class="h-px bg-outline-variant"></div>
+
+          <div class="relative group">
+            <div class="absolute -left-[2.85rem] top-1 w-5 h-5 rounded-full bg-white border-2 border-secondary flex items-center justify-center group-hover:scale-125 transition-transform">
+              <div class="w-2 h-2 rounded-full bg-secondary"></div>
+            </div>
+            <div class="section-label text-secondary block mb-1">PHASE 02</div>
+            <div class="font-display font-bold text-primary text-lg mb-1">Prototype to Market</div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Full incubation, investor connects, legal &amp; financial guidance, and funding access.</p>
+          </div>
+
+          <div class="h-px bg-outline-variant"></div>
+
+          <div class="relative group">
+            <div class="absolute -left-[2.85rem] top-1 w-5 h-5 rounded-full bg-white border-2 border-primary flex items-center justify-center group-hover:scale-125 transition-transform">
+              <div class="w-2 h-2 rounded-full bg-primary"></div>
+            </div>
+            <div class="section-label text-vibrant-blue mb-1">PHASE 03</div>
+            <div class="font-display font-bold text-primary text-lg mb-1">Scale &amp; Expand</div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">18–36 month programs with quarterly review cycles and full ecosystem access.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Campus research access -->
+  </div>
+</section>
+
+<!-- ═══════════════ ADVISORY BOARD PREVIEW ═══════════════ -->
+<section class="py-24 px-6 md:px-10 bg-surface-container-low">
+  <div class="max-w-container mx-auto">
+    <div class="mb-14 reveal">
+      <span class="section-label text-vibrant-blue">[ 05 ] ADVISORY BOARD</span>
+      <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">People who shape V3F.</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl">V3F Advisors guide the incubator itself — shaping policy, governance, and access to government funds and ecosystem partnerships.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Advisor 1 -->
+      <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
+            <span class="section-label text-white/80">LEAD ADVISOR</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-bold text-lg text-primary mb-1">Mr. Hiranmay Mahanta</h3>
+          <p class="section-label text-on-surface-variant mb-3">CEO, i-Hub Gujarat</p>
+          <p class="text-on-surface-variant text-sm">Founding Director, GTU Innovation Council. National policy expert on entrepreneurship ecosystems.</p>
+          <div class="flex gap-2 mt-4 flex-wrap">
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">ENTREPRENEURSHIP</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">POLICY</span>
+          </div>
+        </div>
+      </div>
+      <!-- Advisor 2 -->
+      <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
+            <span class="section-label text-white/80">INDUSTRY ADVISOR</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-bold text-lg text-primary mb-1">Prof. M.S. Unnikrishnan</h3>
+          <p class="section-label text-on-surface-variant mb-3">CEO, IITB-Monash Research Academy</p>
+          <p class="text-on-surface-variant text-sm">Former MD & CEO of Thermax Ltd. Bridging corporate engineering and academic research.</p>
+          <div class="flex gap-2 mt-4 flex-wrap">
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">ACADEMIA</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">INDUSTRY</span>
+          </div>
+        </div>
+      </div>
+      <!-- Advisor 3 -->
+      <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
+            <span class="section-label text-white/80">DEEP TECH ADVISOR</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-bold text-lg text-primary mb-1">Prof. B.S. Murty</h3>
+          <p class="section-label text-on-surface-variant mb-3">Director, IIT Hyderabad</p>
+          <p class="text-on-surface-variant text-sm">Pioneer in nano-materials & high-entropy alloys. President, Indian Institute of Metals.</p>
+          <div class="flex gap-2 mt-4 flex-wrap">
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">DEEP TECH</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">RESEARCH</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Board mission statement -->
+    <figure class="mt-14 max-w-3xl mx-auto text-center reveal">
+      <blockquote class="font-display font-bold text-2xl md:text-3xl text-primary leading-snug">"V3F represents the convergence of visionary governance and engineering grit."</blockquote>
+      <figcaption class="section-label text-vibrant-blue mt-4">— Board Mission Statement</figcaption>
+    </figure>
+
+    <div class="mt-10 text-center reveal">
+      <a href="advisors.html" class="btn-outline">Meet All Advisors <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ ADVISORY BOARD -->
-<section id="advisors" class="py-24 bg-surface-container relative overflow-hidden">
-  <div class="absolute inset-0 isometric-grid opacity-10"></div>
-  <div class="amb-teal"  style="top:8%;left:5%"></div>
-  <div class="amb-amber" style="bottom:12%;right:6%"></div>
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-    <div class="aws-header mb-12 fade-in">
-      <div class="aws-header-num hidden md:block">[ 05 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">Advisory Board</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;">
-          People who <em class="serif-italic" style="font-weight:400">shape V3F.</em>
-        </h2>
-        <p class="text-on-surface-variant text-base mt-4 max-w-2xl">V3F Advisors guide the incubator itself — shaping policy, governance, and access to government funds and ecosystem partnerships.</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-
-      <!-- Advisor 1: Hiranmay Mahanta -->
-      <div class="glass-panel p-7 rounded-xl card-hover fade-up delay-1 group border border-primary-fixed-dim/25 hover:border-primary-fixed-dim/55 relative overflow-hidden" style="background:rgba(255,200,100,0.025);">
-        <div class="h-0.5 w-full rounded-full mb-6" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
-        <div class="flex items-center gap-4 mb-4">
-          <img loading="lazy" src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(236,101,32,0.4);box-shadow:0 0 16px rgba(79,209,197,0.18);transition:box-shadow 0.3s ease;"/>
-          <div>
-            <span class="font-label-mono text-xs px-2 py-0.5 rounded-full mb-1 inline-block" style="background:#FF9900;color:#111111;font-weight:700;">LEAD ADVISOR</span>
-            <h3 class="font-bold text-base leading-tight">Mr. Hiranmay Mahanta</h3>
-          </div>
-        </div>
-        <div class="text-on-surface-variant text-xs mb-1 font-medium">CEO, i-Hub Gujarat</div>
-        <div class="text-on-surface-variant text-xs mb-4 leading-relaxed">Gujarat Student Start-up & Innovation Hub · Founding Director, GTU Innovation Council</div>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Entrepreneurship</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Ecosystem</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Policy</span>
-        </div>
-        <div class="font-label-mono text-xs text-primary-fixed-dim mt-4">Ecosystem & Innovation Advisor</div>
-      </div>
-
-      <!-- Advisor 2: Prof. M.S. Unnikrishnan -->
-      <div class="glass-panel p-7 rounded-xl card-hover fade-up delay-2 group border border-outline-variant/20 hover:border-coral-accent/40 relative overflow-hidden" style="background:rgba(255,200,100,0.025);">
-        <div class="h-0.5 w-full rounded-full mb-6" style="background:linear-gradient(90deg,#00B4D8,#00B4D8,transparent);"></div>
-        <div class="flex items-center gap-4 mb-4">
-          <img loading="lazy" src="images/advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(255,107,53,0.4);box-shadow:0 0 16px rgba(255,107,53,0.2);transition:box-shadow 0.3s ease;"/>
-          <div>
-            <h3 class="font-bold text-base leading-tight">Prof. M.S. Unnikrishnan</h3>
-          </div>
-        </div>
-        <div class="text-on-surface-variant text-xs mb-1 font-medium">CEO, IITB-Monash Research Academy</div>
-        <div class="text-on-surface-variant text-xs mb-4 leading-relaxed">Former MD & CEO, Thermax Ltd. · National-level industry–academia policy leader</div>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Academia</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Industry</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Policy</span>
-        </div>
-        <div class="font-label-mono text-xs text-primary-fixed-dim mt-4">Industry–Academia & Policy Advisor</div>
-      </div>
-
-      <!-- Advisor 3: Prof. B.S. Murty -->
-      <div class="glass-panel p-7 rounded-xl card-hover fade-up delay-3 group border border-outline-variant/20 hover:border-primary-fixed-dim/40 relative overflow-hidden" style="background:rgba(255,200,100,0.025);">
-        <div class="h-0.5 w-full rounded-full mb-6" style="background:linear-gradient(90deg,#00B4D8,transparent);"></div>
-        <div class="flex items-center gap-4 mb-4">
-          <img loading="lazy" src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(255,107,53,0.4);box-shadow:0 0 16px rgba(255,107,53,0.2);transition:box-shadow 0.3s ease;"/>
-          <div>
-            <h3 class="font-bold text-base leading-tight">Prof. B.S. Murty</h3>
-          </div>
-        </div>
-        <div class="text-on-surface-variant text-xs mb-1 font-medium">Director, IIT Hyderabad & IIITDM Kurnool</div>
-        <div class="text-on-surface-variant text-xs mb-4 leading-relaxed">President, Indian Institute of Metals · Pioneer in nano-materials & high-entropy alloys</div>
-        <div class="flex flex-wrap gap-1.5">
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Research</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Deep Tech</span>
-          <span class="text-xs px-2 py-0.5 rounded-full font-label-mono" style="background:rgba(255,255,255,0.05);color:#b3c2d4;border:1px solid rgba(255,255,255,0.10);">Materials Science</span>
-        </div>
-        <div class="font-label-mono text-xs text-primary-fixed-dim mt-4">Research & Deep-Tech Advisor</div>
-      </div>
-
+<!-- ═══════════════ MENTOR NETWORK PREVIEW ═══════════════ -->
+<section class="py-24 px-6 md:px-10 bg-white">
+  <div class="max-w-container mx-auto">
+    <div class="mb-10 reveal">
+      <span class="section-label text-vibrant-blue">[ 06 ] MENTOR NETWORK</span>
+      <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Domain experts for every startup.</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl">V3F mentors work directly with incubated startups — matched by sector and stage, providing hands-on guidance on product, market, fundraising, legal, and more.</p>
     </div>
 
-    <!-- Meet All Advisors CTA -->
-    <div class="flex justify-center mb-16 fade-up delay-4">
-      <a href="advisors.html" class="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-fixed-dim/40 rounded-full font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Manrope',sans-serif;">
-        Meet All Advisors
-        <span class="material-symbols-outlined text-base text-primary-fixed-dim">arrow_forward</span>
-      </a>
-    </div>
+    <!-- Featured mentor cards — 3×2 grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
 
-    <!-- Mentors section header -->
-    <div class="mb-8">
-      <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-3 fade-in">MENTOR NETWORK</div>
-      <h2 class="font-headline-lg text-3xl font-bold mb-4 fade-up">Domain Experts for Every Startup</h2>
-      <p class="text-on-surface-variant max-w-xl fade-up delay-1">V3F Mentors work directly with incubated startups — matched by sector and stage, providing hands-on guidance on product, market, fundraising, legal, and more.</p>
-    </div>
-
-    <!-- Featured Mentors: 6 real cards, 3-column grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-      <a href="mentors.html#anand-kamat" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-1 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">AK</div>
+      <!-- Anand Kamat -->
+      <a href="mentors.html#anand-kamat" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">AK</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Anand Kamat</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Anand Kamat</div>
           <div class="text-on-surface-variant text-xs mb-2">Co-Founder &amp; CEO, PostQode</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">AI Products</span>
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Agentic AI</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">AI Products</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Agentic AI</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
-      <a href="mentors.html#swapna-gupta" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-2 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">SG</div>
+
+      <!-- Swapna Gupta -->
+      <a href="mentors.html#swapna-gupta" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">SG</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Swapna Gupta</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Swapna Gupta</div>
           <div class="text-on-surface-variant text-xs mb-2">Partner, Avaana Capital</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Deep Tech VC</span>
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Fundraising</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Deep Tech VC</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Fundraising</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
-      <a href="mentors.html#sandip-chintawar" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-3 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">SC</div>
+
+      <!-- Sandip Chintawar -->
+      <a href="mentors.html#sandip-chintawar" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">SC</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Sandip Chintawar</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Sandip Chintawar</div>
           <div class="text-on-surface-variant text-xs mb-2">Co-Founder, Cymetrix Software</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">3 Exits</span>
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Enterprise SaaS</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">3 Exits</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Enterprise SaaS</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
-      <a href="mentors.html#sharad-bairathi" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-4 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-coral-accent/10 border border-coral-accent/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-coral-accent/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">SB</div>
+
+      <!-- Sharad Bairathi -->
+      <a href="mentors.html#sharad-bairathi" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">SB</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Sharad Bairathi</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Sharad Bairathi</div>
           <div class="text-on-surface-variant text-xs mb-2">Founder, Embitel → VW Group</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Exit to VW</span>
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Auto Tech</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Exit to VW</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Auto Tech</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
-      <a href="mentors.html#ajay-kamalvanshi" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-primary-fixed-dim/40 card-hover fade-up delay-5 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">AK</div>
+
+      <!-- Ajay Kamalvanshi -->
+      <a href="mentors.html#ajay-kamalvanshi" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">AK</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Ajay Kamalvanshi</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Ajay Kamalvanshi</div>
           <div class="text-on-surface-variant text-xs mb-2">AI Infrastructure, NVIDIA</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">GPU / HPC</span>
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Deep Tech</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">GPU / HPC</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Deep Tech</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
-      <a href="mentors.html#pravin-kamble" class="glass-panel rounded-xl p-5 flex items-start gap-4 border border-outline-variant/20 hover:border-coral-accent/40 card-hover fade-up delay-6 group transition-all">
-        <div class="w-12 h-12 rounded-full bg-primary-fixed-dim/10 border border-primary-fixed-dim/25 flex items-center justify-center shrink-0 font-bold text-primary-fixed-dim group-hover:bg-primary-fixed-dim/20 transition-colors text-sm" style="font-family:'Manrope',sans-serif;">PK</div>
+
+      <!-- Pravin Kamble -->
+      <a href="mentors.html#pravin-kamble" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">PK</div>
         <div class="flex-1 min-w-0">
-          <div class="font-bold text-sm mb-0.5">Pravin Kamble</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Pravin Kamble</div>
           <div class="text-on-surface-variant text-xs mb-2">Founder &amp; CEO, 99minds</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="text-xs bg-coral-accent/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">Fintech</span>
-            <span class="text-xs bg-primary-fixed-dim/10 text-primary-fixed-dim px-2 py-0.5 rounded-full font-label-mono">SaaS</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Fintech</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">SaaS</span>
           </div>
         </div>
-        <span class="material-symbols-outlined text-outline/40 text-base group-hover:text-primary-fixed-dim transition-colors shrink-0 mt-1">arrow_forward</span>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
+
     </div>
 
-    <!-- Stats + dual CTA -->
-    <div class="mt-8 flex flex-col sm:flex-row items-center gap-6 justify-between fade-up">
-      <div class="flex gap-8 flex-wrap">
-        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif;">13</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Active Mentors</div></div>
-        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif;">7</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Domains</div></div>
-        <div class="text-center"><div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif;">25+</div><div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Avg. Years Exp.</div></div>
+    <!-- Stats + CTAs -->
+    <div class="flex flex-col sm:flex-row items-center gap-6 justify-between reveal border-t border-outline-variant pt-8">
+      <div class="flex gap-10 flex-wrap">
+        <div class="text-center">
+          <div class="font-display font-extrabold text-3xl text-primary">13</div>
+          <div class="section-label text-on-surface-variant mt-1">Active Mentors</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display font-extrabold text-3xl text-primary">7</div>
+          <div class="section-label text-on-surface-variant mt-1">Domains</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display font-extrabold text-3xl text-primary">25+</div>
+          <div class="section-label text-on-surface-variant mt-1">Avg. Years Exp.</div>
+        </div>
       </div>
       <div class="flex gap-3 flex-wrap justify-center">
-        <a href="mentors.html" class="inline-flex items-center gap-2 px-7 py-3 border border-coral-accent/40 rounded-full font-bold text-sm hover:bg-coral-accent/10 hover:border-coral-accent transition-all active:scale-95" style="font-family:'Manrope',sans-serif;">
-          Meet All 13 Mentors <span class="material-symbols-outlined text-base text-primary-fixed-dim">arrow_forward</span>
-        </a>
-        <a href="mentors.html#mentor-apply" class="inline-flex items-center gap-2 px-7 py-3 bg-primary-container text-on-primary rounded-full font-bold text-sm hover:glow-amber active:scale-95 transition-all" style="font-family:'Manrope',sans-serif;">
-          Become a Mentor
-        </a>
+        <a href="mentors.html" class="btn-outline">Meet All 13 Mentors <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+        <a href="mentors.html#mentor-apply" class="btn-primary">Become a Mentor</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ ABOUT V3F -->
-<section id="about" class="py-24 relative overflow-hidden" style="background:linear-gradient(180deg,#050B14 0%,#0a1222 50%,#050B14 100%)">
-  <div class="absolute inset-0 isometric-grid opacity-10"></div>
-  <div class="amb-amber" style="top:15%;right:8%"></div>
-  <div class="amb-teal"  style="bottom:20%;left:5%"></div>
+<!-- ═══════════════ ABOUT PREVIEW ═══════════════ -->
+<section class="py-24 px-6 md:px-10 relative overflow-hidden" style="background:linear-gradient(180deg,#0f1117 0%,#080a0f 50%,#0f1117 100%);">
+  <!-- Grid + ambient glows -->
+  <div class="absolute inset-0 isometric-grid opacity-10 pointer-events-none"></div>
+  <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(30,80,200,0.07) 0%,transparent 70%)"></div>
+  <div class="absolute bottom-1/4 left-1/3 w-60 h-60 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(82,183,136,0.05) 0%,transparent 70%)"></div>
 
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
+  <div class="max-w-container mx-auto relative z-10">
 
-    <!-- Header — matches aws-header pattern used by all other sections -->
-    <div class="aws-header mb-16 fade-in" style="margin: 40px;">
-      <div class="aws-header-num hidden md:block">[ 06 ]</div>
-      <div class="flex-1">
-        <div class="aws-header-label">
-          <div class="aws-header-line"></div>
-          <span class="aws-header-tag">About V3F</span>
-        </div>
-        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.1; font-size: 65px;">
-          Championing the future of<br><em class="serif-italic gradient-text" style="font-weight:400">entrepreneurial excellence.</em>
-        </h2>
-        <p class="text-on-surface-variant text-base mt-4 max-w-2xl">
-          V3F Nagpur exists to turn ambition into impact. As VNIT's dedicated incubation arm, we accelerate startups that spark new ideas and advance economic progress throughout the region.
-        </p>
-      </div>
+    <!-- Header -->
+    <div class="mb-14 reveal">
+      <span class="section-label text-vibrant-blue">[ 07 ] ABOUT V3F</span>
+      <h2 class="font-display font-extrabold text-white mt-3 mb-4" style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;">
+        Championing the future of<br/><span class="text-primary-fixed-dim">entrepreneurial excellence.</span>
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl">V3F Nagpur exists to turn ambition into impact. As VNIT's dedicated incubation arm, we accelerate startups that spark new ideas and advance economic progress throughout the region.</p>
     </div>
 
     <!-- Two-column body -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
 
       <!-- Left: Mission + Affiliation -->
-      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-6 slide-left border border-white/8">
+      <div class="rounded-2xl p-8 flex flex-col gap-6 reveal" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
         <div>
-          <div class="aws-header-tag mb-3">Mission & Ecosystem</div>
-          <h3 class="font-bold text-xl text-white mb-4" style="font-family:'Manrope',sans-serif">
-            A <span class="gradient-text">Startup-Centric</span> Environment Built on VNIT's Legacy
-          </h3>
-          <div class="space-y-3 text-on-surface-variant text-sm leading-relaxed">
+          <div class="section-label text-primary-fixed-dim mb-3">MISSION & ECOSYSTEM</div>
+          <h3 class="font-display font-bold text-white text-xl mb-4">A <span class="text-primary-fixed-dim">Startup-Centric</span> Environment Built on VNIT's Legacy</h3>
+          <div class="space-y-3 text-white/60 text-sm leading-relaxed">
             <p>V3F opens doors to world-class facilities, an experienced mentor community, strong industry linkages, and a collaborative atmosphere that gives every startup the advantage to grow.</p>
             <p>Startups that join V3F tap into the full breadth of VNIT's innovation network — research labs, student talent, corporate collaborations, and active investor communities.</p>
           </div>
         </div>
-        <div class="p-4 rounded-xl flex items-start gap-4 mt-auto" style="background:rgba(45,106,79,0.08);border:1px solid rgba(82,183,136,0.2)">
+        <!-- Affiliation box -->
+        <div class="mt-auto p-4 rounded-xl flex items-start gap-4" style="background:rgba(82,183,136,0.07);border:1px solid rgba(82,183,136,0.2)">
           <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.15)">
-            <span class="material-symbols-outlined text-xl" style="color:#52b788">verified</span>
+            <span class="material-symbols-outlined text-lg" style="color:#52b788;font-variation-settings:'FILL' 1;">verified</span>
           </div>
           <div>
-            <div class="font-label-mono text-xs mb-1" style="color:#52b788">VNIT AFFILIATION</div>
-            <p class="text-on-surface text-sm leading-relaxed">V3F is a <strong>Section 8 company under VNIT Nagpur</strong>, with the Director of VNIT as Chairman of the Board.</p>
+            <div class="section-label mb-1" style="color:#52b788">VNIT AFFILIATION</div>
+            <p class="text-white/70 text-sm leading-relaxed">V3F is a <strong class="text-white">Section 8 company under VNIT Nagpur</strong>, with the Director of VNIT as Chairman of the Board.</p>
           </div>
         </div>
       </div>
 
       <!-- Right: What V3F Brings -->
-      <div class="glass-panel rounded-2xl p-8 flex flex-col gap-5 slide-right border border-white/8">
-        <div class="flex items-center gap-3">
-          <div class="card-num-teal">→</div>
-          <h4 class="font-bold text-white text-lg" style="font-family:'Manrope',sans-serif">What V3F Brings to Your Journey</h4>
+      <div class="rounded-2xl p-8 flex flex-col gap-5 reveal" style="background:rgba(10,12,20,0.88);border:1px solid rgba(99,140,255,0.15)">
+        <div class="flex items-center gap-3 mb-1">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(99,140,255,0.12)">
+            <span class="material-symbols-outlined text-primary-fixed-dim">rocket_launch</span>
+          </div>
+          <h4 class="font-display font-bold text-white text-lg">What V3F Brings to Your Journey</h4>
         </div>
         <div class="space-y-3 flex-1">
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,153,0,0.12)">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(99,140,255,0.12)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-lg">domain</span>
             </div>
             <div>
-              <div class="font-semibold text-white text-sm mb-0.5">Workspace & Facilities</div>
-              <p class="text-on-surface-variant text-xs leading-relaxed">Dedicated desks, cabins, labs, and meeting rooms on the VNIT campus.</p>
+              <div class="font-bold text-white text-sm mb-0.5">Workspace &amp; Facilities</div>
+              <p class="text-white/55 text-xs leading-relaxed">Dedicated desks, cabins, labs, and meeting rooms on the VNIT campus.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(79,209,197,0.1)">
-              <span class="material-symbols-outlined text-lg" style="color:#4FD1C5">psychology</span>
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(82,183,136,0.10)">
+              <span class="material-symbols-outlined text-lg" style="color:#52b788">psychology</span>
             </div>
             <div>
-              <div class="font-semibold text-white text-sm mb-0.5">Expert Mentorship & Advisory</div>
-              <p class="text-on-surface-variant text-xs leading-relaxed">Curated mentors, quarterly reviews, legal and financial advisory.</p>
+              <div class="font-bold text-white text-sm mb-0.5">Expert Mentorship &amp; Advisory</div>
+              <p class="text-white/55 text-xs leading-relaxed">Curated mentors, quarterly reviews, legal and financial advisory.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
-            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(255,153,0,0.12)">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(99,140,255,0.12)">
               <span class="material-symbols-outlined text-primary-fixed-dim text-lg">payments</span>
             </div>
             <div>
-              <div class="font-semibold text-white text-sm mb-0.5">Capital & Investor Connections</div>
-              <p class="text-on-surface-variant text-xs leading-relaxed">Demo days, angel connects, government grants, and CSR pathways.</p>
+              <div class="font-bold text-white text-sm mb-0.5">Capital &amp; Investor Connections</div>
+              <p class="text-white/55 text-xs leading-relaxed">Demo days, angel connects, government grants, and CSR pathways.</p>
             </div>
           </div>
         </div>
-        <div class="pt-4 border-t flex items-center gap-2 text-on-surface-variant text-xs font-label-mono" style="border-color:rgba(255,153,0,0.1)">
-          <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
-          18–36 MONTH PROGRAMS · ROLLING ADMISSIONS
+        <div class="pt-4 border-t flex items-center gap-2 text-white/40 text-xs" style="border-color:rgba(99,140,255,0.12)">
+          <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse flex-shrink-0"></span>
+          <span class="section-label">18–36 MONTH PROGRAMS · ROLLING ADMISSIONS</span>
         </div>
       </div>
     </div>
 
-    <!-- Stats + CTA — inline mentors-style footer row -->
-    <div class="mt-8 flex flex-col sm:flex-row items-center gap-6 justify-between fade-up">
-      <div class="flex gap-10 flex-wrap">
-        <div>
-          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">300+</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Faculty Experts</div>
+    <!-- Stat chips + CTA -->
+    <div class="flex flex-col items-center gap-8 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">300+</div>
+          <div class="section-label text-white/50">Faculty Experts</div>
         </div>
-        <div>
-          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">215</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Acre Campus</div>
+        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">215</div>
+          <div class="section-label text-white/50">Acre Campus</div>
         </div>
-        <div>
-          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">6</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Centres of Excellence</div>
+        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">6</div>
+          <div class="section-label text-white/50">Centres of Excellence</div>
         </div>
-        <div>
-          <div class="font-black text-2xl gradient-text" style="font-family:'Manrope',sans-serif">Sec 8</div>
-          <div class="font-label-mono text-xs text-on-surface-variant mt-0.5">Legal Status</div>
+        <div class="rounded-xl p-5 text-center" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+          <div class="font-display font-extrabold text-2xl text-primary-fixed-dim mb-1">Sec 8</div>
+          <div class="section-label text-white/50">Legal Status</div>
         </div>
       </div>
-      <a href="about.html" class="inline-flex items-center gap-2 px-7 py-3 border border-primary-fixed-dim/40 rounded-full font-bold text-sm hover:bg-primary-fixed-dim/10 hover:border-primary-fixed-dim transition-all active:scale-95" style="font-family:'Manrope',sans-serif;">
-        Learn More About V3F <span class="material-symbols-outlined text-base text-primary-fixed-dim">arrow_forward</span>
+      <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-display font-bold text-sm text-primary-fixed-dim transition-all hover:bg-primary-fixed-dim/10 active:scale-95" style="border:1px solid rgba(99,140,255,0.4)">
+        Learn More About V3F
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
       </a>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ CONTACT / APPLY -->
-<section id="contact" class="py-24 relative overflow-hidden">
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/5 via-transparent to-coral-accent/5"></div>
-    <div class="absolute inset-0 isometric-grid opacity-15"></div>
-    <!-- Decorative glows -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,153,0,0.06) 0%,transparent 70%)"></div>
-    <div class="absolute bottom-1/4 right-1/3 w-72 h-72 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(255,107,53,0.05) 0%,transparent 70%)"></div>
-  </div>
-
-  <div class="px-4 md:px-16 max-w-[1440px] mx-auto relative z-10">
-
-    <!-- Section header -->
-    <div class="text-center mb-16 fade-up">
-      <div class="aws-header-label justify-center mb-4">
-        <span class="aws-header-num">[ 07 ]</span>
-        <div class="aws-header-line ml-2"></div>
-        <span class="aws-header-tag">Apply Now</span>
-      </div>
-      <h2 class="font-black text-4xl md:text-5xl text-white mb-4" style="font-family:'Manrope',sans-serif">
-        Start your <em class="serif-italic gradient-text" style="font-weight:400">journey</em> with V3F
-      </h2>
-      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Apply for incubation, ask a question, or simply reach out — we respond to every inquiry within 48 hours.</p>
-    </div>
-
-    <!-- Two-column layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-
-      <!-- ── LEFT: Contact info column ── -->
-      <div class="space-y-6 slide-left">
-
-        <div>
-          <h3 class="font-black mb-3 leading-tight" style="font-family:'Manrope',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem)"><span class="gradient-text">W</span>e'd Love to <span class="gradient-text">H</span>ear From <span class="gradient-text">Y</span>ou</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Can't find the answers you're looking for? Reach out directly to our incubation support team, or drop by our office on the VNIT Nagpur campus.</p>
-        </div>
-
-        <!-- Contact cards -->
-        <div class="space-y-3">
-          <!-- Incubation support -->
-          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,153,0,0.12)">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,153,0,0.1)">
-              <span class="material-symbols-outlined text-primary-fixed-dim">send</span>
-            </div>
-            <div class="flex-1">
-              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Manrope',sans-serif">Incubation Support</div>
-              <div class="text-on-surface-variant text-xs mb-2">Enquire about application cycles, guidelines, or eligibility criteria.</div>
-              <a href="mailto:incubation@v3foundation.in" class="font-label-mono text-xs text-primary-fixed-dim hover:text-primary transition-colors">incubation@v3foundation.in</a>
-            </div>
-          </div>
-          <!-- Become a mentor -->
-          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,107,53,0.12)">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,107,53,0.1)">
-              <span class="material-symbols-outlined text-primary-fixed-dim">psychology</span>
-            </div>
-            <div class="flex-1">
-              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Manrope',sans-serif">Become a Mentor</div>
-              <div class="text-on-surface-variant text-xs mb-2">Share your domain expertise and guide the next generation of founders.</div>
-              <a href="mailto:mentorship@v3foundation.in" class="font-label-mono text-xs text-primary-fixed-dim hover:text-primary transition-colors">mentorship@v3foundation.in</a>
-            </div>
-          </div>
-          <!-- General queries -->
-          <div class="glass-panel rounded-xl p-5 flex items-start gap-4 border card-hover" style="border-color:rgba(255,180,80,0.08)">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(255,153,0,0.08)">
-              <span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
-            </div>
-            <div class="flex-1">
-              <div class="font-bold text-on-surface text-sm mb-0.5" style="font-family:'Manrope',sans-serif">General Queries</div>
-              <div class="text-on-surface-variant text-xs mb-2">General requests regarding memberships, co-working, or partnership options.</div>
-              <a href="mailto:info@v3foundation.in" class="font-label-mono text-xs text-primary-fixed-dim hover:text-primary transition-colors">info@v3foundation.in</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Location card -->
-        <div class="glass-panel rounded-xl overflow-hidden border" style="border-color:rgba(255,153,0,0.12)">
-          <!-- Google Maps embed -->
-          <div class="relative w-full overflow-hidden" style="height:220px;">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7443.4640766825605!2d79.04893757434158!3d21.123246684528322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c070e8004c25%3A0xdcfcc32c89158bc3!2sVisvesvaraya%20National%20Institute%20of%20Technology%20(VNIT)%2C%20Nagpur!5e0!3m2!1sen!2sin!4v1782555238189!5m2!1sen!2sin"
-              width="100%"
-              height="220"
-              style="border:0;filter:invert(90%) hue-rotate(180deg) saturate(0.6) brightness(0.85);display:block;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              title="VNIT Nagpur Campus Location"
-            ></iframe>
-            <!-- Crosshair corners -->
-            <div class="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-primary-fixed-dim/40 pointer-events-none"></div>
-            <div class="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-primary-fixed-dim/40 pointer-events-none"></div>
-          </div>
-          <div class="p-5 flex items-start gap-3">
-            <span class="material-symbols-outlined text-primary-fixed-dim text-xl flex-shrink-0 mt-0.5">maps_home_work</span>
+<!-- ═══════════════ CONTACT / APPLY ═══════════════ -->
+<section id="contact" class="py-24 px-6 md:px-10 bg-surface-container-lowest">
+  <div class="max-w-container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Left: info -->
+      <div class="reveal">
+        <span class="section-label text-vibrant-blue">[ 07 ] APPLY NOW</span>
+        <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-5">Start your journey<br/>with V3F.</h2>
+        <p class="text-on-surface-variant text-lg mb-10">Apply for incubation, ask a question, or simply reach out — we respond to every inquiry within 48 hours.</p>
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary text-2xl mt-1">send</span>
             <div>
-              <div class="font-bold text-on-surface text-sm mb-1" style="font-family:'Manrope',sans-serif">V3F Nagpur — Incubation Centre</div>
-              <div class="text-on-surface-variant text-xs leading-relaxed">Visvesvaraya National Institute of Technology<br/>South Ambazari Road, Nagpur — 440010<br/>Maharashtra, India</div>
+              <h4 class="font-bold text-on-surface mb-1">Incubation Support</h4>
+              <p class="text-on-surface-variant text-sm mb-1">Enquire about application cycles, guidelines, or eligibility.</p>
+              <a href="mailto:incubation@v3foundation.in" class="text-primary font-semibold text-sm">incubation@v3foundation.in</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary text-2xl mt-1">psychology</span>
+            <div>
+              <h4 class="font-bold text-on-surface mb-1">Become a Mentor</h4>
+              <p class="text-on-surface-variant text-sm mb-1">Share your domain expertise and guide the next generation.</p>
+              <a href="mailto:mentorship@v3foundation.in" class="text-primary font-semibold text-sm">mentorship@v3foundation.in</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary text-2xl mt-1">mail</span>
+            <div>
+              <h4 class="font-bold text-on-surface mb-1">General Queries</h4>
+              <p class="text-on-surface-variant text-sm mb-1">Memberships, co-working, or partnership options.</p>
+              <a href="mailto:info@v3foundation.in" class="text-primary font-semibold text-sm">info@v3foundation.in</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary text-2xl mt-1">maps_home_work</span>
+            <div>
+              <h4 class="font-bold text-on-surface mb-1">V3F Nagpur — Incubation Centre</h4>
+              <p class="text-on-surface-variant text-sm">Visvesvaraya National Institute of Technology<br/>South Ambazari Road, Nagpur — 440010<br/>Maharashtra, India</p>
             </div>
           </div>
         </div>
-
-        <!-- Quick stats row -->
-        <div class="grid grid-cols-3 gap-3">
-          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Manrope',sans-serif">48h</div>
-            <div class="font-label-mono text-xs text-on-surface-variant">Response Time</div>
-          </div>
-          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Manrope',sans-serif">18–36</div>
-            <div class="font-label-mono text-xs text-on-surface-variant">Month Programs</div>
-          </div>
-          <div class="glass-panel rounded-xl p-4 text-center border" style="border-color:rgba(255,180,80,0.08)">
-            <div class="font-black text-xl gradient-text mb-1" style="font-family:'Manrope',sans-serif">Q'ly</div>
-            <div class="font-label-mono text-xs text-on-surface-variant">Cohort Reviews</div>
-          </div>
+        <div class="flex gap-6 mt-10 pt-8 border-t border-outline-variant">
+          <div><p class="font-display font-bold text-2xl text-primary">48h</p><p class="section-label text-on-surface-variant mt-1">Response Time</p></div>
+          <div><p class="font-display font-bold text-2xl text-primary">18–36</p><p class="section-label text-on-surface-variant mt-1">Month Programs</p></div>
+          <div><p class="font-display font-bold text-2xl text-primary">Q'ly</p><p class="section-label text-on-surface-variant mt-1">Cohort Reviews</p></div>
         </div>
-
       </div>
 
-      <!-- ── RIGHT: Application form ── -->
-      <div class="slide-right">
-        <div class="glass-panel p-8 md:p-10 rounded-2xl border-t-2 shadow-2xl fade-up" style="border-color:rgba(255,180,80,0.08);border-top-color:rgba(255,153,0,0.5)">
-
-          <!-- Form header -->
-          <div class="mb-8">
-            <div class="font-label-mono text-xs text-primary-fixed-dim tracking-widest mb-2">APPLICATIONS OPEN</div>
-            <h3 class="font-black text-2xl text-white mb-1" style="font-family:'Manrope',sans-serif">Ready to Build Your Startup?</h3>
-            <p class="font-label-mono text-xs text-primary-fixed-dim/70 mb-1">AWAITING SYSTEM INPUT...</p>
-            <p class="text-on-surface-variant text-xs">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
-          </div>
-
-          <form class="space-y-7" data-formspree action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST">
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">01 FOUNDER NAME</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" name="founder_name" placeholder="Enter Full Name" type="text" required/>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+      <!-- Right: form -->
+      <div class="reveal">
+        <div class="bg-surface-gray border border-outline-variant p-8">
+          <h3 class="font-display font-bold text-2xl text-primary mb-2">Ready to Build Your Startup?</h3>
+          <p class="text-on-surface-variant text-sm mb-8">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
+          <form class="space-y-5" data-formspree action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="section-label text-on-surface-variant mb-2 block">01 FOUNDER NAME</label>
+                <input name="name" type="text" required placeholder="Full Name" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+              </div>
+              <div>
+                <label class="section-label text-on-surface-variant mb-2 block">02 EMAIL PROTOCOL</label>
+                <input name="email" type="email" required placeholder="email@vnit.ac.in" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+              </div>
             </div>
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">02 EMAIL PROTOCOL</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" name="email" placeholder="founder@company.tech" type="email" required/>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            <div>
+              <label class="section-label text-on-surface-variant mb-2 block">03 PHONE NUMBER</label>
+              <input name="phone" type="tel" placeholder="+91 00000 00000" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
             </div>
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">03 PHONE NUMBER</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm" name="phone" placeholder="+91 XXXXX XXXXX" type="tel"/>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
-            </div>
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">04 PROGRAM</label>
-              <select name="program" class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
-                <option value="" class="bg-surface-container-low">Select a program...</option>
-                <option class="bg-surface-container-low">Pre-Incubation</option>
-                <option class="bg-surface-container-low">Incubation</option>
-                <option class="bg-surface-container-low">Co-Working Membership</option>
+            <div>
+              <label class="section-label text-on-surface-variant mb-2 block">04 PROGRAM</label>
+              <select name="program" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
+                <option value="">Select a program...</option>
+                <option>Pre-Incubation</option>
+                <option>Incubation</option>
+                <option>Co-Working Membership</option>
               </select>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
             </div>
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">05 VNIT AFFILIATION</label>
-              <select name="vnit_affiliation" class="w-full bg-surface-container-low border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all text-sm text-on-surface">
-                <option value="" class="bg-surface-container-low">Are you associated with VNIT?</option>
-                <option class="bg-surface-container-low">VNIT Student</option>
-                <option class="bg-surface-container-low">VNIT Alumni</option>
-                <option class="bg-surface-container-low">VNIT Faculty</option>
-                <option class="bg-surface-container-low">External Applicant</option>
+            <div>
+              <label class="section-label text-on-surface-variant mb-2 block">05 VNIT AFFILIATION</label>
+              <select name="affiliation" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
+                <option value="">Select affiliation...</option>
+                <option>VNIT Student</option>
+                <option>VNIT Alumni</option>
+                <option>VNIT Faculty</option>
+                <option>External Startup</option>
               </select>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
             </div>
-            <div class="relative group">
-              <label class="font-label-mono text-xs text-on-surface-variant block mb-2 tracking-widest">06 PROJECT SCHEMATIC</label>
-              <textarea class="w-full bg-transparent border-0 border-b border-outline-variant p-2 focus:ring-0 focus:border-primary font-label-mono transition-all resize-none text-sm" name="project_description" placeholder="Describe your startup idea and sector..." rows="3"></textarea>
-              <div class="absolute bottom-0 left-0 h-[1px] w-0 bg-primary group-focus-within:w-full transition-all duration-500"></div>
+            <div>
+              <label class="section-label text-on-surface-variant mb-2 block">06 PROJECT SCHEMATIC</label>
+              <textarea name="message" rows="4" placeholder="Briefly describe your innovation..." class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
             </div>
-
-            <!-- Privacy note -->
-            <p class="font-label-mono text-xs text-on-surface-variant/50 flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm" style="font-size:14px">lock</span>
+            <button type="submit" class="w-full btn-primary justify-center text-sm">
+              Submit Application <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+            <div id="form-success" class="hidden text-sm" style="padding:14px;background:#e4efff;border:1px solid #a9c7ff;color:#002754;">✓ Application received! We'll be in touch within 48 hours.</div>
+            <div id="form-error" class="hidden text-sm" style="padding:14px;background:#ffdad6;border:1px solid #ba1a1a;color:#93000a;">Something went wrong. Please email us at <a href="mailto:anil@v3foundation.in" class="underline">anil@v3foundation.in</a></div>
+            <p class="text-on-surface-variant text-xs flex items-center gap-2">
+              <span class="material-symbols-outlined text-[14px]">lock</span>
               Confidential &amp; secure. Your data is never shared with third parties.
             </p>
-
-            <button class="w-full py-4 rounded-full bg-primary-container text-on-primary font-bold hover:glow-cyan active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group text-sm" type="submit">
-              Submit Application
-              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-            </button>
-            <div id="form-success">✓ Application received! We'll be in touch within 48 hours.</div>
-          <div id="form-error">Something went wrong. Please email us at anil@v3foundation.in</div>
           </form>
         </div>
       </div>
+    </div>
 
+    <!-- Office & Campus Location — map card -->
+    <div class="mt-8 bg-white border border-outline-variant p-6 md:p-8 reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-vibrant-blue">location_on</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-primary">Office &amp; Campus Location</h3>
+          </div>
+          <div class="space-y-5">
+            <div>
+              <div class="section-label text-vibrant-blue mb-1">Office Address</div>
+              <p class="text-on-surface text-sm leading-relaxed">
+                V3F Nagpur — VNIT Foundation for Startups<br/>
+                Visvesvaraya National Institute of Technology Campus<br/>
+                South Ambazari Road, Nagpur — 440010, Maharashtra, India
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <div class="section-label text-vibrant-blue mb-1">Office Hours</div>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Mon – Fri: 9:00 AM – 6:00 PM<br/>Sat: 10:00 AM – 2:00 PM</p>
+              </div>
+              <div>
+                <div class="section-label text-vibrant-blue mb-1">Directions</div>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Located inside VNIT Nagpur. Enter through the main gate on South Ambazari Road.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 rounded-xl overflow-hidden border border-outline-variant relative" style="height:280px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7443.4640766825605!2d79.04893757434158!3d21.123246684528322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c070e8004c25%3A0xdcfcc32c89158bc3!2sVisvesvaraya%20National%20Institute%20of%20Technology%20(VNIT)%2C%20Nagpur!5e0!3m2!1sen!2sin!4v1782555238189!5m2!1sen!2sin"
+            width="100%" height="280" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" title="VNIT Nagpur Campus Location"></iframe>
+          <a href="https://maps.app.goo.gl/g1Rdb5fbaWYpopCh9" target="_blank" rel="noopener noreferrer"
+             class="absolute bottom-3 right-3 font-mono text-xs font-bold px-4 py-2 rounded-full"
+             style="background:#002754;color:#fff;">Open in Maps ↗</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ═══════════════════════════════════════════════════ FOOTER -->
-<footer class="w-full py-16 bg-surface-container border-t border-outline-variant/30">
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 px-4 md:px-16 max-w-[1440px] mx-auto">
-    <div class="md:col-span-4 space-y-6">
-      <img src="images/Option 9.png" alt="V3F — VNIT Venture Vault Foundation" class="h-16 w-auto object-contain" style="mix-blend-mode:screen;"/>
-      <p class="text-on-surface-variant text-sm leading-relaxed">
-        VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development through structured incubation support at VNIT Nagpur.
-      </p>
-      <div class="text-on-surface-variant text-xs font-label-mono">
-        Section 8 Company · Affiliated with VNIT Nagpur<br/>
-        South Ambazari Road, Nagpur — 440010, MH
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="bg-surface-container border-t border-outline-variant">
+  <div class="max-w-container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="md:col-span-1">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/Option 9.png" alt="V3F Logo" class="h-9 w-auto"/>
+        <span class="font-display font-bold text-lg text-primary">V3F Nagpur</span>
       </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-5">VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development through structured incubation support.</p>
+      <p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p>
+      <p class="text-on-surface-variant text-sm mt-1">South Ambazari Road, Nagpur — 440010, MH</p>
     </div>
-    <div class="md:col-span-2">
-      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">PROGRAMS</h4>
-      <ul class="space-y-4">
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Pre-Incubation</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Incubation</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#programs">Co-Working</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#contact">Funding Support</a></li>
+    <div>
+      <h5 class="section-label text-primary mb-5">PROGRAMS</h5>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li><a href="programs.html" class="hover:text-primary hover:underline transition-colors">Pre-Incubation</a></li>
+        <li><a href="programs.html" class="hover:text-primary hover:underline transition-colors">Incubation</a></li>
+        <li><a href="programs.html" class="hover:text-primary hover:underline transition-colors">Co-Working</a></li>
+        <li><a href="index.html#contact" class="hover:text-primary hover:underline transition-colors">Funding Support</a></li>
       </ul>
     </div>
-    <div class="md:col-span-2">
-      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">ABOUT</h4>
-      <ul class="space-y-4">
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="about.html">About V3F</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#advisors">Advisory Board</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="#focus">Focus Areas</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="about.html#about-governance">Governance</a></li>
-        <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="faq.html">FAQ</a></li>
+    <div>
+      <h5 class="section-label text-primary mb-5">ABOUT</h5>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li><a href="about.html" class="hover:text-primary hover:underline transition-colors">About V3F</a></li>
+        <li><a href="advisors.html" class="hover:text-primary hover:underline transition-colors">Advisory Board</a></li>
+        <li><a href="mentors.html" class="hover:text-primary hover:underline transition-colors">Mentors</a></li>
+        <li><a href="focus-areas.html" class="hover:text-primary hover:underline transition-colors">Focus Areas</a></li>
+        <li><a href="faq.html" class="hover:text-primary hover:underline transition-colors">FAQ</a></li>
       </ul>
     </div>
-    <div class="md:col-span-4">
-      <h4 class="font-label-mono text-xs text-primary mb-6 tracking-widest">CONNECT</h4>
-      <div class="space-y-4">
-        <a href="#contact" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
-          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">send</span>
-          <span class="font-label-mono text-xs">Apply Now</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
-          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">psychology</span>
-          <span class="font-label-mono text-xs">Become a Mentor</span>
-        </a>
-        <a href="#contact" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
-          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">mail</span>
-          <span class="font-label-mono text-xs">Contact Us</span>
-        </a>
-        <a href="https://vnit.ac.in" target="_blank" rel="noopener" class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors group">
-          <span class="material-symbols-outlined text-primary/50 text-sm group-hover:text-primary transition-colors">open_in_new</span>
-          <span class="font-label-mono text-xs">VNIT Nagpur</span>
-        </a>
-      </div>
+    <div>
+      <h5 class="section-label text-primary mb-5">CONNECT</h5>
+      <ul class="space-y-3 text-sm text-on-surface-variant">
+        <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">send</span>Apply Now</a></li>
+        <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">psychology</span>Become a Mentor</a></li>
+        <li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">mail</span>Contact Us</a></li>
+        <li><a href="https://vnit.ac.in" target="_blank" class="flex items-center gap-2 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">open_in_new</span>VNIT Nagpur</a></li>
+      </ul>
     </div>
   </div>
-  
-  <!-- Footer links in the last bottom center -->
-  <div class="mt-12 pt-8 border-t border-outline-variant/10 text-center space-y-4">
-    <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="index.html">Home</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="programs.html">Programs</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="focus-areas.html">Focus Areas</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="about.html">About</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-mono text-xs" href="faq.html">FAQ</a>
-    </div>
-    <div class="text-on-surface-variant/60 text-xs font-label-mono">
-      © 2025 V3F NAGPUR. ALL RIGHTS RESERVED.
+  <div class="border-t border-outline-variant px-10 py-6 max-w-container mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+    <p class="text-on-surface-variant text-xs">© 2025 V3F NAGPUR. ALL RIGHTS RESERVED.</p>
+    <div class="flex gap-6 text-xs text-on-surface-variant">
+      <a href="#" class="hover:text-primary hover:underline">Privacy Policy</a>
+      <a href="#" class="hover:text-primary hover:underline">Terms of Service</a>
     </div>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════════ SCRIPTS -->
 <script>
-// ── WebGL Shader ──────────────────────────────────────────────
-(function() {
-  const canvas = document.getElementById('shader-canvas');
-  function syncSize() {
-    const w = canvas.clientWidth || 1280, h = canvas.clientHeight || 720;
-    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
-  }
-  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(syncSize).observe(canvas);
-  syncSize();
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) return;
-  const vs = `attribute vec2 a_position; varying vec2 v_texCoord;
-void main() { v_texCoord = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0.0, 1.0); }`;
-  const fs = `precision highp float;
-uniform float u_time; uniform vec2 u_resolution; uniform vec2 u_mouse; varying vec2 v_texCoord;
-void main() {
-  vec2 uv = v_texCoord;
-  float scale = 30.0;
-  vec2 grid_uv = fract(uv * scale);
-  float line_width = 0.02;
-  float grid = step(1.0 - line_width, grid_uv.x) + step(1.0 - line_width, grid_uv.y);
-  vec2 mouse_uv = u_mouse / u_resolution;
-  float dist = distance(uv, mouse_uv);
-  float glow = smoothstep(0.3, 0.0, dist) * 0.4;
-  float pulse = sin(u_time * 0.5) * 0.05 + 0.95;
-  vec3 color = vec3(0.055, 0.035, 0.016);
-  vec3 grid_color = vec3(1.0, 0.55, 0.0);
-  color += grid * grid_color * 0.1 * pulse;
-  color += glow * grid_color;
-  gl_FragColor = vec4(color, 1.0);
-}`;
-  function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
-  const prog = gl.createProgram();
-  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-  gl.linkProgram(prog); gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'a_position');
-  gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes = gl.getUniformLocation(prog, 'u_resolution');
-  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      mouse.x = ((e.clientX - rect.left) / rect.width) * canvas.width;
-      mouse.y = (1.0 - (e.clientY - rect.top) / rect.height) * canvas.height;
-    }
+  // Header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('shadow-md', window.scrollY > 40);
   });
-  function render(t) {
-    if (typeof ResizeObserver === 'undefined') syncSize();
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    if (uTime) gl.uniform1f(uTime, t * 0.001);
-    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(render);
-  }
-  render(0);
-})();
-
-// ── Hero: Particles + Scroll parallax on campus photo ─────────
-(function() {
-  // Floating particles
-  const field = document.getElementById('particle-field');
-  if (field) {
-    for (let i = 0; i < 20; i++) {
-      const p = document.createElement('div');
-      p.style.cssText = `
-        position:absolute;
-        width:${Math.random() > 0.5 ? 2 : 3}px;
-        height:${Math.random() > 0.5 ? 2 : 3}px;
-        border-radius:50%;
-        left:${Math.random() * 100}%;
-        bottom:${5 + Math.random() * 50}%;
-        background:${Math.random() > 0.7 ? '#00B4D8' : '#00B4D8'};
-        opacity:0;
-        animation: particle-drift ${(3.5 + Math.random()*4).toFixed(1)}s ease-in infinite;
-        animation-delay:${(Math.random()*7).toFixed(1)}s;
-        --dx:${((Math.random()-0.5)*60).toFixed(0)}px;
-        --dur:${(3.5+Math.random()*4).toFixed(1)}s;
-        --delay:${(Math.random()*7).toFixed(1)}s;
-      `;
-      field.appendChild(p);
-    }
-  }
-
-  // Scroll parallax — hero photo moves slower than scroll
-  const heroBg = document.getElementById('hero-bg');
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      if (scrolled < window.innerHeight) {
-        heroBg.style.transform = `translateY(${scrolled * 0.35}px) scale(1.12)`;
-      }
-    }, { passive: true });
-  }
-})();
-
-// ── Scroll animations ─────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  // Intersection Observer
-  const classes = ['.fade-up', '.fade-in', '.slide-left', '.slide-right', '.scale-in', '.fade-left', '.fade-right'];
-  const all = document.querySelectorAll(classes.map(c => c).join(',') + ', .fade-left, .fade-right');
-
-  // Map fade-left/right to slide classes
-  document.querySelectorAll('.fade-left').forEach(el => el.classList.add('slide-left'));
-  document.querySelectorAll('.fade-right').forEach(el => el.classList.add('slide-right'));
-
+  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .scale-in').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Glass panel observer
-  document.querySelectorAll('.glass-panel').forEach((panel, i) => {
-    if (!panel.classList.contains('fade-up') && !panel.classList.contains('fade-in')) {
-      panel.style.opacity = '0';
-      panel.style.transform = 'translateY(20px)';
-      panel.style.transition = `opacity 0.6s ease ${i % 5 * 0.1}s, transform 0.6s ease ${i % 5 * 0.1}s`;
-      const obs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { panel.style.opacity = '1'; panel.style.transform = 'translateY(0)'; obs.unobserve(panel); }
-      }, { threshold: 0.1 });
-      obs.observe(panel);
-    }
-  });
-
-  // Stat counter animation — all counters in the band fire together, finish at the same time
-  (function() {
-    const DURATION = 2000; // total ms all counters run
-
-    function renderCounter(el, value) {
-      const suffix = el.getAttribute('data-suffix') || '';
-      const unit   = el.getAttribute('data-unit')   || '';
-      const uSize  = el.getAttribute('data-unit-size') || '';
-      if (unit) {
-        el.innerHTML = Math.floor(value) + suffix +
-          '<em style="font-size:' + uSize + '">' + unit + '</em>';
-      } else {
-        el.textContent = Math.floor(value) + suffix;
-      }
-    }
-
-    function runAllCounters(els) {
-      const targets = els.map(el => parseInt(el.getAttribute('data-target'), 10));
-      let startTime = null;
-
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const elapsed  = timestamp - startTime;
-        const progress = Math.min(elapsed / DURATION, 1);
-        // ease-out cubic so it decelerates nicely
-        const eased = 1 - Math.pow(1 - progress, 3);
-
-        els.forEach((el, i) => renderCounter(el, eased * targets[i]));
-
-        if (progress < 1) requestAnimationFrame(step);
-        else els.forEach((el, i) => renderCounter(el, targets[i])); // snap to exact final value
-      }
-      requestAnimationFrame(step);
-    }
-
-    const statBand = document.querySelector('.stat-band');
-    if (!statBand) return;
-
-    const counterEls = Array.from(statBand.querySelectorAll('[data-target]'));
-    if (!counterEls.length) return;
-
-    let fired = false;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          runAllCounters(counterEls);
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.4 });
-
-    observer.observe(statBand);
-  })();
-
-  // Parallax
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-  }, { passive: true });
-
-  // Form label highlight
-  document.querySelectorAll('input, textarea, select').forEach(input => {
-    const label = input.parentElement && input.parentElement.querySelector('label');
-    if (label) {
-      input.addEventListener('focus', () => { label.style.color = '#4FD1C5'; });
-      input.addEventListener('blur', () => { label.style.color = ''; });
-    }
-  });
-
-  // Typewriter effect on hero subtitle
-  const typeEl = document.querySelector('.typewriter-target');
-  if (typeEl) {
-    const text = typeEl.textContent;
-    typeEl.textContent = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    typeEl.appendChild(cursor);
-    let i = 0;
-    const type = () => { if (i < text.length) { typeEl.insertBefore(document.createTextNode(text[i++]), cursor); setTimeout(type, 38); } };
-    setTimeout(type, 800);
-  }
-});
-
-// ── Side Nav: active state + scroll-reveal + click ────────────────
-(function() {
-  const nav       = document.getElementById('arc-nav');
-  const items     = document.querySelectorAll('.arc-item');
-  const trackFill = document.getElementById('arc-track-fill');
-  const sections  = ['hero', 'programs', 'focus', 'ecosystem', 'advisors', 'about', 'contact'];
-  const sectionEls = sections.map(id =>
-    id === 'hero' ? document.querySelector('section') : document.getElementById(id)
-  ).filter(Boolean);
-  const totalItems = items.length;
-
-  // --- Active section tracker ---
-  function updateArc() {
-    const scrollY = window.pageYOffset + window.innerHeight * 0.4;
-    let activeSection = 'hero';
-    sectionEls.forEach((el) => {
-      if (el && el.offsetTop <= scrollY) {
-        activeSection = el.id || 'hero';
-      }
-    });
-
-    let activeIdx = 0;
-    items.forEach((item, i) => {
-      const href = item.getAttribute('href');
-      const isSecActive = (href === '#' && activeSection === 'hero') || (href === '#' + activeSection);
-      item.classList.toggle('arc-active', isSecActive);
-      if (isSecActive) activeIdx = i;
-    });
-
-    if (trackFill) {
-      const pct = totalItems > 1 ? (activeIdx / (totalItems - 1)) * 100 : 0;
-      trackFill.style.height = pct + '%';
-    }
-  }
-
-  // --- Scroll-reveal: show labels while scrolling ---
-  let scrollTimer;
-  window.addEventListener('scroll', () => {
-    updateArc();
-    nav.classList.add('is-scrolling');
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => nav.classList.remove('is-scrolling'), 350);
-  }, { passive: true });
-  updateArc();
-
-  // --- Click: smooth scroll + ripple ---
-  items.forEach(item => {
-    item.addEventListener('click', e => {
-      const href = item.getAttribute('href');
-      if (href && !href.startsWith('#')) {
-        // Allow external redirection normally
-        return;
-      }
-      e.preventDefault();
-      const ripple = document.createElement('span');
-      ripple.className = 'arc-ripple';
-      item.appendChild(ripple);
-      ripple.addEventListener('animationend', () => ripple.remove());
-      if (href && href !== '#') {
-        const target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
-})()
-</script>
-
-<style>
-  #rotating-word {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<script>
-  (function() {
-    const words = ["Ventures", "Startups", "Realities", "Products", "Companies"];
-    const el = document.getElementById('rotating-word');
-    let i = 0;
-    el.textContent = words[0];
-    el.style.opacity = '1';
-    el.style.transform = 'translateY(0)';
-
-    function cycle() {
-      // Fade out + slide up
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(-16px)';
-      setTimeout(() => {
-        // Swap word, snap to slide-in position
-        i = (i + 1) % words.length;
-        el.textContent = words[i];
-        el.style.transition = 'none';
-        el.style.transform = 'translateY(16px)';
-        // Re-enable transition and fade in after a frame
-        setTimeout(() => {
-          el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, 30);
+  // Rotating hero word
+  (function(){
+    var el = document.getElementById('rotating-word');
+    if (!el) return;
+    var words = ["Ventures", "Startups", "Realities", "Products", "Companies"];
+    var i = 0;
+    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    el.style.display = 'inline-block';
+    setInterval(function(){
+      el.style.opacity = '0'; el.style.transform = 'translateY(-8px)';
+      setTimeout(function(){
+        i = (i + 1) % words.length; el.textContent = words[i];
+        el.style.transition = 'none'; el.style.transform = 'translateY(8px)';
+        setTimeout(function(){ el.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 30);
       }, 400);
-    }
-
-    setInterval(cycle, 2800);
+    }, 2800);
   })();
-</script>
 
-<!-- Scroll progress bar -->
-<div id="scpb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:#00B4D8;z-index:9999;pointer-events:none;transition:width 0.08s linear;"></div>
-<script>
-(function(){var b=document.getElementById('scpb');window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(h>0?Math.min(s/h*100,100):0)+'%';},{passive:true});})();
-</script>
-
-<script>
-(function(){
-  var btn=document.getElementById('mob-btn'),menu=document.getElementById('mob-menu'),overlay=document.getElementById('mob-overlay'),closeBtn=document.getElementById('mob-close');
-  function openMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';btn.setAttribute('aria-expanded','true');}
-  function closeMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');document.body.style.overflow='';btn.setAttribute('aria-expanded','false');}
-  btn.addEventListener('click',openMenu);
-  closeBtn.addEventListener('click',closeMenu);
-  overlay.addEventListener('click',closeMenu);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-})();
-</script>
-
-<script>
-(function(){
-  var form=document.querySelector('form[data-formspree]');
-  if(!form)return;
-  var btn=form.querySelector('button[type="submit"]');
-  var successEl=document.getElementById('form-success');
-  var errorEl=document.getElementById('form-error');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    btn.disabled=true;btn.textContent='Sending...';
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-      .then(function(r){
-        if(r.ok){
-          form.reset();successEl.style.display='block';errorEl.style.display='none';
-          btn.textContent='Submitted!';
-        } else {
-          errorEl.style.display='block';successEl.style.display='none';
-          btn.disabled=false;btn.innerHTML='Submit Application <span class="material-symbols-outlined">arrow_forward</span>';
-        }
-      })
-      .catch(function(){
-        errorEl.style.display='block';successEl.style.display='none';
-        btn.disabled=false;btn.innerHTML='Submit Application <span class="material-symbols-outlined">arrow_forward</span>';
-      });
-  });
-})();
+  // Formspree submit handler
+  (function(){
+    var form = document.querySelector('form[data-formspree]');
+    if (!form) return;
+    var btn = form.querySelector('button[type="submit"]');
+    var okEl = document.getElementById('form-success');
+    var errEl = document.getElementById('form-error');
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      okEl.classList.add('hidden'); errEl.classList.add('hidden');
+      var original = btn.innerHTML; btn.disabled = true; btn.textContent = 'Sending…';
+      try {
+        var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (res.ok) { form.reset(); okEl.classList.remove('hidden'); }
+        else { errEl.classList.remove('hidden'); }
+      } catch (_) { errEl.classList.remove('hidden'); }
+      btn.disabled = false; btn.innerHTML = original;
+    });
+  })();
 </script>
 </body>
 </html>

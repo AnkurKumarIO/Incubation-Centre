@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Page Not Found — V3F Nagpur</title>
 <meta name="robots" content="noindex"/>
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
-tailwind.config = {
-  darkMode:"class",
-  theme:{ extend:{
-    colors:{
-      "background":"#050B14","on-surface":"#FFFFFF","on-surface-variant":"#94A3B8",
-      "primary-container":"#FF9900","on-primary":"#050B14","outline-variant":"#1A2744",
-      "accent-glow":"#00B4D8","accent-secondary":"#FF6B35",
-    }
-  }}
-}
+tailwind.config = { theme: { extend: { colors: {
+  primary:"#002754","primary-container":"#153d72","surface":"#f7f9ff","surface-container":"#e4efff",
+  "on-surface":"#0f1d2a","on-surface-variant":"#43474f","outline-variant":"#c3c6d1","vibrant-blue":"#2274BE",
+}, maxWidth:{ container:"1280px" } } } }
 </script>
 <style>
-  body{background:#050B14;color:#A0AEC0;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;overflow:hidden}
-  .gradient-text{background:linear-gradient(135deg,#FF9900,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .isometric-grid{background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:44px 44px}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  .float{animation:float 4s ease-in-out infinite}
+  body{font-family:'Inter',sans-serif;} .font-display{font-family:'Manrope',sans-serif;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;line-height:1;}
+  .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;}
+  .btn-primary{background:#002754;color:#fff;font-weight:700;padding:14px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-primary:hover{background:#153d72;box-shadow:0 8px 24px -6px rgba(0,39,84,0.35);transform:translateY(-1px);}
+  .btn-outline{border:1.5px solid #002754;color:#002754;font-weight:700;padding:13px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-outline:hover{background:#002754;color:#fff;}
 </style>
 </head>
-<body>
-<div class="isometric-grid absolute inset-0 opacity-10 pointer-events-none"></div>
-<div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at center,rgba(79,209,197,0.06) 0%,transparent 70%)"></div>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
 
-<div class="relative text-center px-6 max-w-lg">
-  <div class="float mb-8">
-    <div class="text-[7rem] font-black leading-none" style="font-family:'Manrope',sans-serif">
-      <span class="gradient-text">404</span>
+<main class="flex-1 flex items-center justify-center px-6 relative z-10">
+  <div class="max-w-xl text-center">
+    <a href="index.html" class="inline-flex items-center gap-3 mb-10 no-underline">
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-10 w-auto"/>
+      <span class="font-display font-bold text-xl text-primary">V3F Nagpur</span>
+    </a>
+    <p class="font-display font-extrabold text-primary leading-none" style="font-size:clamp(5rem,18vw,9rem);">404</p>
+    <span class="section-label text-vibrant-blue">PAGE NOT FOUND</span>
+    <h1 class="font-display font-bold text-2xl text-primary mt-3 mb-3">This page doesn't exist</h1>
+    <p class="text-on-surface-variant mb-8">The link may be broken, or the page may have moved. Head back to the homepage to explore V3F Nagpur.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="index.html" class="btn-primary">Back to Home <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+      <a href="programs.html" class="btn-outline">View Programs</a>
     </div>
+    <p class="section-label text-on-surface-variant mt-12">V3F Nagpur · VNIT Incubation Centre · <a href="mailto:anil@v3foundation.in" class="text-primary hover:underline">anil@v3foundation.in</a></p>
   </div>
-
-  <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border mb-6" style="border-color:rgba(236,101,32,0.3);background:rgba(180,180,180,0.06)">
-    <span class="w-2 h-2 rounded-full animate-ping flex-shrink-0" style="background:#FF9900"></span>
-    <span style="font-family:'Manrope',sans-serif;font-size:11px;color:#FF9900;letter-spacing:0.12em">PAGE NOT FOUND</span>
-  </div>
-
-  <h1 class="text-2xl font-bold mb-3" style="font-family:'Manrope',sans-serif">This page doesn't exist</h1>
-  <p class="text-sm mb-8" style="color:#888">The link may be broken, or the page may have been moved. Head back to the homepage to explore V3F Nagpur.</p>
-
-  <div class="flex flex-col sm:flex-row gap-3 justify-center">
-    <a href="index.html" class="px-8 py-3 rounded-full font-bold text-sm" style="background:#FF9900;color:#111;font-family:'Manrope',sans-serif">Back to Home</a>
-    <a href="programs.html" class="px-8 py-3 rounded-full font-bold text-sm" style="border:1px solid rgba(255,255,255,0.15);color:#fff;font-family:'Manrope',sans-serif">View Programs</a>
-  </div>
-
-  <p class="mt-10 text-xs" style="color:#555;font-family:'Manrope',sans-serif">V3F Nagpur · VNIT Incubation Centre · <a href="mailto:anil@v3foundation.in" style="color:#FF9900">anil@v3foundation.in</a></p>
-</div>
+</main>
 </body>
 </html>
