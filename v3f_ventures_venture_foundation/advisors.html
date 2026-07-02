@@ -47,6 +47,7 @@ tailwind.config = { theme: { extend: { colors: {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     overflow: hidden;
+    border-radius: 12px;
   }
   .flip-front { background: #fff; }
   .flip-back {
@@ -109,41 +110,45 @@ tailwind.config = { theme: { extend: { colors: {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- B.S. Murty -->
-      <div class="flip-card reveal" style="height:520px;">
+      <div class="flip-card reveal" style="height:420px;">
         <div class="flip-inner">
-          <div class="flip-front border border-outline-variant">
-            <div class="relative h-80 bg-surface-variant overflow-hidden">
-              <img src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="w-full h-full object-cover object-top"/>
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="w-full h-full object-cover object-top"/>
+              </div>
             </div>
-            <div class="p-6">
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
               <h3 class="font-display font-bold text-xl text-primary mb-1">Prof. B.S. Murty</h3>
               <p class="section-label text-vibrant-blue mb-1">RESEARCH & DEEP-TECH</p>
               <p class="text-on-surface-variant text-sm mb-3">Director, IIT Hyderabad & IIITDM Kurnool · President, Indian Institute of Metals</p>
-              <div class="flex flex-wrap gap-2"><span class="section-label bg-surface-container px-2 py-1 text-primary">RESEARCH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">DEEP TECH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">MATERIALS SCIENCE</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">RESEARCH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">DEEP TECH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">MATERIALS SCIENCE</span></div>
             </div>
           </div>
           <div class="flip-back">
             <p class="section-label text-white/50 mb-3">RESEARCH & DEEP-TECH</p>
             <h3 class="font-display font-bold text-xl text-white mb-4">Prof. B.S. Murty</h3>
             <p class="text-white/80 text-sm leading-relaxed mb-6">One of India's foremost materials scientists. A pioneer in nano-materials and high-entropy alloys research, guiding V3F on deep-tech incubation strategy and research commercialisation pathways aligned with DST and SERB programs.</p>
-            <div class="flex flex-wrap gap-2"><span class="section-label bg-white/10 px-2 py-1 text-white/70">RESEARCH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">DEEP TECH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">MATERIALS SCIENCE</span></div>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">RESEARCH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">DEEP TECH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">MATERIALS SCIENCE</span></div>
           </div>
         </div>
       </div>
 
       <!-- Hiranmay Mahanta -->
-      <div class="flip-card reveal" style="height:520px;">
+      <div class="flip-card reveal" style="height:420px;">
         <div class="flip-inner">
           <!-- Front -->
-          <div class="flip-front border border-outline-variant">
-            <div class="relative h-80 bg-surface-variant overflow-hidden">
-              <img src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="w-full h-full object-cover object-top"/>
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="w-full h-full object-cover object-top"/>
+              </div>
             </div>
-            <div class="p-6">
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
               <h3 class="font-display font-bold text-xl text-primary mb-1">Mr. Hiranmay Mahanta</h3>
               <p class="section-label text-vibrant-blue mb-1">ECOSYSTEM & INNOVATION</p>
               <p class="text-on-surface-variant text-sm mb-3">CEO, i-Hub Gujarat · Founding Director, GTU Innovation Council</p>
-              <div class="flex flex-wrap gap-2"><span class="section-label bg-surface-container px-2 py-1 text-primary">ENTREPRENEURSHIP</span><span class="section-label bg-surface-container px-2 py-1 text-primary">ECOSYSTEM</span><span class="section-label bg-surface-container px-2 py-1 text-primary">POLICY</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">ENTREPRENEURSHIP</span><span class="section-label bg-surface-container px-2 py-1 text-primary">ECOSYSTEM</span><span class="section-label bg-surface-container px-2 py-1 text-primary">POLICY</span></div>
             </div>
           </div>
           <!-- Back -->
@@ -151,76 +156,82 @@ tailwind.config = { theme: { extend: { colors: {
             <p class="section-label text-white/50 mb-3">ECOSYSTEM & INNOVATION</p>
             <h3 class="font-display font-bold text-xl text-white mb-4">Mr. Hiranmay Mahanta</h3>
             <p class="text-white/80 text-sm leading-relaxed mb-6">Drives Gujarat's flagship startup ecosystem across 104 universities as CEO of i-Hub Gujarat. As Founding Director of GTU Innovation Council, he built one of India's most cohesive academic innovation ecosystems over a decade.</p>
-            <div class="flex flex-wrap gap-2"><span class="section-label bg-white/10 px-2 py-1 text-white/70">ENTREPRENEURSHIP</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">ECOSYSTEM</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">POLICY</span></div>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">ENTREPRENEURSHIP</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">ECOSYSTEM</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">POLICY</span></div>
           </div>
         </div>
       </div>
 
       <!-- Jagdish Desai -->
-      <div class="flip-card reveal" style="height:520px;">
+      <div class="flip-card reveal" style="height:420px;">
         <div class="flip-inner">
-          <div class="flip-front border border-outline-variant">
-            <div class="relative h-80 bg-surface-variant overflow-hidden">
-              <img src="images/advisor-jagdish-desai.png" alt="Mr. Jagdish Desai" class="w-full h-full object-cover object-top"/>
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="images/advisor-jagdish-desai.png" alt="Mr. Jagdish Desai" class="w-full h-full object-cover object-top"/>
+              </div>
             </div>
-            <div class="p-6">
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
               <h3 class="font-display font-bold text-xl text-primary mb-1">Mr. Jagdish Desai</h3>
               <p class="section-label text-vibrant-blue mb-1">GLOBAL BUSINESS & INVESTMENT</p>
               <p class="text-on-surface-variant text-sm mb-3">Global Executive, CEO & Venture Capitalist · Former President, Emerson Electric</p>
-              <div class="flex flex-wrap gap-2"><span class="section-label bg-surface-container px-2 py-1 text-primary">VENTURE CAPITAL</span><span class="section-label bg-surface-container px-2 py-1 text-primary">GLOBAL OPS</span><span class="section-label bg-surface-container px-2 py-1 text-primary">M&A</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">VENTURE CAPITAL</span><span class="section-label bg-surface-container px-2 py-1 text-primary">GLOBAL OPS</span><span class="section-label bg-surface-container px-2 py-1 text-primary">M&A</span></div>
             </div>
           </div>
           <div class="flip-back">
             <p class="section-label text-white/50 mb-3">GLOBAL BUSINESS & INVESTMENT</p>
             <h3 class="font-display font-bold text-xl text-white mb-4">Mr. Jagdish Desai</h3>
             <p class="text-white/80 text-sm leading-relaxed mb-6">Co-founded Virgo Valves & Controls, scaling it to a landmark $400M acquisition by Emerson Electric in 2014. Now a venture capitalist advising V3F on international growth, fundraising, and cross-border deal-making.</p>
-            <div class="flex flex-wrap gap-2"><span class="section-label bg-white/10 px-2 py-1 text-white/70">VENTURE CAPITAL</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">GLOBAL OPS</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">M&A</span></div>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">VENTURE CAPITAL</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">GLOBAL OPS</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">M&A</span></div>
           </div>
         </div>
       </div>
 
       <!-- M.S. Unnikrishnan -->
-      <div class="flip-card reveal" style="height:520px;">
+      <div class="flip-card reveal" style="height:420px;">
         <div class="flip-inner">
-          <div class="flip-front border border-outline-variant">
-            <div class="relative h-80 bg-surface-variant overflow-hidden">
-              <img src="images/advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" class="w-full h-full object-cover object-top"/>
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="images/advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" class="w-full h-full object-cover object-top"/>
+              </div>
             </div>
-            <div class="p-6">
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
               <h3 class="font-display font-bold text-xl text-primary mb-1">Prof. M.S. Unnikrishnan</h3>
               <p class="section-label text-vibrant-blue mb-1">INDUSTRY–ACADEMIA & POLICY</p>
               <p class="text-on-surface-variant text-sm mb-3">CEO, IITB-Monash Research Academy · Former MD & CEO, Thermax Ltd.</p>
-              <div class="flex flex-wrap gap-2"><span class="section-label bg-surface-container px-2 py-1 text-primary">ACADEMIA</span><span class="section-label bg-surface-container px-2 py-1 text-primary">INDUSTRY</span><span class="section-label bg-surface-container px-2 py-1 text-primary">POLICY</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">ACADEMIA</span><span class="section-label bg-surface-container px-2 py-1 text-primary">INDUSTRY</span><span class="section-label bg-surface-container px-2 py-1 text-primary">POLICY</span></div>
             </div>
           </div>
           <div class="flip-back">
             <p class="section-label text-white/50 mb-3">INDUSTRY–ACADEMIA & POLICY</p>
             <h3 class="font-display font-bold text-xl text-white mb-4">Prof. M.S. Unnikrishnan</h3>
             <p class="text-white/80 text-sm leading-relaxed mb-6">A rare leader who excelled at the highest level in both industry and academia. As MD & CEO of Thermax he globalised the engineering conglomerate. Now heads the IITB-Monash Research Academy championing technology development and sustainable industrial growth.</p>
-            <div class="flex flex-wrap gap-2"><span class="section-label bg-white/10 px-2 py-1 text-white/70">ACADEMIA</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">INDUSTRY</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">POLICY</span></div>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">ACADEMIA</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">INDUSTRY</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">POLICY</span></div>
           </div>
         </div>
       </div>
 
       <!-- Ramesh C Jain -->
-      <div class="flip-card reveal" style="height:520px;">
+      <div class="flip-card reveal" style="height:420px;">
         <div class="flip-inner">
-          <div class="flip-front border border-outline-variant">
-            <div class="relative h-80 bg-surface-variant overflow-hidden">
-              <img src="images/advisor-ramesh-jain.jpg" alt="Prof. Ramesh C Jain" class="w-full h-full object-cover object-top"/>
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="images/advisor-ramesh-jain.jpg" alt="Prof. Ramesh C Jain" class="w-full h-full object-cover object-top"/>
+              </div>
             </div>
-            <div class="p-6">
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
               <h3 class="font-display font-bold text-xl text-primary mb-1">Prof. Ramesh C Jain</h3>
               <p class="section-label text-vibrant-blue mb-1">AI, TECHNOLOGY & HEALTHCARE</p>
               <p class="text-on-surface-variant text-sm mb-3">Pioneer in AI, Computer Vision & Multimodal Computing · Fellow, ACM, IEEE, AAAI</p>
-              <div class="flex flex-wrap gap-2"><span class="section-label bg-surface-container px-2 py-1 text-primary">AI & VISION</span><span class="section-label bg-surface-container px-2 py-1 text-primary">DEEP TECH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">HEALTHTECH</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">AI & VISION</span><span class="section-label bg-surface-container px-2 py-1 text-primary">DEEP TECH</span><span class="section-label bg-surface-container px-2 py-1 text-primary">HEALTHTECH</span></div>
             </div>
           </div>
           <div class="flip-back">
             <p class="section-label text-white/50 mb-3">AI, TECHNOLOGY & HEALTHCARE</p>
             <h3 class="font-display font-bold text-xl text-white mb-4">Prof. Ramesh C Jain</h3>
             <p class="text-white/80 text-sm leading-relaxed mb-6">A 50-year pioneer in AI, computer vision, and multimedia computing. Founded the AI Lab at University of Michigan. His students created Photoshop, the iPod, and the iPhone. Now builds multimodal AI systems for healthcare at billion-person scale.</p>
-            <div class="flex flex-wrap gap-2"><span class="section-label bg-white/10 px-2 py-1 text-white/70">AI & VISION</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">DEEP TECH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">HEALTHTECH</span></div>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">AI & VISION</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">DEEP TECH</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">HEALTHTECH</span></div>
           </div>
         </div>
       </div>
