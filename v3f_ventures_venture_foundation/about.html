@@ -65,24 +65,33 @@ tailwind.config = { theme: { extend: { colors: {
   <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
   <div class="max-w-container mx-auto relative z-10">
     <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> &rsaquo; About</p>
-    <span class="section-label text-vibrant-blue">ABOUT V3F</span>
-    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight">Nurturing the Spirit of<br/>Entrepreneurship.</h1>
-    <p class="text-on-surface-variant text-xl max-w-2xl mb-8">At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit &mdash; as VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.</p>
-
-    <!-- Identity pills -->
-    <div class="flex flex-wrap gap-3 mb-10 reveal">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Section 8 Company</span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Affiliated with VNIT Nagpur</span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Founder-First Ecosystem</span>
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Nagpur Region</span>
-    </div>
-
-    <!-- V3F at a Glance -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant border border-outline-variant rounded-xl overflow-hidden reveal">
-      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">18&ndash;36</p><p class="section-label text-on-surface-variant mt-1">Month Programs</p></div>
-      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary" data-count="300" data-suffix="+">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Mentors</p></div>
-      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">&infin;</p><p class="section-label text-on-surface-variant mt-1">Rolling Admissions</p></div>
-      <div class="bg-white p-6"><p class="font-display font-extrabold text-3xl text-primary">01</p><p class="section-label text-on-surface-variant mt-1">NIT-Backed Incubator</p></div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: text content -->
+      <div>
+        <span class="section-label text-vibrant-blue">ABOUT V3F</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight" style="font-size: 4em;">Nurturing the Spirit of<br/>Entrepreneurship.</h1>
+        <p class="text-on-surface-variant text-xl max-w-2xl mb-8">At the heart of innovation lies the spirit of entrepreneurship. V3F Nagpur is committed to nurturing this spirit &mdash; as VNIT's incubation wing, we catalyse startups that drive positive change, innovation, and economic development across the region.</p>
+        <!-- Identity pills -->
+        <div class="flex flex-wrap gap-3 mb-10 reveal">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Section 8 Company</span>
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Affiliated with VNIT Nagpur</span>
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#002754;"></span>Founder-First Ecosystem</span>
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant bg-white section-label text-primary"><span class="w-1.5 h-1.5 rounded-full" style="background:#2274BE;"></span>Nagpur Region</span>
+        </div>
+      </div>
+      <!-- Right: campus image -->
+      <div class="hidden lg:block reveal">
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-outline-variant" style="margin-bottom: 10px;">
+          <img src="images/building.png" alt="VNIT Nagpur Campus" class="w-full h-full object-cover" style="max-height:480px;"/>
+        </div>
+        <!-- V3F at a Glance -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant border border-outline-variant rounded-xl overflow-hidden reveal">
+          <div class="bg-white p-5"><p class="font-display font-extrabold text-2xl text-primary">18&ndash;36</p><p class="section-label text-on-surface-variant mt-1">Month Programs</p></div>
+          <div class="bg-white p-5"><p class="font-display font-extrabold text-2xl text-primary">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty Mentors</p></div>
+          <div class="bg-white p-5"><p class="font-display font-extrabold text-2xl text-primary">&infin;</p><p class="section-label text-on-surface-variant mt-1">Rolling Admissions</p></div>
+          <div class="bg-white p-5"><p class="font-display font-extrabold text-2xl text-primary">01</p><p class="section-label text-on-surface-variant mt-1">NIT-Backed Incubator</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -107,7 +116,7 @@ tailwind.config = { theme: { extend: { colors: {
       <p class="text-on-surface-variant leading-relaxed mb-5">Our objective is to create an environment that encourages sustainable entrepreneurship by providing the right ecosystem, support, and opportunities while contributing to long-term ecosystem development through continuous collaboration and innovation.</p>
       <p class="text-on-surface-variant leading-relaxed mb-8">Startups incubated at V3F Nagpur also benefit from being a part of the broader VNIT innovation ecosystem. They gain access to the expertise and guidance of faculty members, well-equipped research infrastructure, talented student communities, meaningful industry partnerships, and established investor networks &mdash; providing a strong foundation and a supportive environment to grow.</p>
 
-      <div class="bg-surface-container-low border border-outline-variant p-6 mb-8">
+      <div class="bg-surface-container-low border border-outline-variant p-6 mb-8" style="margin-top: 45px;">
         <div class="flex items-start gap-3">
           <span class="material-symbols-outlined text-vibrant-blue text-[20px] mt-0.5" style="font-variation-settings:'FILL' 1;">verified</span>
           <div>
@@ -116,29 +125,45 @@ tailwind.config = { theme: { extend: { colors: {
           </div>
         </div>
       </div>
-
-      <div class="space-y-5">
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-primary flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">domain</span></div>
-          <div><h4 class="font-bold text-on-surface">Infrastructure &amp; Workspace</h4><p class="text-on-surface-variant text-sm mt-1">Co-working seats, private cabins, labs, and meeting rooms on the VNIT campus.</p></div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-vibrant-blue flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">psychology</span></div>
-          <div><h4 class="font-bold text-on-surface">Mentoring &amp; Guidance</h4><p class="text-on-surface-variant text-sm mt-1">Matched mentors, quarterly milestones, and legal &amp; financial advisory.</p></div>
-        </div>
-        <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">payments</span></div>
-          <div><h4 class="font-bold text-on-surface">Funding &amp; Investor Access</h4><p class="text-on-surface-variant text-sm mt-1">Demo days, angel connects, government grants, and CSR funding pathways.</p></div>
-        </div>
-      </div>
     </div>
-    <div class="reveal">
-      <img src="images/building.png" alt="VNIT Nagpur" class="w-full rounded-2xl shadow-xl mb-6 object-cover"/>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-surface-container-low border border-outline-variant p-5 text-center"><p class="font-display font-extrabold text-3xl text-primary">215 Ac</p><p class="section-label text-on-surface-variant mt-1">NIT Campus</p></div>
-        <div class="bg-surface-container-low border border-outline-variant p-5 text-center"><p class="font-display font-extrabold text-3xl text-primary">6</p><p class="section-label text-on-surface-variant mt-1">CoE Labs</p></div>
-        <div class="bg-primary text-white p-5 text-center"><p class="font-display font-extrabold text-3xl">300+</p><p class="section-label text-primary-fixed-dim mt-1">Faculty Experts</p></div>
-        <div class="bg-vibrant-blue text-white p-5 text-center"><p class="font-display font-extrabold text-3xl">Sec 8</p><p class="section-label text-white/70 mt-1">Legal Status</p></div>
+    <div class="reveal" style="margin-top: 35px;">
+      <div class="grid grid-cols-2 gap-4 h-full">
+        <div class="bg-surface-container-low border border-outline-variant p-7 flex flex-col justify-center text-center rounded-xl">
+          <p class="font-display font-extrabold text-4xl text-primary">215 Ac</p>
+          <p class="section-label text-on-surface-variant mt-2">NIT Campus</p>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant p-7 flex flex-col justify-center text-center rounded-xl">
+          <p class="font-display font-extrabold text-4xl text-primary">6</p>
+          <p class="section-label text-on-surface-variant mt-2">CoE Labs</p>
+        </div>
+        <div class="bg-primary p-7 flex flex-col justify-center text-center rounded-xl">
+          <p class="font-display font-extrabold text-4xl text-white">300+</p>
+          <p class="section-label text-primary-fixed-dim mt-2">Faculty Experts</p>
+        </div>
+        <div class="bg-vibrant-blue p-7 flex flex-col justify-center text-center rounded-xl">
+          <p class="font-display font-extrabold text-4xl text-white">Sec 8</p>
+          <p class="section-label text-white/70 mt-2">Legal Status</p>
+        </div>
+        <div class="col-span-2 bg-surface-container-low border border-outline-variant p-7 flex flex-col justify-center text-center rounded-xl">
+          <p class="font-display font-extrabold text-4xl text-primary">18–36</p>
+          <p class="section-label text-on-surface-variant mt-2">Month Programs · Rolling Admissions</p>
+        </div>
+        <div class="col-span-2 bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden">
+          <div class="flex gap-4 items-center p-5">
+            <div class="w-10 h-10 bg-primary flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">domain</span></div>
+            <div><h4 class="font-bold text-on-surface">Infrastructure &amp; Workspace</h4><p class="text-on-surface-variant text-sm mt-0.5">Co-working seats, private cabins, labs, and meeting rooms on the VNIT campus.</p></div>
+          </div>
+          <div class="border-t border-outline-variant"></div>
+          <div class="flex gap-4 items-center p-5">
+            <div class="w-10 h-10 bg-vibrant-blue flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">psychology</span></div>
+            <div><h4 class="font-bold text-on-surface">Mentoring &amp; Guidance</h4><p class="text-on-surface-variant text-sm mt-0.5">Matched mentors, quarterly milestones, and legal &amp; financial advisory.</p></div>
+          </div>
+          <div class="border-t border-outline-variant"></div>
+          <div class="flex gap-4 items-center p-5">
+            <div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded flex-shrink-0"><span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">payments</span></div>
+            <div><h4 class="font-bold text-on-surface">Funding &amp; Investor Access</h4><p class="text-on-surface-variant text-sm mt-0.5">Demo days, angel connects, government grants, and CSR funding pathways.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -199,11 +224,14 @@ tailwind.config = { theme: { extend: { colors: {
     <!-- Chairman + Vice Chairman -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <div class="card-hover bg-white border-2 border-primary overflow-hidden reveal">
-        <div class="grid grid-cols-[auto_1fr]">
-          <div class="w-36 h-full overflow-hidden">
-            <img src="images/chairman.jpg" alt="Dr. Prem Lal Patel" class="w-full h-full object-cover"/>
+        <div class="flex items-center min-h-[260px]">
+          <!-- 3:4 image box — centred vertically, left-anchored with margin -->
+          <div class="flex-shrink-0 self-center ml-6 my-6">
+            <div style="width:120px;aspect-ratio:3/4;overflow:hidden;border-radius:6px;border:2px solid #002754;">
+              <img src="images/chairman.jpg" alt="Dr. Prem Lal Patel" class="w-full h-full object-cover object-top"/>
+            </div>
           </div>
-          <div class="p-7">
+          <div class="p-7 flex-1" style="height: 300px;">
             <span class="section-label text-vibrant-blue mb-2 block">CHAIRMAN</span>
             <h3 class="font-display font-bold text-xl text-primary mb-0.5">Dr. Prem Lal Patel</h3>
             <p class="text-primary font-semibold text-sm">Director, VNIT Nagpur · Since May 2024</p>
@@ -214,11 +242,14 @@ tailwind.config = { theme: { extend: { colors: {
         </div>
       </div>
       <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
-        <div class="grid grid-cols-[auto_1fr]">
-          <div class="w-36 h-full overflow-hidden">
-            <img src="images/vice-chairman.jpg" alt="Shashikant Chaudhary" class="w-full h-full object-cover"/>
+        <div class="flex items-center min-h-[260px]">
+          <!-- 3:4 image box — centred vertically, left-anchored with margin -->
+          <div class="flex-shrink-0 self-center ml-6 my-6">
+            <div style="width:120px;aspect-ratio:3/4;overflow:hidden;border-radius:6px;border:1.5px solid #c3c6d1;">
+              <img src="images/vice-chairman.jpg" alt="Shashikant Chaudhary" class="w-full h-full object-cover object-top"/>
+            </div>
           </div>
-          <div class="p-7">
+          <div class="p-7 flex-1">
             <span class="section-label text-vibrant-blue mb-2 block">VICE CHAIRMAN</span>
             <h3 class="font-display font-bold text-xl text-primary mb-0.5">Shashikant Chaudhary</h3>
             <p class="text-primary font-semibold text-sm">Serial Entrepreneur & Angel Investor · VNIT Alumnus</p>
@@ -280,44 +311,44 @@ tailwind.config = { theme: { extend: { colors: {
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Governance Structure.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">V3F operates with clearly defined accountability structures to ensure transparency, fairness, and institutional alignment.</p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
       <!-- Accountability Framework -->
-      <div class="bg-white border border-outline-variant p-8 reveal">
+      <div class="bg-white border border-outline-variant p-8 reveal flex flex-col">
         <div class="flex items-center gap-3 mb-6">
           <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">verified_user</span>
           <h3 class="font-display font-bold text-xl text-primary">Accountability Framework</h3>
         </div>
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>The Director of VNIT Nagpur chairs the Board of Directors</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>Operational activities are reported to the Board quarterly</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>Policy revisions are made periodically by the Governing Board</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>Faculty startup and IPR matters are guided by VNIT policies</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>Disputes are resolved through mediation or arbitration</li>
-          <li class="flex items-start gap-3 text-sm text-on-surface"><span class="text-on-surface-variant mt-1">—</span>All startups submit audited financial statements annually</li>
+        <ul class="flex-1 flex flex-col justify-between">
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3 border-b border-outline-variant"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>The Director of VNIT Nagpur chairs the Board of Directors</li>
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3 border-b border-outline-variant"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>Operational activities are reported to the Board quarterly</li>
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3 border-b border-outline-variant"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>Policy revisions are made periodically by the Governing Board</li>
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3 border-b border-outline-variant"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>Faculty startup and IPR matters are guided by VNIT policies</li>
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3 border-b border-outline-variant"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>Disputes are resolved through mediation or arbitration</li>
+          <li class="flex items-start gap-3 text-sm text-on-surface py-3"><span class="text-on-surface-variant mt-1 flex-shrink-0">—</span>All startups submit audited financial statements annually</li>
         </ul>
       </div>
 
       <!-- Key Policy Frameworks -->
-      <div class="space-y-4 reveal">
-        <div class="flex items-center gap-3 mb-2">
+      <div class="flex flex-col gap-4 reveal">
+        <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings:'FILL' 1;">policy</span>
           <h3 class="font-display font-bold text-xl text-primary">Key Policy Frameworks</h3>
         </div>
-        <div class="bg-white border border-outline-variant p-6">
+        <div class="bg-white border border-outline-variant p-6 flex-1 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-3">
             <span class="material-symbols-outlined text-xl text-vibrant-blue" style="font-variation-settings:'FILL' 1;">how_to_vote</span>
             <h4 class="font-bold text-primary">Selection Authority</h4>
           </div>
           <p class="text-on-surface-variant text-sm">Final incubation decisions rest with the V3F Governing Board or an authorised committee comprising faculty, industry experts, and investors.</p>
         </div>
-        <div class="bg-white border border-outline-variant p-6">
+        <div class="bg-white border border-outline-variant p-6 flex-1 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-3">
             <span class="material-symbols-outlined text-xl text-vibrant-blue" style="font-variation-settings:'FILL' 1;">policy</span>
             <h4 class="font-bold text-primary">IP Ownership</h4>
           </div>
           <p class="text-on-surface-variant text-sm">IP created using VNIT resources is governed by the VNIT IPR Policy. Startups retain IP developed independently with V3F's guidance.</p>
         </div>
-        <div class="bg-white border border-outline-variant p-6">
+        <div class="bg-white border border-outline-variant p-6 flex-1 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-3">
             <span class="material-symbols-outlined text-xl text-vibrant-blue" style="font-variation-settings:'FILL' 1;">trending_up</span>
             <h4 class="font-bold text-primary">Exit Strategy</h4>
