@@ -36,6 +36,29 @@ tailwind.config = { theme: { extend: { colors: {
   .filter-btn{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:8px 16px;border:1px solid #c3c6d1;color:#43474f;background:#fff;cursor:pointer;transition:all 0.2s;}
   .filter-btn:hover{border-color:#002754;color:#002754;} .filter-btn.active{background:#002754;border-color:#002754;color:#fff;}
   .mentor-item.hide{display:none;}
+
+  /* ── Card flip ── */
+  .flip-card { perspective: 1000px; cursor: pointer; }
+  .flip-inner {
+    position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flip-card:hover .flip-inner { transform: rotateY(180deg); }
+  .flip-front, .flip-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .flip-front { background: #fff; }
+  .flip-back {
+    background: #002754;
+    transform: rotateY(180deg);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 2rem;
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
@@ -116,200 +139,278 @@ tailwind.config = { theme: { extend: { colors: {
       <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
       <button class="filter-btn" data-filter="design">Design</button>
     </div>
-    <div class="grid gap-5" id="mentor-list">
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="ai deep-tech">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">AK</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Ajay Kamalvanshi</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">AI Infrastructure, NVIDIA</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="mentor-list">
+      <div class="mentor-item flip-card reveal" data-domains="ai deep-tech" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/5.png" alt="Ajay Kamalvanshi" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Ajay Kamalvanshi</h3>
+              <p class="text-on-surface-variant text-sm mb-3">AI Infrastructure, NVIDIA</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">GPU / HPC</span><span class="section-label bg-surface-container px-2 py-1 text-primary">AI Infrastructure</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">GPU / HPC</span><span class="section-label bg-surface-container px-2 py-1 text-primary">AI Infrastructure</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Drives next-generation AI infrastructure at NVIDIA, optimising GPU systems for hyperscale data centres and real-world AI workloads. Brings 25+ years across HPC, system software, and large-scale computing, with leadership experience at Nokia, Novell, and Phoenix Technologies. Expert in GPU performance, power optimisation, and Linux systems — helping V3F build efficient, scalable AI and deep-tech products.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">NVIDIA</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">25+ Years Exp.</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Ajay Kamalvanshi</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Drives next-generation AI infrastructure at NVIDIA, optimising GPU systems for hyperscale data centres and real-world AI workloads. Brings 25+ years across HPC, system software, and large-scale computing, with leadership experience at Nokia, Novell, and Phoenix Technologies. Expert in GPU performance, power optimisation, and Linux systems — helping V3F build efficient, scalable AI and deep-tech products.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">NVIDIA</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">25+ Years Exp.</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="ai deep-tech">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">AK</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Anand Kamat</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Co-Founder & CEO, PostQode</div>
+      <div class="mentor-item flip-card reveal" data-domains="ai deep-tech" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/1-3.png" alt="Anand Kamat" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Anand Kamat</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Co-Founder & CEO, PostQode</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">AI Products</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Enterprise Tech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Agentic AI</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">AI Products</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Enterprise Tech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Agentic AI</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Co-founder and CEO of PostQode, an Agentic AI startup building AI SDLC agents for Insurance and Automobile. With 30+ years of experience in enterprise products and technology transformation — business leadership and engineering roles at Microsoft, Adobe, and Bell Labs. Specialises in AI products and platforms, helping V3F accelerate AI initiatives.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">30+ Years Exp.</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Microsoft · Adobe · Bell Labs</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Anand Kamat</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Co-founder and CEO of PostQode, an Agentic AI startup building AI SDLC agents for Insurance and Automobile. With 30+ years of experience in enterprise products and technology transformation — business leadership and engineering roles at Microsoft, Adobe, and Bell Labs. Specialises in AI products and platforms, helping V3F accelerate AI initiatives.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">30+ Years Exp.</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Microsoft · Adobe · Bell Labs</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="ai design">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">MS</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Mihirr Sose</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Founder & Growth Operator</div>
+      <div class="mentor-item flip-card reveal" data-domains="ai design" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/9.png" alt="Mihirr Sose" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Mihirr Sose</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Founder & Growth Operator</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">0→1 Growth</span><span class="section-label bg-surface-container px-2 py-1 text-primary">GTM</span><span class="section-label bg-surface-container px-2 py-1 text-primary">No-Code / AI</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">0→1 Growth</span><span class="section-label bg-surface-container px-2 py-1 text-primary">GTM</span><span class="section-label bg-surface-container px-2 py-1 text-primary">No-Code / AI</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Founder, growth operator, and startup mentor helping 0→1 stage founders move fast from idea to MVP and early traction. Enables growth through operator-led learning, community building, and practical GTM systems for early-stage startups. Mentors AI, automation, and no-code at V3F, helping teams accelerate product development and go-to-market execution.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Idea → MVP Expert</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">GTM Systems</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Mihirr Sose</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Founder, growth operator, and startup mentor helping 0→1 stage founders move fast from idea to MVP and early traction. Enables growth through operator-led learning, community building, and practical GTM systems for early-stage startups. Mentors AI, automation, and no-code at V3F, helping teams accelerate product development and go-to-market execution.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Idea → MVP Expert</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">GTM Systems</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="manufacturing saas">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">MS</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Mithun Shrivastava</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Founder, Blowhorn · MBA Cambridge</div>
+      <div class="mentor-item flip-card reveal" data-domains="manufacturing saas" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/11.png" alt="Mithun Shrivastava" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Mithun Shrivastava</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Founder, Blowhorn · MBA Cambridge</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Logistics</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Operations</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Startup Building</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Logistics</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Operations</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Startup Building</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">MBA from the University of Cambridge and Founder of Blowhorn — a logistics startup. Prior to entrepreneurship, was part of the fast-track management cohort at AP Moller Maersk. Brings deep knowledge of logistics operations, startup building, and institutional management frameworks.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Cambridge MBA</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Maersk Alumni</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Mithun Shrivastava</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">MBA from the University of Cambridge and Founder of Blowhorn — a logistics startup. Prior to entrepreneurship, was part of the fast-track management cohort at AP Moller Maersk. Brings deep knowledge of logistics operations, startup building, and institutional management frameworks.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Cambridge MBA</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Maersk Alumni</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="design">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">NG</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Naveen Kumar Gonga</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">CEO & Co-Founder, Studio Carbon</div>
+      <div class="mentor-item flip-card reveal" data-domains="design" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/10.png" alt="Naveen Kumar Gonga" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Naveen Kumar Gonga</h3>
+              <p class="text-on-surface-variant text-sm mb-3">CEO & Co-Founder, Studio Carbon</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Product Design</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Brand Strategy</span><span class="section-label bg-surface-container px-2 py-1 text-primary">UI/UX</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Product Design</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Brand Strategy</span><span class="section-label bg-surface-container px-2 py-1 text-primary">UI/UX</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">CEO & Co-Founder of Studio Carbon, leading a 40+ member global team across industrial design, branding, and UI/UX. Helps V3F startups turn ideas into market-ready products and scalable brands through design-led strategy and systems thinking. Expert on product strategy, design thinking, and building globally competitive offerings.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Studio Carbon · 40+ Team</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Industrial Design</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Naveen Kumar Gonga</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">CEO & Co-Founder of Studio Carbon, leading a 40+ member global team across industrial design, branding, and UI/UX. Helps V3F startups turn ideas into market-ready products and scalable brands through design-led strategy and systems thinking. Expert on product strategy, design thinking, and building globally competitive offerings.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Studio Carbon · 40+ Team</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Industrial Design</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="manufacturing">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">PD</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Parag Deoras</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Global Supply Chain Leader</div>
+      <div class="mentor-item flip-card reveal" data-domains="manufacturing" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/6.png" alt="Parag Deoras" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Parag Deoras</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Global Supply Chain Leader</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Supply Chain</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Operations</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Industry 4.0</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Supply Chain</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Operations</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Industry 4.0</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Global supply chain leader with 25+ years across Royal Philips, ArcelorMittal, and Flowserve Corporation, driving large-scale transformation and efficiency programs. Led a $2B supply chain transformation delivering 10% operating improvement, with deep expertise in procurement, cost optimisation, and industrial engineering. Mentors V3F startups on building resilient operations, smart supply chains, and scalable industrial systems.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Royal Philips · ArcelorMittal</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">$2B Programme Lead</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Parag Deoras</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Global supply chain leader with 25+ years across Royal Philips, ArcelorMittal, and Flowserve Corporation, driving large-scale transformation and efficiency programs. Led a $2B supply chain transformation delivering 10% operating improvement, with deep expertise in procurement, cost optimisation, and industrial engineering. Mentors V3F startups on building resilient operations, smart supply chains, and scalable industrial systems.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Royal Philips · ArcelorMittal</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">$2B Programme Lead</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="saas finance">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">PK</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Pravin Kamble</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Founder & CEO, 99minds</div>
+      <div class="mentor-item flip-card reveal" data-domains="saas finance" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/7.png" alt="Pravin Kamble" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Pravin Kamble</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Founder & CEO, 99minds</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Fintech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">SaaS Scaling</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Commerce Tech</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Fintech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">SaaS Scaling</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Commerce Tech</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Founder & CEO of 99minds, building global infrastructure for loyalty, branded currency, and digital wallet ecosystems. Expert in scaling SaaS and fintech products that drive customer engagement and revenue for modern retailers. Actively mentors founders in Vidarbha, supporting startups in building scalable commerce and fintech solutions.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">99minds · Fintech SaaS</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Vidarbha Mentor</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Pravin Kamble</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Founder & CEO of 99minds, building global infrastructure for loyalty, branded currency, and digital wallet ecosystems. Expert in scaling SaaS and fintech products that drive customer engagement and revenue for modern retailers. Actively mentors founders in Vidarbha, supporting startups in building scalable commerce and fintech solutions.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">99minds · Fintech SaaS</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Vidarbha Mentor</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="healthcare deep-tech">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">RS</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Rohit Srivastava</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Chair Professor, IIT Bombay</div>
+      <div class="mentor-item flip-card reveal" data-domains="healthcare deep-tech" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/3-3.png" alt="Rohit Srivastava" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Rohit Srivastava</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Chair Professor, IIT Bombay</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">MedTech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">IP & Patents</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Translational R&D</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">MedTech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">IP & Patents</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Translational R&D</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Distinguished Chair Professor at IIT Bombay and healthcare innovator with deep expertise in translational research and affordable medical technologies. Co-Founder of several healthcare startups from Nanobios Lab. Helps V3F in converting ideas into impactful products, scaling innovations, and navigating patents and commercialisation.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">IIT Bombay</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Nanobios Lab Co-Founder</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Rohit Srivastava</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Distinguished Chair Professor at IIT Bombay and healthcare innovator with deep expertise in translational research and affordable medical technologies. Co-Founder of several healthcare startups from Nanobios Lab. Helps V3F in converting ideas into impactful products, scaling innovations, and navigating patents and commercialisation.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">IIT Bombay</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Nanobios Lab Co-Founder</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="ai saas">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">SC</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Sandip Chintawar</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Co-Founder, Cymetrix Software</div>
+      <div class="mentor-item flip-card reveal" data-domains="ai saas" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/4.png" alt="Sandip Chintawar" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Sandip Chintawar</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Co-Founder, Cymetrix Software</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">3 Exits</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Enterprise SaaS</span><span class="section-label bg-surface-container px-2 py-1 text-primary">VC Fundraising</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">3 Exits</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Enterprise SaaS</span><span class="section-label bg-surface-container px-2 py-1 text-primary">VC Fundraising</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Co-Founder of Cymetrix Software with 20+ years building, scaling, and exiting global tech ventures — 3 successful exits. Creator of the world's first commercial Java product with OEM deals with Cisco, IBM, and Exodus. Scaled companies across Silicon Valley and India, raised capital from top VCs and angel investors. Early pioneer in cloud-based web services and enterprise tech innovation.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">20+ Years Exp.</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">3 Successful Exits</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Silicon Valley</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Sandip Chintawar</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Co-Founder of Cymetrix Software with 20+ years building, scaling, and exiting global tech ventures — 3 successful exits. Creator of the world's first commercial Java product with OEM deals with Cisco, IBM, and Exodus. Scaled companies across Silicon Valley and India, raised capital from top VCs and angel investors. Early pioneer in cloud-based web services and enterprise tech innovation.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">20+ Years Exp.</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">3 Successful Exits</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Silicon Valley</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="deep-tech manufacturing">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">SB</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Sharad Bairathi</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Founder, Embitel → Volkswagen Group</div>
+      <div class="mentor-item flip-card reveal" data-domains="deep-tech manufacturing" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/8.png" alt="Sharad Bairathi" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Sharad Bairathi</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Founder, Embitel → Volkswagen Group</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Exit to VW Group</span><span class="section-label bg-surface-container px-2 py-1 text-primary">SDV / Auto Tech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Global Scaling</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Exit to VW Group</span><span class="section-label bg-surface-container px-2 py-1 text-primary">SDV / Auto Tech</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Global Scaling</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Founder of Embitel — built a 1,500+ member global tech firm recognised among Deloitte Fast 50 and top innovative companies in India. Successfully scaled and exited to Volkswagen Group; now leading Software-Defined Vehicle (SDV) development. Proven global leader who built and expanded tech businesses across Europe and the US, driving strategy, operations, and high-growth execution.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Deloitte Fast 50</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">VW Group Exit</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Sharad Bairathi</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Founder of Embitel — built a 1,500+ member global tech firm recognised among Deloitte Fast 50 and top innovative companies in India. Successfully scaled and exited to Volkswagen Group; now leading Software-Defined Vehicle (SDV) development. Proven global leader who built and expanded tech businesses across Europe and the US, driving strategy, operations, and high-growth execution.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Deloitte Fast 50</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">VW Group Exit</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="finance saas">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">SH</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Sharad Heda</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Angel Investor & CEO Coach</div>
+      <div class="mentor-item flip-card reveal" data-domains="finance saas" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/12.png" alt="Sharad Heda" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Sharad Heda</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Angel Investor & CEO Coach</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">CEO Coaching</span><span class="section-label bg-surface-container px-2 py-1 text-primary">10→100 Growth</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Angel Investing</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">CEO Coaching</span><span class="section-label bg-surface-container px-2 py-1 text-primary">10→100 Growth</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Angel Investing</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Technology industry veteran and former leader at Microland, who helped scale it into a global technology services organisation. Mentors founders across 1→10 and 10→100 growth stages, guiding strategy, GTM, organisational design, and fundraising readiness. Angel investor and CEO coach bringing hands-on experience in scaling businesses across global markets and building high-performance teams.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Microland Alumni</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">CEO Coach</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Sharad Heda</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Technology industry veteran and former leader at Microland, who helped scale it into a global technology services organisation. Mentors founders across 1→10 and 10→100 growth stages, guiding strategy, GTM, organisational design, and fundraising readiness. Angel investor and CEO coach bringing hands-on experience in scaling businesses across global markets and building high-performance teams.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">Microland Alumni</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">CEO Coach</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="deep-tech manufacturing">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">SP</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Shirish Purohit</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Emerging Markets Strategy, Tejas Networks</div>
+      <div class="mentor-item flip-card reveal" data-domains="deep-tech manufacturing" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/13.png" alt="Shirish Purohit" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Shirish Purohit</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Emerging Markets Strategy, Tejas Networks</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Telecom / 5G</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Global Markets</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech Scale</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Telecom / 5G</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Global Markets</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech Scale</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Seasoned telecom leader with 35+ years across telecommunications, networking technologies, and global business development — currently leading emerging markets strategy at Tejas Networks Ltd for large-scale indigenous 4G/5G deployments. Co-founder & former CEO of Midas Communication Technologies — scaled it into a global exporter with presence in 20+ countries. Brings deep expertise in technology commercialisation, startup scaling, and global market expansion.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">35+ Years Exp.</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Tejas Networks · 20+ Countries</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Shirish Purohit</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Seasoned telecom leader with 35+ years across telecommunications, networking technologies, and global business development — currently leading emerging markets strategy at Tejas Networks Ltd for large-scale indigenous 4G/5G deployments. Co-founder & former CEO of Midas Communication Technologies — scaled it into a global exporter with presence in 20+ countries. Brings deep expertise in technology commercialisation, startup scaling, and global market expansion.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">35+ Years Exp.</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Tejas Networks · 20+ Countries</span></div>
+          </div>
         </div>
       </div>
-      <div class="mentor-item card-hover bg-white border border-outline-variant p-6 flex flex-col md:flex-row gap-6 reveal" data-domains="finance deep-tech">
-        <div class="flex flex-col items-center md:items-start gap-3 md:w-56 shrink-0">
-          <div class="w-16 h-16 rounded-full bg-surface-container text-primary font-display font-extrabold text-xl flex items-center justify-center">SG</div>
-          <div class="text-center md:text-left">
-            <div class="font-display font-bold text-base text-primary leading-tight">Swapna Gupta</div>
-            <div class="text-on-surface-variant text-xs mt-0.5">Partner, Avaana Capital</div>
+      <div class="mentor-item flip-card reveal" data-domains="finance deep-tech" style="height:420px;">
+        <div class="flip-inner">
+          <div class="flip-front border border-outline-variant flex flex-col items-center text-center">
+            <div class="pt-8 pb-4 w-full flex justify-center">
+              <div class="w-40 h-40 rounded-xl border-4 border-surface-container overflow-hidden flex items-center justify-center">
+                <img src="https://v3foundation.in/wp-content/uploads/2026/05/2-2.png" alt="Swapna Gupta" class="w-full h-full object-cover object-top"/>
+              </div>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center flex-1 w-full">
+              <h3 class="font-display font-bold text-xl text-primary mb-1">Swapna Gupta</h3>
+              <p class="text-on-surface-variant text-sm mb-3">Partner, Avaana Capital</p>
+              <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-surface-container px-2 py-1 text-primary">Fundraising</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech VC</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Scaling</span></div>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5 justify-center md:justify-start"><span class="section-label bg-surface-container px-2 py-1 text-primary">Fundraising</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Deep Tech VC</span><span class="section-label bg-surface-container px-2 py-1 text-primary">Scaling</span></div>
-        </div>
-        <div class="flex-1 flex flex-col gap-3">
-          <div class="flex items-center gap-3"><hr class="flex-1 border-outline-variant"/></div>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Partner at Avaana Capital, investing in deep-tech and frontier innovation startups building globally competitive solutions. Former investor at Qualcomm Ventures, backing high-growth startups like Shadowfax and Ninjacart across mobility, agri-tech, and Industry 4.0. Brings 15+ years in investing and finance, mentoring V3F founders on fundraising, scaling, and building venture-backable businesses.</p>
-          <div class="flex gap-2 flex-wrap mt-1"><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">15+ Years Exp.</span><span class="font-mono text-xs text-on-surface-variant border border-outline-variant px-2 py-1">Qualcomm Ventures Alumni</span></div>
+          <div class="flip-back">
+            <h3 class="font-display font-bold text-xl text-white mb-4">Swapna Gupta</h3>
+            <p class="text-white/80 text-sm leading-relaxed mb-6">Partner at Avaana Capital, investing in deep-tech and frontier innovation startups building globally competitive solutions. Former investor at Qualcomm Ventures, backing high-growth startups like Shadowfax and Ninjacart across mobility, agri-tech, and Industry 4.0. Brings 15+ years in investing and finance, mentoring V3F founders on fundraising, scaling, and building venture-backable businesses.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-auto"><span class="section-label bg-white/10 px-2 py-1 text-white/70">15+ Years Exp.</span><span class="section-label bg-white/10 px-2 py-1 text-white/70">Qualcomm Ventures Alumni</span></div>
+          </div>
         </div>
       </div>
     </div>
