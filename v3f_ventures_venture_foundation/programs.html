@@ -28,7 +28,7 @@ tailwind.config = {
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
   .nav-link{position:relative;} .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#002754;transition:width 0.2s;} .nav-link:hover::after,.nav-link.active::after{width:100%;}
-  .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;}
+  .section-label{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;}
   .btn-primary{background:#002754;color:#fff;font-weight:700;padding:14px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
   .btn-primary:hover{background:#153d72;box-shadow:0 8px 24px -6px rgba(0,39,84,0.35);transform:translateY(-1px);}
   .btn-outline{border:1.5px solid #002754;color:#002754;font-weight:700;padding:13px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
@@ -45,7 +45,7 @@ tailwind.config = {
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
   <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center no-underline">
-      <img src="images/Option 9.png" alt="V3F Logo" class="h-14 w-auto"/>
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-16 w-auto"/>
     </a>
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Home</a>
@@ -72,8 +72,8 @@ tailwind.config = {
     <p class="text-on-surface-variant text-xl max-w-2xl mb-8">V3F offers three distinct program tracks, each tailored to the stage of your venture. From idea validation to scaling, we have the right support for you.</p>
     <div class="flex flex-wrap gap-6 text-sm">
       <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">rocket_launch</span>18–36 mo Incubation tenure</div>
-      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">trending_up</span>Min. 2% Equity stake</div>
-      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">sync</span>Quarterly Cohort reviews</div>
+      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">trending_up</span>Minimum equity commitment</div>
+      <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">sync</span>Monthly/Quarterly Cohort reviews</div>
     </div>
   </div>
 </section>
@@ -177,7 +177,7 @@ tailwind.config = {
           <div class="grid grid-cols-2 gap-4 text-sm">
             <div><p class="section-label text-primary-fixed-dim mb-1">Duration</p><p class="font-bold">18–24 months</p></div>
             <div><p class="section-label text-primary-fixed-dim mb-1">Max Extension</p><p class="font-bold">Up to 36 months</p></div>
-            <div><p class="section-label text-primary-fixed-dim mb-1">Equity Stake</p><p class="font-bold">Min. 2%</p></div>
+            <div><p class="section-label text-primary-fixed-dim mb-1">Equity Commitment</p><p class="font-bold">Minimum</p></div>
             <div><p class="section-label text-primary-fixed-dim mb-1">Reviews</p><p class="font-bold">Quarterly</p></div>
           </div>
         </div>
@@ -199,13 +199,11 @@ tailwind.config = {
         <span class="section-label text-vibrant-blue">TRACK 03</span>
       </div>
       <h2 class="font-display font-extrabold text-4xl text-primary mb-3">Co-Working Membership</h2>
-      <span class="bg-surface-container section-label text-primary px-3 py-1 inline-block mb-6">Open Access</span>
-      <p class="text-on-surface-variant text-lg mb-8">Access premium workspace at VNIT without formal incubation commitment. Pay as you go.</p>
+      <p class="text-on-surface-variant text-lg mb-8">Access premium workspace at VNIT with formal incubation commitment.</p>
       <div class="space-y-8">
         <div>
           <h4 class="font-bold text-primary mb-3 text-sm uppercase tracking-wider">Who Is This For?</h4>
           <ul class="space-y-2">
-            <li class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[16px]">check</span>Startups not yet ready for formal incubation</li>
             <li class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[16px]">check</span>Freelancers and small teams needing workspace</li>
             <li class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[16px]">check</span>Companies wanting a VNIT campus presence</li>
             <li class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[16px]">check</span>Startups exploring the V3F ecosystem</li>
@@ -301,7 +299,7 @@ tailwind.config = {
     <div><p class="font-display font-extrabold text-5xl mb-2">18–36</p><p class="section-label text-primary-fixed-dim">Month Programs</p></div>
     <div><p class="font-display font-extrabold text-5xl mb-2">300+</p><p class="section-label text-primary-fixed-dim">Faculty Experts</p></div>
     <div><p class="font-display font-extrabold text-5xl mb-2">6</p><p class="section-label text-primary-fixed-dim">CoE Labs</p></div>
-    <div><p class="font-display font-extrabold text-5xl mb-2">Q'ly</p><p class="section-label text-primary-fixed-dim">Cohort Reviews</p></div>
+    <div><p class="font-display font-extrabold text-5xl mb-2">M/Q</p><p class="section-label text-primary-fixed-dim">Cohort Reviews</p></div>
   </div>
 </section>
 </main>
@@ -310,7 +308,7 @@ tailwind.config = {
 <footer class="bg-surface-container border-t border-outline-variant">
   <div class="max-w-container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
     <div class="md:col-span-1">
-      <div class="flex items-center gap-3 mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-9 w-auto"/><span class="font-display font-bold text-lg text-primary">V3F Nagpur</span></div>
+      <div class="mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-24 w-auto"/></div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-3">VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development.</p>
       <p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p>
     </div>

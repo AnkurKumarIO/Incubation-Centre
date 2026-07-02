@@ -27,7 +27,7 @@ tailwind.config = { theme: { extend: { colors: {
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
   .nav-link{position:relative;} .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#002754;transition:width 0.2s;} .nav-link:hover::after,.nav-link.active::after{width:100%;}
-  .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;}
+  .section-label{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;}
   .btn-primary{background:#002754;color:#fff;font-weight:700;padding:14px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
   .btn-primary:hover{background:#153d72;box-shadow:0 8px 24px -6px rgba(0,39,84,0.35);transform:translateY(-1px);}
   .btn-outline{border:1.5px solid #002754;color:#002754;font-weight:700;padding:13px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
@@ -42,7 +42,7 @@ tailwind.config = { theme: { extend: { colors: {
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
   <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center no-underline">
-      <img src="images/Option 9.png" alt="V3F Logo" class="h-14 w-auto"/>
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-16 w-auto"/>
     </a>
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Home</a>
@@ -101,7 +101,7 @@ tailwind.config = { theme: { extend: { colors: {
 <section id="about-mission" class="py-24 px-6 md:px-10">
   <div class="max-w-container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
     <div class="reveal">
-      <span class="section-label text-vibrant-blue">[ 01 ] MISSION</span>
+      <span class="section-label text-vibrant-blue">MISSION</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-6">Building a Founder-First Ecosystem.</h2>
       <p class="text-on-surface-variant text-lg leading-relaxed mb-5">V3F Nagpur provides startups with access to state-of-the-art facilities, a strong and well-connected network of mentors, valuable industry connections, and a supportive community that empowers entrepreneurs to grow, innovate, and thrive.</p>
       <p class="text-on-surface-variant leading-relaxed mb-5">Our objective is to create an environment that encourages sustainable entrepreneurship by providing the right ecosystem, support, and opportunities while contributing to long-term ecosystem development through continuous collaboration and innovation.</p>
@@ -148,38 +148,38 @@ tailwind.config = { theme: { extend: { colors: {
 <section id="about-features" class="py-24 px-6 md:px-10 bg-surface-container-low">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 02 ] FEATURES</span>
+      <span class="section-label text-vibrant-blue">FEATURES</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">What Makes V3F Different.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">Six core principles that define our approach to building a founder-centric, sustainable incubation ecosystem.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="card-hover bg-white border border-outline-variant p-8 reveal">
-        <p class="section-label text-vibrant-blue mb-4">01 APPROACH</p>
+        <p class="section-label text-vibrant-blue mb-4">APPROACH</p>
         <h3 class="font-display font-bold text-xl text-primary mb-3">Founder-Friendly Approach</h3>
         <p class="text-on-surface-variant text-sm">Our incubation framework supports entrepreneurs with resources to build sustainable ventures — not just extract equity.</p>
       </div>
       <div class="card-hover bg-white border border-outline-variant p-8 reveal">
-        <p class="section-label text-vibrant-blue mb-4">02 AWARENESS</p>
+        <p class="section-label text-vibrant-blue mb-4">AWARENESS</p>
         <h3 class="font-display font-bold text-xl text-primary mb-3">Competitive Landscape Awareness</h3>
         <p class="text-on-surface-variant text-sm">Our policy considers leading incubators across the region, ensuring startups receive best-in-class support.</p>
       </div>
       <div class="card-hover bg-white border border-outline-variant p-8 reveal">
-        <p class="section-label text-vibrant-blue mb-4">03 ECOSYSTEM</p>
+        <p class="section-label text-vibrant-blue mb-4">ECOSYSTEM</p>
         <h3 class="font-display font-bold text-xl text-primary mb-3">Long-Term Ecosystem Development</h3>
         <p class="text-on-surface-variant text-sm">V3F fosters entrepreneurial growth and sustainable businesses contributing positively to the Nagpur region.</p>
       </div>
       <div class="card-hover bg-white border border-outline-variant p-8 reveal">
-        <p class="section-label text-vibrant-blue mb-4">04 FACULTY</p>
+        <p class="section-label text-vibrant-blue mb-4">FACULTY</p>
         <h3 class="font-display font-bold text-xl text-primary mb-3">Incentives for VNIT Faculty</h3>
         <p class="text-on-surface-variant text-sm">Faculty mentoring startups is recognised by VNIT during appraisal and professional evaluation.</p>
       </div>
       <div class="card-hover bg-white border border-outline-variant p-8 reveal">
-        <p class="section-label text-vibrant-blue mb-4">05 COMMUNITY</p>
+        <p class="section-label text-vibrant-blue mb-4">COMMUNITY</p>
         <h3 class="font-display font-bold text-xl text-primary mb-3">Subsidised Services for VNIT Community</h3>
         <p class="text-on-surface-variant text-sm">VNIT students and alumni get significantly reduced fees compared to external applicants.</p>
       </div>
       <div class="card-hover bg-primary text-white p-8 reveal">
-        <p class="section-label text-primary-fixed-dim mb-4">06 AUTONOMY</p>
+        <p class="section-label text-primary-fixed-dim mb-4">AUTONOMY</p>
         <h3 class="font-display font-bold text-xl mb-3">Operational Autonomy</h3>
         <p class="text-primary-fixed text-sm">V3F operates with functional autonomy for quick decision-making while aligned with VNIT's vision.</p>
       </div>
@@ -191,7 +191,7 @@ tailwind.config = { theme: { extend: { colors: {
 <section id="about-board" class="py-24 px-6 md:px-10">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 03 ] LEADERSHIP</span>
+      <span class="section-label text-vibrant-blue">LEADERSHIP</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Board of Directors.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">V3F Nagpur is governed by a distinguished board comprising VNIT leadership, industry veterans, and academic experts.</p>
     </div>
@@ -276,7 +276,7 @@ tailwind.config = { theme: { extend: { colors: {
 <section id="about-governance" class="py-24 px-6 md:px-10 bg-surface-container-low">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 04 ] GOVERNANCE</span>
+      <span class="section-label text-vibrant-blue">GOVERNANCE</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Governance Structure.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">V3F operates with clearly defined accountability structures to ensure transparency, fairness, and institutional alignment.</p>
     </div>
@@ -343,7 +343,7 @@ tailwind.config = { theme: { extend: { colors: {
 <!-- FOOTER -->
 <footer class="bg-surface-container border-t border-outline-variant">
   <div class="max-w-container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div><div class="flex items-center gap-3 mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-9 w-auto"/><span class="font-display font-bold text-lg text-primary">V3F Nagpur</span></div><p class="text-on-surface-variant text-sm leading-relaxed mb-3">VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development.</p><p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p><p class="text-on-surface-variant text-sm mt-1">South Ambazari Road, Nagpur — 440010, MH</p></div>
+    <div><div class="mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-24 w-auto"/></div><p class="text-on-surface-variant text-sm leading-relaxed mb-3">VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development.</p><p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p><p class="text-on-surface-variant text-sm mt-1">South Ambazari Road, Nagpur — 440010, MH</p></div>
     <div><h5 class="section-label text-primary mb-5">PROGRAMS</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="programs.html" class="hover:text-primary hover:underline">Pre-Incubation</a></li><li><a href="programs.html" class="hover:text-primary hover:underline">Incubation</a></li><li><a href="programs.html" class="hover:text-primary hover:underline">Co-Working</a></li><li><a href="index.html#contact" class="hover:text-primary hover:underline">Funding Support</a></li></ul></div>
     <div><h5 class="section-label text-primary mb-5">ABOUT</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="about.html" class="hover:text-primary hover:underline">About V3F</a></li><li><a href="advisors.html" class="hover:text-primary hover:underline">Advisory Board</a></li><li><a href="focus-areas.html" class="hover:text-primary hover:underline">Focus Areas</a></li><li><a href="about.html#about-governance" class="hover:text-primary hover:underline">Governance</a></li></ul></div>
     <div><h5 class="section-label text-primary mb-5">CONNECT</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary"><span class="material-symbols-outlined text-[15px]">send</span>Apply Now</a></li><li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary"><span class="material-symbols-outlined text-[15px]">psychology</span>Become a Mentor</a></li><li><a href="index.html#contact" class="flex items-center gap-2 hover:text-primary"><span class="material-symbols-outlined text-[15px]">mail</span>Contact Us</a></li><li><a href="https://vnit.ac.in" target="_blank" class="flex items-center gap-2 hover:text-primary"><span class="material-symbols-outlined text-[15px]">open_in_new</span>VNIT Nagpur</a></li></ul></div>

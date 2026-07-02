@@ -64,7 +64,7 @@ tailwind.config = {
   .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#002754; transition:width 0.2s; }
   .nav-link:hover::after, .nav-link.active::after { width:100%; }
   .hero-bg { background: radial-gradient(ellipse 80% 60% at 60% 40%, #e4efff 0%, #f7f9ff 70%); }
-  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+  .section-label { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
   .btn-primary { background:#002754; color:#fff; font-weight:700; padding:14px 32px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
   .btn-primary:hover { background:#153d72; box-shadow:0 8px 24px -6px rgba(0,39,84,0.35); transform:translateY(-1px); }
   .btn-outline { border:1.5px solid #002754; color:#002754; font-weight:700; padding:13px 32px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
@@ -77,7 +77,7 @@ tailwind.config = {
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
   <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center no-underline">
-      <img src="images/Option 9.png" alt="V3F Logo" class="h-14 w-auto"/>
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-16 w-auto"/>
     </a>
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html" class="nav-link active text-primary font-semibold text-sm">Home</a>
@@ -140,13 +140,6 @@ tailwind.config = {
         <a href="index.html#contact" class="btn-primary">Apply for Incubation <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
         <a href="programs.html" class="btn-outline">Explore Programs</a>
       </div>
-      <!-- Stats row -->
-      <div class="grid grid-cols-4 gap-4 pt-6 border-t border-outline-variant mt-4">
-        <div><p class="font-display font-extrabold text-2xl text-primary">300+</p><p class="section-label text-on-surface-variant mt-1">Faculty</p></div>
-        <div><p class="font-display font-extrabold text-2xl text-primary">215 Ac</p><p class="section-label text-on-surface-variant mt-1">Campus</p></div>
-        <div><p class="font-display font-extrabold text-2xl text-primary">6</p><p class="section-label text-on-surface-variant mt-1">CoE Labs</p></div>
-        <div><p class="font-display font-extrabold text-2xl text-primary">Sec 8</p><p class="section-label text-on-surface-variant mt-1">Company</p></div>
-      </div>
     </div>
     <!-- Right: campus image with overlay label -->
     <div class="relative hidden lg:block">
@@ -154,14 +147,9 @@ tailwind.config = {
         <img src="images/building.png" alt="VNIT Nagpur Campus" class="w-full h-[480px] object-cover"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
         <div class="absolute bottom-6 left-6 right-6">
-          <p class="section-label text-white/70 mb-1">V3F INCUBATION CENTRE NAGPUR · EST. 2024</p>
+          <p class="section-label text-white/70 mb-1">V3F INCUBATION CENTRE NAGPUR</p>
           <p class="font-display font-bold text-white text-xl">Visvesvaraya National Institute of Technology</p>
         </div>
-      </div>
-      <!-- Floating badge -->
-      <div class="absolute -bottom-5 -right-5 bg-vibrant-blue text-white px-6 py-4 rounded-xl shadow-lg">
-        <p class="font-display font-extrabold text-2xl">18mo</p>
-        <p class="section-label text-white/70 mt-0.5">Avg. Incubation</p>
       </div>
     </div>
   </div>
@@ -170,7 +158,7 @@ tailwind.config = {
 <!-- ═══════════════ WHY V3F BENTO ═══════════════ -->
 <section class="py-24 px-6 md:px-10 max-w-container mx-auto">
   <div class="mb-14 reveal">
-    <span class="section-label text-vibrant-blue">[ 01 ] WHY V3F</span>
+    <span class="section-label text-vibrant-blue">WHY V3F</span>
     <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">The foundation your<br/>startup deserves.</h2>
     <p class="text-on-surface-variant text-lg max-w-xl">India's premier NIT-backed incubation centre — where deep tech founders find the infrastructure, capital, and network to scale.</p>
   </div>
@@ -182,7 +170,7 @@ tailwind.config = {
         <span class="material-symbols-outlined" style="font-size:220px;font-variation-settings:'wght' 100;">hub</span>
       </div>
       <div>
-        <p class="section-label text-vibrant-blue mb-4">01 / ECOSYSTEM</p>
+        <p class="section-label text-vibrant-blue mb-4">ECOSYSTEM</p>
         <h3 class="font-display font-bold text-2xl text-primary mb-3">VNIT Ecosystem Access</h3>
         <p class="text-on-surface-variant max-w-md">Faculty expertise, research labs, and student talent — all at your disposal. Access 13 engineering departments directly.</p>
       </div>
@@ -195,7 +183,7 @@ tailwind.config = {
     <!-- Mentorship - dark -->
     <div class="md:col-span-4 card-hover bg-primary text-white rounded-2xl p-8 flex flex-col justify-between reveal">
       <div>
-        <p class="section-label text-primary-fixed-dim mb-4">02 / MENTORSHIP</p>
+        <p class="section-label text-primary-fixed-dim mb-4">MENTORSHIP</p>
         <h3 class="font-display font-bold text-2xl mb-3">Expert Mentor Network</h3>
         <p class="text-primary-fixed text-sm leading-relaxed">Matched mentors from industry, academia, and investor networks. 13+ active mentors with 25+ years experience.</p>
       </div>
@@ -204,7 +192,7 @@ tailwind.config = {
 
     <!-- Funding -->
     <div class="md:col-span-4 card-hover bg-surface-container-low border border-outline-variant rounded-2xl p-8 flex flex-col justify-between reveal">
-      <p class="section-label text-vibrant-blue">03 / FUNDING</p>
+      <p class="section-label text-vibrant-blue">FUNDING</p>
       <div>
         <h3 class="font-display font-bold text-2xl text-primary mb-3">Funding & Grant Support</h3>
         <p class="text-on-surface-variant text-sm">Guidance on government schemes, angel networks, and investor connects to fuel your seed stages.</p>
@@ -216,9 +204,9 @@ tailwind.config = {
     <div class="md:col-span-8 card-hover bg-surface-gray border border-outline-variant rounded-2xl overflow-hidden flex reveal">
       <div class="p-8 flex-1 flex flex-col justify-between">
         <div>
-          <p class="section-label text-vibrant-blue mb-4">04 / INFRASTRUCTURE</p>
+          <p class="section-label text-vibrant-blue mb-4">INFRASTRUCTURE</p>
           <h3 class="font-display font-bold text-2xl text-primary mb-3">Campus Infrastructure</h3>
-          <p class="text-on-surface-variant text-sm">Co-working spaces, private cabins, labs, and meeting rooms on VNIT campus. High-speed internet and full campus amenities.</p>
+          <p class="text-on-surface-variant text-sm">Co-working spaces, private cabins, labs, high-speed connectivity and meeting rooms on VNIT campus.</p>
         </div>
         <a href="about.html" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-4 transition-all">Take a Virtual Tour <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
       </div>
@@ -242,7 +230,7 @@ tailwind.config = {
 <section class="py-24 px-6 md:px-10 bg-white">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 02 ] PROGRAMS</span>
+      <span class="section-label text-vibrant-blue">PROGRAMS</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Support at every<br/>stage of growth.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">From early-stage ideas to market-ready ventures — structured support tailored to your startup's growth stage.</p>
     </div>
@@ -293,7 +281,7 @@ tailwind.config = {
         </div>
         <div class="p-7 flex flex-col flex-1">
           <h3 class="font-display font-bold text-xl text-primary mb-2">Co-Working</h3>
-          <p class="text-on-surface-variant text-sm mb-5 flex-1">Premium co-working on VNIT campus without full incubation commitment — ideal for early-stage teams and solo founders.</p>
+          <p class="text-on-surface-variant text-sm mb-5 flex-1">Premium co-working on VNIT campus with full incubation commitment — ideal for early-stage teams and solo founders.</p>
           <ul class="space-y-2 mb-7">
             <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Hot-desk & dedicated seats</li>
             <li class="flex items-center gap-2 text-sm text-on-surface"><span class="material-symbols-outlined text-vibrant-blue text-[17px]">check_circle</span>Meeting rooms & event spaces</li>
@@ -314,7 +302,7 @@ tailwind.config = {
 <section class="py-24 px-6 md:px-10 bg-deep-onyx text-white">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-primary-fixed-dim">[ 03 ] FOCUS AREAS</span>
+      <span class="section-label text-primary-fixed-dim">FOCUS AREAS</span>
       <h2 class="font-display font-extrabold text-4xl mt-3 mb-4">Sectors we champion.</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
@@ -359,7 +347,7 @@ tailwind.config = {
 <section id="ecosystem" class="py-24 px-6 md:px-10">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 04 ] ECOSYSTEM</span>
+      <span class="section-label text-vibrant-blue">ECOSYSTEM</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">India-class research<br/>infrastructure.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">As a V3F incubatee, you get privileged access to VNIT Nagpur's Centres of Excellence — worth crores, available from day one.</p>
     </div>
@@ -534,7 +522,7 @@ tailwind.config = {
             </div>
             <div class="section-label text-vibrant-blue mb-1">PHASE 03</div>
             <div class="font-display font-bold text-primary text-lg mb-1">Scale &amp; Expand</div>
-            <p class="text-on-surface-variant text-sm leading-relaxed">18–36 month programs with quarterly review cycles and full ecosystem access.</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">18–36 month programs with monthly/quarterly review cycles and full ecosystem access.</p>
           </div>
 
         </div>
@@ -549,19 +537,31 @@ tailwind.config = {
 <section class="py-24 px-6 md:px-10 bg-surface-container-low">
   <div class="max-w-container mx-auto">
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 05 ] ADVISORY BOARD</span>
+      <span class="section-label text-vibrant-blue">ADVISORY BOARD</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">People who shape V3F.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">V3F Advisors guide the incubator itself — shaping policy, governance, and access to government funds and ecosystem partnerships.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Advisor 1 -->
+      <!-- Advisor 1: B.S. Murty -->
       <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
         <div class="aspect-[4/3] overflow-hidden relative">
-          <img src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
-          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
-            <span class="section-label text-white/80">LEAD ADVISOR</span>
+          <img src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"/>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display font-bold text-lg text-primary mb-1">Prof. B.S. Murty</h3>
+          <p class="section-label text-on-surface-variant mb-3">Director, IIT Hyderabad</p>
+          <p class="text-on-surface-variant text-sm">Pioneer in nano-materials & high-entropy alloys. President, Indian Institute of Metals.</p>
+          <div class="flex gap-2 mt-4 flex-wrap">
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">DEEP TECH</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">RESEARCH</span>
           </div>
+        </div>
+      </div>
+      <!-- Advisor 2: Hiranmay Mahanta -->
+      <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/advisor-hiranmay-mahanta.png" alt="Mr. Hiranmay Mahanta" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"/>
         </div>
         <div class="p-6">
           <h3 class="font-display font-bold text-lg text-primary mb-1">Mr. Hiranmay Mahanta</h3>
@@ -573,39 +573,18 @@ tailwind.config = {
           </div>
         </div>
       </div>
-      <!-- Advisor 2 -->
+      <!-- Advisor 3: Jagdish Desai -->
       <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
         <div class="aspect-[4/3] overflow-hidden relative">
-          <img src="images/advisor-ms-unnikrishnan.png" alt="Prof. M.S. Unnikrishnan" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
-          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
-            <span class="section-label text-white/80">INDUSTRY ADVISOR</span>
-          </div>
+          <img src="images/advisor-jagdish-desai.png" alt="Mr. Jagdish Desai" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"/>
         </div>
         <div class="p-6">
-          <h3 class="font-display font-bold text-lg text-primary mb-1">Prof. M.S. Unnikrishnan</h3>
-          <p class="section-label text-on-surface-variant mb-3">CEO, IITB-Monash Research Academy</p>
-          <p class="text-on-surface-variant text-sm">Former MD & CEO of Thermax Ltd. Bridging corporate engineering and academic research.</p>
+          <h3 class="font-display font-bold text-lg text-primary mb-1">Mr. Jagdish Desai</h3>
+          <p class="section-label text-on-surface-variant mb-3">Global Executive & Venture Capitalist</p>
+          <p class="text-on-surface-variant text-sm">Former President, Emerson Electric. Co-founded Virgo Valves — $400M acquisition. VC advising on global fundraising.</p>
           <div class="flex gap-2 mt-4 flex-wrap">
-            <span class="bg-surface-container px-2 py-1 section-label text-primary">ACADEMIA</span>
-            <span class="bg-surface-container px-2 py-1 section-label text-primary">INDUSTRY</span>
-          </div>
-        </div>
-      </div>
-      <!-- Advisor 3 -->
-      <div class="card-hover bg-white border border-outline-variant overflow-hidden reveal">
-        <div class="aspect-[4/3] overflow-hidden relative">
-          <img src="images/advisor-bs-murty.jpg" alt="Prof. B.S. Murty" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
-          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-primary/80 to-transparent">
-            <span class="section-label text-white/80">DEEP TECH ADVISOR</span>
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="font-display font-bold text-lg text-primary mb-1">Prof. B.S. Murty</h3>
-          <p class="section-label text-on-surface-variant mb-3">Director, IIT Hyderabad</p>
-          <p class="text-on-surface-variant text-sm">Pioneer in nano-materials & high-entropy alloys. President, Indian Institute of Metals.</p>
-          <div class="flex gap-2 mt-4 flex-wrap">
-            <span class="bg-surface-container px-2 py-1 section-label text-primary">DEEP TECH</span>
-            <span class="bg-surface-container px-2 py-1 section-label text-primary">RESEARCH</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">VENTURE CAPITAL</span>
+            <span class="bg-surface-container px-2 py-1 section-label text-primary">GLOBAL OPS</span>
           </div>
         </div>
       </div>
@@ -627,7 +606,7 @@ tailwind.config = {
 <section class="py-24 px-6 md:px-10 bg-white">
   <div class="max-w-container mx-auto">
     <div class="mb-10 reveal">
-      <span class="section-label text-vibrant-blue">[ 06 ] MENTOR NETWORK</span>
+      <span class="section-label text-vibrant-blue">MENTOR NETWORK</span>
       <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-4">Domain experts for every startup.</h2>
       <p class="text-on-surface-variant text-lg max-w-xl">V3F mentors work directly with incubated startups — matched by sector and stage, providing hands-on guidance on product, market, fundraising, legal, and more.</p>
     </div>
@@ -635,64 +614,8 @@ tailwind.config = {
     <!-- Featured mentor cards — 3×2 grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
 
-      <!-- Anand Kamat -->
-      <a href="mentors.html#anand-kamat" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
-        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">AK</div>
-        <div class="flex-1 min-w-0">
-          <div class="font-display font-bold text-primary text-sm mb-0.5">Anand Kamat</div>
-          <div class="text-on-surface-variant text-xs mb-2">Co-Founder &amp; CEO, PostQode</div>
-          <div class="flex gap-1.5 flex-wrap">
-            <span class="section-label bg-surface-container text-primary px-2 py-0.5">AI Products</span>
-            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Agentic AI</span>
-          </div>
-        </div>
-        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
-      </a>
-
-      <!-- Swapna Gupta -->
-      <a href="mentors.html#swapna-gupta" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
-        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">SG</div>
-        <div class="flex-1 min-w-0">
-          <div class="font-display font-bold text-primary text-sm mb-0.5">Swapna Gupta</div>
-          <div class="text-on-surface-variant text-xs mb-2">Partner, Avaana Capital</div>
-          <div class="flex gap-1.5 flex-wrap">
-            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Deep Tech VC</span>
-            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Fundraising</span>
-          </div>
-        </div>
-        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
-      </a>
-
-      <!-- Sandip Chintawar -->
-      <a href="mentors.html#sandip-chintawar" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
-        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">SC</div>
-        <div class="flex-1 min-w-0">
-          <div class="font-display font-bold text-primary text-sm mb-0.5">Sandip Chintawar</div>
-          <div class="text-on-surface-variant text-xs mb-2">Co-Founder, Cymetrix Software</div>
-          <div class="flex gap-1.5 flex-wrap">
-            <span class="section-label bg-surface-container text-primary px-2 py-0.5">3 Exits</span>
-            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Enterprise SaaS</span>
-          </div>
-        </div>
-        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
-      </a>
-
-      <!-- Sharad Bairathi -->
-      <a href="mentors.html#sharad-bairathi" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
-        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">SB</div>
-        <div class="flex-1 min-w-0">
-          <div class="font-display font-bold text-primary text-sm mb-0.5">Sharad Bairathi</div>
-          <div class="text-on-surface-variant text-xs mb-2">Founder, Embitel → VW Group</div>
-          <div class="flex gap-1.5 flex-wrap">
-            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Exit to VW</span>
-            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Auto Tech</span>
-          </div>
-        </div>
-        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
-      </a>
-
       <!-- Ajay Kamalvanshi -->
-      <a href="mentors.html#ajay-kamalvanshi" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
         <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">AK</div>
         <div class="flex-1 min-w-0">
           <div class="font-display font-bold text-primary text-sm mb-0.5">Ajay Kamalvanshi</div>
@@ -705,15 +628,71 @@ tailwind.config = {
         <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
       </a>
 
-      <!-- Pravin Kamble -->
-      <a href="mentors.html#pravin-kamble" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
-        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">PK</div>
+      <!-- Anand Kamat -->
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">AK</div>
         <div class="flex-1 min-w-0">
-          <div class="font-display font-bold text-primary text-sm mb-0.5">Pravin Kamble</div>
-          <div class="text-on-surface-variant text-xs mb-2">Founder &amp; CEO, 99minds</div>
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Anand Kamat</div>
+          <div class="text-on-surface-variant text-xs mb-2">Co-Founder &amp; CEO, PostQode</div>
           <div class="flex gap-1.5 flex-wrap">
-            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Fintech</span>
-            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">SaaS</span>
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">AI Products</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Agentic AI</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+
+      <!-- Mihirr Sose -->
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">MS</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Mihirr Sose</div>
+          <div class="text-on-surface-variant text-xs mb-2">Founder &amp; Growth Operator</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">0→1 Growth</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">GTM</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+
+      <!-- Mithun Shrivastava -->
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">MS</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Mithun Shrivastava</div>
+          <div class="text-on-surface-variant text-xs mb-2">Founder, Blowhorn · MBA Cambridge</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Logistics</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Operations</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+
+      <!-- Naveen Kumar Gonga -->
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 font-display font-bold text-primary text-sm group-hover:bg-primary/20 transition-colors">NG</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Naveen Kumar Gonga</div>
+          <div class="text-on-surface-variant text-xs mb-2">CEO &amp; Co-Founder, Studio Carbon</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Product Design</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">UI/UX</span>
+          </div>
+        </div>
+        <span class="material-symbols-outlined text-outline text-base group-hover:text-primary transition-colors shrink-0 mt-1">arrow_forward</span>
+      </a>
+
+      <!-- Parag Deoras -->
+      <a href="mentors.html" class="card-hover flex items-start gap-4 p-5 border border-outline-variant bg-surface-container-low reveal group transition-all">
+        <div class="w-12 h-12 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center shrink-0 font-display font-bold text-secondary text-sm group-hover:bg-secondary/20 transition-colors">PD</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-display font-bold text-primary text-sm mb-0.5">Parag Deoras</div>
+          <div class="text-on-surface-variant text-xs mb-2">Global Supply Chain Leader</div>
+          <div class="flex gap-1.5 flex-wrap">
+            <span class="section-label bg-surface-container text-primary px-2 py-0.5">Supply Chain</span>
+            <span class="section-label bg-secondary-container text-on-secondary-container px-2 py-0.5">Industry 4.0</span>
           </div>
         </div>
         <span class="material-symbols-outlined text-outline text-base group-hover:text-secondary transition-colors shrink-0 mt-1">arrow_forward</span>
@@ -756,7 +735,7 @@ tailwind.config = {
 
     <!-- Header -->
     <div class="mb-14 reveal">
-      <span class="section-label text-vibrant-blue">[ 07 ] ABOUT V3F</span>
+      <span class="section-label text-vibrant-blue">ABOUT V3F</span>
       <h2 class="font-display font-extrabold text-white mt-3 mb-4" style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;">
         Championing the future of<br/><span class="text-primary-fixed-dim">entrepreneurial excellence.</span>
       </h2>
@@ -812,7 +791,7 @@ tailwind.config = {
             </div>
             <div>
               <div class="font-bold text-white text-sm mb-0.5">Expert Mentorship &amp; Advisory</div>
-              <p class="text-white/55 text-xs leading-relaxed">Curated mentors, quarterly reviews, legal and financial advisory.</p>
+              <p class="text-white/55 text-xs leading-relaxed">Curated mentors, monthly/quarterly reviews, legal and financial advisory.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-4 rounded-xl" style="background:rgba(255,255,255,0.03)">
@@ -867,7 +846,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <!-- Left: info -->
       <div class="reveal">
-        <span class="section-label text-vibrant-blue">[ 07 ] APPLY NOW</span>
+        <span class="section-label text-vibrant-blue">APPLY NOW</span>
         <h2 class="font-display font-extrabold text-4xl text-primary mt-3 mb-5">Start your journey<br/>with V3F.</h2>
         <p class="text-on-surface-variant text-lg mb-10">Apply for incubation, ask a question, or simply reach out — we respond to every inquiry within 48 hours.</p>
         <div class="space-y-6">
@@ -906,7 +885,7 @@ tailwind.config = {
         <div class="flex gap-6 mt-10 pt-8 border-t border-outline-variant">
           <div><p class="font-display font-bold text-2xl text-primary">48h</p><p class="section-label text-on-surface-variant mt-1">Response Time</p></div>
           <div><p class="font-display font-bold text-2xl text-primary">18–36</p><p class="section-label text-on-surface-variant mt-1">Month Programs</p></div>
-          <div><p class="font-display font-bold text-2xl text-primary">Q'ly</p><p class="section-label text-on-surface-variant mt-1">Cohort Reviews</p></div>
+          <div><p class="font-display font-bold text-2xl text-primary">M/Q</p><p class="section-label text-on-surface-variant mt-1">Cohort Reviews</p></div>
         </div>
       </div>
 
@@ -914,24 +893,24 @@ tailwind.config = {
       <div class="reveal">
         <div class="bg-surface-gray border border-outline-variant p-8">
           <h3 class="font-display font-bold text-2xl text-primary mb-2">Ready to Build Your Startup?</h3>
-          <p class="text-on-surface-variant text-sm mb-8">Rolling Admissions · First Cohort · Quarterly review cycles · 18–36 month programs</p>
+          <p class="text-on-surface-variant text-sm mb-8">Rolling Admissions · First Cohort · Monthly/Quarterly review cycles · 18–36 month programs</p>
           <form class="space-y-5" data-formspree action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST">
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <label class="section-label text-on-surface-variant mb-2 block">01 FOUNDER NAME</label>
+                <label class="section-label text-on-surface-variant mb-2 block">FOUNDER NAME</label>
                 <input name="name" type="text" required placeholder="Full Name" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
               </div>
               <div>
-                <label class="section-label text-on-surface-variant mb-2 block">02 EMAIL PROTOCOL</label>
+                <label class="section-label text-on-surface-variant mb-2 block">EMAIL PROTOCOL</label>
                 <input name="email" type="email" required placeholder="email@vnit.ac.in" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
               </div>
             </div>
             <div>
-              <label class="section-label text-on-surface-variant mb-2 block">03 PHONE NUMBER</label>
+              <label class="section-label text-on-surface-variant mb-2 block">PHONE NUMBER</label>
               <input name="phone" type="tel" placeholder="+91 00000 00000" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
             </div>
             <div>
-              <label class="section-label text-on-surface-variant mb-2 block">04 PROGRAM</label>
+              <label class="section-label text-on-surface-variant mb-2 block">PROGRAM</label>
               <select name="program" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
                 <option value="">Select a program...</option>
                 <option>Pre-Incubation</option>
@@ -940,7 +919,7 @@ tailwind.config = {
               </select>
             </div>
             <div>
-              <label class="section-label text-on-surface-variant mb-2 block">05 VNIT AFFILIATION</label>
+              <label class="section-label text-on-surface-variant mb-2 block">VNIT AFFILIATION</label>
               <select name="affiliation" class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors text-on-surface-variant">
                 <option value="">Select affiliation...</option>
                 <option>VNIT Student</option>
@@ -950,7 +929,7 @@ tailwind.config = {
               </select>
             </div>
             <div>
-              <label class="section-label text-on-surface-variant mb-2 block">06 PROJECT SCHEMATIC</label>
+              <label class="section-label text-on-surface-variant mb-2 block">PROJECT SCHEMATIC</label>
               <textarea name="message" rows="4" placeholder="Briefly describe your innovation..." class="w-full border border-outline bg-white px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-colors resize-none"></textarea>
             </div>
             <button type="submit" class="w-full btn-primary justify-center text-sm">
@@ -1019,8 +998,7 @@ tailwind.config = {
   <div class="max-w-container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
     <div class="md:col-span-1">
       <div class="flex items-center gap-3 mb-4">
-        <img src="images/Option 9.png" alt="V3F Logo" class="h-9 w-auto"/>
-        <span class="font-display font-bold text-lg text-primary">V3F Nagpur</span>
+        <img src="images/Option 9.png" alt="V3F Logo" class="h-24 w-auto"/>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-5">VNIT Foundation for Startups — catalysing innovation, entrepreneurship, and economic development through structured incubation support.</p>
       <p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p>

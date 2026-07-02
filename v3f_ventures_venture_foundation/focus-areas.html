@@ -27,7 +27,7 @@ tailwind.config = { theme: { extend: { colors: {
   .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
   .nav-link{position:relative;} .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#002754;transition:width 0.2s;} .nav-link:hover::after,.nav-link.active::after{width:100%;}
-  .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;}
+  .section-label{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;}
   .btn-primary{background:#002754;color:#fff;font-weight:700;padding:14px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
   .btn-primary:hover{background:#153d72;box-shadow:0 8px 24px -6px rgba(0,39,84,0.35);transform:translateY(-1px);}
   .btn-outline{border:1.5px solid #002754;color:#002754;font-weight:700;padding:13px 32px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
@@ -41,7 +41,7 @@ tailwind.config = { theme: { extend: { colors: {
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
   <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-center no-underline">
-      <img src="images/Option 9.png" alt="V3F Logo" class="h-14 w-auto"/>
+      <img src="images/Option 9.png" alt="V3F Logo" class="h-16 w-auto"/>
     </a>
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html" class="nav-link text-on-surface-variant hover:text-primary font-medium text-sm transition-colors">Home</a>
@@ -191,10 +191,6 @@ tailwind.config = { theme: { extend: { colors: {
     </div>
     <div class="relative reveal">
       <img src="images/vr jamdar.jpg" alt="V.R. Jamdar Siemens Centre of Excellence" class="w-full rounded-xl shadow-2xl"/>
-      <div class="absolute -bottom-5 -right-5 bg-vibrant-blue p-5">
-        <p class="font-display font-extrabold text-3xl text-white">₹187<span class="text-xl">Cr</span></p>
-        <p class="section-label text-white/70">TOTAL VALUATION</p>
-      </div>
     </div>
   </div>
 </section>
@@ -216,7 +212,7 @@ tailwind.config = { theme: { extend: { colors: {
 <!-- FOOTER -->
 <footer class="bg-surface-container border-t border-outline-variant">
   <div class="max-w-container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div><div class="flex items-center gap-3 mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-9 w-auto"/><span class="font-display font-bold text-lg text-primary">V3F Nagpur</span></div><p class="text-on-surface-variant text-sm leading-relaxed mb-3">VNIT Foundation for Startups — catalysing innovation through structured incubation support.</p><p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p></div>
+    <div><div class="mb-4"><img src="images/Option 9.png" alt="V3F Logo" class="h-24 w-auto"/></div><p class="text-on-surface-variant text-sm leading-relaxed mb-3">VNIT Foundation for Startups — catalysing innovation through structured incubation support.</p><p class="section-label text-on-surface-variant">Section 8 Company · Affiliated with VNIT Nagpur</p></div>
     <div><h5 class="section-label text-primary mb-5">PROGRAMS</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="programs.html" class="hover:text-primary hover:underline">Pre-Incubation</a></li><li><a href="programs.html" class="hover:text-primary hover:underline">Incubation</a></li><li><a href="programs.html" class="hover:text-primary hover:underline">Co-Working</a></li></ul></div>
     <div><h5 class="section-label text-primary mb-5">ABOUT</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="about.html" class="hover:text-primary hover:underline">About V3F</a></li><li><a href="advisors.html" class="hover:text-primary hover:underline">Advisory Board</a></li><li><a href="about.html#about-governance" class="hover:text-primary hover:underline">Governance</a></li></ul></div>
     <div><h5 class="section-label text-primary mb-5">CONNECT</h5><ul class="space-y-3 text-sm text-on-surface-variant"><li><a href="index.html#contact" class="hover:text-primary hover:underline">Apply Now</a></li><li><a href="index.html#contact" class="hover:text-primary hover:underline">Contact Us</a></li><li><a href="https://vnit.ac.in" target="_blank" class="hover:text-primary hover:underline">VNIT Nagpur</a></li></ul></div>
