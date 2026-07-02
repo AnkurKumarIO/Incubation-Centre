@@ -59,15 +59,19 @@ tailwind.config = { theme: { extend: { colors: {
 
 <main class="pt-20">
 <!-- HERO -->
-<section class="py-20 px-6 md:px-10 bg-surface-container-low relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.05] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
+<section class="py-24 px-6 md:px-10 relative overflow-hidden">
+  <!-- Campus background image -->
+  <img src="images/vnit-3.jpg" alt="VNIT Nagpur campus" class="absolute inset-0 w-full h-full object-cover"/>
+  <!-- Navy overlay for text legibility (lighter so campus is more visible) -->
+  <div class="absolute inset-0 bg-primary/55"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-primary/20"></div>
   <div class="max-w-container mx-auto relative z-10 text-center">
-    <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> › Focus Areas</p>
-    <span class="section-label text-vibrant-blue">FOCUS AREAS</span>
-    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl mx-auto leading-tight">
+    <p class="text-sm text-primary-fixed mb-2"><a href="index.html" class="hover:text-white text-primary-fixed">Home</a> › Focus Areas</p>
+    <span class="section-label text-primary-fixed-dim">FOCUS AREAS</span>
+    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-white mt-3 mb-5 max-w-3xl mx-auto leading-tight">
       Sectors at the<br/>Frontier of Innovation.
     </h1>
-    <p class="text-on-surface-variant text-xl max-w-2xl mx-auto">V3F supports innovation-driven startups across high-impact sectors aligned with national priorities. Our focus areas evolve based on industry trends and ecosystem opportunities.</p>
+    <p class="text-primary-fixed text-xl max-w-2xl mx-auto">V3F supports innovation-driven startups across high-impact sectors aligned with national priorities. Our focus areas evolve based on industry trends and ecosystem opportunities.</p>
   </div>
 </section>
 
