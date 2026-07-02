@@ -59,9 +59,56 @@ tailwind.config = { theme: { extend: { colors: {
     display: flex; flex-direction: column; justify-content: center;
     padding: 2rem;
   }
+
+  /* -- Tier 1 motion: hero load-in -- */
+  @keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  .hero-in{opacity:1}
+  html.anim-ready .hero-in{opacity:0;animation:heroIn .7s cubic-bezier(.16,1,.3,1) forwards}
+  .hero-in-1{animation-delay:.05s}
+  .hero-in-2{animation-delay:.16s}
+  .hero-in-3{animation-delay:.28s}
+  .hero-in-4{animation-delay:.4s}
+  @keyframes heroImgIn{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:scale(1)}}
+  .hero-img-in{opacity:1}
+  html.anim-ready .hero-img-in{opacity:0;animation:heroImgIn .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.3s}
+
+  /* -- Header compact on scroll -- */
+  #site-header>div:first-child{transition:height .35s cubic-bezier(.4,0,.2,1)}
+  #site-header.scrolled>div:first-child{height:64px}
+  #site-header img[alt="V3F Logo"]{transition:height .35s cubic-bezier(.4,0,.2,1)}
+  #site-header.scrolled img[alt="V3F Logo"]{height:44px}
+
+  /* -- Ken Burns for hero background photos -- */
+  @keyframes kenburns{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .kenburns{animation:kenburns 22s ease-in-out infinite alternate}
+
+  /* -- Image reveal-on-scroll (scale-in) -- */
+  .reveal img{transition:transform 1s cubic-bezier(.16,1,.3,1);transform:scale(1.06)}
+  .reveal.visible img{transform:scale(1)}
+
+  @media (prefers-reduced-motion: reduce){
+    html.anim-ready .hero-in,html.anim-ready .hero-img-in{animation:none!important;opacity:1!important;transform:none!important}
+    .kenburns{animation:none!important}
+    .reveal img{transform:none!important;transition:none!important}
+    #site-header>div:first-child,#site-header img[alt="V3F Logo"]{transition:none!important}
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
+<script>document.documentElement.classList.add('anim-ready');</script>
+<script>
+  // Safety net: guarantee hero text/images and scroll-reveal content are never left invisible,
+  // regardless of any other script error or IntersectionObserver failure.
+  setTimeout(function(){
+    document.querySelectorAll('.hero-in,.hero-img-in').forEach(function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }, 2000);
+</script>
 
 <!-- NAV -->
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
@@ -89,15 +136,15 @@ tailwind.config = { theme: { extend: { colors: {
   <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(#002754 1px,transparent 1px);background-size:32px 32px;"></div>
   <div class="max-w-container mx-auto relative z-10">
     <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> &rsaquo; Mentors</p>
-    <span class="section-label text-vibrant-blue">MENTOR NETWORK</span>
-    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight">Founders Guided by<br/>Those Who&rsquo;ve Built.</h1>
-    <p class="text-on-surface-variant text-xl max-w-2xl mb-8">V3F pairs every incubated startup with dedicated mentors - founders, investors, and technologists from industry, academia, and investor networks who work directly with your team through every critical phase.</p>
-    <div class="flex flex-wrap gap-6 text-sm">
+    <span class="section-label text-vibrant-blue hero-in hero-in-1">MENTOR NETWORK</span>
+    <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight hero-in hero-in-2">Founders Guided by<br/>Those Who&rsquo;ve Built.</h1>
+    <p class="text-on-surface-variant text-xl max-w-2xl mb-8 hero-in hero-in-3">V3F pairs every incubated startup with dedicated mentors - founders, investors, and technologists from industry, academia, and investor networks who work directly with your team through every critical phase.</p>
+    <div class="flex flex-wrap gap-6 text-sm hero-in hero-in-4">
       <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">groups</span>13 Active Mentors</div>
       <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">handshake</span>Sector-Matched 1:1</div>
       <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">calendar_month</span>Monthly Sessions</div>
     </div>
-    <div class="mt-6 bg-surface-container-low border border-outline-variant p-4 inline-flex items-start gap-3 max-w-2xl">
+    <div class="mt-6 bg-surface-container-low border border-outline-variant p-4 inline-flex items-start gap-3 max-w-2xl hero-in hero-in-4">
       <span class="material-symbols-outlined text-vibrant-blue text-[18px] mt-0.5">info</span>
       <p class="text-on-surface-variant text-sm">Mentors work hands-on with individual startups, distinct from V3F&rsquo;s <a href="advisors.html" class="text-primary hover:underline">Advisory Board</a>, which guides the incubator&rsquo;s strategic direction.</p>
     </div>
@@ -506,7 +553,7 @@ tailwind.config = { theme: { extend: { colors: {
     empty.classList.toggle('hidden',shown!==0);});
   // Header shadow
   const header=document.getElementById('site-header');
-  window.addEventListener('scroll',()=>header.classList.toggle('shadow-md',window.scrollY>40));
+  window.addEventListener('scroll',()=>{header.classList.toggle('shadow-md',window.scrollY>40);header.classList.toggle('scrolled',window.scrollY>40);});
   // Reveal
   const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.05});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));

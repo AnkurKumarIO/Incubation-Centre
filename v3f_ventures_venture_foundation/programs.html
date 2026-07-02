@@ -38,9 +38,57 @@ tailwind.config = {
   .tab-btn:not(.active){color:#43474f;}
   .tab-btn:not(.active):hover{color:#002754;}
   .tab-panel{display:none;} .tab-panel.active{display:block;}
+
+  /* -- Tier 1 motion: hero load-in -- */
+  @keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  .hero-in{opacity:1}
+  html.anim-ready .hero-in{opacity:0;animation:heroIn .7s cubic-bezier(.16,1,.3,1) forwards}
+  .hero-in-1{animation-delay:.05s}
+  .hero-in-2{animation-delay:.16s}
+  .hero-in-3{animation-delay:.28s}
+  .hero-in-4{animation-delay:.4s}
+  @keyframes heroImgIn{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:scale(1)}}
+  .hero-img-in{opacity:1}
+  html.anim-ready .hero-img-in{opacity:0;animation:heroImgIn .9s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.3s}
+
+  /* -- Header compact on scroll -- */
+  #site-header>div:first-child{transition:height .35s cubic-bezier(.4,0,.2,1)}
+  #site-header.scrolled>div:first-child{height:64px}
+  #site-header img[alt="V3F Logo"]{transition:height .35s cubic-bezier(.4,0,.2,1)}
+  #site-header.scrolled img[alt="V3F Logo"]{height:44px}
+  .page-subnav{transition:top .35s cubic-bezier(.4,0,.2,1)}
+
+  /* -- Ken Burns for hero background photos -- */
+  @keyframes kenburns{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .kenburns{animation:kenburns 22s ease-in-out infinite alternate}
+
+  /* -- Image reveal-on-scroll (scale-in) -- */
+  .reveal img{transition:transform 1s cubic-bezier(.16,1,.3,1);transform:scale(1.06)}
+  .reveal.visible img{transform:scale(1)}
+
+  @media (prefers-reduced-motion: reduce){
+    html.anim-ready .hero-in,html.anim-ready .hero-img-in{animation:none!important;opacity:1!important;transform:none!important}
+    .kenburns{animation:none!important}
+    .reveal img{transform:none!important;transition:none!important}
+    #site-header>div:first-child,#site-header img[alt="V3F Logo"]{transition:none!important}
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
+<script>document.documentElement.classList.add('anim-ready');</script>
+<script>
+  // Safety net: guarantee hero text/images and scroll-reveal content are never left invisible,
+  // regardless of any other script error or IntersectionObserver failure.
+  setTimeout(function(){
+    document.querySelectorAll('.hero-in,.hero-img-in').forEach(function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }, 2000);
+</script>
 <!-- NAV -->
 <header id="site-header" class="fixed top-0 w-full z-50 bg-white border-b border-outline-variant transition-shadow duration-300">
   <div class="max-w-container mx-auto px-10 h-20 flex items-center justify-between">
@@ -68,17 +116,17 @@ tailwind.config = {
   <div class="max-w-container mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-12 items-center">
       <div>
-        <p class="text-sm text-on-surface-variant mb-2"><a href="index.html" class="hover:text-primary">Home</a> › Programs</p>
-        <span class="section-label text-vibrant-blue">OUR PROGRAMS</span>
-        <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight">Structured Support<br/>for Every Stage of Growth.</h1>
-        <p class="text-on-surface-variant text-xl max-w-2xl mb-8">V3F offers three distinct program tracks, each tailored to the stage of your venture. From idea validation to scaling, we have the right support for you.</p>
-        <div class="flex flex-wrap gap-6 text-sm">
+        <p class="text-sm text-on-surface-variant mb-2 hero-in hero-in-1"><a href="index.html" class="hover:text-primary">Home</a> › Programs</p>
+        <span class="section-label text-vibrant-blue hero-in hero-in-1">OUR PROGRAMS</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-6xl text-primary mt-3 mb-5 max-w-3xl leading-tight hero-in hero-in-2">Structured Support<br/>for Every Stage of Growth.</h1>
+        <p class="text-on-surface-variant text-xl max-w-2xl mb-8 hero-in hero-in-3">V3F offers three distinct program tracks, each tailored to the stage of your venture. From idea validation to scaling, we have the right support for you.</p>
+        <div class="flex flex-wrap gap-6 text-sm hero-in hero-in-4">
           <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">rocket_launch</span>18-36 mo Incubation tenure</div>
           <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">trending_up</span>Minimum equity commitment</div>
           <div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-vibrant-blue text-[18px]">sync</span>Monthly/Quarterly Cohort reviews</div>
         </div>
       </div>
-      <div class="hidden lg:block">
+      <div class="hidden lg:block hero-img-in">
         <img src="images/vnit-1.jpg" alt="VNIT Nagpur - V3F campus" class="w-full h-[360px] object-cover rounded-2xl shadow-xl border border-outline-variant"/>
       </div>
     </div>
@@ -86,7 +134,7 @@ tailwind.config = {
 </section>
 
 <!-- TAB NAV -->
-<div class="sticky top-20 z-40 bg-white border-b border-outline-variant">
+<div class="page-subnav sticky top-20 z-40 bg-white border-b border-outline-variant">
   <div class="max-w-container mx-auto px-10 flex gap-1 overflow-x-auto">
     <button class="tab-btn active" onclick="switchTab('pre-incubation', this)">Pre-Incubation</button>
     <button class="tab-btn" onclick="switchTab('incubation', this)">Incubation</button>
@@ -331,7 +379,13 @@ tailwind.config = {
 
 <script>
   const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => header.classList.toggle('shadow-md', window.scrollY > 40));
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 40;
+    header.classList.toggle('shadow-md', scrolled);
+    header.classList.toggle('scrolled', scrolled);
+    const subnav = document.querySelector('.page-subnav');
+    if (subnav) subnav.style.top = scrolled ? '64px' : '80px';
+  });
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
